@@ -18,14 +18,14 @@ const rddStatusEffects = [
   { rdd: true, id: STATUSES.StatusStunned, label: 'EFFECT.StatusStunned', icon: 'icons/svg/stoned.svg', "duration.rounds": 1 },
   { rdd: true, id: STATUSES.StatusBleeding, label: 'EFFECT.StatusBleeding', icon: 'icons/svg/blood.svg' },
   { rdd: true, id: STATUSES.StatusProne, label: 'EFFECT.StatusProne', icon: 'icons/svg/falling.svg' },
-  { rdd: true, id: STATUSES.StatusGrappling, tint: '#33cc33', label: 'EFFECT.StatusGrappling', icon: 'systems/foundryvtt-ctm/icons/competence_corps_a_corps.webp' },
-  { rdd: true, id: STATUSES.StatusGrappled, tint: '#ff9900', label: 'EFFECT.StatusGrappled', icon: 'systems/foundryvtt-ctm/icons/competence_corps_a_corps.webp' },
+  { rdd: true, id: STATUSES.StatusGrappling, tint: '#33cc33', label: 'EFFECT.StatusGrappling', icon: 'systems/ctm/icons/competence_corps_a_corps.webp' },
+  { rdd: true, id: STATUSES.StatusGrappled, tint: '#ff9900', label: 'EFFECT.StatusGrappled', icon: 'systems/ctm/icons/competence_corps_a_corps.webp' },
   { rdd: true, id: STATUSES.StatusRestrained, label: 'EFFECT.StatusRestrained', icon: 'icons/svg/net.svg' },
   { rdd: true, id: STATUSES.StatusUnconscious, label: 'EFFECT.StatusUnconscious', icon: 'icons/svg/unconscious.svg' },
   { rdd: true, id: STATUSES.StatusBlind, label: 'EFFECT.StatusBlind', icon: 'icons/svg/blind.svg' },
   { rdd: true, id: STATUSES.StatusComma, label: 'EFFECT.StatusComma', icon: 'icons/svg/skull.svg' },
   { rdd: true, id: STATUSES.StatusDead, label: 'EFFECT.StatusDead', icon: 'icons/svg/skull.svg' },
-  { rdd: true, id: STATUSES.StatusDemiReve, label: 'EFFECT.StatusDemiReve', icon: 'systems/foundryvtt-ctm/icons/heures/hd12.svg' }
+  { rdd: true, id: STATUSES.StatusDemiReve, label: 'EFFECT.StatusDemiReve', icon: 'systems/ctm/icons/heures/hd12.svg' }
 ];
 const demiReveStatusEffect = rddStatusEffects.find(it => it.id == STATUSES.StatusDemiReve);
 
@@ -99,7 +99,7 @@ export class StatusEffects extends FormApplication {
     const options = super.defaultOptions;
     mergeObject(options, {
       id: "status-effects",
-      template: "systems/foundryvtt-ctm/templates/settings/status-effects.html",
+      template: "systems/ctm/templates/settings/status-effects.html",
       height: 800,
       width: 350,
       minimizable: false,

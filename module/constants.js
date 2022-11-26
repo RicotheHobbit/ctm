@@ -1,5 +1,5 @@
-export const SYSTEM_RDD = 'foundryvtt-ctm';
-export const SYSTEM_SOCKET_ID = 'system.foundryvtt-ctm';
+export const SYSTEM_RDD = 'ctm';
+export const SYSTEM_SOCKET_ID = 'system.ctm';
 export const LOG_HEAD = 'RdD | ';
 
 export const HIDE_DICE = 'hide';

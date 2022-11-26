@@ -24,7 +24,7 @@ export class RdDActorSheet extends ActorSheet {
     RdDUtility.initAfficheContenu();
     return mergeObject(super.defaultOptions, {
       classes: ["rdd", "sheet", "actor"],
-      template: "systems/foundryvtt-ctm/templates/actor-sheet.html",
+      template: "systems/ctm/templates/actor-sheet.html",
       width: 640,
       tabs: [{ navSelector: ".sheet-tabs", contentSelector: ".sheet-body", initial: "carac" }],
       dragDrop: [{ dragSelector: ".item-list .item", dropSelector: undefined }],

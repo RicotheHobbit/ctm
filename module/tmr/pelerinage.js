@@ -21,7 +21,7 @@ export class Pelerinage extends Draconique {
   
   code() { return 'pelerinage' }
   tooltip(linkData) { return `Votre pèlerinage en ${this.tmrLabel(linkData)}` }
-  img() { return 'systems/foundryvtt-ctm/icons/tmr/pelerin.webp' }
+  img() { return 'systems/ctm/icons/tmr/pelerin.webp' }
   
   createSprite(pixiTMR) {
     return pixiTMR.sprite(this.code(), {

@@ -17,7 +17,7 @@ export class PresentCites extends Draconique {
 
   code() { return 'present-cites' }
   tooltip(linkData) { return `La ${this.tmrLabel(linkData)} a un présent` }
-  img() { return 'systems/foundryvtt-ctm/icons/tmr/gift.webp' }
+  img() { return 'systems/ctm/icons/tmr/gift.webp' }
 
   createSprite(pixiTMR) {
     return pixiTMR.sprite(this.code(),

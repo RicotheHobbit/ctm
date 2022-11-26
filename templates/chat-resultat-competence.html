@@ -7,12 +7,12 @@
     {{/if}}
   {{/if}}
 </h4>
-{{> "systems/foundryvtt-ctm/templates/chat-infojet.html"}}
+{{> "systems/ctm/templates/chat-infojet.html"}}
 <hr>
 <div>
   <span>{{#if rolled.ptTache}}{{rolled.ptTache}} points de tâche{{/if}}{{#if rolled.ptQualite}}{{#if rolled.ptTache}},{{/if}} Qualité ajustée de {{numberFormat rolled.ptQualite decimals=0 sign=true}}{{/if}}</span>
 </div>
-{{> "systems/foundryvtt-ctm/templates/chat-info-appel-au-moral.html"}}
+{{> "systems/ctm/templates/chat-info-appel-au-moral.html"}}
 {{~#if show.explications}}
 <div>
   {{show.explications}}

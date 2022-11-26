@@ -19,7 +19,7 @@ export class ReserveExtensible extends Draconique {
 
   code() { return 'reserve_extensible' }
   tooltip(linkData) { return `Réserve extensible en ${this.tmrLabel(linkData)} !` }
-  img() { return 'systems/foundryvtt-ctm/icons/tmr/treasure-chest.webp' }
+  img() { return 'systems/ctm/icons/tmr/treasure-chest.webp' }
 
   createSprite(pixiTMR) {
     return pixiTMR.sprite(this.code(), {

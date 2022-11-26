@@ -233,7 +233,7 @@ function messageDeBienvenue() {
     ChatMessage.create({
       user: game.user.id,
       content: `<div id="message-bienvenue-rdd"><span class="rdd-roll-part">Bienvenue dans le Rêve des Dragons !</span>
-      <br>Vous trouverez quelques informations pour démarrer dans ce document : @Compendium[foundryvtt-ctm.rappel-des-regles.7uGrUHGdPu0EmIu2]{Documentation MJ/Joueurs}
+      <br>Vous trouverez quelques informations pour démarrer dans ce document : @Compendium[ctm.rappel-des-regles.7uGrUHGdPu0EmIu2]{Documentation MJ/Joueurs}
       <br>La commande <code>/aide</code> dans le chat permet de voir les commandes spécifiques à Rêve de Dragon.</div>
       ` });
   }
@@ -277,7 +277,7 @@ Hooks.once("ready", async function () {
   /* -------------------------------------------- */
   /* Affiche/Init le calendrier */
   let calendrier = new RdDCalendrier();
-  let templatePath = "systems/foundryvtt-ctm/templates/calendar-template.html";
+  let templatePath = "systems/ctm/templates/calendar-template.html";
   let templateData = {};
   renderTemplate(templatePath, templateData).then(html => {
     calendrier.render(true);
@@ -300,7 +300,7 @@ Hooks.once("ready", async function () {
 
 async function migrationPngWebp_1_5_34() {
   if (!game.settings.get(SYSTEM_RDD, "migration-png-webp-1.5.34")) {
-    const regexOldPngJpg = /(systems\/foundryvtt-ctm\/icons\/.*)\.(png|jpg)/;
+    const regexOldPngJpg = /(systems\/ctm\/icons\/.*)\.(png|jpg)/;
     const replaceWithWebp = '$1.webp';
     function convertImgToWebp(img) {
       return img.replace(regexOldPngJpg, replaceWithWebp);

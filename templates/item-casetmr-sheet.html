@@ -1,5 +1,5 @@
 <form class="{{cssClass}}" autocomplete="off">
-  {{>"systems/foundryvtt-ctm/templates/header-item.html"}}
+  {{>"systems/ctm/templates/header-item.html"}}
   {{!-- Sheet Body --}}
   <section class="sheet-body">
     <div class="form-group">
@@ -10,11 +10,11 @@
       <label for="niveau">Mode spécifique</label>
       <select name="system.specific" id="specific" data-dtype="String">
         {{#select system.specific}}
-        {{>"systems/foundryvtt-ctm/templates/enum-tmr-effet.html"}}
+        {{>"systems/ctm/templates/enum-tmr-effet.html"}}
         {{/select}}
     </select>
     </div>
 
-    {{>"systems/foundryvtt-ctm/templates/partial-item-description.html"}}
+    {{>"systems/ctm/templates/partial-item-description.html"}}
   </section>
 </form>

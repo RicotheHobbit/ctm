@@ -63,7 +63,7 @@ export class ReglesOptionelles extends FormApplication {
     const options = super.defaultOptions;
     mergeObject(options, {
       id: "regles-optionelles",
-      template: "systems/foundryvtt-ctm/templates/settings/regles-optionelles.html",
+      template: "systems/ctm/templates/settings/regles-optionelles.html",
       height: 600,
       width: 450,
       minimizable: false,

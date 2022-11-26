@@ -1,5 +1,5 @@
 <form class="{{cssClass}}" autocomplete="off">
-  {{>"systems/foundryvtt-ctm/templates/header-item.html"}}
+  {{>"systems/ctm/templates/header-item.html"}}
   {{!-- Sheet Body --}}
   <section class="sheet-body">
     <div class="flexcol">
@@ -11,12 +11,12 @@
         <label>Sens</label>
         <select name="system.aspect" id="aspect" data-dtype="String">
           {{#select system.aspect}}
-          {{>"systems/foundryvtt-ctm/templates/enum-aspect-tarot.html"}}
+          {{>"systems/ctm/templates/enum-aspect-tarot.html"}}
           {{/select}}
         </select>
       </div>
 
-      {{>"systems/foundryvtt-ctm/templates/partial-item-frequence.html"}}
-      {{>"systems/foundryvtt-ctm/templates/partial-item-description.html"}}
+      {{>"systems/ctm/templates/partial-item-frequence.html"}}
+      {{>"systems/ctm/templates/partial-item-description.html"}}
     </section>
 </form>

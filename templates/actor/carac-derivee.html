@@ -32,7 +32,7 @@
         {{#if (eq compteur.label 'Ethylisme')}}
         <select class="description-value" name="system.compteurs.ethylisme.value" id="ethylisme" data-dtype="Number">
           {{#select compteur.value}}
-          {{>"systems/foundryvtt-ctm/templates/enum-niveau-ethylisme.html"}}
+          {{>"systems/ctm/templates/enum-niveau-ethylisme.html"}}
           {{/select}}
         </select>
         {{else}}
@@ -42,9 +42,9 @@
           {{#if compteur.isStress}}
           <a class="stress-test" title="Transformer">Transformer</a>
           {{else if (eq compteur.label 'Moral')}}
-          <a class="moral-malheureux" title="Jet de moral situation malheureuse"><img class="small-button-container" src="systems/foundryvtt-ctm/icons/moral-malheureux.svg" alt="Jet de moral situation malheureuse"/></a>
-          <a class="moral-neutre" title="Jet de moral situation neutre"><img class="small-button-container" src="systems/foundryvtt-ctm/icons/moral-neutre.svg" alt="Jet de moral situation neutre"/></a>
-          <a class="moral-heureux" title="Jet de moral situation heureuse"><img class="small-button-container" src="systems/foundryvtt-ctm/icons/moral-heureux.svg" alt="Jet de moral situation heureuse"/></a>
+          <a class="moral-malheureux" title="Jet de moral situation malheureuse"><img class="small-button-container" src="systems/ctm/icons/moral-malheureux.svg" alt="Jet de moral situation malheureuse"/></a>
+          <a class="moral-neutre" title="Jet de moral situation neutre"><img class="small-button-container" src="systems/ctm/icons/moral-neutre.svg" alt="Jet de moral situation neutre"/></a>
+          <a class="moral-heureux" title="Jet de moral situation heureuse"><img class="small-button-container" src="systems/ctm/icons/moral-heureux.svg" alt="Jet de moral situation heureuse"/></a>
           {{else}}
           <label></label>
           {{/if}}

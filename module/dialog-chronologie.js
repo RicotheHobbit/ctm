@@ -28,7 +28,7 @@ export class DialogChronologie extends Dialog {
       heureRdD: game.system.rdd.calendrier.getCurrentHeure(),
       dateReel: DialogChronologie.getCurrentDateTime()
     };
-    const html = await renderTemplate("systems/foundryvtt-ctm/templates/dialog-chronologie.html", dialogData);
+    const html = await renderTemplate("systems/ctm/templates/dialog-chronologie.html", dialogData);
     const dialog = new DialogChronologie(html);
     dialog.render(true);
   }
@@ -84,7 +84,7 @@ export class DialogChronologie extends Dialog {
   }
 
   async prepareChronologieEntry() {
-    return await renderTemplate("systems/foundryvtt-ctm/templates/chronologie-entry.html", this.extractJournalParameters());
+    return await renderTemplate("systems/ctm/templates/chronologie-entry.html", this.extractJournalParameters());
   }
 
   extractJournalParameters() {

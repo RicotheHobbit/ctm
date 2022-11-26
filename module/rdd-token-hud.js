@@ -42,7 +42,7 @@ export class RdDTokenHud {
     const controlIconCombat = html.find('.control-icon[data-action=combat]');
     // initiative
     await RdDTokenHud._configureSubMenu(controlIconCombat,
-      'systems/foundryvtt-ctm/templates/hud-actor-init.html',
+      'systems/ctm/templates/hud-actor-init.html',
       hudData,
       (event) => {
         let initCommand = event.currentTarget.attributes['data-command']?.value;
@@ -58,7 +58,7 @@ export class RdDTokenHud {
 
     const controlIconTarget = html.find('.control-icon[data-action=target]');
     // combat
-    await RdDTokenHud._configureSubMenu(controlIconTarget, 'systems/foundryvtt-ctm/templates/hud-actor-attaque.html', hudData,
+    await RdDTokenHud._configureSubMenu(controlIconTarget, 'systems/ctm/templates/hud-actor-attaque.html', hudData,
       (event) => {
         const actionIndex = event.currentTarget.attributes['data-action-index']?.value;
         const action = actionsCombat[actionIndex];

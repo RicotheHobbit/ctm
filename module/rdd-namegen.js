@@ -12,7 +12,7 @@ const words = ['pore', 'pre', 'flor', 'lane', 'turlu', 'pin', 'a', 'alph', 'i', 
 export class RdDNameGen {
 
   static async getName(msg, params) {
-    const html = await renderTemplate(`systems/foundryvtt-ctm/templates/chat-command-nom.html`, {
+    const html = await renderTemplate(`systems/ctm/templates/chat-command-nom.html`, {
       nom: Misc.upperFirst(await RdDDice.rollOneOf(words) + await RdDDice.rollOneOf(words))
     });
     ChatMessage.create({ content: html, whisper: ChatMessage.getWhisperRecipients("GM") });

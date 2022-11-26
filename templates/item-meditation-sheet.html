@@ -1,12 +1,12 @@
 <form class="{{cssClass}}" autocomplete="off">
-  {{>"systems/foundryvtt-ctm/templates/header-item.html"}}
+  {{>"systems/ctm/templates/header-item.html"}}
   {{!-- Sheet Body --}}
   <section class="sheet-body">
     <div class="form-group">
       <label for="xp">Compétence</label>
       <select name="system.competence" id="competenceselect" data-dtype="String">
         {{#select system.competence}}
-        {{>"systems/foundryvtt-ctm/templates/enum-competence.html"}}
+        {{>"systems/ctm/templates/enum-competence.html"}}
         {{/select}}    
       </select>
     </div>
@@ -22,7 +22,7 @@
       <label for="xp">Heure</label>
       <select name="system.heure" id="heure" data-dtype="String">
         {{#select system.heure}}
-        {{>"systems/foundryvtt-ctm/templates/enum-heures.html"}}
+        {{>"systems/ctm/templates/enum-heures.html"}}
         {{/select}}
       </select>        
     </div>
@@ -42,7 +42,7 @@
       <label for="xp">Case TMR</label>
       <select name="system.tmr" id="tmr" data-dtype="String">
         {{#select system.tmr}}
-        {{>"systems/foundryvtt-ctm/templates/enum-tmr-type.html"}}
+        {{>"systems/ctm/templates/enum-tmr-type.html"}}
         {{/select}}
       </select>
     </div>
@@ -69,6 +69,6 @@
       {{/if}}
     </div>
 
-    {{>"systems/foundryvtt-ctm/templates/partial-item-description.html"}}
+    {{>"systems/ctm/templates/partial-item-description.html"}}
   </section>
 </form>

@@ -4,7 +4,7 @@ export class DialogConsommer extends Dialog {
 
   static async create(actor, item, onActionItem = async ()=>{}) {
     const consommerData = DialogConsommer.prepareData(actor, item);
-    const html = await renderTemplate('systems/foundryvtt-ctm/templates/dialog-item-consommer.html', consommerData);
+    const html = await renderTemplate('systems/ctm/templates/dialog-item-consommer.html', consommerData);
     return new DialogConsommer(actor, item, consommerData, html, onActionItem)
   }
 

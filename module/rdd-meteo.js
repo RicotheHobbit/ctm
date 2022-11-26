@@ -116,7 +116,7 @@ export class RdDMeteo {
     meteo.pluie.description = RdDMeteo.pluie(meteo.pluie.force);
 
     ChatMessage.create({
-      content: await renderTemplate('systems/foundryvtt-ctm/templates/chat-resultat-meteo.html', meteo),
+      content: await renderTemplate('systems/ctm/templates/chat-resultat-meteo.html', meteo),
       whisper: ChatMessage.getWhisperRecipients('GM')
     });
   }

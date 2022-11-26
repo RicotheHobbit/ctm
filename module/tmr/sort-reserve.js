@@ -14,7 +14,7 @@ export class SortReserve extends Draconique {
 
   code() { return 'sortreserve' }
   tooltip(sort) { return `${sort.name}, r${sort.system.ptreve}` }
-  img() { return 'systems/foundryvtt-ctm/icons/tmr/scroll.webp' }
+  img() { return 'systems/ctm/icons/tmr/scroll.webp' }
 
   createSprite(pixiTMR) {
     return pixiTMR.sprite(this.code(), {

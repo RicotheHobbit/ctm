@@ -1,7 +1,7 @@
 <img class="chat-icon" src="{{competence.img}}" alt="{{competence.name}}" />
 <h4>{{alias}} pare une attaque à {{diffLibre}} - {{arme.name}}</h4>
 <div>{{selectedCarac.label}}{{#unless (eq selectedCarac.label competence.name)}} / {{competence.name}}{{/unless}}</div>
-{{> "systems/foundryvtt-ctm/templates/chat-infojet.html"}}
+{{> "systems/ctm/templates/chat-infojet.html"}}
 <hr>
 <div>
   <span>
@@ -12,7 +12,7 @@
     La parade a échoué!
     {{/if}}
   </span>
-  {{> "systems/foundryvtt-ctm/templates/chat-info-appel-au-moral.html"}}
+  {{> "systems/ctm/templates/chat-info-appel-au-moral.html"}}
 </div>
 
 {{#if (eq show.recul 'encaisse')}}<div>{{alias}} ne recule pas malgré la violence du coup.</div>
@@ -38,7 +38,7 @@
   <img class="chat-icon" src="icons/svg/thrust.svg" alt="charge" />
   C'était une charge, les parades de l'adversaire auront un -4 et il ne pourra pas esquiver!
   {{ else if (eq attackerRoll.tactique 'feinte')}}
-  <img class="chat-icon" src="systems/foundryvtt-ctm/icons/heures/hd06.svg" alt="feinte" height="32"
+  <img class="chat-icon" src="systems/ctm/icons/heures/hd06.svg" alt="feinte" height="32"
     width="32" />
   C'était une feinte!
   {{/if}}

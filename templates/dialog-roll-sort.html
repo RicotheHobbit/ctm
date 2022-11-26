@@ -58,8 +58,8 @@
         </select>
         <label class="div-sort-difficulte-fixe">{{numberFormat selectedSort.system.difficulte decimals=0 sign=true}}</label>
       </div>
-      {{>"systems/foundryvtt-ctm/templates/partial-roll-diffCondition.html"}}
-      {{>"systems/foundryvtt-ctm/templates/partial-roll-forcer.html"}}
+      {{>"systems/ctm/templates/partial-roll-diffCondition.html"}}
+      {{>"systems/ctm/templates/partial-roll-forcer.html"}}
       <div class="flexrow">
         <label for="bonus-case">Bonus de case </label>
         <label name="bonus-case" class="bonus-case">0%</label>
@@ -69,7 +69,7 @@
   </div>
   <div class="description-sort">
     <hr>
-    {{> "systems/foundryvtt-ctm/templates/partial-description-sort.html" sort=selectedSort}}
+    {{> "systems/ctm/templates/partial-description-sort.html" sort=selectedSort}}
   </div>
 
   <div id="tableResolution"></div>

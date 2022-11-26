@@ -9,13 +9,13 @@
         </label>
         <label>{{competence.name}}:</label><label class="flex-grow">{{numberFormat competence.system.niveau decimals=0 sign=true}}</label></label>
       </div>
-      {{> "systems/foundryvtt-ctm/templates/partial-description-overflow.html" oeuvre.system}}
+      {{> "systems/ctm/templates/partial-description-overflow.html" oeuvre.system}}
     </div>
     <div class="flex-group-left">
-      {{>"systems/foundryvtt-ctm/templates/partial-roll-diffFixe.html"}}
-      {{>"systems/foundryvtt-ctm/templates/partial-roll-diffCondition.html"}}
-      {{>"systems/foundryvtt-ctm/templates/partial-roll-forcer.html"}}
-      {{>"systems/foundryvtt-ctm/templates/partial-roll-moral.html"}}
+      {{>"systems/ctm/templates/partial-roll-diffFixe.html"}}
+      {{>"systems/ctm/templates/partial-roll-diffCondition.html"}}
+      {{>"systems/ctm/templates/partial-roll-forcer.html"}}
+      {{>"systems/ctm/templates/partial-roll-moral.html"}}
       <div id="tableAjustements" class="flexrow"></div>
     </div>
   </div>

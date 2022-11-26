@@ -265,14 +265,14 @@ export class RdDRoll extends Dialog {
       if (this.rollData.use.moral) {
         if (this.rollData.moral > 0) {
           tooltip.innerHTML = "Appel au moral";
-          appelMoral.src = "/systems/foundryvtt-ctm/icons/moral-heureux.svg";
+          appelMoral.src = "/systems/ctm/icons/moral-heureux.svg";
         } else {
           tooltip.innerHTML = "Appel à l'énergie du désespoir";
-          appelMoral.src = "/systems/foundryvtt-ctm/icons/moral-malheureux.svg";
+          appelMoral.src = "/systems/ctm/icons/moral-malheureux.svg";
         }
       } else {
         tooltip.innerHTML = "Sans appel au moral";
-        appelMoral.src = "/systems/foundryvtt-ctm/icons/moral-neutre.svg";
+        appelMoral.src = "/systems/ctm/icons/moral-neutre.svg";
       }
       this.updateRollResult();
     });
@@ -290,7 +290,7 @@ export class RdDRoll extends Dialog {
     this.rollData.bonus = RdDItemSort.getCaseBonus(sort, this.rollData.tmr.coord);
     this.rollData.diffLibre = RdDItemSort.getDifficulte(sort, -7);
     RdDItemSort.setCoutReveReel(sort);
-    const htmlSortDescription = await renderTemplate("systems/foundryvtt-ctm/templates/partial-description-sort.html", { sort: sort });
+    const htmlSortDescription = await renderTemplate("systems/ctm/templates/partial-description-sort.html", { sort: sort });
     $(".sort-ou-rituel").text(sort.system.isrituel ? "rituel" : "sort");
     $(".bonus-case").text(`${this.rollData.bonus}%`);
     $(".details-sort").remove();
@@ -356,7 +356,7 @@ export class RdDRoll extends Dialog {
 
   /* -------------------------------------------- */
   async buildAjustements(rollData) {
-    const html = await renderTemplate(`systems/foundryvtt-ctm/templates/partial-roll-ajustements.html`, rollData);
+    const html = await renderTemplate(`systems/ctm/templates/partial-roll-ajustements.html`, rollData);
     return html;
   }
 

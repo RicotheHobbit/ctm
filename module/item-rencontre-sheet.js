@@ -10,7 +10,7 @@ export class RdDRencontreItemSheet extends ItemSheet {
   static get defaultOptions() {
     return mergeObject(super.defaultOptions, {
       classes: ["rdd", "sheet", "item"],
-      template: "systems/foundryvtt-ctm/templates/item-rencontre-sheet.html",
+      template: "systems/ctm/templates/item-rencontre-sheet.html",
       width: 500,
       height: 500,
       tabs: [{ navSelector: ".sheet-tabs", contentSelector: ".sheet-body", initial: "carac" }]
@@ -99,7 +99,7 @@ export class RdDRencontreItemSheet extends ItemSheet {
 
   get template() {
   /* -------------------------------------------- */
-    return `systems/foundryvtt-ctm/templates/item-rencontre-sheet.html`;
+    return `systems/ctm/templates/item-rencontre-sheet.html`;
   }
 
   get title() {

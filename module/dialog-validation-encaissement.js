@@ -9,7 +9,7 @@ export class DialogValidationEncaissement extends Dialog {
 
   static async validerEncaissement(actor, rollData, armure, show, onEncaisser) {
     let encaissement = await RdDUtility.jetEncaissement(rollData, armure, { showDice: HIDE_DICE });
-    const html = await renderTemplate('systems/foundryvtt-ctm/templates/dialog-validation-encaissement.html', {
+    const html = await renderTemplate('systems/ctm/templates/dialog-validation-encaissement.html', {
       actor: actor,
       rollData: rollData,
       encaissement: encaissement,

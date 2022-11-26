@@ -222,7 +222,7 @@ export class RdDItemCompetence extends Item {
     return {
       name: "Sans compétence",
       type: "competence",
-      img: "systems/foundryvtt-ctm/icons/templates/icone_parchement_vierge.webp",
+      img: "systems/ctm/icons/templates/icone_parchement_vierge.webp",
       system: {
         niveau: 0,
         default_diffLibre: 0,

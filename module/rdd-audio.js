@@ -13,8 +13,8 @@ export class RdDAudio {
     if (game.settings.get(SYSTEM_RDD, "activer-sons-audio") ) {
       let audioData = context2file[context];
       if ( audioData ) {
-        let audioPath = "systems/foundryvtt-ctm/sounds/" + audioData.file;
-        console.log(`foundryvtt-ctm | Playing Sound: ${audioPath}`)
+        let audioPath = "systems/ctm/sounds/" + audioData.file;
+        console.log(`ctm | Playing Sound: ${audioPath}`)
         AudioHelper.play({ src: audioPath }, audioData.isGlobal);
       }
     }

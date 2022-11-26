@@ -3,7 +3,7 @@ import { Misc } from "./misc.js";
 export class DialogRepos extends Dialog {
 
   static async create(actor) {
-    const html = await renderTemplate("systems/foundryvtt-ctm/templates/dialog-repos.html", actor);
+    const html = await renderTemplate("systems/ctm/templates/dialog-repos.html", actor);
     const dialog = new DialogRepos(html, actor);
     dialog.render(true);
   }

@@ -11,7 +11,7 @@ import { HIDE_DICE, SHOW_DICE, SYSTEM_RDD, SYSTEM_SOCKET_ID } from "./constants.
 import { DialogChronologie } from "./dialog-chronologie.js";
 
 /* -------------------------------------------- */
-const dossierIconesHeures = 'systems/foundryvtt-ctm/icons/heures/'
+const dossierIconesHeures = 'systems/ctm/icons/heures/'
 const heuresList = ["vaisseau", "sirene", "faucon", "couronne", "dragon", "epees", "lyre", "serpent", "poissonacrobate", "araignee", "roseau", "chateaudormant"];
 const heuresDef = {
   "vaisseau": {key: "vaisseau", label: "Vaisseau", lettreFont: 'v', saison: "printemps", heure: 0, icon: 'hd01.svg' },
@@ -129,7 +129,7 @@ export class RdDCalendrier extends Application {
   /* -------------------------------------------- */
   static get defaultOptions() {
     return mergeObject(super.defaultOptions, {
-      template: "systems/foundryvtt-ctm/templates/calendar-template.html",
+      template: "systems/ctm/templates/calendar-template.html",
       popOut: false,
       resizable: false
     });
@@ -516,7 +516,7 @@ export class RdDCalendrier extends Application {
       calendrierData.jourMoisOptions = RdDCalendrier.buildJoursMois();
       calendrierData.heuresOptions = [0, 1];
       calendrierData.minutesOptions = Array(RDD_MINUTES_PAR_HEURES).fill().map((item, index) => 0 + index);
-      let html = await renderTemplate('systems/foundryvtt-ctm/templates/calendar-editor-template.html', calendrierData);
+      let html = await renderTemplate('systems/ctm/templates/calendar-editor-template.html', calendrierData);
       this.editeur = new RdDCalendrierEditeur(html, this, calendrierData)
     }
     this.editeur.updateData(calendrierData);
@@ -550,7 +550,7 @@ export class RdDCalendrier extends Application {
     //console.log("ASTRO", astrologieArray);
     calendrierData.astrologieData = astrologieArray;
     calendrierData.heuresParActeur = heuresParActeur;
-    let html = await renderTemplate('systems/foundryvtt-ctm/templates/calendar-astrologie-template.html', calendrierData);
+    let html = await renderTemplate('systems/ctm/templates/calendar-astrologie-template.html', calendrierData);
     let astrologieEditeur = new RdDAstrologieEditeur(html, this, calendrierData)
     astrologieEditeur.updateData(calendrierData);
     astrologieEditeur.render(true);

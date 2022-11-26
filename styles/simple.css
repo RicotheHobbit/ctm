@@ -97,7 +97,7 @@
 .sheet nav.sheet-tabs {
   font-family: "CaslonAntique";
 } /* For nav and title */
-.window-app input, .foundryvtt-ctm .item-form, .sheet header.sheet-header .flex-compteurs, .sheet header.sheet-header .flex-group-center.flex-fatigue, select, button, .item-checkbox, #sidebar, #players, #navigation #nav-toggle {
+.window-app input, .ctm .item-form, .sheet header.sheet-header .flex-compteurs, .sheet header.sheet-header .flex-group-center.flex-fatigue, select, button, .item-checkbox, #sidebar, #players, #navigation #nav-toggle {
   font-family: "CaslonAntique"; /* For sheet parts */
 }
 
@@ -238,7 +238,7 @@ table {border: 1px solid #7a7971;}
 .flex-grow-2 {
   flex-grow : 2;
 }
-/* Styles limited to foundryvtt-ctm sheets */
+/* Styles limited to ctm sheets */
 .equipement-nom {
   flex-grow : 4;
   margin: 0;
@@ -303,7 +303,7 @@ input:is(.blessure-premiers_soins, .blessure-soins_complets) {
   text-shadow: 1px 1px 4px rgba(60, 60, 60, 1);
 }
 
-.foundryvtt-ctm .sheet-header {
+.ctm .sheet-header {
   -webkit-box-flex: 0;
   -ms-flex: 0 0 210px;
   flex: 0 0 210px;
@@ -322,7 +322,7 @@ input:is(.blessure-premiers_soins, .blessure-soins_complets) {
   justify-content: flex-start;
 }
 
-.foundryvtt-ctm .sheet-header .profile-img {
+.ctm .sheet-header .profile-img {
   -webkit-box-flex: 0;
   -ms-flex: 0 0 128px;
   flex: 0 0 128px;
@@ -387,34 +387,34 @@ input:is(.blessure-premiers_soins, .blessure-soins_complets) {
   vertical-align: bottom;
 }
 
-.foundryvtt-ctm .sheet-header .header-fields {
+.ctm .sheet-header .header-fields {
   -webkit-box-flex: 1;
   -ms-flex: 1;
   flex: 1;
 }
 
-.foundryvtt-ctm .sheet-header h1.charname {
+.ctm .sheet-header h1.charname {
   height: 50px;
   padding: 0px;
   margin: 5px 0;
   border-bottom: 0;
 }
 
-.foundryvtt-ctm .sheet-header h1.charname input {
+.ctm .sheet-header h1.charname input {
   width: 100%;
   height: 100%;
   margin: 0;
 }
 
-.foundryvtt-ctm .sheet-tabs {
+.ctm .sheet-tabs {
   -webkit-box-flex: 0;
   -ms-flex: 0;
   flex: 0;
 }
 
-.foundryvtt-ctm .sheet-body,
-.foundryvtt-ctm .sheet-body .tab,
-.foundryvtt-ctm .sheet-body .tab .editor {
+.ctm .sheet-body,
+.ctm .sheet-body .tab,
+.ctm .sheet-body .tab .editor {
   height: 100%;
 }
 
@@ -475,50 +475,50 @@ input:is(.blessure-premiers_soins, .blessure-soins_complets) {
   padding: 0 3px;
 }
 
-.foundryvtt-ctm .tox .tox-editor-container {
+.ctm .tox .tox-editor-container {
   background: #fff;
 }
 
-.foundryvtt-ctm .tox .tox-edit-area {
+.ctm .tox .tox-edit-area {
   padding: 0 8px;
 }
 
-.foundryvtt-ctm .resource-label {
+.ctm .resource-label {
   font-weight: bold;
   text-transform: uppercase;
 }
 
-.foundryvtt-ctm .tabs {
+.ctm .tabs {
   height: 40px;
   border-top: 1px solid #AAA;
   border-bottom: 1px solid #AAA;
 }
 
-.foundryvtt-ctm .tabs .item {
+.ctm .tabs .item {
   line-height: 40px;
   font-weight: bold;
 }
 
-.foundryvtt-ctm .tabs .item.active {
+.ctm .tabs .item.active {
   text-decoration: underline;
   text-shadow: none;
 }
 
-.foundryvtt-ctm .item-list {
+.ctm .item-list {
   list-style: none;
   padding: 0;
   overflow-y: auto;
 }
 
-.foundryvtt-ctm .item-list .item-header {
+.ctm .item-list .item-header {
   font-weight: bold;
 }
 
-.foundryvtt-ctm .item-list .item img {
+.ctm .item-list .item img {
   display: inline;
 }
 
-.foundryvtt-ctm .item-list .item-name {
+.ctm .item-list .item-name {
   margin: 0;
 }
 

@@ -72,7 +72,7 @@ export class RdDResolutionTable {
   /* -------------------------------------------- */
   static async buildRollDataHtml(rollData, actor, template = 'chat-resultat-general.html') {
     rollData.show = rollData.show || {};
-    return await renderTemplate(`systems/foundryvtt-ctm/templates/${template}`, rollData);
+    return await renderTemplate(`systems/ctm/templates/${template}`, rollData);
   }
 
   /* -------------------------------------------- */

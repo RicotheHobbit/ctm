@@ -227,7 +227,7 @@ export class RdDCommands {
     let commands = []
     this._buildSubTableHelp(commands, table || this.commandsTable);
 
-    let html = await renderTemplate("systems/foundryvtt-ctm/templates/settings/dialog-aide-commands.html", { commands: commands });
+    let html = await renderTemplate("systems/ctm/templates/settings/dialog-aide-commands.html", { commands: commands });
     let d = new Dialog(
       {
         title: "Commandes disponibles dans le tchat",

@@ -18,7 +18,7 @@ export class DialogCreateSigneDraconique extends Dialog {
         }))
     };
 
-    const html = await renderTemplate("systems/foundryvtt-ctm/templates/dialog-create-signedraconique.html", dialogData);
+    const html = await renderTemplate("systems/ctm/templates/dialog-create-signedraconique.html", dialogData);
     new DialogCreateSigneDraconique(dialogData, html)
       .render(true);
   }
@@ -49,7 +49,7 @@ export class DialogCreateSigneDraconique extends Dialog {
     actor.createEmbeddedDocuments("Item", [signe]);
     ChatMessage.create({
       whisper: ChatUtility.getWhisperRecipientsAndGMs(actor.name),
-      content: await renderTemplate("systems/foundryvtt-ctm/templates/chat-signe-draconique-actor.html", {
+      content: await renderTemplate("systems/ctm/templates/chat-signe-draconique-actor.html", {
         signe: signe,
         alias: actor.name
       })

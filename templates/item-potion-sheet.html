@@ -29,7 +29,7 @@
       <label>Fréquence</label>
       <select name="system.rarete" class="rarete" data-dtype="String">
         {{#select system.rarete}}
-        {{>"systems/foundryvtt-ctm/templates/enum-rarete.html"}}
+        {{>"systems/ctm/templates/enum-rarete.html"}}
         {{/select}}
       </select>
     </div>
@@ -37,7 +37,7 @@
       <label>Catégorie</label>
       <select name="system.categorie" class="categoriepotion" data-dtype="String">
         {{#select system.categorie}}
-        {{>"systems/foundryvtt-ctm/templates/enum-categorie-potion.html"}}
+        {{>"systems/ctm/templates/enum-categorie-potion.html"}}
         {{/select}}
       </select>
     </div>
@@ -105,13 +105,13 @@
       </select>
       <select name="splitDate.month" class="enchanteDate" id="nomMois" data-dtype="String">
         {{#select splitDate.month}}
-        {{>"systems/foundryvtt-ctm/templates/enum-heures.html"}}
+        {{>"systems/ctm/templates/enum-heures.html"}}
         {{/select}}
       </select>
     </div>
     {{/if}}
 
-    {{>"systems/foundryvtt-ctm/templates/partial-item-description.html"}}
+    {{>"systems/ctm/templates/partial-item-description.html"}}
     
   </section>
 

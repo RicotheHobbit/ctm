@@ -1,5 +1,5 @@
 <form class="{{cssClass}}" autocomplete="off">
-  {{>"systems/foundryvtt-ctm/templates/header-item.html"}}
+  {{>"systems/ctm/templates/header-item.html"}}
 
   {{!-- Sheet Body --}}
   <section class="sheet-body">
@@ -29,7 +29,7 @@
       <label>Fréquence</label>
       <select name="system.rarete" class="rarete" data-dtype="String">
         {{#select system.rarete}}
-        {{>"systems/foundryvtt-ctm/templates/enum-rarete.html"}}
+        {{>"systems/ctm/templates/enum-rarete.html"}}
         {{/select}}
       </select>
     </div>
@@ -37,11 +37,11 @@
       <label>Catégorie</label>
       <select name="system.categorie" class="categorie" data-dtype="String">
         {{#select system.categorie}}
-        {{>"systems/foundryvtt-ctm/templates/enum-categorie-ingredient.html"}}
+        {{>"systems/ctm/templates/enum-categorie-ingredient.html"}}
         {{/select}}
       </select>
     </div>
 
-    {{>"systems/foundryvtt-ctm/templates/partial-item-description.html"}}
+    {{>"systems/ctm/templates/partial-item-description.html"}}
   </section>
 </form>

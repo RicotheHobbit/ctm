@@ -22,7 +22,7 @@
     {{!-- Carac Tab --}}
     <div class="tab" data-group="primary" data-tab="description">
       <div class="flexrow">
-        {{>"systems/foundryvtt-ctm/templates/actor/vue-detaillee.html"}}
+        {{>"systems/ctm/templates/actor/vue-detaillee.html"}}
       </div>
       <div class="grid grid-2col">
         <div class="flex-group-left flexcol">
@@ -47,7 +47,7 @@
               <span class="carac-label">Catégorie</span>
               <select name="system.categorie" class="categorie" data-dtype="String" {{#unless @root.options.vueDetaillee}}disabled{{/unless}}>
                 {{#select system.categorie}}
-                {{>"systems/foundryvtt-ctm/templates/enum-categorie-vehicule.html"}}
+                {{>"systems/ctm/templates/enum-categorie-vehicule.html"}}
                 {{/select}}
               </select>
             </li>
@@ -78,12 +78,12 @@
       <div class="form-group editor">
         {{editor description target="system.description" button=true owner=owner editable=editable}}
       </div>
-      {{>"systems/foundryvtt-ctm/templates/actor/editor-notes-mj.html"}}
+      {{>"systems/ctm/templates/actor/editor-notes-mj.html"}}
     </div>
 
     {{!-- Equipment Tab --}}
     <div class="tab items" data-group="primary" data-tab="items">
-      {{> "systems/foundryvtt-ctm/templates/actor/inventaire.html"}}
+      {{> "systems/ctm/templates/actor/inventaire.html"}}
     </div>
 
   </section>

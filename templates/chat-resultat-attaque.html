@@ -1,7 +1,7 @@
 <img class="chat-icon" src="{{competence.img}}" alt="{{competence.name}}" />
 <h4>{{alias}} attaque  à {{diffLibre}}: {{arme.name}}</h4>
 <div>{{selectedCarac.label}}{{#unless (eq selectedCarac.label competence.name)}} / {{competence.name}}{{/unless}}</div>
-{{> "systems/foundryvtt-ctm/templates/chat-infojet.html"}}
+{{> "systems/ctm/templates/chat-infojet.html"}}
 <hr>
 {{#if tactique}}
   <div>
@@ -10,7 +10,7 @@
     C'est une charge, vos parades auront un -4 et vous ne pourrez pas esquiver!
     {{ else if (eq tactique 'feinte')}}
       {{#if rolled.isSuccess}}
-        <img class="chat-icon" src="systems/foundryvtt-ctm/icons/heures/hd06.svg" alt="feinte" height="32" width="32" />
+        <img class="chat-icon" src="systems/ctm/icons/heures/hd06.svg" alt="feinte" height="32" width="32" />
         Votre feinte peut faire mouche!
       {{/if}}
     {{/if}}
@@ -36,5 +36,5 @@
 {{else}}
   <span>Votre attaque a échoué!</span>
 {{/if}}
-{{> "systems/foundryvtt-ctm/templates/chat-info-appel-au-moral.html"}}
+{{> "systems/ctm/templates/chat-info-appel-au-moral.html"}}
 </div>

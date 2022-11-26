@@ -1,4 +1,4 @@
-{{> "systems/foundryvtt-ctm/templates/actor/inventaire-monnaie.html" monnaie=monnaie}}
+{{> "systems/ctm/templates/actor/inventaire-monnaie.html" monnaie=monnaie}}
 
 <h4>Equipement</h4>
 <span class="item-name">
@@ -22,7 +22,7 @@
   {{#each objets as |item id|}}
     {{#unless item.estContenu}}
     {{#if (ne item.type 'conteneur')}}
-      {{> "systems/foundryvtt-ctm/templates/actor/inventaire-item.html" item=item vide=true ouvert=true }}
+      {{> "systems/ctm/templates/actor/inventaire-item.html" item=item vide=true ouvert=true }}
     {{/if}}
     {{/unless}}
   {{/each}}

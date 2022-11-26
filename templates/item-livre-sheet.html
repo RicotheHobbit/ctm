@@ -21,7 +21,7 @@
         <label for="xp">Compétence</label>
         <select name="system.competence" id="competenceselect" data-dtype="String">
           {{#select system.competence}}
-          {{>"systems/foundryvtt-ctm/templates/enum-competence.html"}}
+          {{>"systems/ctm/templates/enum-competence.html"}}
           {{/select}}    
         </select>
       </div>
@@ -58,7 +58,7 @@
         <input class="attribute-value" type="number" name="system.cout" value="{{system.cout}}" data-dtype="Number"/>
       </div>
 
-      {{>"systems/foundryvtt-ctm/templates/partial-item-description.html"}}
+      {{>"systems/ctm/templates/partial-item-description.html"}}
 
     </section>
     

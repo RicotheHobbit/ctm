@@ -42,7 +42,7 @@ export class UrgenceDraconique extends Draconique {
 
   code() { return 'urgence' }
   tooltip(linkData) { return `Urgence draconique!` }
-  img() { return 'systems/foundryvtt-ctm/icons/tmr/pelerin.webp' }
+  img() { return 'systems/ctm/icons/tmr/pelerin.webp' }
 
   createSprite(pixiTMR) {
     return pixiTMR.sprite(this.code(),

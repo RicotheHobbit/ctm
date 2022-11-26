@@ -12,7 +12,7 @@ export class RdDRollResolutionTable extends Dialog {
   /* -------------------------------------------- */
   static async open(rollData = {}) {
     RdDRollResolutionTable._setDefaultOptions(rollData);
-    let html = await renderTemplate('systems/foundryvtt-ctm/templates/dialog-roll-resolution.html', rollData);
+    let html = await renderTemplate('systems/ctm/templates/dialog-roll-resolution.html', rollData);
     const dialog = new RdDRollResolutionTable(rollData, html);
     dialog.render(true);
   }

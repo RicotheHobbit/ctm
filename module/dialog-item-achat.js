@@ -42,7 +42,7 @@ export class DialogItemAchat extends Dialog {
   }
 
   static async onAcheter(venteData) {
-    const html = await renderTemplate(`systems/foundryvtt-ctm/templates/dialog-item-achat.html`, venteData);
+    const html = await renderTemplate(`systems/ctm/templates/dialog-item-achat.html`, venteData);
     const dialog = new DialogItemAchat(html, venteData);
     dialog.render(true);
   }

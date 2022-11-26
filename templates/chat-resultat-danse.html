@@ -2,7 +2,7 @@
 <h4>
   {{alias}} tente de danser : {{oeuvre.name}} (niveau {{oeuvre.system.niveau}})
 </h4>
-{{> "systems/foundryvtt-ctm/templates/chat-infojet.html"}}
+{{> "systems/ctm/templates/chat-infojet.html"}}
 <hr>
 <div>
   {{#if rolled.isSuccess}}
@@ -10,6 +10,6 @@
   {{else}}
   {{alias}} est peu inspiré(e) et son interprétation a une qualité de {{qualiteFinale}}.
   {{/if}}
-  {{> "systems/foundryvtt-ctm/templates/chat-info-appel-au-moral.html"}}
+  {{> "systems/ctm/templates/chat-info-appel-au-moral.html"}}
 </div>
-{{> "systems/foundryvtt-ctm/templates/chat-description.html" oeuvre.system}}
+{{> "systems/ctm/templates/chat-description.html" oeuvre.system}}

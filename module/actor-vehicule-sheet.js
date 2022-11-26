@@ -10,7 +10,7 @@ export class RdDActorVehiculeSheet extends RdDActorSheet {
 
     return mergeObject(super.defaultOptions, {
       classes: ["rdd", "sheet", "actor"],
-      template: "systems/foundryvtt-ctm/templates/actor-vehicule-sheet.html",
+      template: "systems/ctm/templates/actor-vehicule-sheet.html",
       width: 640,
       height: 720,
       tabs: [{ navSelector: ".sheet-tabs", contentSelector: ".sheet-body", initial: "carac" }],

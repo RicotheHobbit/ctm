@@ -12,7 +12,7 @@
         <label>Caractéristique</label>
         <select name="system.default_carac" id="default_carac" data-dtype="String">
           {{#select system.default_carac}}
-          {{>"systems/foundryvtt-ctm/templates/enum-caracteristiques.html"}}
+          {{>"systems/ctm/templates/enum-caracteristiques.html"}}
           {{/select}}
         </select>
       </div>
@@ -20,7 +20,7 @@
         <label>Compétence</label>
         <select name="system.competence" id="competenceselect" data-dtype="String">
           {{#select system.competence}}
-          {{>"systems/foundryvtt-ctm/templates/enum-competence.html"}}
+          {{>"systems/ctm/templates/enum-competence.html"}}
           {{/select}}    
         </select>
       </div>
@@ -33,7 +33,7 @@
         <input class="attribute-value" type="text" name="system.niveau" value="{{system.niveau}}" data-dtype="Number"/>
       </div>
 
-      {{>"systems/foundryvtt-ctm/templates/partial-item-description.html"}}
+      {{>"systems/ctm/templates/partial-item-description.html"}}
     
     </section>
     

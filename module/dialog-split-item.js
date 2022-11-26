@@ -7,7 +7,7 @@ export class DialogSplitItem extends Dialog {
       item: item,
       choix: { quantite: 1, max: item.system.quantite - 1 }
     };
-    const html = await renderTemplate(`systems/foundryvtt-ctm/templates/dialog-item-split.html`, splitData);
+    const html = await renderTemplate(`systems/ctm/templates/dialog-item-split.html`, splitData);
     return new DialogSplitItem(item, splitData, html, callback)
   }
 
