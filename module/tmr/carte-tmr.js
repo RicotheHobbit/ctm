@@ -12,7 +12,7 @@ export class CarteTmr extends Draconique {
   async onActorCreateOwned(actor, item) { }
 
   code() { return 'tmr' }
-  img() { return 'systems/foundryvtt-reve-de-dragon/styles/img/ui/tmp_main_r1.webp' }
+  img() { return 'systems/foundryvtt-ctm/styles/img/ui/tmp_main_r1.webp' }
 
   createSprite(pixiTMR) {
     return pixiTMR.carteTmr(this.code());

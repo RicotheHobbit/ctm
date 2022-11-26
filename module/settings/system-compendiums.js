@@ -143,7 +143,7 @@ export class SystemCompendiums extends FormApplication {
     const options = super.defaultOptions;
     mergeObject(options, {
       id: "system-compendiums",
-      template: "systems/foundryvtt-reve-de-dragon/templates/settings/system-compendiums.html",
+      template: "systems/foundryvtt-ctm/templates/settings/system-compendiums.html",
       height: 'fit-content',
       width: 600,
       minimizable: false,
@@ -240,7 +240,7 @@ export class SystemCompendiumTable {
   /* -------------------------------------------- */
   async $chatRolledResult(row) {
     const percentages = (row.total == 100) ? '%' : ''
-    const flavorContent = await renderTemplate('systems/foundryvtt-reve-de-dragon/templates/chat-compendium-table-roll.html', {
+    const flavorContent = await renderTemplate('systems/foundryvtt-ctm/templates/chat-compendium-table-roll.html', {
       roll: row.roll,
       document: row?.document,
       percentages,
@@ -261,7 +261,7 @@ export class SystemCompendiumTable {
 
   /* -------------------------------------------- */
   async $chatSystemCompendiumTable(table, typeName) {
-    const flavorContent = await renderTemplate('systems/foundryvtt-reve-de-dragon/templates/chat-compendium-table.html', {
+    const flavorContent = await renderTemplate('systems/foundryvtt-ctm/templates/chat-compendium-table.html', {
       img: RdDItem.getDefaultImg(this.subType),
       typeName: typeName ?? this.typeName(),
       sourceCompendium: this.sourceCompendium,

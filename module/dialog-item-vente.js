@@ -19,7 +19,7 @@ export class DialogItemVente extends Dialog {
       quantiteIllimite: !item.isOwned,
       isOwned: item.isOwned,
     };
-    const html = await renderTemplate(`systems/foundryvtt-reve-de-dragon/templates/dialog-item-vente.html`, venteData);
+    const html = await renderTemplate(`systems/foundryvtt-ctm/templates/dialog-item-vente.html`, venteData);
     return new DialogItemVente(venteData, html, callback).render(true);
   }
 

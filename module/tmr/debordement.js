@@ -20,7 +20,7 @@ export class Debordement extends Draconique {
 
   code() { return 'debordement' }
   tooltip(linkData) { return `Débordement en ${this.tmrLabel(linkData)}` }
-  img() { return 'systems/foundryvtt-reve-de-dragon/icons/tmr/wave.webp' }
+  img() { return 'systems/foundryvtt-ctm/icons/tmr/wave.webp' }
 
   createSprite(pixiTMR) {
     return pixiTMR.sprite(this.code(), {

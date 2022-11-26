@@ -12,7 +12,7 @@
       <label for="heureRdD">Heure</label>
       <select type="text" name="heureRdD" value="{{heureRdD}}" data-dtype="String" />
         {{#select heureRdD}}
-        {{>"systems/foundryvtt-reve-de-dragon/templates/enum-heures.html"}}
+        {{>"systems/foundryvtt-ctm/templates/enum-heures.html"}}
         {{/select}}
       </select>
     </div>
@@ -22,7 +22,7 @@
         <input type="text" name="jourRdD" value="{{jourRdD}}" data-dtype="Number" min="1" max="28"/>
         <select type="text" name="dateRdD.moisRdD.key" value="{{dateRdD.moisRdD.key}}" data-dtype="String" >
           {{#select dateRdD.moisRdD.key}}
-          {{>"systems/foundryvtt-reve-de-dragon/templates/enum-heures.html"}}
+          {{>"systems/foundryvtt-ctm/templates/enum-heures.html"}}
           {{/select}}
         </select>
         <input type="text" name="dateRdD.annee" value="{{dateRdD.annee}}" data-dtype="Number" />

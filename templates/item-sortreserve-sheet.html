@@ -1,5 +1,5 @@
 <form class="{{cssClass}}" autocomplete="off">
-  {{>"systems/foundryvtt-reve-de-dragon/templates/header-item.html"}}
+  {{>"systems/foundryvtt-ctm/templates/header-item.html"}}
 
   <section class="sheet-body">
     {{#if (and system.sortid sort)}}
@@ -12,7 +12,7 @@
       <label>Draconic</label>
       <select name="system.draconic" id="draconic" data-dtype="String">
         {{#select system.draconic}}
-        {{>"systems/foundryvtt-reve-de-dragon/templates/enum-draconic.html"}}
+        {{>"systems/foundryvtt-ctm/templates/enum-draconic.html"}}
         {{/select}}
       </select>
     </div>
@@ -33,7 +33,7 @@
       <label for="system.heurecible">Heure de naissance cible</label>
       <select type="text" name="system.heurecible" value="{{system.heurecible}}" data-dtype="String">
         {{#select system.heurecible}}
-        {{>"systems/foundryvtt-reve-de-dragon/templates/enum-heures.html"}}
+        {{>"systems/foundryvtt-ctm/templates/enum-heures.html"}}
         {{/select}}
       </select>
     </div>

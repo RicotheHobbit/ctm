@@ -99,7 +99,7 @@ export class RdDPossession {
   /* -------------------------------------------- */
   static async $rollAttaquePossession(attacker, rollData, isNouvelle = false) {
     const dialog = await RdDRoll.create(attacker, rollData,
-      { html: 'systems/foundryvtt-reve-de-dragon/templates/dialog-roll-competence.html' },
+      { html: 'systems/foundryvtt-ctm/templates/dialog-roll-competence.html' },
       {
         name: 'jet-possession',
         label: rollData.isECNIDefender ? 'Conjurer la possession' : 'Possession',
@@ -125,7 +125,7 @@ export class RdDPossession {
   /* -------------------------------------------- */
   static async $rollDefensePossession(defender, rollData) {
     const dialog = await RdDRoll.create(defender, rollData,
-      { html: 'systems/foundryvtt-reve-de-dragon/templates/dialog-roll-defense-possession.html' },
+      { html: 'systems/foundryvtt-ctm/templates/dialog-roll-defense-possession.html' },
       {
         name: 'conjurer',
         label: 'Conjurer une Possession',
@@ -184,7 +184,7 @@ export class RdDPossession {
   static async createPossession(attacker, defender) {
     return await Item.create({
         name: "Possession en cours de " + attacker.name, type: 'possession',
-        img: "systems/foundryvtt-reve-de-dragon/icons/entites/possession2.webp",
+        img: "systems/foundryvtt-ctm/icons/entites/possession2.webp",
         system: { description: "", typepossession: attacker.name, possede: false, possessionid: randomID(16), possesseurid: attacker.id, possedeid: defender.id, date: 0, compteur: 0 }
       },
       {

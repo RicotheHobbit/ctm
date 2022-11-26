@@ -3,7 +3,7 @@
   {{alias}} travaille à sa t&acirc;che {{tache.name}}
   <br>{{selectedCarac.label}}/{{competence.name}}
 </h4>
-{{> "systems/foundryvtt-reve-de-dragon/templates/chat-infojet.html"}}
+{{> "systems/foundryvtt-ctm/templates/chat-infojet.html"}}
 <hr>
 <div>
   {{alias}} a obtenu {{rolled.ptTache}} point{{~#unless (eq rolled.ptTache 1)}}s{{/unless}} de tâche,
@@ -14,5 +14,5 @@
    ({{~#unless (eq tache.system.tentatives 1)}}{{tache.system.tentatives}} tentatives{{else}}première tentative{{/unless~}}).
   {{#if (and tache.system.fatigue appliquerFatigue)}}<br><span>Il s'est fatigué de {{tache.system.fatigue}} case{{~#if (gt tache.system.fatigue 1)}}s{{/if}}.</span>{{/if}}
   {{#if rolled.isETotal}}<br><span>Son échec total augmente de 1 la difficulté de la tâche!</span>{{/if~}}
-  {{> "systems/foundryvtt-reve-de-dragon/templates/chat-info-appel-au-moral.html"}}
+  {{> "systems/foundryvtt-ctm/templates/chat-info-appel-au-moral.html"}}
 </div>

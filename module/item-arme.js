@@ -172,7 +172,7 @@ export class RdDItemArme extends Item {
   static corpsACorps(mainsNuesActor) {
     const corpsACorps = {
       name: 'Corps à corps',
-      img: 'systems/foundryvtt-reve-de-dragon/icons/competence_corps_a_corps.webp',
+      img: 'systems/foundryvtt-ctm/icons/competence_corps_a_corps.webp',
       system: {
         equipe: true,
         rapide: true,

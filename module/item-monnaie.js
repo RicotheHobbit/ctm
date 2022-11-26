@@ -3,22 +3,22 @@ import { LOG_HEAD } from "./constants.js";
 
 const MONNAIE_ETAIN = {
   name: "Etain (1 denier)", type: 'monnaie',
-  img: "systems/foundryvtt-reve-de-dragon/icons/objets/piece_etain_poisson.webp",
+  img: "systems/foundryvtt-ctm/icons/objets/piece_etain_poisson.webp",
   system: { quantite: 0, valeur_deniers: 1, encombrement: 0.001, description: "" }
 };
 const MONNAIE_BRONZE = {
   name: "Bronze (10 deniers)", type: 'monnaie',
-  img: "systems/foundryvtt-reve-de-dragon/icons/objets/piece_bronze_epees.webp",
+  img: "systems/foundryvtt-ctm/icons/objets/piece_bronze_epees.webp",
   system: { quantite: 0, valeur_deniers: 10, encombrement: 0.002, description: "" }
 };
 const MONNAIE_ARGENT = {
   name: "Argent (1 sol)", type: 'monnaie',
-  img: "systems/foundryvtt-reve-de-dragon/icons/objets/piece_argent_sol.webp",
+  img: "systems/foundryvtt-ctm/icons/objets/piece_argent_sol.webp",
   system: { quantite: 0, valeur_deniers: 100, encombrement: 0.003, description: "" }
 };
 const MONNAIE_OR = {
   name: "Or (10 sols)", type: 'monnaie',
-  img: "systems/foundryvtt-reve-de-dragon/icons/objets/piece_or_sol.webp",
+  img: "systems/foundryvtt-ctm/icons/objets/piece_or_sol.webp",
   system: { quantite: 0, valeur_deniers: 1000, encombrement: 0.004, description: "" }
 };
 

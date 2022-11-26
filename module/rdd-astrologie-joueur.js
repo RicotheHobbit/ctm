@@ -19,7 +19,7 @@ export class RdDAstrologieJoueur extends Dialog {
       ajustementsConditions: CONFIG.RDD.ajustementsConditions,
       astrologie: RdDItemCompetence.findCompetence(actor.items, 'Astrologie')
     }
-    const html = await renderTemplate('systems/foundryvtt-reve-de-dragon/templates/dialog-astrologie-joueur.html', dialogData);
+    const html = await renderTemplate('systems/foundryvtt-ctm/templates/dialog-astrologie-joueur.html', dialogData);
     let options = { classes: ["rdddialog"], width: 600, height: 500, 'z-index': 99999 };
     if (dialogConfig.options) {
       mergeObject(options, dialogConfig.options, { overwrite: true });

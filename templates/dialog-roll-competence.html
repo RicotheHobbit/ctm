@@ -6,7 +6,7 @@
       <img class="chat-icon" src="{{competence.img}}" alt="{{competence.name}}"/>
       <div class="flexrow">
         <label>Caractéristique</label>
-        {{>"systems/foundryvtt-reve-de-dragon/templates/partial-select-carac.html"}}
+        {{>"systems/foundryvtt-ctm/templates/partial-select-carac.html"}}
       </div>
       {{#if arme}}
         {{#if attackerRoll}}
@@ -62,19 +62,19 @@
         {{/unless}}
       {{/if}}
 
-      {{>"systems/foundryvtt-reve-de-dragon/templates/partial-roll-surenc.html"}}
-      {{>"systems/foundryvtt-reve-de-dragon/templates/partial-roll-enctotal.html"}}
+      {{>"systems/foundryvtt-ctm/templates/partial-roll-surenc.html"}}
+      {{>"systems/foundryvtt-ctm/templates/partial-roll-enctotal.html"}}
     </div>
 
     <div class="flex-group-left">
       {{#if attackerRoll}}
-      {{>"systems/foundryvtt-reve-de-dragon/templates/partial-roll-diffFixe.html"}}
+      {{>"systems/foundryvtt-ctm/templates/partial-roll-diffFixe.html"}}
       {{else}}
-      {{>"systems/foundryvtt-reve-de-dragon/templates/partial-roll-diffLibre.html"}}
+      {{>"systems/foundryvtt-ctm/templates/partial-roll-diffLibre.html"}}
       {{/if}}
-      {{>"systems/foundryvtt-reve-de-dragon/templates/partial-roll-diffCondition.html"}}
-      {{>"systems/foundryvtt-reve-de-dragon/templates/partial-roll-forcer.html"}}
-      {{>"systems/foundryvtt-reve-de-dragon/templates/partial-roll-moral.html"}}
+      {{>"systems/foundryvtt-ctm/templates/partial-roll-diffCondition.html"}}
+      {{>"systems/foundryvtt-ctm/templates/partial-roll-forcer.html"}}
+      {{>"systems/foundryvtt-ctm/templates/partial-roll-moral.html"}}
       <div id="tableAjustements" class="flexrow"></div>
     </div>
   </div>

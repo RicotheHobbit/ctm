@@ -1,11 +1,11 @@
-<img class="chat-icon" src="systems/foundryvtt-reve-de-dragon/icons/objets/chope_gres.webp" alt="Ethylisme" />
+<img class="chat-icon" src="systems/foundryvtt-ctm/icons/objets/chope_gres.webp" alt="Ethylisme" />
 <h4>
   {{alias}} boit un verre d'alcool de force {{jetVie.forceAlcool}}
   {{#if alcool}}
   <br>{{alcool.name}}
   {{/if}}
 </h4>
-{{> "systems/foundryvtt-reve-de-dragon/templates/chat-infojet.html" jetVie}}
+{{> "systems/foundryvtt-ctm/templates/chat-infojet.html" jetVie}}
 <hr>
 <span>
   {{#if jetVie.rolled.isSuccess}}
@@ -28,7 +28,7 @@
   {{#if jetVolonte}}
   <hr>
   <h4>Qui a bu boira</h4>
-  {{> "systems/foundryvtt-reve-de-dragon/templates/chat-infojet.html" jetVolonte}}
+  {{> "systems/foundryvtt-ctm/templates/chat-infojet.html" jetVolonte}}
   <hr>
   <span>
     {{#if jetVolonte.rolled.isSuccess}}

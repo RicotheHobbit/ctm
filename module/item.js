@@ -28,38 +28,38 @@ densité 3.5 (~2.3 à 4, parfois plus) -- https://www.juwelo.fr/guide-des-pierre
    */
 
 export const defaultItemImg = {
-  competence: "systems/foundryvtt-reve-de-dragon/icons/competence_defaut.webp",
-  competencecreature: "systems/foundryvtt-reve-de-dragon/icons/competence_defaut.webp",
-  arme: "systems/foundryvtt-reve-de-dragon/icons/armes_armures/epee_gnome.webp",
-  armure: "systems/foundryvtt-reve-de-dragon/icons/armes_armures/armure_plaques.webp",
-  conteneur: "systems/foundryvtt-reve-de-dragon/icons/objets/sac_a_dos.webp",
-  sort: "systems/foundryvtt-reve-de-dragon/icons/competence_oniros.webp",
-  herbe: "systems/foundryvtt-reve-de-dragon/icons/botanique/Endorlotte.webp",
-  ingredient: "systems/foundryvtt-reve-de-dragon/icons/objets/sable_poudre.webp",
-  livre: "systems/foundryvtt-reve-de-dragon/icons/objets/livre.webp",
-  potion: "systems/foundryvtt-reve-de-dragon/icons/objets/liqueur_de_bagdol.webp",
-  rencontre: "systems/foundryvtt-reve-de-dragon/icons/tete_dragon.webp",
-  queue: "systems/foundryvtt-reve-de-dragon/icons/queue_dragon.webp",
-  ombre: "systems/foundryvtt-reve-de-dragon/icons/queue_dragon.webp",
-  souffle: "systems/foundryvtt-reve-de-dragon/icons/souffle_dragon.webp",
-  tete: "systems/foundryvtt-reve-de-dragon/icons/tete_dragon.webp",
-  meditation: "systems/foundryvtt-reve-de-dragon/icons/meditations_ecrits/meditation_alchimie.webp",
-  recettealchimique: "systems/foundryvtt-reve-de-dragon/icons/competence_alchimie.webp",
-  chant: "systems/foundryvtt-reve-de-dragon/icons/arts/chant_0.webp",
-  danse: "systems/foundryvtt-reve-de-dragon/icons/arts/danse_0.webp",
-  jeu: "systems/foundryvtt-reve-de-dragon/icons/arts/jeux_petasse.webp",
-  recettecuisine: "systems/foundryvtt-reve-de-dragon/icons/arts/recette_cuisine_1.webp",
-  musique: "systems/foundryvtt-reve-de-dragon/icons/arts/chant_0.webp",
-  maladie: "systems/foundryvtt-reve-de-dragon/icons/maladies_venins/maladie.webp",
-  poison: "systems/foundryvtt-reve-de-dragon/icons/maladies_venins/venin.webp",
-  oeuvre: "systems/foundryvtt-reve-de-dragon/icons/competence_comedie.webp",
-  nourritureboisson: "systems/foundryvtt-reve-de-dragon/icons/objets/provision_crue.webp",
-  signedraconique: "systems/foundryvtt-reve-de-dragon/icons/tmr/signe_draconique.webp",
-  gemme: "systems/foundryvtt-reve-de-dragon/icons/gemmes/almaze.webp",
-  possession: "systems/foundryvtt-reve-de-dragon/icons/entites/possession2.webp",
-  sortreserve: "systems/foundryvtt-reve-de-dragon/icons/competence_oniros.webp",
-  extraitpoetique: "systems/foundryvtt-reve-de-dragon/icons/competence_ecriture.webp",
-  tarot: "systems/foundryvtt-reve-de-dragon/icons/tarots/dos-tarot.webp",
+  competence: "systems/foundryvtt-ctm/icons/competence_defaut.webp",
+  competencecreature: "systems/foundryvtt-ctm/icons/competence_defaut.webp",
+  arme: "systems/foundryvtt-ctm/icons/armes_armures/epee_gnome.webp",
+  armure: "systems/foundryvtt-ctm/icons/armes_armures/armure_plaques.webp",
+  conteneur: "systems/foundryvtt-ctm/icons/objets/sac_a_dos.webp",
+  sort: "systems/foundryvtt-ctm/icons/competence_oniros.webp",
+  herbe: "systems/foundryvtt-ctm/icons/botanique/Endorlotte.webp",
+  ingredient: "systems/foundryvtt-ctm/icons/objets/sable_poudre.webp",
+  livre: "systems/foundryvtt-ctm/icons/objets/livre.webp",
+  potion: "systems/foundryvtt-ctm/icons/objets/liqueur_de_bagdol.webp",
+  rencontre: "systems/foundryvtt-ctm/icons/tete_dragon.webp",
+  queue: "systems/foundryvtt-ctm/icons/queue_dragon.webp",
+  ombre: "systems/foundryvtt-ctm/icons/queue_dragon.webp",
+  souffle: "systems/foundryvtt-ctm/icons/souffle_dragon.webp",
+  tete: "systems/foundryvtt-ctm/icons/tete_dragon.webp",
+  meditation: "systems/foundryvtt-ctm/icons/meditations_ecrits/meditation_alchimie.webp",
+  recettealchimique: "systems/foundryvtt-ctm/icons/competence_alchimie.webp",
+  chant: "systems/foundryvtt-ctm/icons/arts/chant_0.webp",
+  danse: "systems/foundryvtt-ctm/icons/arts/danse_0.webp",
+  jeu: "systems/foundryvtt-ctm/icons/arts/jeux_petasse.webp",
+  recettecuisine: "systems/foundryvtt-ctm/icons/arts/recette_cuisine_1.webp",
+  musique: "systems/foundryvtt-ctm/icons/arts/chant_0.webp",
+  maladie: "systems/foundryvtt-ctm/icons/maladies_venins/maladie.webp",
+  poison: "systems/foundryvtt-ctm/icons/maladies_venins/venin.webp",
+  oeuvre: "systems/foundryvtt-ctm/icons/competence_comedie.webp",
+  nourritureboisson: "systems/foundryvtt-ctm/icons/objets/provision_crue.webp",
+  signedraconique: "systems/foundryvtt-ctm/icons/tmr/signe_draconique.webp",
+  gemme: "systems/foundryvtt-ctm/icons/gemmes/almaze.webp",
+  possession: "systems/foundryvtt-ctm/icons/entites/possession2.webp",
+  sortreserve: "systems/foundryvtt-ctm/icons/competence_oniros.webp",
+  extraitpoetique: "systems/foundryvtt-ctm/icons/competence_ecriture.webp",
+  tarot: "systems/foundryvtt-ctm/icons/tarots/dos-tarot.webp",
 }
 
 /* -------------------------------------------- */
@@ -295,7 +295,7 @@ export class RdDItem extends Item {
       vente.jsondata = JSON.stringify(vente.item);
   
       console.log(vente);
-      let html = await renderTemplate('systems/foundryvtt-reve-de-dragon/templates/chat-vente-item.html', vente);
+      let html = await renderTemplate('systems/foundryvtt-ctm/templates/chat-vente-item.html', vente);
       ChatMessage.create(RdDUtility.chatDataSetup(html));
     });
   }
@@ -320,7 +320,7 @@ export class RdDItem extends Item {
         payload: chatData,
       });
 
-    renderTemplate('systems/foundryvtt-reve-de-dragon/templates/post-item.html', chatData).then(html => {
+    renderTemplate('systems/foundryvtt-ctm/templates/post-item.html', chatData).then(html => {
       let chatOptions = RdDUtility.chatDataSetup(html, modeOverride);
       ChatMessage.create(chatOptions)
     });

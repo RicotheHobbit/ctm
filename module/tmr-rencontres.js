@@ -106,7 +106,7 @@ export class TMRRencontres {
 
   /* -------------------------------------------- */
   async $chatRolledRencontre(row, tmr) {
-    const flavorContent = await renderTemplate('systems/foundryvtt-reve-de-dragon/templates/chat-compendium-table-roll-rencontre.html',
+    const flavorContent = await renderTemplate('systems/foundryvtt-ctm/templates/chat-compendium-table-roll-rencontre.html',
       {
         roll: row.roll,
         rencontre: row?.document,

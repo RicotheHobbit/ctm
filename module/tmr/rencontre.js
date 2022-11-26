@@ -14,7 +14,7 @@ export class Rencontre extends Draconique {
 
   code() { return 'rencontre' }
   tooltip(rencontre) { return `${rencontre.name} de force ${rencontre.system.force}` }
-  img() { return 'systems/foundryvtt-reve-de-dragon/icons/heures/hd06.webp' }
+  img() { return 'systems/foundryvtt-ctm/icons/heures/hd06.webp' }
 
   createSprite(pixiTMR) {
     return pixiTMR.sprite(this.code(), {

@@ -1,12 +1,12 @@
 <form class="{{cssClass}}" autocomplete="off">
-  {{>"systems/foundryvtt-reve-de-dragon/templates/header-item.html"}}
+  {{>"systems/foundryvtt-ctm/templates/header-item.html"}}
   {{!-- Sheet Body --}}
   <section class="sheet-body">
     <div class="form-group">
       <label>Draconic</label>
       <select name="system.draconic" id="draconic" data-dtype="String">
         {{#select system.draconic}}
-        {{>"systems/foundryvtt-reve-de-dragon/templates/enum-draconic.html"}}
+        {{>"systems/foundryvtt-ctm/templates/enum-draconic.html"}}
         {{/select}}
       </select>
     </div>      
@@ -14,7 +14,7 @@
       <label for="system.caseTMR">Case TMR</label>
       <select name="system.caseTMR" id="caseTMR" data-dtype="String">
         {{#select system.caseTMR}}
-        {{>"systems/foundryvtt-reve-de-dragon/templates/enum-tmr-type.html"}}
+        {{>"systems/foundryvtt-ctm/templates/enum-tmr-type.html"}}
         <option value="special">Case spéciale TMR (saisie ci-dessous)</option>
         {{/select}}
       </select>
@@ -69,6 +69,6 @@
     {{/each}}
     {{/if}}
 
-    {{>"systems/foundryvtt-reve-de-dragon/templates/partial-item-description.html"}}
+    {{>"systems/foundryvtt-ctm/templates/partial-item-description.html"}}
   </section>
 </form>

@@ -1,18 +1,18 @@
 <h3>Oeuvres diverses</h3><a class="chat-card-button creer-une-oeuvre">Créer une oeuvre</a>
 <ul class="item-list alterne-list">
   {{#each chants as |chant id|}}
-  {{> "systems/foundryvtt-reve-de-dragon/templates/actor/oeuvre.html" oeuvre=chant typeOeuvre="Chant" classOeuvre="chant-label"}}
+  {{> "systems/foundryvtt-ctm/templates/actor/oeuvre.html" oeuvre=chant typeOeuvre="Chant" classOeuvre="chant-label"}}
   {{/each}}
   {{#each musiques as |musique id|}}
-  {{> "systems/foundryvtt-reve-de-dragon/templates/actor/oeuvre.html" oeuvre=musique typeOeuvre="Musique" classOeuvre="musique-label"}}
+  {{> "systems/foundryvtt-ctm/templates/actor/oeuvre.html" oeuvre=musique typeOeuvre="Musique" classOeuvre="musique-label"}}
   {{/each}}
   {{#each danses as |danse id|}}
-  {{> "systems/foundryvtt-reve-de-dragon/templates/actor/oeuvre.html" oeuvre=danse typeOeuvre="Danse" classOeuvre="danse-label"}}
+  {{> "systems/foundryvtt-ctm/templates/actor/oeuvre.html" oeuvre=danse typeOeuvre="Danse" classOeuvre="danse-label"}}
   {{/each}}
   {{#each oeuvres as |oeuvre id|}}
-  {{> "systems/foundryvtt-reve-de-dragon/templates/actor/oeuvre.html" oeuvre=oeuvre typeOeuvre=oeuvre.system.competence classOeuvre="oeuvre-label"}}
+  {{> "systems/foundryvtt-ctm/templates/actor/oeuvre.html" oeuvre=oeuvre typeOeuvre=oeuvre.system.competence classOeuvre="oeuvre-label"}}
   {{/each}}
   {{#each recettescuisine as |recette id|}}
-  {{> "systems/foundryvtt-reve-de-dragon/templates/actor/oeuvre.html" oeuvre=recette typeOeuvre="Recette de cuisine" classOeuvre="recettecuisine-label"}}
+  {{> "systems/foundryvtt-ctm/templates/actor/oeuvre.html" oeuvre=recette typeOeuvre="Recette de cuisine" classOeuvre="recettecuisine-label"}}
   {{/each}}
 </ul>

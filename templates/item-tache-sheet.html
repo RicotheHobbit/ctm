@@ -1,5 +1,5 @@
 <form class="{{cssClass}}" autocomplete="off">
-  {{>"systems/foundryvtt-reve-de-dragon/templates/header-item.html"}}
+  {{>"systems/foundryvtt-ctm/templates/header-item.html"}}
   {{!-- Sheet Body --}}
   <section class="sheet-body">
     <div class="form-group">
@@ -17,7 +17,7 @@
       <select name="system.competence" id="competenceselect" data-dtype="String">
       {{#select system.competence}}
       <option value="">Sans compétence</option>
-      {{>"systems/foundryvtt-reve-de-dragon/templates/enum-competence.html"}}
+      {{>"systems/foundryvtt-ctm/templates/enum-competence.html"}}
       {{/select}}    
     </select>
   </div>
@@ -66,6 +66,6 @@
       <input class="attribute-value" type="text" name="system.nb_jet_echec" value="{{system.nb_jet_echec}}" data-dtype="Number" {{#if isGM}}{{else}}disabled{{/if}}/>
     </div>
 
-    {{>"systems/foundryvtt-reve-de-dragon/templates/partial-item-description.html"}}
+    {{>"systems/foundryvtt-ctm/templates/partial-item-description.html"}}
   </section>
 </form>

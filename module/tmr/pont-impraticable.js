@@ -21,7 +21,7 @@ export class PontImpraticable extends Draconique {
 
   code() { return 'pont-impraticable' }
   tooltip(linkData) { return `${this.tmrLabel(linkData)} impraticable` }
-  img() { return 'systems/foundryvtt-reve-de-dragon/icons/tmr/wave.webp' }
+  img() { return 'systems/foundryvtt-ctm/icons/tmr/wave.webp' }
 
   createSprite(pixiTMR) {
     return pixiTMR.sprite(this.code(),

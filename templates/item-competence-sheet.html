@@ -18,7 +18,7 @@
         <label>Catégorie </label>
         <select name="system.categorie" class="categorie" data-dtype="String">
               {{#select system.categorie}}
-              {{>"systems/foundryvtt-reve-de-dragon/templates/enum-categorie-competence.html"}}
+              {{>"systems/foundryvtt-ctm/templates/enum-categorie-competence.html"}}
               {{/select}}
         </select>
       </div>
@@ -35,7 +35,7 @@
         {{#if isGM}}
         <select name="system.base" id="base" data-dtype="Number">
                 {{#select system.base}}
-                {{>"systems/foundryvtt-reve-de-dragon/templates/enum-base-competence.html"}}
+                {{>"systems/foundryvtt-ctm/templates/enum-base-competence.html"}}
                 {{/select}}
         </select>
         {{else}}
@@ -46,7 +46,7 @@
         <label for="defaut_carac">Caractéristique par défaut </label>
         <select name="system.defaut_carac" id="defaut_carac" data-dtype="String">
           {{#select system.defaut_carac}}
-          {{>"systems/foundryvtt-reve-de-dragon/templates/enum-caracteristiques.html"}}
+          {{>"systems/foundryvtt-ctm/templates/enum-caracteristiques.html"}}
           {{/select}}
         </select>        
       </div>
@@ -65,7 +65,7 @@
         <input class="attribute-value" type="text" name="system.niveau_archetype" value="{{system.niveau_archetype}}" data-dtype="Number"/>
       </div>
 
-      {{>"systems/foundryvtt-reve-de-dragon/templates/partial-item-description.html"}}
+      {{>"systems/foundryvtt-ctm/templates/partial-item-description.html"}}
     
     </section>
     

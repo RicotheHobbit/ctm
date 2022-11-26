@@ -10,7 +10,7 @@ function iconHeure(heure) {
   if (heure < 10) {
     heure = '0' + heure;
   }
-  return `systems/foundryvtt-reve-de-dragon/icons/heures/hd${heure}.webp`
+  return `systems/foundryvtt-ctm/icons/heures/hd${heure}.webp`
 }
 const imagesHeures = [1, 2, 3, 4, 5, 6, 7, 9, 9, 10, 11, 12].map(it => iconHeure(it));
 

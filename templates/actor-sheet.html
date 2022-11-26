@@ -8,11 +8,11 @@
           <h1 class="charname"><input name="name" type="text" value="{{name}}" placeholder="Name"/></h1>
         </div>
         <div class="flexrow">
-          {{>"systems/foundryvtt-reve-de-dragon/templates/actor/header-compteurs.html"}}
+          {{>"systems/foundryvtt-ctm/templates/actor/header-compteurs.html"}}
           <div class="flex-group-center">
-            {{>"systems/foundryvtt-reve-de-dragon/templates/actor/header-buttons.html"}}
-            {{>"systems/foundryvtt-reve-de-dragon/templates/actor/header-etat.html"}}
-            {{>"systems/foundryvtt-reve-de-dragon/templates/actor/header-effects.html"}}
+            {{>"systems/foundryvtt-ctm/templates/actor/header-buttons.html"}}
+            {{>"systems/foundryvtt-ctm/templates/actor/header-etat.html"}}
+            {{>"systems/foundryvtt-ctm/templates/actor/header-effects.html"}}
           </div>
         </div>
       </div>
@@ -35,15 +35,15 @@
         {{!-- Carac Tab --}}
         <div class="tab items" data-group="primary" data-tab="carac">
           <div class="flexrow">
-            {{>"systems/foundryvtt-reve-de-dragon/templates/actor/vue-detaillee.html"}}
+            {{>"systems/foundryvtt-ctm/templates/actor/vue-detaillee.html"}}
           </div>
           <div class="grid grid-2col">
             <div class="flex-group-left flexcol">
-              {{>"systems/foundryvtt-reve-de-dragon/templates/actor/carac-main.html"}}
-              {{>"systems/foundryvtt-reve-de-dragon/templates/actor/carac-total.html"}}
+              {{>"systems/foundryvtt-ctm/templates/actor/carac-main.html"}}
+              {{>"systems/foundryvtt-ctm/templates/actor/carac-total.html"}}
             </div>
             <div class="flex-group-left flexcol" >
-              {{>"systems/foundryvtt-reve-de-dragon/templates/actor/carac-derivee.html"}}
+              {{>"systems/foundryvtt-ctm/templates/actor/carac-derivee.html"}}
             </div>
           </div>
         </div>
@@ -56,7 +56,7 @@
               {{#if options.vueDetaillee}}Vue simplifiée{{else}}Vue détaillée{{/if}}</a>
             </span>
             <span><a class="show-hide-competences"><img class="small-button-container"
-              src="systems/foundryvtt-reve-de-dragon/icons/{{#if options.showCompNiveauBase}}no-filter.svg{{else}}filter.svg{{/if}}" alt="filter/montrer tout">
+              src="systems/foundryvtt-ctm/icons/{{#if options.showCompNiveauBase}}no-filter.svg{{else}}filter.svg{{/if}}" alt="filter/montrer tout">
               {{#if options.showCompNiveauBase}}Montrer tout{{else}}Filtrer{{/if}}</a>
             </span>
             <span class="flexrow">
@@ -68,39 +68,39 @@
           </div>
           <div class="grid grid-2col">
             <div class="flex-group-left flexcol competence-column">
-              {{> "systems/foundryvtt-reve-de-dragon/templates/actor/competence-categorie.html" competences=(filtreTriCompetences byCateg.generale) categorie="Compétences générales"}}
-              {{> "systems/foundryvtt-reve-de-dragon/templates/actor/competence-categorie.html" competences=(filtreTriCompetences byCateg.particuliere) categorie="Compétences Particulières"}}
-              {{> "systems/foundryvtt-reve-de-dragon/templates/actor/competence-categorie.html" competences=(filtreTriCompetences byCateg.specialisee) categorie="Compétences Spécialisées"}}
+              {{> "systems/foundryvtt-ctm/templates/actor/competence-categorie.html" competences=(filtreTriCompetences byCateg.generale) categorie="Compétences générales"}}
+              {{> "systems/foundryvtt-ctm/templates/actor/competence-categorie.html" competences=(filtreTriCompetences byCateg.particuliere) categorie="Compétences Particulières"}}
+              {{> "systems/foundryvtt-ctm/templates/actor/competence-categorie.html" competences=(filtreTriCompetences byCateg.specialisee) categorie="Compétences Spécialisées"}}
             </div>
 
             <div class="flex-group-left flexcol competence-column">
-              {{> "systems/foundryvtt-reve-de-dragon/templates/actor/competence-categorie.html" competences=(filtreTriCompetences byCateg.melee) categorie="Compétences de Mêlée"}}
-              {{> "systems/foundryvtt-reve-de-dragon/templates/actor/competence-categorie.html" competences=(filtreTriCompetences byCateg.tir) categorie="Compétences de Tir"}}
-              {{> "systems/foundryvtt-reve-de-dragon/templates/actor/competence-categorie.html" competences=(filtreTriCompetences byCateg.lancer) categorie="Compétences de Lancer"}}
-              {{> "systems/foundryvtt-reve-de-dragon/templates/actor/competence-categorie.html" competences=(filtreTriCompetences byCateg.connaissance) categorie="Connaissances"}}
+              {{> "systems/foundryvtt-ctm/templates/actor/competence-categorie.html" competences=(filtreTriCompetences byCateg.melee) categorie="Compétences de Mêlée"}}
+              {{> "systems/foundryvtt-ctm/templates/actor/competence-categorie.html" competences=(filtreTriCompetences byCateg.tir) categorie="Compétences de Tir"}}
+              {{> "systems/foundryvtt-ctm/templates/actor/competence-categorie.html" competences=(filtreTriCompetences byCateg.lancer) categorie="Compétences de Lancer"}}
+              {{> "systems/foundryvtt-ctm/templates/actor/competence-categorie.html" competences=(filtreTriCompetences byCateg.connaissance) categorie="Connaissances"}}
               {{#if (or system.attributs.hautrevant.value options.vueDetaillee)}}
-              {{> "systems/foundryvtt-reve-de-dragon/templates/actor/competence-categorie.html" competences=(filtreTriCompetences byCateg.draconic) categorie="Draconic"}}
+              {{> "systems/foundryvtt-ctm/templates/actor/competence-categorie.html" competences=(filtreTriCompetences byCateg.draconic) categorie="Draconic"}}
               {{/if}}
-              {{> "systems/foundryvtt-reve-de-dragon/templates/actor/xp-competences.html"}}
+              {{> "systems/foundryvtt-ctm/templates/actor/xp-competences.html"}}
             </div>
           </div>
         </div>
 
         {{!-- Combat Tab --}}
         <div class="tab combat" data-group="primary" data-tab="combat">
-        {{> "systems/foundryvtt-reve-de-dragon/templates/actor/combat.html"}}<hr>
-        {{> "systems/foundryvtt-reve-de-dragon/templates/actor/blessures.html"}}
-        {{> "systems/foundryvtt-reve-de-dragon/templates/actor/maladies-poisons.html"}}
-        {{> "systems/foundryvtt-reve-de-dragon/templates/actor/possessions.html"}}
+        {{> "systems/foundryvtt-ctm/templates/actor/combat.html"}}<hr>
+        {{> "systems/foundryvtt-ctm/templates/actor/blessures.html"}}
+        {{> "systems/foundryvtt-ctm/templates/actor/maladies-poisons.html"}}
+        {{> "systems/foundryvtt-ctm/templates/actor/possessions.html"}}
         
       </div>
       
       {{!-- Connaissances Tab --}}
       <div class="tab connaissances" data-group="primary" data-tab="connaissances">
-        {{> "systems/foundryvtt-reve-de-dragon/templates/actor/taches.html"}}
-        {{> "systems/foundryvtt-reve-de-dragon/templates/actor/oeuvres.html"}}
-        {{> "systems/foundryvtt-reve-de-dragon/templates/actor/jeux.html"}}
-        {{> "systems/foundryvtt-reve-de-dragon/templates/actor/alchimie.html"}}
+        {{> "systems/foundryvtt-ctm/templates/actor/taches.html"}}
+        {{> "systems/foundryvtt-ctm/templates/actor/oeuvres.html"}}
+        {{> "systems/foundryvtt-ctm/templates/actor/jeux.html"}}
+        {{> "systems/foundryvtt-ctm/templates/actor/alchimie.html"}}
       </div>
       
       {{!-- hautreve Tab --}}
@@ -108,11 +108,11 @@
         <div>
           {{#if system.attributs.hautrevant.value}}
           <h3>Haut rêvant</h3>
-          {{> "systems/foundryvtt-reve-de-dragon/templates/actor/haut-revant.html"}}
+          {{> "systems/foundryvtt-ctm/templates/actor/haut-revant.html"}}
           {{else}}
           <h3>Vous n'avez pas le don de haut-rêve</h3>
           <p>Attribuer la Tête de Dragon 'Don de Haut Rêve' pour rendre le personnage Haut-Rêvant.</p>
-          {{> "systems/foundryvtt-reve-de-dragon/templates/actor/non-haut-revant.html"}}
+          {{> "systems/foundryvtt-ctm/templates/actor/non-haut-revant.html"}}
           {{/if}}
           <br><br>
         </div>
@@ -121,10 +121,10 @@
       {{!-- Equipment Tab --}}
       <div class="tab items" data-group="primary" data-tab="items">
         
-        {{> "systems/foundryvtt-reve-de-dragon/templates/actor/inventaire.html"}}
-        {{> "systems/foundryvtt-reve-de-dragon/templates/actor/liens-animaux.html"}}
-        {{> "systems/foundryvtt-reve-de-dragon/templates/actor/liens-suivants.html"}}
-        {{> "systems/foundryvtt-reve-de-dragon/templates/actor/liens-vehicules.html"}}
+        {{> "systems/foundryvtt-ctm/templates/actor/inventaire.html"}}
+        {{> "systems/foundryvtt-ctm/templates/actor/liens-animaux.html"}}
+        {{> "systems/foundryvtt-ctm/templates/actor/liens-suivants.html"}}
+        {{> "systems/foundryvtt-ctm/templates/actor/liens-vehicules.html"}}
 
       </div>
 
@@ -162,7 +162,7 @@
               <label for="system.heure">Heure de naissance :</label>
               <select type="text" name="system.heure" value="{{system.heure}}" data-dtype="String">
                 {{#select system.heure}}
-                {{>"systems/foundryvtt-reve-de-dragon/templates/enum-heures.html"}}
+                {{>"systems/foundryvtt-ctm/templates/enum-heures.html"}}
                 {{/select}}
               </select>
             </li>
@@ -190,8 +190,8 @@
           <div class="form-group editor">
             {{editor notes target="system.notes" button=true owner=owner editable=editable}}
           </div>
-          {{> "systems/foundryvtt-reve-de-dragon/templates/actor/xp-journal.html"}}
-          {{> "systems/foundryvtt-reve-de-dragon/templates/actor/editor-notes-mj.html"}}
+          {{> "systems/foundryvtt-ctm/templates/actor/xp-journal.html"}}
+          {{> "systems/foundryvtt-ctm/templates/actor/editor-notes-mj.html"}}
         </article>
       </div>
 

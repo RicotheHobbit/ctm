@@ -14,13 +14,13 @@
         </div>
       </div>
       <div class="flex-group-left flexrow">
-        {{>"systems/foundryvtt-reve-de-dragon/templates/actor/header-compteurs-creature.html"}}
+        {{>"systems/foundryvtt-ctm/templates/actor/header-compteurs-creature.html"}}
         <div class="flex-group-center">
           <span>
             {{calc.resumeBlessures}}
             &hyphen; Etat Général : {{system.compteurs.etat.value}}
           </span>
-          {{>"systems/foundryvtt-reve-de-dragon/templates/actor/header-effects.html"}}
+          {{>"systems/foundryvtt-ctm/templates/actor/header-effects.html"}}
         </div>
       </div>
     </div>
@@ -39,24 +39,24 @@
     {{!-- Carac & compétences --}}
     <div class="tab items" data-group="primary" data-tab="carac">
       <div class="flexrow">
-        {{>"systems/foundryvtt-reve-de-dragon/templates/actor/vue-detaillee.html"}}
+        {{>"systems/foundryvtt-ctm/templates/actor/vue-detaillee.html"}}
       </div>
       <div class="grid grid-2col">
         <div class="flex-group-left flexcol">
-          {{>"systems/foundryvtt-reve-de-dragon/templates/actor/carac-main.html"}}
-          {{>"systems/foundryvtt-reve-de-dragon/templates/actor/carac-creature.html"}}
+          {{>"systems/foundryvtt-ctm/templates/actor/carac-main.html"}}
+          {{>"systems/foundryvtt-ctm/templates/actor/carac-creature.html"}}
         </div>
         <div class="flex-group-left flexcol competence-column">
-          {{>"systems/foundryvtt-reve-de-dragon/templates/actor/comp-creature.html"}}
+          {{>"systems/foundryvtt-ctm/templates/actor/comp-creature.html"}}
         </div>
       </div>
 
-      {{> "systems/foundryvtt-reve-de-dragon/templates/actor/blessures.html"}}
+      {{> "systems/foundryvtt-ctm/templates/actor/blessures.html"}}
     </div>
 
     {{!-- Equipment Tab --}}
     <div class="tab items" data-group="primary" data-tab="items">
-      {{> "systems/foundryvtt-reve-de-dragon/templates/actor/inventaire.html"}}
+      {{> "systems/foundryvtt-ctm/templates/actor/inventaire.html"}}
     </div>
 
     {{!-- Biography Tab --}}
@@ -72,7 +72,7 @@
         {{editor description target="system.description" button=true owner=owner editable=true}}
       </div>
 
-      {{>"systems/foundryvtt-reve-de-dragon/templates/actor/editor-notes-mj.html"}}
+      {{>"systems/foundryvtt-ctm/templates/actor/editor-notes-mj.html"}}
 
     </div>
 

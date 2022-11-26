@@ -31,7 +31,7 @@ export class Targets {
       default:
         {
           const tokens = targets.map(it => Targets.extractTokenData(it))
-          const html = await renderTemplate("systems/foundryvtt-reve-de-dragon/templates/dialog-select-target.html", {
+          const html = await renderTemplate("systems/foundryvtt-ctm/templates/dialog-select-target.html", {
             tokens: tokens
           });
           new DialogSelectTarget(html, onSelectTarget, targets).render(true);

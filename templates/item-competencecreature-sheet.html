@@ -1,12 +1,12 @@
 <form class="{{cssClass}}" autocomplete="off">
-  {{>"systems/foundryvtt-reve-de-dragon/templates/header-item.html"}}
+  {{>"systems/foundryvtt-ctm/templates/header-item.html"}}
   {{!-- Sheet Body --}}
   <section class="sheet-body">
     <div class="form-group">
       <label for="system.categorie">Catégorie</label>
       <select name="system.categorie" class="categorie" data-dtype="String">
           {{#select system.categorie}}
-          {{>"systems/foundryvtt-reve-de-dragon/templates/enum-categorie-competence.html"}}
+          {{>"systems/foundryvtt-ctm/templates/enum-categorie-competence.html"}}
           {{/select}}
       </select>
     </div>
@@ -45,12 +45,12 @@
         <label>Catégorie parade </label>
         <select name="system.categorie_parade" id="categorie_parade" data-dtype="String">
           {{#select system.categorie_parade}}
-          {{>"systems/foundryvtt-reve-de-dragon/templates/enum-categorie-parade.html"}}
+          {{>"systems/foundryvtt-ctm/templates/enum-categorie-parade.html"}}
           {{/select}}
         </select>
       </div>
     {{/unless}}
 
-    {{>"systems/foundryvtt-reve-de-dragon/templates/partial-item-description.html"}}
+    {{>"systems/foundryvtt-ctm/templates/partial-item-description.html"}}
     </section>
 </form>

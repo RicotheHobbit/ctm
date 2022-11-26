@@ -38,7 +38,7 @@ import { SystemCompendiums } from "./settings/system-compendiums.js";
 import { Targets } from "./targets.js";
 
 const POSSESSION_SANS_DRACONIC = {
-  img: 'systems/foundryvtt-reve-de-dragon/icons/entites/possession.webp',
+  img: 'systems/foundryvtt-ctm/icons/entites/possession.webp',
   name: 'Sans draconic',
   system: {
     niveau: 0,
@@ -408,7 +408,7 @@ export class RdDActor extends Actor {
         }
         ChatMessage.create({
           whisper: ChatUtility.getWhisperRecipientsAndGMs(this.name),
-          content: await renderTemplate(`systems/foundryvtt-reve-de-dragon/templates/chat-potionenchantee-chateaudormant.html`, messageData)
+          content: await renderTemplate(`systems/foundryvtt-ctm/templates/chat-potionenchantee-chateaudormant.html`, messageData)
         });
       }
     }
@@ -778,7 +778,7 @@ export class RdDActor extends Actor {
     rollData.competence.system.defaut_carac = 'reve-actuel';
 
     const dialog = await RdDRoll.create(this, rollData,
-      { html: 'systems/foundryvtt-reve-de-dragon/templates/dialog-roll-reve-de-dragon.html' },
+      { html: 'systems/foundryvtt-ctm/templates/dialog-roll-reve-de-dragon.html' },
       {
         name: 'maitrise',
         label: 'Maîtriser le Rêve de Dragon',
@@ -1904,7 +1904,7 @@ export class RdDActor extends Actor {
       diffConditions: 0,
       ajustementsForce: CONFIG.RDD.difficultesLibres,
     }
-    let html = await renderTemplate('systems/foundryvtt-reve-de-dragon/templates/dialog-roll-ethylisme.html', rollData);
+    let html = await renderTemplate('systems/foundryvtt-ctm/templates/dialog-roll-ethylisme.html', rollData);
     new RdDRollDialogEthylisme(html, rollData, this, r => this.saouler(r.forceAlcool)).render(true);
   }
 
@@ -2134,7 +2134,7 @@ export class RdDActor extends Actor {
 
     ChatMessage.create({
       whisper: ChatUtility.getWhisperRecipientsAndGMs(this.name),
-      content: await renderTemplate(`systems/foundryvtt-reve-de-dragon/templates/chat-resultat-transformer-stress.html`, stressRollData)
+      content: await renderTemplate(`systems/foundryvtt-ctm/templates/chat-resultat-transformer-stress.html`, stressRollData)
     });
 
     let compteurs = duplicate(this.system.compteurs);
@@ -2210,7 +2210,7 @@ export class RdDActor extends Actor {
         if (display) {
           ChatMessage.create({
             whisper: ChatUtility.getWhisperRecipientsAndGMs(this.name),
-            content: await renderTemplate(`systems/foundryvtt-reve-de-dragon/templates/chat-actor-carac-xp.html`, checkXp)
+            content: await renderTemplate(`systems/foundryvtt-ctm/templates/chat-actor-carac-xp.html`, checkXp)
           });
         }
         return checkXp;
@@ -2242,7 +2242,7 @@ export class RdDActor extends Actor {
         if (display) {
           ChatMessage.create({
             whisper: ChatUtility.getWhisperRecipientsAndGMs(this.name),
-            content: await renderTemplate(`systems/foundryvtt-reve-de-dragon/templates/chat-actor-competence-xp.html`, checkXp)
+            content: await renderTemplate(`systems/foundryvtt-ctm/templates/chat-actor-competence-xp.html`, checkXp)
           });
         }
         return checkXp;
@@ -2258,7 +2258,7 @@ export class RdDActor extends Actor {
     if (xpData && !hideChatMessage) {
       ChatMessage.create({
         whisper: ChatUtility.getWhisperRecipientsAndGMs(this.name),
-        content: await renderTemplate(`systems/foundryvtt-reve-de-dragon/templates/chat-actor-gain-xp.html`, xpData)
+        content: await renderTemplate(`systems/foundryvtt-ctm/templates/chat-actor-gain-xp.html`, xpData)
       });
     }
   }
@@ -2355,7 +2355,7 @@ export class RdDActor extends Actor {
 
     const dialog = await RdDRoll.create(this, rollData,
       {
-        html: 'systems/foundryvtt-reve-de-dragon/templates/dialog-roll-sort.html',
+        html: 'systems/foundryvtt-ctm/templates/dialog-roll-sort.html',
         close: html => { this.currentTMR.maximize() } // Re-display TMR
       },
       {
@@ -2480,7 +2480,7 @@ export class RdDActor extends Actor {
     };
 
     const dialog = await RdDRoll.create(this, rollData,
-      { html: 'systems/foundryvtt-reve-de-dragon/templates/dialog-roll-carac.html' },
+      { html: 'systems/foundryvtt-ctm/templates/dialog-roll-carac.html' },
       {
         name: 'jet-' + caracName,
         label: 'Jet ' + Grammar.apostrophe('de', rollData.selectedCarac.label),
@@ -2561,7 +2561,7 @@ export class RdDActor extends Actor {
     }
     console.log("rollCompetence !!!", rollData);
     const dialog = await RdDRoll.create(this, rollData,
-      { html: 'systems/foundryvtt-reve-de-dragon/templates/dialog-roll-competence.html' },
+      { html: 'systems/foundryvtt-ctm/templates/dialog-roll-competence.html' },
       {
         name: 'jet-competence',
         label: 'Jet ' + Grammar.apostrophe('de', rollData.competence.name),
@@ -2623,7 +2623,7 @@ export class RdDActor extends Actor {
     console.log("rollTache !!!", rollData);
 
     const dialog = await RdDRoll.create(this, rollData,
-      { html: 'systems/foundryvtt-reve-de-dragon/templates/dialog-roll-competence.html' },
+      { html: 'systems/foundryvtt-ctm/templates/dialog-roll-competence.html' },
       {
         name: 'jet-competence',
         label: 'Jet de Tâche ' + tacheData.name,
@@ -2679,7 +2679,7 @@ export class RdDActor extends Actor {
     console.log("rollArt !!!", artData);
 
     const dialog = await RdDRoll.create(this, artData,
-      { html: `systems/foundryvtt-reve-de-dragon/templates/dialog-roll-${oeuvre.type}.html` },
+      { html: `systems/foundryvtt-ctm/templates/dialog-roll-${oeuvre.type}.html` },
       {
         name: `jet-${artData.art}`,
         label: `${artData.verbe} ${oeuvre.name}`,
@@ -2758,7 +2758,7 @@ export class RdDActor extends Actor {
     const platCuisine = {
       name: artData.oeuvre.name,
       type: 'nourritureboisson',
-      img: 'systems/foundryvtt-reve-de-dragon/icons/objets/provision_cuite.webp',
+      img: 'systems/foundryvtt-ctm/icons/objets/provision_cuite.webp',
       system: {
         "description": artData.oeuvre.system.description,
         "sust": Math.min(sust, 1),
@@ -2816,7 +2816,7 @@ export class RdDActor extends Actor {
     };
 
     const dialog = await RdDRoll.create(this, meditationData,
-      { html: 'systems/foundryvtt-reve-de-dragon/templates/dialog-roll-meditation.html' },
+      { html: 'systems/foundryvtt-ctm/templates/dialog-roll-meditation.html' },
       {
         name: 'jet-meditation',
         label: "Jet de méditation",
@@ -2891,7 +2891,7 @@ export class RdDActor extends Actor {
 
     const dialog = await RdDRoll.create(this, rollData,
       {
-        html: 'systems/foundryvtt-reve-de-dragon/templates/dialog-roll-signedraconique.html',
+        html: 'systems/foundryvtt-ctm/templates/dialog-roll-signedraconique.html',
         close: html => { this.currentTMR.maximize() } // Re-display TMR
       },
       {
@@ -2928,7 +2928,7 @@ export class RdDActor extends Actor {
     // Stocke si utilisation de la chance
     let rollData = { selectedCarac: this.getCaracByName('chance-actuelle'), surprise: '' };
     const dialog = await RdDRoll.create(this, rollData,
-      { html: 'systems/foundryvtt-reve-de-dragon/templates/dialog-roll-carac.html' },
+      { html: 'systems/foundryvtt-ctm/templates/dialog-roll-carac.html' },
       {
         name: 'appelChance',
         label: 'Appel à la chance',
@@ -3337,7 +3337,7 @@ export class RdDActor extends Actor {
   /* -------------------------------------------- */
   async encaisser() {
     let dialogData = { ajustementsEncaissement: RdDUtility.getAjustementsEncaissement() };
-    let html = await renderTemplate('systems/foundryvtt-reve-de-dragon/templates/dialog-roll-encaisser.html', dialogData);
+    let html = await renderTemplate('systems/foundryvtt-ctm/templates/dialog-roll-encaisser.html', dialogData);
     new RdDEncaisser(html, this).render(true);
   }
 
@@ -3392,7 +3392,7 @@ export class RdDActor extends Actor {
 
     await ChatUtility.createChatWithRollMode(this.name, {
       roll: encaissement.roll,
-      content: await renderTemplate('systems/foundryvtt-reve-de-dragon/templates/chat-resultat-encaissement.html', encaissement)
+      content: await renderTemplate('systems/foundryvtt-ctm/templates/chat-resultat-encaissement.html', encaissement)
     });
 
     if (!encaissement.hasPlayerOwner && encaissement.endurance != 0) {
@@ -3400,7 +3400,7 @@ export class RdDActor extends Actor {
       encaissement.isGM = true;
       ChatMessage.create({
         whisper: ChatMessage.getWhisperRecipients("GM"),
-        content: await renderTemplate('systems/foundryvtt-reve-de-dragon/templates/chat-resultat-encaissement.html', encaissement)
+        content: await renderTemplate('systems/foundryvtt-ctm/templates/chat-resultat-encaissement.html', encaissement)
       });
     }
   }
@@ -3728,7 +3728,7 @@ export class RdDActor extends Actor {
       user: achat.userId,
       speaker: { alias: (acheteur ?? vendeur).name },
       whisper: ChatUtility.getWhisperRecipientsAndGMs(this.name),
-      content: await renderTemplate('systems/foundryvtt-reve-de-dragon/templates/chat-achat-item.html', chatAchatItem)
+      content: await renderTemplate('systems/foundryvtt-ctm/templates/chat-achat-item.html', chatAchatItem)
     });
 
     if (!vente.quantiteIllimite) {
@@ -3740,7 +3740,7 @@ export class RdDActor extends Actor {
         vente.quantiteNbLots -= achat.choix.nombreLots;
         vente.jsondata = JSON.stringify(vente.item);
         const messageVente = game.messages.get(achat.chatMessageIdVente);
-        messageVente.update({ content: await renderTemplate('systems/foundryvtt-reve-de-dragon/templates/chat-vente-item.html', vente) });
+        messageVente.update({ content: await renderTemplate('systems/foundryvtt-ctm/templates/chat-vente-item.html', vente) });
         messageVente.render(true);
       }
     }
@@ -3775,7 +3775,7 @@ export class RdDActor extends Actor {
       rollData.competence.system.defaut_carac = caracTache;
 
       const dialog = await RdDRoll.create(this, rollData,
-        { html: 'systems/foundryvtt-reve-de-dragon/templates/dialog-roll-alchimie.html' },
+        { html: 'systems/foundryvtt-ctm/templates/dialog-roll-alchimie.html' },
         {
           name: 'tache-alchimique',
           label: 'Tache Alchimique',
@@ -3941,7 +3941,7 @@ export class RdDActor extends Actor {
     }
     ChatMessage.create({
       whisper: ChatUtility.getWhisperRecipientsAndGMs(this.name),
-      content: await renderTemplate(`systems/foundryvtt-reve-de-dragon/templates/chat-consommer-potion-soin.html`, potionData)
+      content: await renderTemplate(`systems/foundryvtt-ctm/templates/chat-consommer-potion-soin.html`, potionData)
     });
   }
 
@@ -3974,13 +3974,13 @@ export class RdDActor extends Actor {
     }
     ChatMessage.create({
       whisper: ChatUtility.getWhisperRecipientsAndGMs(this.name),
-      content: await renderTemplate(`systems/foundryvtt-reve-de-dragon/templates/chat-consommer-potion-repos.html`, potionData)
+      content: await renderTemplate(`systems/foundryvtt-ctm/templates/chat-consommer-potion-repos.html`, potionData)
     });
   }
   /* -------------------------------------------- */
   dialogFabriquerPotion(herbe) {
     DialogFabriquerPotion.create(this, herbe, {
-      html: 'systems/foundryvtt-reve-de-dragon/templates/dialog-fabriquer-potion-base.html',
+      html: 'systems/foundryvtt-ctm/templates/dialog-fabriquer-potion-base.html',
     }, []);
   }
 
@@ -3988,7 +3988,7 @@ export class RdDActor extends Actor {
   async fabriquerPotion(herbeData) {
     let newPotion = {
       name: `Potion de ${herbeData.system.categorie} (${herbeData.name})`, type: 'potion',
-      img: "systems/foundryvtt-reve-de-dragon/icons/objets/fiole_verre.webp",
+      img: "systems/foundryvtt-ctm/icons/objets/fiole_verre.webp",
       system: {
         quantite: 1, cout: 0, encombrement: 0.1,
         categorie: herbeData.system.categorie,
@@ -4012,7 +4012,7 @@ export class RdDActor extends Actor {
 
     ChatMessage.create({
       whisper: ChatUtility.getWhisperRecipientsAndGMs(this.name),
-      content: await renderTemplate(`systems/foundryvtt-reve-de-dragon/templates/chat-fabriquer-potion-base.html`, messageData)
+      content: await renderTemplate(`systems/foundryvtt-ctm/templates/chat-fabriquer-potion-base.html`, messageData)
     });
   }
 
@@ -4037,7 +4037,7 @@ export class RdDActor extends Actor {
     }
     ChatMessage.create({
       whisper: ChatUtility.getWhisperRecipientsAndGMs(this.name),
-      content: await renderTemplate(`systems/foundryvtt-reve-de-dragon/templates/chat-consommer-potion-generique.html`, potionData)
+      content: await renderTemplate(`systems/foundryvtt-ctm/templates/chat-consommer-potion-generique.html`, potionData)
     });
   }
 

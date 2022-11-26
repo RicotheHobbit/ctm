@@ -709,7 +709,7 @@ export class RdDCombat {
         const activite = this._ajustementMouvement(this.defender)
         const total = [portee, taille, activite].map(it => it.diff).filter(d => !Number.isNaN(d)).reduce(Misc.sum(), 0)
         ChatMessage.create({
-          content: await renderTemplate('systems/foundryvtt-reve-de-dragon/templates/chat-info-distance.html', {
+          content: await renderTemplate('systems/foundryvtt-ctm/templates/chat-info-distance.html', {
             rollData: rollData,
             attacker: _token,
             isVisible: isVisible,
@@ -775,7 +775,7 @@ export class RdDCombat {
       ChatMessage.create({
         alias: this.attacker.name,
         whisper: ChatUtility.getWhisperRecipientsAndGMs(this.attacker.name),
-        content: await renderTemplate('systems/foundryvtt-reve-de-dragon/templates/chat-actor-perte-empoignade.html', {
+        content: await renderTemplate('systems/foundryvtt-ctm/templates/chat-actor-perte-empoignade.html', {
           attacker: this.attacker,
           competence: competence
         })
@@ -791,7 +791,7 @@ export class RdDCombat {
     await this.proposerAjustementTirLancer(rollData)
 
     const dialog = await RdDRoll.create(this.attacker, rollData,
-      { html: 'systems/foundryvtt-reve-de-dragon/templates/dialog-roll-competence.html' },
+      { html: 'systems/foundryvtt-ctm/templates/dialog-roll-competence.html' },
       {
         name: 'jet-attaque',
         label: 'Attaque: ' + (arme?.name ?? competence.name),
@@ -862,7 +862,7 @@ export class RdDCombat {
     const choixParticuliere = await ChatMessage.create({
       alias: this.attacker.name,
       whisper: ChatUtility.getWhisperRecipientsAndGMs(this.attacker.name),
-      content: await renderTemplate('systems/foundryvtt-reve-de-dragon/templates/chat-demande-attaque-particuliere.html', {
+      content: await renderTemplate('systems/foundryvtt-ctm/templates/chat-demande-attaque-particuliere.html', {
         alias: this.attacker.name,
         attackerId: this.attackerId,
         defenderTokenId: this.defenderTokenId,
@@ -949,7 +949,7 @@ export class RdDCombat {
       speaker: ChatMessage.getSpeaker(this.defender, canvas.tokens.get(this.defenderTokenId)),
       alias: this.attacker.name,
       whisper: ChatUtility.getWhisperRecipientsAndGMs(this.defender.name),
-      content: await renderTemplate('systems/foundryvtt-reve-de-dragon/templates/chat-demande-defense.html', paramDemandeDefense),
+      content: await renderTemplate('systems/foundryvtt-ctm/templates/chat-demande-defense.html', paramDemandeDefense),
     });
     // flag pour garder les jets d'attaque/defense
     ChatUtility.setMessageData(choixDefense, 'defender-roll', defenderRoll);
@@ -993,7 +993,7 @@ export class RdDCombat {
   async _onAttaqueEchecTotal(attackerRoll) {
     const choixEchecTotal = await ChatMessage.create({
       whisper: ChatUtility.getWhisperRecipientsAndGMs(this.attacker.name),
-      content: await renderTemplate('systems/foundryvtt-reve-de-dragon/templates/chat-demande-attaque-etotal.html', {
+      content: await renderTemplate('systems/foundryvtt-ctm/templates/chat-demande-attaque-etotal.html', {
         attackerId: this.attackerId,
         attacker: this.attacker,
         defenderTokenId: this.defenderTokenId,
@@ -1048,7 +1048,7 @@ export class RdDCombat {
     let rollData = this._prepareParade(attackerRoll, arme, competence);
 
     const dialog = await RdDRoll.create(this.defender, rollData,
-      { html: 'systems/foundryvtt-reve-de-dragon/templates/dialog-roll-competence.html' },
+      { html: 'systems/foundryvtt-ctm/templates/dialog-roll-competence.html' },
       {
         name: 'jet-parade',
         label: 'Parade: ' + (arme ? arme.name : rollData.competence.name),
@@ -1129,7 +1129,7 @@ export class RdDCombat {
     let rollData = this._prepareEsquive(attackerRoll, esquive);
 
     const dialog = await RdDRoll.create(this.defender, rollData,
-      { html: 'systems/foundryvtt-reve-de-dragon/templates/dialog-roll-competence.html' },
+      { html: 'systems/foundryvtt-ctm/templates/dialog-roll-competence.html' },
       {
         name: 'jet-esquive',
         label: 'Esquiver',
@@ -1369,7 +1369,7 @@ export class RdDCombat {
     }
 
     ChatUtility.createChatWithRollMode(actor.name, {
-      content: await renderTemplate(`systems/foundryvtt-reve-de-dragon/templates/chat-actor-turn-summary.html`, formData)
+      content: await renderTemplate(`systems/foundryvtt-ctm/templates/chat-actor-turn-summary.html`, formData)
     });
   }
 }

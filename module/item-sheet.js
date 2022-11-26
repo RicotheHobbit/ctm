@@ -20,7 +20,7 @@ export class RdDItemSheet extends ItemSheet {
   static get defaultOptions() {
     return mergeObject(super.defaultOptions, {
       classes: [SYSTEM_RDD, "sheet", "item"],
-      template: "systems/foundryvtt-reve-de-dragon/templates/item-sheet.html",
+      template: "systems/foundryvtt-ctm/templates/item-sheet.html",
       width: 550,
       height: 550
     });
@@ -250,7 +250,7 @@ export class RdDItemSheet extends ItemSheet {
   /* -------------------------------------------- */
   get template() {
     let type = this.item.type
-    return `systems/foundryvtt-reve-de-dragon/templates/item-${type}-sheet.html`;
+    return `systems/foundryvtt-ctm/templates/item-${type}-sheet.html`;
   }
 
   /* -------------------------------------------- */

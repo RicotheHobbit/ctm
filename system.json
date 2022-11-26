@@ -1,5 +1,5 @@
 {
-  "id": "foundryvtt-reve-de-dragon",
+  "id": "foundryvtt-ctm",
   "title": "les Compagnies des Terres du Milieu",
   "version": "1.0.0",
   "download": "https://github.com/RicotheHobbit/ctm/archive/refs/heads/main.zip",
@@ -69,7 +69,7 @@
     {
       "name": "competences",
       "label": "Compétences",
-      "system": "foundryvtt-reve-de-dragon",
+      "system": "foundryvtt-ctm",
       "path": "packs/competences.db",
       "type": "Item",
       "private": true,
@@ -78,7 +78,7 @@
     {
       "name": "arts-et-divertissements",
       "label": "Arts et Divertissements",
-      "system": "foundryvtt-reve-de-dragon",
+      "system": "foundryvtt-ctm",
       "path": "packs/arts-et-divertissements.db",
       "type": "Item",
       "private": false,
@@ -87,7 +87,7 @@
     {
       "name": "competences-creatures",
       "label": "Compétences de Créatures",
-      "system": "foundryvtt-reve-de-dragon",
+      "system": "foundryvtt-ctm",
       "path": "packs/competences-creatures.db",
       "type": "Item",
       "private": true,
@@ -96,7 +96,7 @@
     {
       "name": "competences-entites",
       "label": "Compétences des Entités",
-      "system": "foundryvtt-reve-de-dragon",
+      "system": "foundryvtt-ctm",
       "path": "packs/competences-entites.db",
       "type": "Item",
       "private": true,
@@ -105,7 +105,7 @@
     {
       "name": "sorts-oniros",
       "label": "Sorts d'Oniros",
-      "system": "foundryvtt-reve-de-dragon",
+      "system": "foundryvtt-ctm",
       "path": "packs/sorts-oniros.db",
       "type": "Item",
       "private": false,
@@ -114,7 +114,7 @@
     {
       "name": "sorts-hypnos",
       "label": "Sorts d'Hypnos",
-      "system": "foundryvtt-reve-de-dragon",
+      "system": "foundryvtt-ctm",
       "path": "packs/sorts-hypnos.db",
       "type": "Item",
       "private": false,
@@ -123,7 +123,7 @@
     {
       "name": "sorts-narcos",
       "label": "Sorts de Narcos",
-      "system": "foundryvtt-reve-de-dragon",
+      "system": "foundryvtt-ctm",
       "path": "packs/sorts-narcos.db",
       "type": "Item",
       "private": false,
@@ -132,7 +132,7 @@
     {
       "name": "sorts-thanatos",
       "label": "Sorts de Thanatos",
-      "system": "foundryvtt-reve-de-dragon",
+      "system": "foundryvtt-ctm",
       "path": "packs/sorts-thanatos.db",
       "type": "Item",
       "private": false,
@@ -141,7 +141,7 @@
     {
       "name": "equipement",
       "label": "Equipement",
-      "system": "foundryvtt-reve-de-dragon",
+      "system": "foundryvtt-ctm",
       "path": "packs/equipement.db",
       "type": "Item",
       "private": false,
@@ -150,7 +150,7 @@
     {
       "name": "maladies-et-poisons",
       "label": "Maladies & Poisons",
-      "system": "foundryvtt-reve-de-dragon",
+      "system": "foundryvtt-ctm",
       "path": "packs/maladies-et-poisons.db",
       "type": "Item",
       "private": true,
@@ -159,7 +159,7 @@
     {
       "name": "rappel-des-regles",
       "label": "Rappels des Règles",
-      "system": "foundryvtt-reve-de-dragon",
+      "system": "foundryvtt-ctm",
       "path": "packs/rappel-des-regles.db",
       "type": "JournalEntry",
       "private": false,
@@ -168,7 +168,7 @@
     {
       "name": "queues-de-dragon",
       "label": "Queues de Dragon",
-      "system": "foundryvtt-reve-de-dragon",
+      "system": "foundryvtt-ctm",
       "path": "packs/queues-de-dragon.db",
       "type": "Item",
       "private": true,
@@ -177,7 +177,7 @@
     {
       "name": "ombres-de-thanatos",
       "label": "Ombres de Thanatos",
-      "system": "foundryvtt-reve-de-dragon",
+      "system": "foundryvtt-ctm",
       "path": "packs/ombres-de-thanatos.db",
       "type": "Item",
       "private": true,
@@ -186,7 +186,7 @@
     {
       "name": "souffles-de-dragon",
       "label": "Souffles de Dragon",
-      "system": "foundryvtt-reve-de-dragon",
+      "system": "foundryvtt-ctm",
       "path": "packs/souffles-de-dragon.db",
       "type": "Item",
       "private": true,
@@ -195,7 +195,7 @@
     {
       "name": "tarot-draconique",
       "label": "Tarot Draconique",
-      "system": "foundryvtt-reve-de-dragon",
+      "system": "foundryvtt-ctm",
       "path": "packs/tarot-draconique.db",
       "type": "Item",
       "private": false,
@@ -204,7 +204,7 @@
     {
       "name": "extrait-poetique",
       "label": "Extraits poétiques",
-      "system": "foundryvtt-reve-de-dragon",
+      "system": "foundryvtt-ctm",
       "path": "packs/extrait-poetique.db",
       "type": "Item",
       "private": false,
@@ -213,7 +213,7 @@
     {
       "name": "tetes-de-dragon-pour-haut-revants",
       "label": "Têtes de Dragon (Hauts-Rêvants)",
-      "system": "foundryvtt-reve-de-dragon",
+      "system": "foundryvtt-ctm",
       "path": "packs/tetes-de-dragon-pour-haut-revants.db",
       "type": "Item",
       "private": true,
@@ -222,7 +222,7 @@
     {
       "name": "tetes-de-dragon-pour-tous-personnages",
       "label": "Têtes de Dragon (Tous Personnages)",
-      "system": "foundryvtt-reve-de-dragon",
+      "system": "foundryvtt-ctm",
       "path": "packs/tetes-de-dragon-pour-tous-personnages.db",
       "type": "Item",
       "private": true,
@@ -231,7 +231,7 @@
     {
       "name": "rencontres",
       "label": "Rencontres",
-      "system": "foundryvtt-reve-de-dragon",
+      "system": "foundryvtt-ctm",
       "path": "packs/rencontres.db",
       "type": "Item",
       "private": true,
@@ -240,7 +240,7 @@
     {
       "name": "tables-diverses",
       "label": "Tables Diverses",
-      "system": "foundryvtt-reve-de-dragon",
+      "system": "foundryvtt-ctm",
       "path": "packs/tables-diverses.db",
       "type": "RollTable",
       "private": true,
@@ -249,7 +249,7 @@
     {
       "name": "animaux",
       "label": "Animaux",
-      "system": "foundryvtt-reve-de-dragon",
+      "system": "foundryvtt-ctm",
       "path": "packs/animaux.db",
       "type": "Actor",
       "private": true,
@@ -258,7 +258,7 @@
     {
       "name": "voyageurs",
       "label": "Voyageurs",
-      "system": "foundryvtt-reve-de-dragon",
+      "system": "foundryvtt-ctm",
       "path": "packs/voyageurs.db",
       "type": "Actor",
       "private": false,
@@ -267,7 +267,7 @@
     {
       "name": "vehicules",
       "label": "Véhicules",
-      "system": "foundryvtt-reve-de-dragon",
+      "system": "foundryvtt-ctm",
       "path": "packs/vehicules.db",
       "type": "Actor",
       "private": true,
@@ -276,7 +276,7 @@
     {
       "name": "archetypes",
       "label": "Archetypes PNJs",
-      "system": "foundryvtt-reve-de-dragon",
+      "system": "foundryvtt-ctm",
       "path": "packs/archetypes.db",
       "type": "Actor",
       "private": true,
@@ -285,7 +285,7 @@
     {
       "name": "humanoides",
       "label": "Humanoïdes",
-      "system": "foundryvtt-reve-de-dragon",
+      "system": "foundryvtt-ctm",
       "path": "packs/humanoides.db",
       "type": "Actor",
       "private": true,
@@ -294,7 +294,7 @@
     {
       "name": "entites",
       "label": "Entités de Cauchemar",
-      "system": "foundryvtt-reve-de-dragon",
+      "system": "foundryvtt-ctm",
       "path": "packs/entites-de-cauchemar.db",
       "type": "Actor",
       "private": true,
@@ -303,7 +303,7 @@
     {
       "name": "invocations",
       "label": "Invocation d'Hypnos",
-      "system": "foundryvtt-reve-de-dragon",
+      "system": "foundryvtt-ctm",
       "path": "packs/invocations.db",
       "type": "Actor",
       "private": true,
@@ -312,7 +312,7 @@
     {
       "name": "botanique",
       "label": "Botanique",
-      "system": "foundryvtt-reve-de-dragon",
+      "system": "foundryvtt-ctm",
       "path": "packs/botanique.db",
       "type": "Item",
       "private": true,
@@ -321,7 +321,7 @@
     {
       "name": "taches-courantes",
       "label": "Tâches courantes",
-      "system": "foundryvtt-reve-de-dragon",
+      "system": "foundryvtt-ctm",
       "path": "packs/taches-courantes.db",
       "type": "Item",
       "private": false,
@@ -330,7 +330,7 @@
     {
       "name": "meditations-et-ecrits",
       "label": "Méditations et Ecrits",
-      "system": "foundryvtt-reve-de-dragon",
+      "system": "foundryvtt-ctm",
       "path": "packs/meditations-et-ecrits.db",
       "type": "Item",
       "private": false,
@@ -339,7 +339,7 @@
     {
       "name": "recettes-alchimiques",
       "label": "Recettes Alchimiques",
-      "system": "foundryvtt-reve-de-dragon",
+      "system": "foundryvtt-ctm",
       "path": "packs/recettes-alchimiques.db",
       "type": "Item",
       "private": false,
@@ -348,7 +348,7 @@
     {
       "name": "scenes-rdd",
       "label": "Scenes Reve de Dragon",
-      "system": "foundryvtt-reve-de-dragon",
+      "system": "foundryvtt-ctm",
       "path": "packs/scenes-rdd.db",
       "type": "Scene",
       "private": true,
@@ -363,21 +363,21 @@
   "media": [
     {
       "type": "icon",
-      "url": "systems/foundryvtt-reve-de-dragon/styles/img/reve-de-dragon-icon.webp",
+      "url": "systems/foundryvtt-ctm/styles/img/reve-de-dragon-icon.webp",
       "caption": "Logo Rêve de Dragon",
       "loop": false,
       "flags": {}
     },
     {
       "type": "cover",
-      "url": "systems/foundryvtt-reve-de-dragon/styles/img/reve-de-dragon-cover.webp",
+      "url": "systems/foundryvtt-ctm/styles/img/reve-de-dragon-cover.webp",
       "caption": "Logo Rêve de Dragon",
       "loop": false,
       "flags": {}
     },
     {
       "type": "screenshot",
-      "url": "systems/foundryvtt-reve-de-dragon/styles/img/apercu.webp",
+      "url": "systems/foundryvtt-ctm/styles/img/apercu.webp",
       "caption": "Capture d'écran de Rêve de Dragon sur Foundry",
       "loop": false,
       "flags": {}

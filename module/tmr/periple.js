@@ -25,7 +25,7 @@ export class Periple extends Draconique {
 
   code() { return 'periple' }
   tooltip(linkData) { return `Votre Périple passe par ${this.tmrLabel(linkData)}` }
-  img() { return 'systems/foundryvtt-reve-de-dragon/icons/tmr/pelerin.webp' }
+  img() { return 'systems/foundryvtt-ctm/icons/tmr/pelerin.webp' }
 
   createSprite(pixiTMR) {
     return pixiTMR.sprite(this.code(), {

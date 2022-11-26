@@ -12,7 +12,7 @@ export class RdDSigneDraconiqueItemSheet extends ItemSheet {
   static get defaultOptions() {
     return mergeObject(super.defaultOptions, {
       classes: [SYSTEM_RDD, "sheet", "item"],
-      template: "systems/foundryvtt-reve-de-dragon/templates/item-signedraconique-sheet.html",
+      template: "systems/foundryvtt-ctm/templates/item-signedraconique-sheet.html",
       width: 550,
       height: 550
     });
@@ -90,7 +90,7 @@ export class RdDSigneDraconiqueItemSheet extends ItemSheet {
 
   /* -------------------------------------------- */
   get template() {
-    return `systems/foundryvtt-reve-de-dragon/templates/item-signedraconique-sheet.html`;
+    return `systems/foundryvtt-ctm/templates/item-signedraconique-sheet.html`;
   }
 
   get title() {

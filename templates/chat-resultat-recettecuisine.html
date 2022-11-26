@@ -2,7 +2,7 @@
 <h4>
   {{alias}} tente de cuisiner la recette : {{oeuvre.name}} (niveau {{oeuvre.system.niveau}})
 </h4>
-{{> "systems/foundryvtt-reve-de-dragon/templates/chat-infojet.html"}}
+{{> "systems/foundryvtt-ctm/templates/chat-infojet.html"}}
 <hr>
 <span>
   <img class="chat-icon" src="{{platCuisine.img}}" alt="{{platCuisine.name}}" />
@@ -20,5 +20,5 @@
   En cas d'échec, ils peuvent se forcer à faire plaisir à {{alias}}, mais devront faire un jet de moral Malheureux.
   {{/if}}
 </span>
-{{> "systems/foundryvtt-reve-de-dragon/templates/chat-info-appel-au-moral.html"}}
-{{> "systems/foundryvtt-reve-de-dragon/templates/chat-description.html" oeuvre.system}}
+{{> "systems/foundryvtt-ctm/templates/chat-info-appel-au-moral.html"}}
+{{> "systems/foundryvtt-ctm/templates/chat-description.html" oeuvre.system}}

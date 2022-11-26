@@ -7,12 +7,12 @@
     <span>Localisation</span>
   </li>
   {{#each system.blessures.legeres.liste as |blessure key|}}
-  {{> "systems/foundryvtt-reve-de-dragon/templates/actor/blessure.html" blessure=blessure key=key gravite="legere" title="Légère"}}
+  {{> "systems/foundryvtt-ctm/templates/actor/blessure.html" blessure=blessure key=key gravite="legere" title="Légère"}}
   {{/each}}
   {{#each system.blessures.graves.liste as |blessure key|}}
-  {{> "systems/foundryvtt-reve-de-dragon/templates/actor/blessure.html" blessure=blessure key=key gravite="grave" title="Grave"}}
+  {{> "systems/foundryvtt-ctm/templates/actor/blessure.html" blessure=blessure key=key gravite="grave" title="Grave"}}
   {{/each}}
   {{#each system.blessures.critiques.liste as |blessure key|}}
-  {{> "systems/foundryvtt-reve-de-dragon/templates/actor/blessure.html" blessure=blessure key=key gravite="critique" title="Critique"}}
+  {{> "systems/foundryvtt-ctm/templates/actor/blessure.html" blessure=blessure key=key gravite="critique" title="Critique"}}
   {{/each}}
 </ul>

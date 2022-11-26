@@ -1,5 +1,5 @@
 <form class="{{cssClass}}" autocomplete="off">
-    {{>"systems/foundryvtt-reve-de-dragon/templates/header-item.html"}}
+    {{>"systems/foundryvtt-ctm/templates/header-item.html"}}
     
     {{!-- Sheet Body --}}
     <section class="sheet-body">
@@ -8,7 +8,7 @@
         <select name="system.competence" id="competence" data-dtype="String">
           {{#select system.competence}}
           <option value="">- impossible -</option>
-          {{>"systems/foundryvtt-reve-de-dragon/templates/enum-competence.html" categorie='melee'}}
+          {{>"systems/foundryvtt-ctm/templates/enum-competence.html" categorie='melee'}}
           {{/select}}
         </select>
       </div>
@@ -17,7 +17,7 @@
         <select name="system.lancer" data-dtype="String">
           {{#select system.lancer}}
           <option value="">- impossible -</option>
-          {{>"systems/foundryvtt-reve-de-dragon/templates/enum-competence.html" categorie='lancer'}}
+          {{>"systems/foundryvtt-ctm/templates/enum-competence.html" categorie='lancer'}}
           {{/select}}
         </select>
       </div>
@@ -26,7 +26,7 @@
         <select name="system.tir" id="tir" data-dtype="String">
           {{#select system.tir}}
           <option value="">- impossible -</option>
-          {{>"systems/foundryvtt-reve-de-dragon/templates/enum-competence.html" categorie='tir'}}
+          {{>"systems/foundryvtt-ctm/templates/enum-competence.html" categorie='tir'}}
           {{/select}}
         </select>
       </div>
@@ -42,7 +42,7 @@
         <label for="system.categorie_parade">Catégorie parade </label>
         <select name="system.categorie_parade" id="categorie_parade" data-dtype="String">
           {{#select system.categorie_parade}}
-          {{>"systems/foundryvtt-reve-de-dragon/templates/enum-categorie-parade.html"}}
+          {{>"systems/foundryvtt-ctm/templates/enum-categorie-parade.html"}}
           {{/select}}
         </select>
       </div>
@@ -102,12 +102,12 @@
         <label for="system.initpremierround">Classe d'initiative au premier round (mêlée seulement) </label>
         <select name="system.initpremierround" id="initpremierround" data-dtype="String">
           {{#select system.initpremierround}}
-          {{>"systems/foundryvtt-reve-de-dragon/templates/enum-initpremierround.html"}}
+          {{>"systems/foundryvtt-ctm/templates/enum-initpremierround.html"}}
           {{/select}}
         </select>
       </div>      
 
-      {{>"systems/foundryvtt-reve-de-dragon/templates/partial-item-description.html"}}
+      {{>"systems/foundryvtt-ctm/templates/partial-item-description.html"}}
       
     </section>
     

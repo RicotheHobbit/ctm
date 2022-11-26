@@ -101,7 +101,7 @@ export class EffetsRencontre {
     })
     ChatMessage.create({
       whisper: ChatUtility.getWhisperRecipientsAndGMs(context.actor.name),
-      content: await renderTemplate(`systems/foundryvtt-reve-de-dragon/templates/chat-resultat-reve-de-dragon.html`, context)
+      content: await renderTemplate(`systems/foundryvtt-ctm/templates/chat-resultat-reve-de-dragon.html`, context)
     });
   }
 
@@ -116,7 +116,7 @@ export class EffetsRencontre {
     
     ChatMessage.create({
       whisper: ChatUtility.getWhisperRecipientsAndGMs(this.name),
-      content: await renderTemplate(`systems/foundryvtt-reve-de-dragon/templates/chat-resultat-reve-de-dragon.html`, context)
+      content: await renderTemplate(`systems/foundryvtt-ctm/templates/chat-resultat-reve-de-dragon.html`, context)
     });
   }
   

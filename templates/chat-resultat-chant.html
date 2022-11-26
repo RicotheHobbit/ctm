@@ -2,7 +2,7 @@
 <h4>
   {{alias}} tente de chanter : {{oeuvre.name}} (niveau {{oeuvre.system.niveau}})
 </h4>
-{{> "systems/foundryvtt-reve-de-dragon/templates/chat-infojet.html"}}
+{{> "systems/foundryvtt-ctm/templates/chat-infojet.html"}}
 <hr>
 <div>
   {{#if rolled.isSuccess}}
@@ -10,6 +10,6 @@
   {{else}}
   {{alias}} est peu inspiré(e) et son interprétation a une qualité de {{qualiteFinale}}.
   {{/if}}
-  {{> "systems/foundryvtt-reve-de-dragon/templates/chat-info-appel-au-moral.html"}}
+  {{> "systems/foundryvtt-ctm/templates/chat-info-appel-au-moral.html"}}
 </div>
-{{> "systems/foundryvtt-reve-de-dragon/templates/chat-description.html" oeuvre.system}}
+{{> "systems/foundryvtt-ctm/templates/chat-description.html" oeuvre.system}}

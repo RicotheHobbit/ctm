@@ -15,7 +15,7 @@ export class DialogStress extends Dialog {
         )
     };
 
-    const html = await renderTemplate("systems/foundryvtt-reve-de-dragon/templates/dialog-stress.html", dialogData);
+    const html = await renderTemplate("systems/foundryvtt-ctm/templates/dialog-stress.html", dialogData);
     new DialogStress(dialogData, html)
       .render(true);
   }

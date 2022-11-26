@@ -6,7 +6,7 @@ export class RdDActorEntiteSheet extends RdDActorSheet {
 	static get defaultOptions() {
 	  return mergeObject(super.defaultOptions, {
   	  classes: ["rdd", "sheet", "actor"],
-  	  template: "systems/foundryvtt-reve-de-dragon/templates/actor-entite-sheet.html",
+  	  template: "systems/foundryvtt-ctm/templates/actor-entite-sheet.html",
       width: 640,
       height: 720,
       tabs: [{navSelector: ".sheet-tabs", contentSelector: ".sheet-body", initial: "carac"}],

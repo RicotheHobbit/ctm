@@ -24,7 +24,7 @@ import { RdDCalendrier } from "./rdd-calendrier.js";
 export class RdDTMRDialog extends Dialog {
 
   static async create(actor, tmrData) {
-    let html = await renderTemplate('systems/foundryvtt-reve-de-dragon/templates/dialog-tmr.html', tmrData);
+    let html = await renderTemplate('systems/foundryvtt-ctm/templates/dialog-tmr.html', tmrData);
 
     if (tmrData.mode != 'visu') {
       // Notification au MJ
@@ -425,7 +425,7 @@ export class RdDTMRDialog extends Dialog {
 
     ChatMessage.create({
       whisper: ChatUtility.getWhisperRecipientsAndGMs(game.user.name),
-      content: await renderTemplate(`systems/foundryvtt-reve-de-dragon/templates/chat-rencontre-tmr.html`, rencData)
+      content: await renderTemplate(`systems/foundryvtt-ctm/templates/chat-rencontre-tmr.html`, rencData)
     });
 
     this.updateValuesDisplay();
@@ -641,7 +641,7 @@ export class RdDTMRDialog extends Dialog {
     rollData.poesie = await Poetique.getExtrait();
     ChatMessage.create({
       whisper: ChatUtility.getWhisperRecipientsAndGMs(game.user.name),
-      content: await renderTemplate(`systems/foundryvtt-reve-de-dragon/templates/chat-resultat-maitrise-tmr.html`, rollData)
+      content: await renderTemplate(`systems/foundryvtt-ctm/templates/chat-resultat-maitrise-tmr.html`, rollData)
     });
     if (rollData.rolled.isEchec) {
       await this.close();
@@ -757,7 +757,7 @@ export class RdDTMRDialog extends Dialog {
     rollData.poesie = await Poetique.getExtrait();
     ChatMessage.create({
       whisper: ChatUtility.getWhisperRecipientsAndGMs(game.user.name),
-      content: await renderTemplate(`systems/foundryvtt-reve-de-dragon/templates/chat-resultat-maitrise-tmr.html`, rollData)
+      content: await renderTemplate(`systems/foundryvtt-ctm/templates/chat-resultat-maitrise-tmr.html`, rollData)
     });
     if (rollData.rolled.isEchec) {
       options.onConqueteEchec(rollData, options.effetDraconique);
@@ -774,7 +774,7 @@ export class RdDTMRDialog extends Dialog {
     rollData.isTMRCache = rollData.actor.isTMRCache();
     const dialog = await RdDRoll.create(this.actor, rollData,
       {
-        html: 'systems/foundryvtt-reve-de-dragon/templates/dialog-roll-maitrise-tmr.html',
+        html: 'systems/foundryvtt-ctm/templates/dialog-roll-maitrise-tmr.html',
         close: html => { this.maximize(); } // Re-display TMR
       },
       {
@@ -1013,7 +1013,7 @@ export class RdDTMRDialog extends Dialog {
     if (this.actor.isResonanceSigneDraconique(coord)) {
       ChatMessage.create({
         whisper: ChatUtility.getWhisperRecipientsAndGMs(game.user.name),
-        content: await renderTemplate(`systems/foundryvtt-reve-de-dragon/templates/chat-signe-draconique-resonance.html`, { alias: this.actor.name, typeTMR: TMRUtility.getTMRType(coord) })
+        content: await renderTemplate(`systems/foundryvtt-ctm/templates/chat-signe-draconique-resonance.html`, { alias: this.actor.name, typeTMR: TMRUtility.getTMRType(coord) })
       });
     }
   }
