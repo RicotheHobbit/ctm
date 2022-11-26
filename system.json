@@ -1,14 +1,14 @@
 {
   "id": "foundryvtt-reve-de-dragon",
-  "title": "Rêve de Dragon",
-  "version": "10.2.10",
-  "download": "https://www.uberwald.me/gitea/public/foundryvtt-reve-de-dragon/archive/foundryvtt-reve-de-dragon-10.2.10.zip",
-  "manifest": "https://www.uberwald.me/gitea/public/foundryvtt-reve-de-dragon/raw/v10/system.json",
+  "title": "les Compagnies des Terres du Milieu",
+  "version": "1.0.0",
+  "download": "https://github.com/RicotheHobbit/ctm/archive/refs/heads/main.zip",
+  "manifest": "https://github.com/RicotheHobbit/ctm/blob/main/system.json",
   "compatibility": {
     "minimum": "10",
     "verified": "10"
   },
-  "description": "Rêve de Dragon RPG for FoundryVTT",
+  "description": "les Compagnies des Terres du Milieu via Rêve de Dragon RPG for FoundryVTT",
   "authors": [
     {
       "name": "LeRatierBretonnien",
@@ -37,9 +37,13 @@
     {
       "name": "Fab",
       "flags": {}
-    }
+    },
+	    {
+      "name": "Rico the Hobbit",
+      "flags": {}
+    },
   ],
-  "url": "https://www.uberwald.me/gitea/public/foundryvtt-reve-de-dragon/",
+  "url": "https://github.com/RicotheHobbit/ctm/",
   "license": "LICENSE.txt",
   "esmodules": [
     "module/rdd-main.js"
