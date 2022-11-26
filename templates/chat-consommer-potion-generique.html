@@ -1,0 +1,18 @@
+<img class="chat-icon" src="{{img}}" alt="potion de repos" />
+<h4>
+  {{alias}} a bu une <strong>{{name}}{{#if system.magique}} enchantée{{/if}}</strong>
+</h4>
+<hr>
+<div>
+  {{#if system.magique}}
+    Le Jet de Résistance est {{#if rolled.isSuccess}}réussi{{else}}échoué{{/if}}.
+    {{> "systems/foundryvtt-reve-de-dragon/templates/chat-infojet.html"}}
+  {{/if}}
+  <br>Les effets de la potions sont à gérer manuellement, en fonction de sa nature
+  {{#if system.magique}}
+    {{#if rolled.isEchec}}et de son enchantement ({{system.pr}} Points de Rêve)
+    {{else}}son enchantement n'a pas d'effet
+    {{/if}}
+  {{/if}}.
+  <br>La potion a été supprimée de l'équipement.
+</div>

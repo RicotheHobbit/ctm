@@ -1,0 +1,35 @@
+{{#if options.isGM}}
+<li class="item flexrow">
+  <span>
+    <a class="chat-card-button forcer-tmr-aleatoire">Ré-insertion aléatoire</a>
+  </span>
+  <span>
+    <a class="chat-card-button afficher-tmr">{{#if hautreve.cacheTMR}}Montrer les TMR{{else}}Cacher les TMR{{/if}}</a>
+  </span>
+</li>
+{{/if}}
+<li class="item flexrow">
+  <span class="competence-label flex-shrink">Demi rêve :
+  {{#if options.isGM}}
+    {{caseTmr-label system.reve.tmrpos.coord}}
+  </span><span>
+    <input class="competence-value" type="text" name="system.reve.tmrpos.coord" value="{{system.reve.tmrpos.coord}}" data-dtype="String"/>
+  {{else if hautreve.cacheTMR}}
+    {{caseTmr-type system.reve.tmrpos.coord}}
+  </span><span>
+    ??
+  {{else}}
+    {{caseTmr-label system.reve.tmrpos.coord}}
+  </span><span>
+    {{system.reve.tmrpos.coord}}
+  {{/if}}
+  </span> 
+</li>
+{{> "systems/foundryvtt-reve-de-dragon/templates/actor/non-haut-revant.html"}}
+<hr>
+{{> "systems/foundryvtt-reve-de-dragon/templates/actor/hr-signes-draconiques.html"}}
+{{> "systems/foundryvtt-reve-de-dragon/templates/actor/hr-rencontres.html"}}
+{{> "systems/foundryvtt-reve-de-dragon/templates/actor/hr-sorts.html"}}
+{{> "systems/foundryvtt-reve-de-dragon/templates/actor/hr-sorts-reserve.html"}}
+{{> "systems/foundryvtt-reve-de-dragon/templates/actor/hr-meditations.html"}}
+{{> "systems/foundryvtt-reve-de-dragon/templates/actor/hr-casestmr.html"}}

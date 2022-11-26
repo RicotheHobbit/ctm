@@ -1,0 +1,22 @@
+<form class="{{cssClass}}" autocomplete="off">
+  {{>"systems/foundryvtt-reve-de-dragon/templates/header-item.html"}}
+  {{!-- Sheet Body --}}
+  <section class="sheet-body">
+    <div class="flexcol">
+      <div class="form-group">
+        <label>Aspect</label>
+        <input class="attribute-value" type="text" name="system.concept" value="{{system.concept}}" data-dtype="String" />
+      </div>
+      <div class="form-group">
+        <label>Sens</label>
+        <select name="system.aspect" id="aspect" data-dtype="String">
+          {{#select system.aspect}}
+          {{>"systems/foundryvtt-reve-de-dragon/templates/enum-aspect-tarot.html"}}
+          {{/select}}
+        </select>
+      </div>
+
+      {{>"systems/foundryvtt-reve-de-dragon/templates/partial-item-frequence.html"}}
+      {{>"systems/foundryvtt-reve-de-dragon/templates/partial-item-description.html"}}
+    </section>
+</form>

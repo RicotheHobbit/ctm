@@ -1,0 +1,13 @@
+<form class="resolution-roll-dialog">
+  <div class="grid grid-4col">
+    <div class="flexrow">
+      <label>Caractéristique</label>
+      {{>"systems/foundryvtt-reve-de-dragon/templates/partial-select-carac.html"}}
+    </div>
+    {{>"systems/foundryvtt-reve-de-dragon/templates/partial-roll-diffLibre.html"}}
+    {{>"systems/foundryvtt-reve-de-dragon/templates/partial-roll-diffCondition.html"}}
+    <button id="lancer" type="button">Lancer les dés</button>
+  </div>
+  <div id="tableResolution"></div>
+  <div id="tableProbaReussite"></div>
+</form>

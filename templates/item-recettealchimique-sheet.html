@@ -1,0 +1,36 @@
+<form class="{{cssClass}}" autocomplete="off">
+  {{>"systems/foundryvtt-reve-de-dragon/templates/header-item.html"}}
+  {{!-- Sheet Body --}}
+  <section class="sheet-body">
+    <div class="form-group">
+      <label class="alchimie-title" for="xp">But</label>
+      <input class="attribute-value" type="text" name="system.but" value="{{system.but}}" data-dtype="String"/>
+    </div>
+    <div class="flexcol">
+      <span><label class="alchimie-title">Manipulation : </label></span>
+      <div class="form-group medium-editor">
+        {{editor manipulation_update target="system.manipulation" button=true owner=owner editable=editable}}
+      </div>
+    </div>
+    <div class="flexcol">
+      <span><label class="alchimie-title">Utilisation : </label></span>
+      <div class="form-group small-editor">
+        {{editor utilisation target="system.utilisation" button=true owner=owner editable=editable}}
+      </div>
+    </div>
+    <div class="flexcol">
+      <span><label class="alchimie-title">Enchantement : </label></span>
+      <div class="form-group small-editor">
+        {{editor enchantement target="system.enchantement" button=true owner=owner editable=editable}}
+      </div>
+    </div>
+    <div class="flexcol">
+      <span><label class="alchimie-title">Sur-effet : </label></span>
+      <div class="form-group small-editor">
+        {{editor sureffet target="system.sureffet" button=true owner=owner editable=editable}}
+      </div>
+    </div>
+
+    {{>"systems/foundryvtt-reve-de-dragon/templates/partial-item-description.html"}}
+  </section>
+</form>

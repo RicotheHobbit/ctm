@@ -1,0 +1,118 @@
+<form class="{{cssClass}}" autocomplete="off">
+  <header class="sheet-header">
+    <img class="profile-img" src="{{img}}" data-edit="img" title="{{name}}" />
+    <div class="header-fields">
+      <h1 class="charname"><input name="name" type="text" value="{{name}}" placeholder="Name" /></h1>
+      {{#if isOwned}}
+      <div class="form-group">
+        <span for="xp"><a class="consommer-potion chat-card-button" data-actor-id="{{actorId}}">Consommer cette potion et appliquer ses effets</a></span>
+      </div>
+      {{/if}}  
+    </div>
+  </header>
+
+  {{!-- Sheet Body --}}
+  <section class="sheet-body">
+    <div class="form-group">
+      <label>Encombrement</label>
+      <input class="attribute-value" type="text" name="system.encombrement" value="{{system.encombrement}}" data-dtype="Number" />
+    </div>
+    <div class="form-group">
+      <label>Quantité </label>
+      <input class="attribute-value" type="text" name="system.quantite" value="{{system.quantite}}" data-dtype="Number" />
+    </div>
+    <div class="form-group item-cout">
+      <label>Prix (sols)</label>
+      <input class="attribute-value" type="text" name="system.cout" value="{{system.cout}}" data-dtype="Number" />
+    </div>
+    <div class="form-group">
+      <label>Fréquence</label>
+      <select name="system.rarete" class="rarete" data-dtype="String">
+        {{#select system.rarete}}
+        {{>"systems/foundryvtt-reve-de-dragon/templates/enum-rarete.html"}}
+        {{/select}}
+      </select>
+    </div>
+    <div class="form-group">
+      <label>Catégorie</label>
+      <select name="system.categorie" class="categoriepotion" data-dtype="String">
+        {{#select system.categorie}}
+        {{>"systems/foundryvtt-reve-de-dragon/templates/enum-categorie-potion.html"}}
+        {{/select}}
+      </select>
+    </div>
+    {{#if isSoins}}
+    <div class="form-group">
+      <label>Herbe</label>
+      <select name="system.herbe" class="herbe" data-dtype="String">
+        {{selectOptions herbesSoins selected=system.herbe localize=false}}
+      </select>
+    </div>
+    <div class="form-group">
+      <label>Nombre de brins</label>
+      <input class="attribute-value" type="text" name="system.herbebrins" value="{{system.herbebrins}}" data-dtype="Number" />
+    </div>
+    <div class="form-group">
+      <label>Bonus</label>
+      <input class="attribute-value" type="text" name="system.herbebonus" value="{{system.herbebonus}}" data-dtype="Number" />
+    </div>
+    {{/if}}
+    {{#if isRepos}}
+    <div class="form-group">
+      <label>Herbe</label>
+      <select name="system.herbe" class="herbe" data-dtype="String">
+        {{selectOptions herbesRepos selected=system.herbe localize=false}}
+      </select>
+    </div>
+    <div class="form-group">
+      <label>Nombre de brins</label>
+      <input class="attribute-value" type="text" name="system.herbebrins" value="{{system.herbebrins}}" data-dtype="Number" />
+    </div>
+    <div class="form-group">
+      <label>Bonus</label>
+      <input class="attribute-value" type="text" name="system.herbebonus" value="{{system.herbebonus}}" data-dtype="Number" />
+    </div>
+    <div class="form-group">
+      <label>Repos Alchimique ?</label>
+      <input class="attribute-value" type="checkbox" name="system.reposalchimique"  {{#if system.reposalchimique}}checked{{/if}}/>
+    </div>
+    {{/if}}
+    {{#if system.magique}}
+    <div class="form-group">
+      <label>Points de rêve</label>
+      <input class="attribute-value" type="text" name="system.pr" value="{{system.pr}}" data-dtype="Number" />
+    </div>
+    <div class="form-group">
+      <label for="xp">Permanente ? </label>
+      <input class="attribute-value" type="checkbox" name="system.prpermanent"  {{#if system.prpermanent}}checked{{/if}}/>
+    </div>
+    {{#if isSoins}}
+    <div class="form-group">
+      <label for="xp">Points de guérison </label>
+      <label for="xp">{{pointsGuerison}}</label>
+    </div>
+    {{/if}}
+    <div class="form-group">
+      <label>Date de l'Enchantement : Jour/Mois (date actuelle : {{dateActuelle}})</label>
+    </div>
+    <div class="form-group">
+      <select name="splitDate.day" class="enchanteDate" id="jourMois" data-dtype="String">
+        {{#select splitDate.day}}
+        {{#each jourMoisOptions as |key|}}
+        <option value="{{key}}">{{numberFormat key decimals=0}}</option>
+        {{/each}}
+        {{/select}}
+      </select>
+      <select name="splitDate.month" class="enchanteDate" id="nomMois" data-dtype="String">
+        {{#select splitDate.month}}
+        {{>"systems/foundryvtt-reve-de-dragon/templates/enum-heures.html"}}
+        {{/select}}
+      </select>
+    </div>
+    {{/if}}
+
+    {{>"systems/foundryvtt-reve-de-dragon/templates/partial-item-description.html"}}
+    
+  </section>
+
+</form>

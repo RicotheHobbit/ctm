@@ -1,0 +1,40 @@
+<img class="chat-icon" src="{{competence.img}}" alt="{{competence.name}}"/>
+<h4 data-categorie="tmr" data-actor-id="{{actor._id}}">
+  {{alias}} tente de {{maitrise.verbe}} {{le tmr.genre}}
+  {{#if isTMRCache}}
+    {{caseTmr-type tmr.coord}}
+  {{else}}
+    {{tmr.label}} ({{tmr.coord}})
+  {{/if}}
+</h4>
+{{#if previous}}
+  {{#with previous}}
+    {{> "systems/foundryvtt-reve-de-dragon/templates/chat-infojet.html"}}
+    <br><strong>Double résistance du fleuve!</strong><br>
+  {{/with}}
+{{/if}}
+{{> "systems/foundryvtt-reve-de-dragon/templates/chat-infojet.html"}}
+<hr>
+<span>
+  {{alias}}
+  {{#if rolled.isSuccess}}parvient à{{else}}échoue à{{/if}}
+  {{maitrise.verbe}} {{le tmr.genre}}
+  {{#if isTMRCache}}
+    {{caseTmr-type tmr.coord}}
+  {{else}}
+    {{tmr.label}} ({{tmr.coord}})
+  {{/if}}!
+  {{#if rolled.isEchec}}
+    {{alias}} <strong>quitte les Terres Médianes</strong> !
+    {{#if souffle}}
+      <br>De plus, son échec total lui fait subir un Souffle de Dragon : {{souffle.name}}
+    {{/if}}
+  {{/if}}
+</span>
+{{#if poesie}}
+<hr>
+<span class="poesie-extrait">
+  {{{poesie.extrait}}}
+  <p class="poesie-reference">{{poesie.reference}}</p>
+</span>
+{{/if}}

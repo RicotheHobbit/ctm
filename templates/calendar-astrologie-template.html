@@ -1,0 +1,50 @@
+<form class="{{cssClass}}" autocomplete="off">
+  <header class="sheet-header">
+      <div class="header-fields">
+          <h1 class="charname">Horoscope</h1>
+      </div>
+  </header>
+  
+  {{!-- Sheet Body --}}
+  <section class="sheet-body">
+    <div class="form-group">
+      <table class='table-nombres-astraux'>
+        <tr class='table-nombres-astraux-td'>
+          {{#each astrologieData as |nombreData key|}}
+          <td class='table-nombres-astraux-td'>{{nombreData.humanDate}}</td>
+          {{/each}}
+        </tr>
+        <tr class='table-nombres-astraux-td'>
+          {{#each astrologieData as |nombreData key|}}
+          <td class='table-nombres-astraux-td'>
+            <ol>
+            <b>{{nombreData.nombreAstral}}</b>
+            {{#each nombreData.valeursFausses as |fausseVal key|}}
+            <li>{{fausseVal.actorName}} - {{fausseVal.nombreAstral}}</li>
+            {{/each}}            
+            </ol>
+          </td>
+          {{/each}}
+        </tr>
+      </table>              
+    </div>
+    <div>
+      <ul>
+        {{#each heuresParActeur as |heuresDef name|}}        
+        <li><strong>{{name}} </strong></li>
+        <ul class="list-item-margin1">
+          {{#each heuresDef as |heure idx|}}
+          <li><strong>{{heure.value}}</strong> : 
+            {{#each heure.heures as |heureName idx|}}
+            {{heureName}}&nbsp;
+            {{/each}}
+          </li>
+          {{/each}}
+        </ul>
+        </li>
+        {{/each}}
+      </ul>
+    </div>
+  </section>
+  
+</form>

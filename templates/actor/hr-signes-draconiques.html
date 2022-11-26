@@ -1,0 +1,15 @@
+{{#if (and options.isGM signesdraconiques.length)}}
+<h3>Signes draconiques</h3>
+<ul class="item-list alterne-list">
+  {{#each signesdraconiques as |signe key|}}
+    <li class="item list-item flexrow" data-item-id="{{signe._id}}" data-attribute="{{key}}">
+      <img class="sheet-competence-img" src="{{signe.img}}" />
+      <span class="display-label flex-grow"><a>{{signe.name}}</a></span> 
+      <span class="flex-shrink">{{signe.system.difficulte}}</span>
+      <div class="item-controls flex-shrink">
+        <a class="item-delete" title="Supprimer"><i class="fas fa-trash"></i></a>
+      </div>
+    </li>
+  {{/each}}
+</ul>
+{{/if}}

@@ -1,0 +1,55 @@
+<ul class="carac-list">
+  <li class="caracteristique flexrow list-item">
+    <span class="carac-label" name="beaute">Beauté&nbsp;:</span>
+    <input class="description-value" type="text" name="system.beaute" value="{{system.beaute}}" data-dtype="String" {{#unless @root.options.vueDetaillee}}disabled{{/unless}}/>
+    <label class="carac-xp"/>
+  </li>
+  {{#each system.attributs as |attr key|}}
+  {{#unless (eq key 'hautrevant')}}
+  <li class="caracteristique flexrow  list-item" data-attribute="{{key}}">
+    <span class="carac-label" name="system.attributs.{{key}}.label">{{attr.label}}&nbsp;:</span>
+    {{#if (eq key 'protection')}}
+    <input class="description-value" id="attribut-protection-edit" type="text" name="{{key}}" value="{{attr.value}}" data-dtype="number"/>
+    {{else}}
+    <input class="description-value" type="text" disabled name="system.attributs.{{key}}." value="{{attr.value}}" data-dtype="number"/>
+    {{/if}}
+    <label class="carac-xp"/>
+  </li>
+  {{/unless}}
+  {{/each}}
+</ul>
+<ul class="carac-list alterne-list">
+  <li class="caracteristique flexrow list-item">
+    <span class="attribut-label chance-actuelle"><a>Chance actuelle</a></span>
+    <input class="description-value compteur-edit" type="text" name="chance" value="{{system.compteurs.chance.value}}" data-dtype="number"/>
+  </li>
+  {{#each system.compteurs as |compteur key|}}
+    {{#if (eq compteur.label 'Chance')}}
+    {{else if (eq compteur.label 'Experience')}}
+    {{else if compteur.isInput}}
+      <li class="caracteristique flexrow list-item">
+        <span class="attribut-label">{{compteur.label}}</span>
+        {{#if (eq compteur.label 'Ethylisme')}}
+        <select class="description-value" name="system.compteurs.ethylisme.value" id="ethylisme" data-dtype="Number">
+          {{#select compteur.value}}
+          {{>"systems/foundryvtt-reve-de-dragon/templates/enum-niveau-ethylisme.html"}}
+          {{/select}}
+        </select>
+        {{else}}
+        <input class="description-value compteur-edit" id="{{key}}-edit" type="text" name="{{key}}" value="{{compteur.value}}" data-dtype="number"/>
+        {{/if}}
+        <span class="utiliser-attribut" style="padding-left: 5px">
+          {{#if compteur.isStress}}
+          <a class="stress-test" title="Transformer">Transformer</a>
+          {{else if (eq compteur.label 'Moral')}}
+          <a class="moral-malheureux" title="Jet de moral situation malheureuse"><img class="small-button-container" src="systems/foundryvtt-reve-de-dragon/icons/moral-malheureux.svg" alt="Jet de moral situation malheureuse"/></a>
+          <a class="moral-neutre" title="Jet de moral situation neutre"><img class="small-button-container" src="systems/foundryvtt-reve-de-dragon/icons/moral-neutre.svg" alt="Jet de moral situation neutre"/></a>
+          <a class="moral-heureux" title="Jet de moral situation heureuse"><img class="small-button-container" src="systems/foundryvtt-reve-de-dragon/icons/moral-heureux.svg" alt="Jet de moral situation heureuse"/></a>
+          {{else}}
+          <label></label>
+          {{/if}}
+        </span>
+      </li>
+    {{/if}}
+  {{/each}}
+</ul>

@@ -1,0 +1,28 @@
+<form class="rdddialogstress">
+  <div class="flexcol">
+    <div class="form-group">
+      <label for="motif">Motif</label>
+      <input type="text" name="motif" value="{{motif}}" data-dtype="String" />
+    </div>
+    <div class="form-group">
+      <label for="stress">Stress</label>
+      <input type="number" name="stress" value="{{stress}}" data-dtype="Number" />
+    </div>
+    <div class="form-group">
+      <label for="immediat">Expérience immédiate</label>
+      <input class="flex-shrink" type="checkbox" name="immediat" {{#if immediat}}checked{{/if}} />
+    </div>
+    <div class="flexcol">
+      <label>Personnages concernés</label>
+      <div class="grid-select-actor">
+        {{#each actors as |actor key|}}
+        <label class="flexrow">
+          <input type="checkbox" data-dtype="Boolean" class="select-actor"
+              data-actor-id="{{actor.id}}" {{#if actor.selected}}checked{{/if}} />
+          {{actor.name}}
+        </label>
+        {{/each}}
+      </div>
+    </div>
+  </div>
+</form>

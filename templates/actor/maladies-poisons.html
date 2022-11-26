@@ -1,0 +1,34 @@
+{{#if maladiesPoisons.length}}
+<h3 class="blessures-title">Maladies & Poisons:</h3>
+<ul class="item-list alterne-list">
+  <li class="competence-header flexrow">
+    <span class="competence-title flex-grow competence-label">Nom</span>
+    <span class="competence-title competence-label">Type</span>
+    <span class="competence-title competence-value">Remèdes</span>
+    <span class="competence-title flex-grow competence-value">Edition</span>
+  </li>
+  {{#each maladiesPoisons as |maladie key|}}
+  <li class="item flexrow list-item" data-item-id="{{maladie._id}}">
+      <span class="competence-label">
+        {{#if (or @root.options.isGM maladie.system.identifie)}} 
+          {{maladie.name}}
+        {{else}}
+          Inconnue
+        {{/if}}
+      </span>
+      <span class="competence-label">{{maladie.type}}</span>
+      <span class="competence-label">
+        {{#if (or @root.options.isGM maladie.system.remedesconnus)}} 
+          {{maladie.system.remedes}}
+        {{else}}
+          Remèdes Inconnus
+        {{/if}}
+      </span>
+      <div class="item-controls">
+        <a class="item-edit" title="Modifier"><i class="fas fa-edit"></i></a>
+        <a class="item-delete" title="Supprimer"><i class="fas fa-trash"></i></a>
+      </div>          
+  </li>
+  {{/each}}
+  </ul>
+{{/if}}

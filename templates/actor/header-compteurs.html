@@ -1,0 +1,39 @@
+<ul class="flex-group-center flex-compteurs">
+  <li>
+    <label class="compteur">
+      <a class="jet-vie">Vie</a>
+      <a class="vie-moins"><i class="fas fa-minus-square"></i></a>
+      <input class="resource-content" type="text" name="system.sante.vie.value" value="{{system.sante.vie.value}}" data-dtype="Number"/>
+      <span>/ {{system.sante.vie.max}}</span>
+      <a class="vie-plus"><i class="fas fa-plus-square"></i></a>
+    </label>
+  </li>
+  <li>
+    <label class="compteur">
+      <a class="jet-endurance">Endurance</a>
+      <a class="endurance-moins"><i class="fas fa-minus-square"></i></a>
+      <input class="resource-content" type="text" name="system.sante.endurance.value" value="{{system.sante.endurance.value}}" data-dtype="Number"/>
+      <span>/ {{system.sante.endurance.max}}</span>
+      <a class="endurance-plus"><i class="fas fa-plus-square"></i></a>
+    </label>
+  </li>
+  <li>
+    <label class="appliquerFatigue compteur tooltip">
+      <span class="tooltiptext ttt-fatigue">{{{calc.fatigue.html}}}</span>
+      Fatigue
+      <a class="fatigue-moins"><i class="fas fa-minus-square"></i></a>
+      <input class="resource-content" id="fatigue-value" type="text" name="system.sante.fatigue.value" value="{{system.sante.fatigue.value}}" data-dtype="Number" />
+      <span>/ {{system.sante.fatigue.max}}</span>
+      <a class="fatigue-plus"><i class="fas fa-plus-square"></i></a>
+    </label>
+  </li>
+  <li>
+    <label class="compteur">
+      <span class="ptreve-actuel"><a>Rêve</a></span>
+      <a class="ptreve-actuel-moins"><i class="fas fa-minus-square"></i></a>
+      <input class="resource-content" id="pointsreve-value" type="text" name="system.reve.reve.value" value="{{system.reve.reve.value}}" data-dtype="Number" />
+      <span>/ {{system.reve.seuil.value}}</span>
+      <a class="ptreve-actuel-plus"><i class="fas fa-plus-square"></i></a>
+    </label>
+  </li>
+</ul>

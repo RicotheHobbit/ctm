@@ -1,0 +1,54 @@
+{{#if isGM}}
+<span>
+  {{#if (gt endurance 0)}}
+  De plus, {{alias}} a perdu {{endurance}} points d'endurance
+  {{#if (ne vie 0)}}et <span class="rdd-roll-echec">{{vie}} points de vie</span>{{/if}}
+  {{/if}}
+  {{#if (gt endurance 1)}}Jet d'endurance : {{jetEndurance}} / {{resteEndurance}} {{/if}}
+  </span>
+{{else}}
+<h4>{{alias}} encaisse à
+  <span>
+    {{numberFormat dmg.total decimals=0 sign=true}}
+    {{#if (eq dmg.mortalite 'non-mortel')~}}(coups non mortels)
+    {{~else if (eq dmg.mortalite 'cauchemar')}}(entité de cauchemar)
+    {{~/if}}
+  </span>
+</h4>
+<div>
+  Jet d'encaissement de {{roll.total}}
+  {{#unless (eq armure 0)}}, l'armure a protègé de {{armure}}
+    {{~#unless (eq penetration 0)}} (pénétration de {{penetration}}){{/unless}}
+  {{~/unless}}, total: <span class="rdd-roll-echec">{{total}}</span>
+  <br>  
+  {{alias}} 
+  {{#if (eq dmg.mortalite 'cauchemar')}}subit le coup
+  {{else if eraflures}}subit une contusion
+  {{else if legeres}}subit une blessure légère
+  {{else if graves}}subit une blessure grave
+  {{else if critiques}}subit une blessure critique
+  {{else if mort}}vient de mourir
+  {{else}}s'en sort sans une égratignure
+  {{~/if~}}
+  {{~#unless (eq dmg.mortalite 'cauchemar')}}
+    {{#if dmg.loc.label}}
+    {{#if (gt roll.total 0)}}({{dmg.loc.label}}){{/if}}
+    {{/if}}
+  {{/unless~}}
+  {{~#if (gt endurance 0)}}
+  {{~#if hasPlayerOwner}}, a perdu {{endurance}} points d'endurance
+  {{#if (ne vie 0)}}, <span class="rdd-roll-echec">{{vie}} points de vie</span>{{/if}}
+  {{/if}}
+  {{#if (ne dmg.mortalite 'cauchemar')}}
+  {{#if (gt endurance 1)}}et
+  {{#if sonne}}est <strong>sonné</strong><img class="chat-icon" src="icons/svg/stoned.svg" alt="charge" height="16" width="16" /> jusqu'à la fin du prochain round{{else}}n'est pas sonné{{/if}}!
+  {{#if hasPlayerOwner}}Jet d'endurance : Jet d'endurance : {{jetEndurance}} / {{resteEndurance}}{{/if}}
+  {{/if}}
+  {{/if}}
+  {{/if}}
+  {{#if (eq show.recul 'encaisse')}}<div>{{alias}} ne recule pas malgré la violence du coup.</div>
+  {{else if (eq show.recul 'chute')}}<div>Sous la violence du coup, {{alias}} recule et chute au sol ! Il/elle ne pourra plus attaquer ce round.</div>
+  {{else if (eq show.recul 'recul')}}<div>La violence du coup fait reculer {{alias}} de quelques mètres ! Il/elle ne pourra plus attaquer ce round.</div>
+  {{/if}}
+</div>
+{{/if}}

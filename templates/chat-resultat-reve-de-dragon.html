@@ -1,0 +1,28 @@
+<img class="chat-icon" src="systems/foundryvtt-reve-de-dragon/icons/competence_legendes.webp" alt="Rêve de Dragon"/>
+<h4 data-categorie="tmr" data-actor-id="{{actor._id}}">
+  {{alias}} tente de maîtriser un Rêve de Dragon!
+</h4>
+{{> "systems/foundryvtt-reve-de-dragon/templates/chat-infojet.html"}}
+<hr>
+<span>
+{{#if rolled.isSuccess}}
+  {{alias}} maîtrise le Rêve de Dragon! ll gagne {{rencontre.system.force}} points de Rêve.
+  {{#if tete}}
+    <br>{{alias}} doit <strong>demander au Gardien des Rêves</strong> de faire un tirage sur une des
+    tables des têtes de dragon (Haut-rêvant ou Tous personnages).
+  {{/if}}
+{{else}}
+  {{alias}} ne parvient pas à vaincre le Rêve de Dragon, et prend un violent coup de queue.
+  Il subit {{#if rolled.isETotal}}deux queues{{else}}une queue{{/if}} de dragon!
+  {{#each queues as | queue key|}}
+  <br>{{queue.name}}: {{{queue.system.description}}}
+  {{/each}}
+{{/if}}
+</span>
+{{#if poesie}}
+<hr>
+<span class="poesie-extrait">
+  {{{poesie.extrait}}}
+  <p class="poesie-reference">{{poesie.reference}}</p>
+</span>
+{{/if}}

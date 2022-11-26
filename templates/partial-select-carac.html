@@ -1,0 +1,7 @@
+<select name="carac" id="carac" class="flex-grow select-carac" data-dtype="String">
+  {{#select carac}}
+  {{#each carac as |caracitem key|}}
+  <option value={{key}}>{{caracitem.label}}</option>
+  {{/each}}
+  {{/select}}
+</select>

@@ -1,0 +1,20 @@
+<h3>Dés spéciaux</h3>
+<ul class="alterne-list">
+  <li class="list-item">
+    <strong>/roll 1dt</strong>: lance un dé de rencontre dans les TMR
+  </li>
+  <li class="list-item">
+    <strong>/roll 1dr</strong>: lance un dé draconique (de 0 à 7, relance et additionne en cas de 7)
+  </li>
+  <li class="list-item">
+    <strong>/roll 1dh</strong>: lance le dé des heures (de 1 à 12)
+  </li>
+</ul>
+<h3>Commandes disponibles</h3>
+<ul class="alterne-list">
+  {{#each commands as |command key|}}
+  <li class="list-item">
+    <div>{{{command}}}</div>
+  </li>
+  {{/each}}
+</ul>

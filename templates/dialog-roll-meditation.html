@@ -1,0 +1,49 @@
+<form class="dialog-roll-meditation">
+  <h2>{{meditation.name}}</h2>
+  <div class="grid grid-2col">
+    <div class="flex-group-left">
+      <img class="chat-icon" src="{{competence.img}}" alt="{{competence.name}}" />
+      <div class="flexcol">
+        <label><strong>{{meditation.system.theme}}</strong></label>
+        <hr>
+        <label>Support: <strong>{{upperFirst meditation.system.support}}</strong></label>
+        <label>Case TMR: <strong>{{typeTmr-name meditation.system.tmr}}</strong></label>
+        <label>Durée: 60 minutes</label>
+        <hr>
+        <label>Intellect / {{competence.name}}:
+          {{numberFormat carac.intellect.value decimals=0 sign=false}} / {{numberFormat competence.system.niveau decimals=0 sign=true}}</label>
+      </div>
+    </div>
+    <div class="flex-group-left">
+      <div class="flexrow">
+        <label><strong>Conditions Optionnelles : </strong></label>
+      </div>
+      <div class="flexrow">
+        <label>Comportement antérieur : {{upperFirst meditation.system.comportement}}</label>
+        <input class="attribute-value conditionMeditation" type="checkbox" id="isComportement" {{#if conditionMeditation.isComportement}}checked{{/if}} />
+      </div>
+      <div class="flexrow">
+        <label>Heure : {{upperFirst meditation.system.heure}}</label>
+        <input class="attribute-value conditionMeditation" type="checkbox" id="isHeure" {{#if conditionMeditation.isHeure}}checked{{/if}} />
+      </div>
+      <div class="flexrow">
+        <label>Purification : {{upperFirst meditation.system.purification}}</label>
+        <input class="attribute-value conditionMeditation" type="checkbox" id="isPurification" {{#if conditionMeditation.isPurification}}checked{{/if}} />
+      </div>
+      <div class="flexrow">
+        <label>Vêture : {{upperFirst meditation.system.veture}}</label>
+        <input class="attribute-value conditionMeditation" type="checkbox" id="isVeture" {{#if conditionMeditation.isVeture}}checked{{/if}} />
+      </div>
+      <hr>
+      {{>"systems/foundryvtt-reve-de-dragon/templates/partial-roll-diffCondition.html"}}
+      {{>"systems/foundryvtt-reve-de-dragon/templates/partial-roll-forcer.html"}}
+      <div id="tableAjustements"></div>
+    </div>
+  </div>
+
+  <div id="tableResolution"></div>
+  <div id="tableProbaReussite"></div>
+</form>
+
+<script>
+</script>

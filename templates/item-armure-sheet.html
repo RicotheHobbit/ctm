@@ -1,0 +1,29 @@
+<form class="{{cssClass}}" autocomplete="off">
+  {{>"systems/foundryvtt-reve-de-dragon/templates/header-item.html"}}
+
+  {{!-- Sheet Body --}}
+  <section class="sheet-body">
+    <div class="form-group">
+      <label for="xp">Protection</label>
+      <input class="attribute-value" type="text" name="system.protection" value="{{system.protection}}" data-dtype="String"/>
+    </div>
+    <div class="form-group">
+      <label for="xp">Encombrement </label>
+      <input class="attribute-value" type="text" name="system.encombrement" value="{{system.encombrement}}" data-dtype="Number"/>
+    </div>
+    <div class="form-group">
+      <label for="xp">Détérioration</label>
+      <input class="attribute-value" type="text" name="system.deterioration" value="{{system.deterioration}}" data-dtype="Number"/>
+    </div>
+    <div class="form-group">
+      <label for="xp">Malus Armure </label>
+      <input class="attribute-value" type="text" name="system.malus" value="{{system.malus}}" data-dtype="Number"/>
+    </div>
+    <div class="form-group item-cout">
+      <label for="xp">Prix (sols) </label>
+      <input class="attribute-value" type="text" name="system.cout" value="{{system.cout}}" data-dtype="Number"/>
+    </div>
+
+    {{>"systems/foundryvtt-reve-de-dragon/templates/partial-item-description.html"}}
+  </section>
+</form>

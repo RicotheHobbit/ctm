@@ -1,0 +1,90 @@
+<form class="{{cssClass}}" autocomplete="off">
+
+  {{!-- Sheet Header --}}
+  <header class="sheet-header">
+    <img class="profile-img" src="{{img}}" data-edit="img" title="{{name}}" />
+    <div class="header-fields">
+      <div class="flexrow">
+        <h1 class="charname"><input name="name" type="text" value="{{name}}" placeholder="Name" /></h1>
+      </div>
+    </div>
+</header>
+
+  {{!-- Sheet Tab Navigation --}}
+  <nav class="sheet-tabs tabs" data-group="primary">
+    <a class="item" data-tab="description">Description</a>
+    <a class="item" data-tab="items">Chargement</a>
+  </nav>
+
+  {{!-- Sheet Body --}}
+  <section class="sheet-body">
+
+    {{!-- Carac Tab --}}
+    <div class="tab" data-group="primary" data-tab="description">
+      <div class="flexrow">
+        {{>"systems/foundryvtt-reve-de-dragon/templates/actor/vue-detaillee.html"}}
+      </div>
+      <div class="grid grid-2col">
+        <div class="flex-group-left flexcol">
+          <ol class="carac-list alterne-list">
+            <li class="caracteristique flexrow list-item">
+              <span class="carac-label">Résistance</span>
+              <input class="competence-value" type="text" name="system.etat.resistance.value" value="{{system.etat.resistance.value}}" data-dtype="Number" />
+              /
+              <input class="competence-value" type="text" name="system.etat.resistance.max" value="{{system.etat.resistance.max}}" data-dtype="Number" {{#unless @root.options.vueDetaillee}}disabled{{/unless}} />
+            </li>
+            <li class="caracteristique flexrow list-item">
+              <span class="carac-label">Structure</span>
+              <input class="competence-value" type="text" name="system.etat.structure.value" value="{{system.etat.structure.value}}" data-dtype="Number" />
+              /
+              <input class="competence-value" type="text" name="system.etat.structure.max" value="{{system.etat.structure.max}}" data-dtype="Number" {{#unless @root.options.vueDetaillee}}disabled{{/unless}} />
+            </li>
+          </ol>
+        </div>
+        <div class="flex-group-left flexcol">
+          <ol>
+            <li class="caracteristique flexrow list-item">
+              <span class="carac-label">Catégorie</span>
+              <select name="system.categorie" class="categorie" data-dtype="String" {{#unless @root.options.vueDetaillee}}disabled{{/unless}}>
+                {{#select system.categorie}}
+                {{>"systems/foundryvtt-reve-de-dragon/templates/enum-categorie-vehicule.html"}}
+                {{/select}}
+              </select>
+            </li>
+            <li class="caracteristique flexrow list-item">
+              <span class="carac-label">Vitesse</span>
+              <input class="caracteristique streched" type="text" name="system.vitesse" value="{{system.vitesse}}" data-dtype="String" {{#unless @root.options.vueDetaillee}}disabled{{/unless}} />
+            </li>
+            <li class="caracteristique flexrow list-item">
+              <span class="carac-label">Bonus rames</span>
+              <input class="caracteristique streched" type="text" name="system.bonus" value="{{system.bonus}}" data-dtype="String" {{#unless @root.options.vueDetaillee}}disabled{{/unless}} />
+            </li>
+            <li class="caracteristique flexrow list-item">
+              <span class="carac-label">Manoeuvrabilité</span>
+              <input class="caracteristique streched" type="text" name="system.manoeuvrabilite" value="{{system.manoeuvrabilite}}" data-dtype="String" {{#unless @root.options.vueDetaillee}}disabled{{/unless}} />
+            </li>
+            <li class="caracteristique flexrow list-item">
+              <span class="carac-label">Equipage</span>
+              <input class="caracteristique streched" type="text" name="system.equipage" value="{{system.equipage}}" data-dtype="Number" {{#unless @root.options.vueDetaillee}}disabled{{/unless}} />
+            </li>
+            <li class="caracteristique flexrow list-item">
+              <span class="carac-label">Capacité d'Encombrement</span>
+              <input class="caracteristique streched" type="text" name="system.capacite_encombrement" value="{{system.capacite_encombrement}}" data-dtype="Number" {{#unless @root.options.vueDetaillee}}disabled{{/unless}} />
+            </li>
+          </ol>
+        </div>
+      </div>
+
+      <div class="form-group editor">
+        {{editor description target="system.description" button=true owner=owner editable=editable}}
+      </div>
+      {{>"systems/foundryvtt-reve-de-dragon/templates/actor/editor-notes-mj.html"}}
+    </div>
+
+    {{!-- Equipment Tab --}}
+    <div class="tab items" data-group="primary" data-tab="items">
+      {{> "systems/foundryvtt-reve-de-dragon/templates/actor/inventaire.html"}}
+    </div>
+
+  </section>
+</form>

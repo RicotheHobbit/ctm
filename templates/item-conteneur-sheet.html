@@ -1,0 +1,39 @@
+<form class="{{cssClass}}" autocomplete="off">
+  {{>"systems/foundryvtt-reve-de-dragon/templates/header-item.html"}}
+  {{!-- Sheet Body --}}
+  <section class="sheet-body">
+    <div class="form-group">
+      <label for="xp">Encombrement </label>
+      <input class="attribute-value" type="text" name="system.encombrement" value="{{system.encombrement}}" data-dtype="Number"/>
+    </div>
+    <div class="form-group">
+      <label for="xp">Capacite (points d'Encombrement portable)</label>
+      <input class="attribute-value" type="text" name="system.capacite" value="{{system.capacite}}" data-dtype="Number"/>
+    </div>
+    <div class="form-group">
+      <label for="xp">Qualité</label>
+      <input class="attribute-value" type="text" name="system.qualite" value="{{system.qualite}}" data-dtype="Number"/>
+    </div>
+    <div class="form-group item-cout">
+      <label for="xp">Prix (sols) </label>
+      <input class="attribute-value" type="text" name="system.cout" value="{{system.cout}}" data-dtype="Number"/>
+    </div>
+    {{#if isOwned}}
+    <div class="flexcol">
+      <span><label>Contenu : </label></span>
+      <ul class="item-list alterne-list">
+        <li class="competence-header flexrow">
+          <span class="equipement-nom">Nom</span>
+          <span class="equipement-detail">Q.</span>
+          <span class="equipement-detail">Enc.</span>
+          <span class="equipement-actions">Actions</span>
+        </li>
+          {{buildContenu this}}
+      </ul>
+    </div>
+    {{/if}}
+
+
+    {{>"systems/foundryvtt-reve-de-dragon/templates/partial-item-description.html"}}
+  </section>
+</form>

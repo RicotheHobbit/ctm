@@ -1,0 +1,232 @@
+<form class="{{cssClass}}" autocomplete="off">
+  {{>"systems/foundryvtt-reve-de-dragon/templates/header-item.html"}}
+  {{!-- Sheet Body --}}
+  <nav class="sheet-tabs tabs" data-group="primary">
+    <a class="item" data-tab="rencontre">Rencontre</a>
+    <a class="item" data-tab="succes">Victoire</a>
+    <a class="item" data-tab="echec">Défaite</a>
+    {{#unless system.mauvaiseRencontre}}
+    <a class="item" data-tab="frequence">Fréquences</a>
+    {{/unless}}
+  </nav>
+  
+  <section class="sheet-body">
+    
+    <div class="tab items" data-group="primary" data-tab="rencontre">
+      {{#if isOwned}}
+      <div class="form-group">
+        <label for="system.force">Rêve</label>
+        <input type="text" name="system.force" value="{{system.force}}" data-dtype="Number"/>
+      </div>
+      <div class="form-group">
+        <label for="system.coord">Case TMR - {{caseTmr-label system.coord}}</label>
+        <input class="attribute-value" type="text" name="system.coord" value="{{system.coord}}" data-dtype="String" {{#unless isGM}}disabled{{/unless}}/>
+      </div>
+      <div class="form-group">
+        <label for="system.date">Date/heure</label>
+        <div class="flexrow">
+          <input class="attribute-value" type="text" name="system.date" value="{{system.date}}" data-dtype="String" {{#unless isGM}}disabled{{/unless}}/>
+          <input class="attribute-value" type="text" name="system.heure" value="{{system.heure}}" data-dtype="String" {{#unless isGM}}disabled{{/unless}}/>
+        </div>
+      </div>
+      {{else}}
+      <div class="form-group">
+        <label for="system.formule">Rêve</label>
+        <input type="text" name="system.formule" value="{{system.formule}}" data-dtype="String" {{#unless isGM}}disabled{{/unless}}/>
+      </div>
+      <div class="form-group">
+        <label for="system.genre">Genre</label>
+        <select type="text" name="system.genre" data-dtype="String" {{#unless isGM}}disabled{{/unless}}>
+          {{#select  system.genre}}
+          <option value=""></option>
+          <option value="f">Féminin</option>
+          <option value="m">Masculin</option>
+          {{/select}}
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="system.ordreTri">Position dans la table</label>
+        <input type="number" name="system.ordreTri" value="{{system.ordreTri}}" min="0" max="100" data-dtype="Number" {{#unless isGM}}disabled{{/unless}}/>
+      </div>
+      <div class="form-group">
+        <label for="system.presentCite">Offert par les Présents des cités</label>
+        <input type="checkbox" name="system.presentCite" data-dtype="Boolean" {{#if system.presentCite}}checked{{/if}} {{#unless isGM}}disabled{{/unless}}/>
+      </div>
+      <div class="form-group">
+        <label for="system.refoulement">Refoulement</label>
+        <input type="number" name="system.refoulement" value="{{system.refoulement}}" min="0" max="4" data-dtype="Number" {{#unless isGM}}disabled{{/unless}}/>
+      </div>
+      {{/if}}
+      <div class="form-group">
+        <label for="system.mauvaiseRencontre">Mauvaise rencontre</label>
+        <input type="checkbox" name="system.mauvaiseRencontre" data-dtype="Boolean" {{#if system.mauvaiseRencontre}}checked{{/if}} {{#unless isGM}}disabled{{/unless}}/>
+      </div>
+      {{#unless isOwned}}
+      {{#if system.mauvaiseRencontre}}
+      <div class="form-group">
+        <label for="system.frequence.mauvaise">Fréquence mauvaise rencontre</label>
+        <input type="number" name="system.frequence.mauvaise" value="{{system.frequence.mauvaise}}" min="0" max="100" data-dtype="Number" {{#unless isGM}}disabled{{/unless}}/>
+      </div>
+      {{/if}}
+      {{/unless}}
+      <div class="flexcol">
+        <span><label>Description : </label></span>
+        <div class="form-group editor">
+          {{editor description target="system.description" button=true owner=owner editable=editable}}
+        </div>
+      </div>
+    </div>
+
+    <div class="tab items" data-group="primary" data-tab="succes">
+      <div class="form-group">
+        <label for="system.succes.message">Message</label>
+        <textarea autocomplete="off" title="Message en cas de succès" name="system.succes.message" {{#unless isGM}}disabled{{/unless}}/>{{system.succes.message}}</textarea>
+      </div>
+      <div class="form-group">
+        <div class="button-dropdown">
+          {{#if isGM}}
+          <label class="button-dropbutton" title="Ajouter">Effets <i class="fas fa-plus-circle"></i></label>
+          <div class="button-dropdown-content">
+            {{#each effets.succes.liste as |effet|}}
+            <a class="effet-add" data-effet-code="{{effet.code}}" data-effet-resultat="{{effet.resultat}}">{{effet.description}}</a>
+            {{/each}}
+          </div>
+          {{else}}
+          <label>Effets</label>
+          {{/if}}
+        </div>
+      </div>
+      <div class="form-group">
+        <label></label>
+        <div class="flexcol">
+          {{#each effets.succes.select as |effet pos|}}
+          <label>
+            {{effet.description}}
+            {{#if @root.isGM}}
+            <a class="effet-delete" data-effet-code="{{effet.code}}" data-effet-resultat="{{effet.resultat}}" data-effet-pos="{{pos}}" title="Supprimer"><i class="fas fa-trash"></i></a>
+            {{/if}}
+          </label>
+          {{/each}}
+        </div>
+      </div>
+      <hr>
+      <div class="form-group">
+        <label for="system.succes.reference">Réference</label>
+        <input type="text" name="system.succes.reference" value="{{system.succes.reference}}" data-dtype="String" {{#unless isGM}}disabled{{/unless}}/>
+      </div>
+      <div class="flexcol">
+        <label for="system.succes.poesie">Poésie</label>
+        <div class="form-group editor">
+          {{editor system.succes.poesie target="system.succes.poesie" button=true owner=owner editable=editable}}
+        </div>
+      </div>
+    </div>
+
+    <div class="tab items" data-group="primary" data-tab="echec">
+      <div class="form-group">
+        <label for="system.echec.message">Message</label>
+        <textarea autocomplete="off" title="Message en cas d'échec" name="system.echec.message" {{#unless isGM}}disabled{{/unless}}/>{{system.echec.message}}</textarea>
+      </div>
+      <div class="form-group">
+        <div class="button-dropdown">
+          {{#if isGM}}
+          <label class="button-dropbutton" title="Ajouter">Effets <i class="fas fa-plus-circle"></i></label>
+          <div class="button-dropdown-content">
+            {{#each effets.echec.liste as |effet|}}
+            <a class="effet-add" data-effet-code="{{effet.code}}" data-effet-resultat="{{effet.resultat}}">{{effet.description}}</a>
+            {{/each}}
+          </div>
+          {{else}}
+          <label>Effets</label>
+          {{/if}}
+        </div>
+      </div>
+      <div class="form-group">
+        <label></label>
+        <div class="flexcol">
+          {{#each effets.echec.select as |effet pos|}}
+          <label>
+            {{effet.description}}
+            {{#if @root.isGM}}
+            <a class="effet-delete" data-effet-code="{{effet.code}}" data-effet-resultat="{{effet.resultat}}" data-effet-pos="{{pos}}" title="Supprimer"><i class="fas fa-trash"></i></a>
+            {{/if}}
+          </label>
+          {{/each}}
+        </div>
+      </div>
+      <hr>
+      <div class="form-group">
+        <label for="system.echec.reference">Réference</label>
+        <input type="text" name="system.echec.reference" value="{{system.echec.reference}}" data-dtype="String" {{#unless isGM}}disabled{{/unless}}/>
+      </div>
+      <div class="flexcol">
+        <label for="system.echec.poesie">Poésie</label>
+        <div class="form-group editor">
+          {{editor system.echec.poesie target="system.echec.poesie" button=true owner=owner editable=editable}}
+        </div>
+      </div>
+    </div>
+
+    {{#unless system.mauvaiseRencontre}}
+    <div class="tab items" data-group="primary" data-tab="frequence">
+      <hr>
+      <div class="form-group">
+        <label for="system.frequence.cite">Fréquence en Cité</label>
+        <input type="number" name="system.frequence.cite" value="{{system.frequence.cite}}" min="0" max="100" data-dtype="Number" {{#unless isGM}}disabled{{/unless}}/>
+      </div>
+      <div class="form-group">
+        <label for="system.frequence.sanctuaire">Fréquence en Sanctuaire</label>
+        <input type="number" name="system.frequence.sanctuaire" value="{{system.frequence.sanctuaire}}" min="0" max="100" data-dtype="Number" {{#unless isGM}}disabled{{/unless}}/>
+      </div>
+      <div class="form-group">
+        <label for="system.frequence.plaines">Fréquence en Plaines</label>
+        <input type="number" name="system.frequence.plaines" value="{{system.frequence.plaines}}" min="0" max="100" data-dtype="Number" {{#unless isGM}}disabled{{/unless}}/>
+      </div>
+      <div class="form-group">
+        <label for="system.frequence.pont">Fréquence en Pont</label>
+        <input type="number" name="system.frequence.pont" value="{{system.frequence.pont}}" min="0" max="100" data-dtype="Number" {{#unless isGM}}disabled{{/unless}}/>
+      </div>
+      <div class="form-group">
+        <label for="system.frequence.collines">Fréquence en Collines</label>
+        <input type="number" name="system.frequence.collines" value="{{system.frequence.collines}}" min="0" max="100" data-dtype="Number" {{#unless isGM}}disabled{{/unless}}/>
+      </div>
+      <div class="form-group">
+        <label for="system.frequence.foret">Fréquence en Forêt</label>
+        <input type="number" name="system.frequence.foret" value="{{system.frequence.foret}}" min="0" max="100" data-dtype="Number" {{#unless isGM}}disabled{{/unless}}/>
+      </div>
+      <div class="form-group">
+        <label for="system.frequence.monts">Fréquence en Monts</label>
+        <input type="number" name="system.frequence.monts" value="{{system.frequence.monts}}" min="0" max="100" data-dtype="Number" {{#unless isGM}}disabled{{/unless}}/>
+      </div>
+      <div class="form-group">
+        <label for="system.frequence.desert">Fréquence en Désert</label>
+        <input type="number" name="system.frequence.desert" value="{{system.frequence.desert}}" min="0" max="100" data-dtype="Number" {{#unless isGM}}disabled{{/unless}}/>
+      </div>
+      <div class="form-group">
+        <label for="system.frequence.fleuve">Fréquence en Fleuve</label>
+        <input type="number" name="system.frequence.fleuve" value="{{system.frequence.fleuve}}" min="0" max="100" data-dtype="Number" {{#unless isGM}}disabled{{/unless}}/>
+      </div>
+      <div class="form-group">
+        <label for="system.frequence.lac">Fréquence en Lac</label>
+        <input type="number" name="system.frequence.lac" value="{{system.frequence.lac}}" min="0" max="100" data-dtype="Number" {{#unless isGM}}disabled{{/unless}}/>
+      </div>
+      <div class="form-group">
+        <label for="system.frequence.marais">Fréquence en Marais</label>
+        <input type="number" name="system.frequence.marais" value="{{system.frequence.marais}}" min="0" max="100" data-dtype="Number" {{#unless isGM}}disabled{{/unless}}/>
+      </div>
+      <div class="form-group">
+        <label for="system.frequence.gouffre">Fréquence en Gouffre</label>
+        <input type="number" name="system.frequence.gouffre" value="{{system.frequence.gouffre}}" min="0" max="100" data-dtype="Number" {{#unless isGM}}disabled{{/unless}}/>
+      </div>
+      <div class="form-group">
+        <label for="system.frequence.necropole">Fréquence en Nécropole</label>
+        <input type="number" name="system.frequence.necropole" value="{{system.frequence.necropole}}" min="0" max="100" data-dtype="Number" {{#unless isGM}}disabled{{/unless}}/>
+      </div>
+      <div class="form-group">
+        <label for="system.frequence.desolation">Fréquence en Désolation</label>
+        <input type="number" name="system.frequence.desolation" value="{{system.frequence.desolation}}" min="0" max="100" data-dtype="Number" {{#unless isGM}}disabled{{/unless}}/>
+      </div>
+    </div>
+    {{/unless}}
+  </section>
+</form>

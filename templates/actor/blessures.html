@@ -1,0 +1,18 @@
+<ul class="item-list alterne-list">
+  <li class="competence-header flexrow" >
+    <span>Blessures</span>
+    <span>Premiers soins</span>
+    <span>Soins complets</span>
+    <span>Age (jours)</span>
+    <span>Localisation</span>
+  </li>
+  {{#each system.blessures.legeres.liste as |blessure key|}}
+  {{> "systems/foundryvtt-reve-de-dragon/templates/actor/blessure.html" blessure=blessure key=key gravite="legere" title="Légère"}}
+  {{/each}}
+  {{#each system.blessures.graves.liste as |blessure key|}}
+  {{> "systems/foundryvtt-reve-de-dragon/templates/actor/blessure.html" blessure=blessure key=key gravite="grave" title="Grave"}}
+  {{/each}}
+  {{#each system.blessures.critiques.liste as |blessure key|}}
+  {{> "systems/foundryvtt-reve-de-dragon/templates/actor/blessure.html" blessure=blessure key=key gravite="critique" title="Critique"}}
+  {{/each}}
+</ul>

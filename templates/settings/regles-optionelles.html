@@ -1,0 +1,13 @@
+<form autocomplete="off" onsubmit="event.preventDefault();">
+  {{#each groups as |group key|}}
+  <h3>{{key}}</h3>
+  <ul>
+    {{#each group as |regle r|}}
+    <li>
+      <input class="select-option" type="checkbox" name="{{regle.id}}" {{#if regle.active}}checked{{/if}}/>
+      <label>{{regle.descr}}</label>
+    </li>
+    {{/each}}
+  </ul>
+  {{/each}}
+</form>

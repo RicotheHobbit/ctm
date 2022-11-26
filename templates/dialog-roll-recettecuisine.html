@@ -1,0 +1,41 @@
+<form class="rdddialog">
+  <h2>Cuisiner: {{oeuvre.name}}</h2>
+    
+  <div class="grid grid-2col">
+    <div class="flex-group-left">
+      <img class="chat-icon" src="{{competence.img}}" alt="{{competence.name}}" />
+      <div>
+        <div class="flexrow">
+          <label>Caractéristique: </label><label>{{selectedCarac.label}}</label>
+        </div>
+        <div class="flexrow">
+          <label>{{competence.name}}: </label><label>{{numberFormat competence.system.niveau decimals=0 sign=true}}</label></label>
+        </div>
+        <div class="flexrow">
+          <label>Exotisme: </label><label>{{oeuvre.system.exotisme}}</label>
+        </div>
+        <div class="flexrow">
+          <label for="proportions">Proportions: </label>
+          <input class="cuisine-proportions" type="number" size="4" name="proportions" value="{{proportions}}" data-dtype="Number" />
+        </div>
+        <div class="flexrow">
+          <label for="ajouterEquipement">Ajouter à l'équipement</label>
+          <input class="checkbox-by-name" type="checkbox" name="ajouterEquipement" {{#if ajouterEquipement}}checked{{/if}} />
+        </div>
+      </div>
+    </div>
+    <div class="flex-group-left">
+      {{>"systems/foundryvtt-reve-de-dragon/templates/partial-roll-diffFixe.html"}}
+      {{>"systems/foundryvtt-reve-de-dragon/templates/partial-roll-diffCondition.html"}}
+      {{>"systems/foundryvtt-reve-de-dragon/templates/partial-roll-forcer.html"}}
+      {{>"systems/foundryvtt-reve-de-dragon/templates/partial-roll-moral.html"}}
+      <div id="tableAjustements" class="flexrow"></div>
+    </div>
+  </div>
+  {{> "systems/foundryvtt-reve-de-dragon/templates/partial-description-overflow.html" oeuvre.system}}
+  <div id="tableResolution"></div>
+  <div id="tableProbaReussite"></div>
+</form>
+
+<script>
+</script>

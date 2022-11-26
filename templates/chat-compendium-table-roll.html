@@ -1,0 +1,13 @@
+<h4>Tirage aléatoire: {{typeName}}</h4>
+<div>{{sourceCompendium}}</div>
+<div>Jet {{roll.formula}} : {{roll.total}}{{percentages}}</div>
+<hr>
+<div>
+  <img class="chat-icon" src="{{document.img}}" alt="{{document.name}}" />
+  <p>{{linkCompendium @root.sourceCompendium document.id document.name}}</p>
+  {{#if document.system.description}}
+  <div class="poesie-extrait">
+    {{{document.system.description}}}
+  </div>
+  {{/if}}
+</div>

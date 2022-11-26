@@ -1,0 +1,28 @@
+<div>
+  <span class="chance-appel">
+    <a title="Appel à la chance"><img class="button-img" src="systems/foundryvtt-reve-de-dragon/styles/img/ui/appel-chance.svg" alt="Appel à la chance"/></a>
+  </span>
+  <span class="encaisser-direct">
+    <a title="Encaisser des dommages"><img class="button-img" src="icons/svg/bones.svg" alt="Encaisser des dommages"/></a>
+  </span>
+  <span class="ethylisme-test">
+    <a title="Jet d'Ethylisme"><img class="button-img" src="icons/svg/tankard.svg" alt="Boire"/></a>
+  </span>
+  <span class="repos">
+    <a title="Repos"><img class="button-img" src="icons/svg/sleep.svg" alt="Se reposer"/></a>
+  </span>
+  {{#if system.attributs.hautrevant.value}}
+  <span class="monte-tmr">
+    <a title="Montée dans les Terres M&eacute;dianes !" {{#if hautreve.isDemiReve}}disabled{{/if}}><img class="button-img" src="systems/foundryvtt-reve-de-dragon/styles/img/ui/icon-tmr-normal.svg" alt="Montée dans les Terres M&eacute;dianes !"/></a></span>
+  <span class="monte-tmr-rapide">
+    <a title="Montée accélérée dans les Terres M&eacute;dianes !"><img class="button-img" src="systems/foundryvtt-reve-de-dragon/styles/img/ui/icon-tmr-rapide.svg" alt="Montée accélérée dans les Terres M&eacute;dianes !"/></a></span>
+  <span class="visu-tmr">
+    <a title="Regarder les Terres M&eacute;dianes"><img class="button-img" src="systems/foundryvtt-reve-de-dragon/styles/img/ui/icon-tmr-view.svg" alt="Regarder les Terres M&eacute;dianes"/></a>
+  </span>
+  {{/if}}
+  {{#if @root.options.isGM}}
+  <span class="remise-a-neuf">
+    <a title="Remise à neuf"><img class="button-img" src="icons/svg/regen.svg" alt="Remise à neuf"/></a>
+  </span>
+  {{/if}}
+</div>

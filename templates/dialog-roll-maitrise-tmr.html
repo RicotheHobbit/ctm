@@ -1,0 +1,29 @@
+<form class="skill-roll-dialog">
+  <h2>Maîtrise {{#if isTMRCache}}
+    {{tmr.type}}
+  {{else}}
+    {{tmr.label}} ({{tmr.coord}})
+  {{/if}}
+  </h2>
+  <div class="grid grid-2col">
+    <div class="flex-group-left">
+      <img class="chat-icon" src="{{competence.img}}" alt="{{competence.name}}"/>
+      <div class="grid grid-2col">
+        <label for="carac">Rêve actuel:</label><label class="flex-grow" name="carac">{{selectedCarac.value}}</label>
+        <label for="draconic">{{competence.name}}:</label><label class="flex-grow" name="draconic">{{numberFormat competence.system.niveau decimals=0 sign=true}}</label>
+      </div>
+    </div>
+    <div class="flex-group-left">
+      {{>"systems/foundryvtt-reve-de-dragon/templates/partial-roll-diffFixe.html"}}
+      {{>"systems/foundryvtt-reve-de-dragon/templates/partial-roll-diffCondition.html"}}
+      {{>"systems/foundryvtt-reve-de-dragon/templates/partial-roll-forcer.html"}}
+      <div id="tableAjustements" class="flexrow"></div>
+    </div>
+  </div>
+
+  <div id="tableResolution"></div>
+  <div id="tableProbaReussite"></div>
+</form>
+
+<script>
+</script>

@@ -1,0 +1,80 @@
+<form class="{{cssClass}}" autocomplete="off">
+
+  {{!-- Sheet Header --}}
+  <header class="sheet-header">
+    <div class="header-fields">
+      <div class="flexrow">
+        <img class="profile-img" src="{{img}}" data-edit="img" title="{{name}}" />
+        <h1 class="charname flex-grow"><input name="name" type="text" value="{{name}}" placeholder="Name" /></h1>
+        <div class="flex-group-center">
+          <span class="encaisser-direct"><a title="Encaisser des dommages"><img class="button-img" src="icons/svg/bones.svg" alt="Encaisser des dommages"/></a></span>
+          {{#if @root.options.isGM}}
+          <span class="remise-a-neuf"><a title="Remise à neuf"><img class="button-img" src="icons/svg/regen.svg" alt="Remise à neuf"/></a></span>
+          {{/if}}
+        </div>
+      </div>
+      <div class="flex-group-left flexrow">
+        {{>"systems/foundryvtt-reve-de-dragon/templates/actor/header-compteurs-creature.html"}}
+        <div class="flex-group-center">
+          <span>
+            {{calc.resumeBlessures}}
+            &hyphen; Etat Général : {{system.compteurs.etat.value}}
+          </span>
+          {{>"systems/foundryvtt-reve-de-dragon/templates/actor/header-effects.html"}}
+        </div>
+      </div>
+    </div>
+  </header>
+
+  {{!-- Sheet Tab Navigation --}}
+  <nav class="sheet-tabs tabs" data-group="primary">
+    <a class="item" data-tab="carac">Caractéristiques</a>
+    <a class="item" data-tab="items">Équipement</a>
+    <a class="item" data-tab="description">Description</a>
+  </nav>
+
+  {{!-- Sheet Body --}}
+  <section class="sheet-body">
+
+    {{!-- Carac & compétences --}}
+    <div class="tab items" data-group="primary" data-tab="carac">
+      <div class="flexrow">
+        {{>"systems/foundryvtt-reve-de-dragon/templates/actor/vue-detaillee.html"}}
+      </div>
+      <div class="grid grid-2col">
+        <div class="flex-group-left flexcol">
+          {{>"systems/foundryvtt-reve-de-dragon/templates/actor/carac-main.html"}}
+          {{>"systems/foundryvtt-reve-de-dragon/templates/actor/carac-creature.html"}}
+        </div>
+        <div class="flex-group-left flexcol competence-column">
+          {{>"systems/foundryvtt-reve-de-dragon/templates/actor/comp-creature.html"}}
+        </div>
+      </div>
+
+      {{> "systems/foundryvtt-reve-de-dragon/templates/actor/blessures.html"}}
+    </div>
+
+    {{!-- Equipment Tab --}}
+    <div class="tab items" data-group="primary" data-tab="items">
+      {{> "systems/foundryvtt-reve-de-dragon/templates/actor/inventaire.html"}}
+    </div>
+
+    {{!-- Biography Tab --}}
+    <div class="tab description" data-group="primary" data-tab="description">
+
+      <div class="form-group">
+        <span class="item-name"><h4>Race</h4></span>
+        <input type="text" name="system.race" value="{{system.race}}" data-dtype="String" />
+      </div>
+
+      <div class="form-group editor">        
+        <span class="item-name"><h4>Description</h4>          
+        {{editor description target="system.description" button=true owner=owner editable=true}}
+      </div>
+
+      {{>"systems/foundryvtt-reve-de-dragon/templates/actor/editor-notes-mj.html"}}
+
+    </div>
+
+  </section>
+</form>

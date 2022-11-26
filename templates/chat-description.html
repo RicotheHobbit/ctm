@@ -1,0 +1,14 @@
+{{#if description}}
+<hr>
+<div class="poesie-extrait poesie-overflow">
+  {{{description}}}
+  {{#if reference}}
+  <p class="poesie-reference">{{reference}}</p>
+  {{/if}}
+</div>
+{{else if reference}}
+<hr>
+<span class="poesie-extrait">
+  <p class="poesie-reference">{{reference}}</p>
+</span>
+{{/if}}

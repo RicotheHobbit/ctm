@@ -1,0 +1,19 @@
+<form class="{{cssClass}}" autocomplete="off">
+  {{>"systems/foundryvtt-reve-de-dragon/templates/header-item.html"}}
+  {{!-- Sheet Body --}}
+  <section class="sheet-body">
+      <div class="form-group">
+        <label for="xp">Type de possession </label>
+        <input class="attribute-value" type="text" name="system.typepossession" value="{{system.typepossession}}" data-dtype="String"/>
+      </div>
+      <div class="form-group">
+        <label for="xp">Possédé ? </label>
+        <input class="attribute-value" type="checkbox" name="system.istrue"  {{#if system.istrue}}checked{{/if}}/>
+      </div>
+      <div class="form-group">
+        <label for="xp">Compteur </label>
+        <input class="attribute-value" type="text" name="system.compteur" value="{{system.compteur}}" data-dtype="Number"/>
+      </div>
+    {{>"systems/foundryvtt-reve-de-dragon/templates/partial-item-description.html"}}
+  </section>
+</form>

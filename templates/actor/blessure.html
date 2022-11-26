@@ -1,0 +1,27 @@
+<li class="item flexrow list-item {{#if blessure.active}}blessure-active-{{gravite}}{{else}}blessure-inactive{{/if}}"
+      data-blessure-type="{{gravite}}"
+      data-attribute={{key}}
+      data-blessure-index="{{key}}"
+      data-blessure-active="{{blessure.active}}">
+  <span class="blessure-control" title="Blessure {{title}}">
+    <i class="fas fa-skull-crossbones" name="blessure-{{gravite}}-{{key}}-active"></i>
+    {{title}}
+  </span>
+  {{#if blessure.active}}
+  <span class="blessure-soins flexrow">
+    <input class="blessure-psdone" name="blessure-{{gravite}}-{{key}}-psdone" type="checkbox" name="blessure.psdone"  {{#if blessure.psdone}}checked{{/if}}/>
+    <input class="blessure-premiers_soins" type="text" name="blessure-{{gravite}}-{{key}}-premiers_soins" data-dtype="number" value="{{blessure.premiers_soins}}"/>
+  </span>
+  <span class="blessure-soins flexrow">
+    <input class="blessure-scdone" name="blessure-{{gravite}}-{{key}}-scdone" type="checkbox" name="blessure.scdone"  {{#if blessure.scdone}}checked{{/if}}/>
+    <input class="blessure-soins_complets" type="text" name="blessure-{{gravite}}-{{key}}-soins_complets" data-dtype="number" value="{{blessure.soins_complets}}"/>
+  </span>
+  <input class="blessure-jours" type="text" name="blessure-{{gravite}}-{{key}}-jours" name="jours" data-dtype="number" value="{{blessure.jours}}"/>
+  <input class="blessure-localisation" type="text" name="blessure-{{gravite}}-{{key}}-localisation" data-dtype="String" value="{{blessure.loc}}"/>
+  {{else}}
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+  {{/if}}
+</li>

@@ -1,0 +1,26 @@
+<ul class="item-list">
+  <li class="item flexrow">
+    <span class="competence-label">Seuil de Rêve :</span>
+    <span>
+    {{#if options.isGM}}
+      <input class="seuil-reve-value" type="text" name="system.reve.seuil.value" value="{{system.reve.seuil.value}}" data-dtype="Number"/>
+    {{else}}
+      {{system.reve.seuil.value}}
+    {{/if}}
+    </span>
+  </li>
+  <li class="item flexrow" >
+    <span class="competence-label">Refoulement : </span>
+    <span>
+    {{#if options.isGM}}
+      <input class="competence-value" type="text" name="system.reve.refoulement.value" value="{{system.reve.refoulement.value}}" data-dtype="Number"/>
+    {{else}}
+      {{system.reve.refoulement.value}}
+    {{/if}}
+    </span>
+  </li>
+</ul>
+<hr>
+{{> "systems/foundryvtt-reve-de-dragon/templates/actor/dragon-queues.html"}}
+{{> "systems/foundryvtt-reve-de-dragon/templates/actor/dragon-souffles.html"}}
+{{> "systems/foundryvtt-reve-de-dragon/templates/actor/dragon-tetes.html"}}

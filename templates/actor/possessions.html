@@ -1,0 +1,22 @@
+{{#if possessions.length}}
+{{!-- Possession --}}
+<h3 class="blessures-title">Possession:</h3>
+<ul class="item-list alterne-list">
+  <li class="competence-header flexrow">
+    <span class="competence-title flex-grow competence-label">Nom</span>
+    <span class="competence-title competence-label">Type</span>
+  </li>
+  {{#each possessions as |possession  key|}}
+  <li class="item flexrow list-item" data-item-id="{{possession._id}}">
+      <span class="competence-label">
+        <a class="sheet-possession-attack">{{possession.name}} (Conjurer)</a>
+      </span>
+      <span class="competence-label">{{possession.system.type}}</span>
+      <div class="item-controls">
+        <a class="item-edit" title="Modifier"><i class="fas fa-edit"></i></a>
+        <a class="item-delete" title="Supprimer"><i class="fas fa-trash"></i></a>
+      </div>          
+  </li>
+  {{/each}}
+  </ul>
+{{/if}}

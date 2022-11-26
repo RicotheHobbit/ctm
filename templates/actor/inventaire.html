@@ -1,0 +1,32 @@
+{{> "systems/foundryvtt-reve-de-dragon/templates/actor/inventaire-monnaie.html" monnaie=monnaie}}
+
+<h4>Equipement</h4>
+<span class="item-name">
+  <a class="chat-card-button creer-un-objet">Nouvel objet</a>
+  {{#if options.isGM}}
+  <a class="chat-card-button nettoyer-conteneurs">Tout vider</a>
+  {{/if}}
+  {{#if calc.surEncombrementMessage}}<b>{{calc.surEncombrementMessage}}</b> &hyphen;{{/if}}
+  Encombrement: {{numberFormat calc.encTotal decimals=2}} (max: {{system.attributs.encombrement.value}})
+  {{#if (regle-optionnelle 'afficher-prix-joueurs')}}
+  &hyphen; Valeur: {{numberFormat calc.prixTotalEquipement decimals=2}} Sols
+  {{/if}}
+</span>
+<ul class="item-list alterne-list">
+  <li class="competence-header flexrow">
+    <span class="equipement-nom">Nom</span>
+    <span class="equipement-detail">Q.</span>
+    <span class="equipement-detail">Enc.</span>
+    <span class="equipement-actions">Actions</span>
+  </li>
+  {{#each objets as |item id|}}
+    {{#unless item.estContenu}}
+    {{#if (ne item.type 'conteneur')}}
+      {{> "systems/foundryvtt-reve-de-dragon/templates/actor/inventaire-item.html" item=item vide=true ouvert=true }}
+    {{/if}}
+    {{/unless}}
+  {{/each}}
+  {{#each conteneurs as |conteneur id|}}
+    {{buildConteneur this}}
+  {{/each}}
+</ul>

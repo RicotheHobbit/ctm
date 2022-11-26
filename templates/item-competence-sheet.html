@@ -1,0 +1,72 @@
+<form class="{{cssClass}}" autocomplete="off">
+    <header class="sheet-header">
+        <img class="profile-img" src="{{img}}" data-edit="img" title="{{name}}"/>
+        <div class="header-fields">
+            <h1 class="charname">
+              {{#if isGM}}
+              <input name="name" type="text" value="{{name}}" placeholder="Name"/>
+              {{else}}
+              {{item.name}}
+              {{/if}}
+            </h1>
+        </div>
+    </header>
+    
+    {{!-- Sheet Body --}}
+    <section class="sheet-body">
+      <div class="form-group">
+        <label>Catégorie </label>
+        <select name="system.categorie" class="categorie" data-dtype="String">
+              {{#select system.categorie}}
+              {{>"systems/foundryvtt-reve-de-dragon/templates/enum-categorie-competence.html"}}
+              {{/select}}
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="niveau">Niveau </label>
+        <input class="attribute-value" type="text" name="system.niveau" value="{{system.niveau}}" data-dtype="Number"/>
+      </div>
+      <div class="form-group">
+        <label for="xp">XP </label>
+        <input class="attribute-value sheet-competence-xp" type="text" name="system.xp" value="{{system.xp}}" data-dtype="Number"/>
+      </div>
+      <div class="form-group">
+        <label for="base">Niveau de base </label>
+        {{#if isGM}}
+        <select name="system.base" id="base" data-dtype="Number">
+                {{#select system.base}}
+                {{>"systems/foundryvtt-reve-de-dragon/templates/enum-base-competence.html"}}
+                {{/select}}
+        </select>
+        {{else}}
+        <label id="base">{{system.base}}</label>
+        {{/if}}
+      </div>
+      <div class="form-group">
+        <label for="defaut_carac">Caractéristique par défaut </label>
+        <select name="system.defaut_carac" id="defaut_carac" data-dtype="String">
+          {{#select system.defaut_carac}}
+          {{>"systems/foundryvtt-reve-de-dragon/templates/enum-caracteristiques.html"}}
+          {{/select}}
+        </select>        
+      </div>
+      <div class="form-group">
+        <label for="default_diffLibre">Difficulté libre par défaut</label>
+        <input class="attribute-value" type="text" name="system.default_diffLibre" value="{{system.default_diffLibre}}" data-dtype="Number"/>
+      </div>
+      {{#if (eq system.categorie 'draconic')}}
+      <div class="form-group">
+        <label for="xp">XP Sort </label>
+        <input class="attribute-value" type="text" name="system.xp_sort" value="{{system.xp_sort}}" data-dtype="Number"/>
+      </div>
+      {{/if}}
+      <div class="form-group">
+        <label for="niveau_archetype">Niveau d'Archetype</label>
+        <input class="attribute-value" type="text" name="system.niveau_archetype" value="{{system.niveau_archetype}}" data-dtype="Number"/>
+      </div>
+
+      {{>"systems/foundryvtt-reve-de-dragon/templates/partial-item-description.html"}}
+    
+    </section>
+    
+</form>

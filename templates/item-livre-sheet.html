@@ -1,0 +1,65 @@
+<form class="{{cssClass}}" autocomplete="off">
+    <header class="sheet-header">
+        <img class="profile-img" src="{{img}}" data-edit="img" title="{{name}}"/>
+        <div class="header-fields">
+            <h1 class="charname"><input name="name" type="text" value="{{name}}" placeholder="Name"/></h1>
+            {{#if isOwned}}
+            <div class="form-group">
+              <span for="xp"><a class="creer-tache-livre chat-card-button" data-actor-id="{{actorId}}">Créer une tâche de lecture</a></span>
+            </div>
+            {{/if}}      
+        </div>
+    </header>
+    
+    {{!-- Sheet Body --}}
+    <section class="sheet-body">
+      <div class="form-group">
+        <label for="xp">Auteur</label>
+        <input class="attribute-value" type="text" name="system.auteur" value="{{system.auteur}}" data-dtype="String"/>
+      </div>
+      <div class="form-group">
+        <label for="xp">Compétence</label>
+        <select name="system.competence" id="competenceselect" data-dtype="String">
+          {{#select system.competence}}
+          {{>"systems/foundryvtt-reve-de-dragon/templates/enum-competence.html"}}
+          {{/select}}    
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="xp">Difficulté</label>
+        <input class="attribute-value" type="number" name="system.difficulte" value="{{system.difficulte}}" data-dtype="Number"/>
+      </div>
+      <div class="form-group">
+        <label for="xp">Points de tâches</label>
+        <input class="attribute-value" type="number" name="system.points_de_tache" value="{{system.points_de_tache}}" data-dtype="Number"/>
+      </div>
+      <div class="form-group">
+        <label for="xp">Expérience</label>
+        <input class="attribute-value" type="number" name="system.xp" value="{{system.xp}}" data-dtype="Number"/>
+      </div>
+      <div class="form-group">
+        <label for="xp">Niveau minimum</label>
+        <input class="attribute-value" type="text" name="system.niveau_minimum" value="{{system.niveau_minimum}}" data-dtype="Number"/>
+      </div>
+      <div class="form-group">
+        <label for="xp">Niveau maximum</label>
+        <input class="attribute-value" type="text" name="system.niveau_maximum" value="{{system.niveau_maximum}}" data-dtype="Number"/>
+      </div>
+      <div class="form-group">
+        <label for="xp">Encombrement </label>
+        <input class="attribute-value" type="number" name="system.encombrement" value="{{system.encombrement}}" data-dtype="Number"/>
+      </div>
+      <div class="form-group">
+        <label>Quantité </label>
+        <input class="attribute-value" type="number" name="system.quantite" value="{{system.quantite}}" data-dtype="Number" />
+      </div>
+      <div class="form-group item-cout">
+        <label for="xp">Prix (sols) </label>
+        <input class="attribute-value" type="number" name="system.cout" value="{{system.cout}}" data-dtype="Number"/>
+      </div>
+
+      {{>"systems/foundryvtt-reve-de-dragon/templates/partial-item-description.html"}}
+
+    </section>
+    
+</form>

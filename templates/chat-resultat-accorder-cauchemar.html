@@ -1,0 +1,10 @@
+<h4>
+  {{alias}} s'accorde: {{entite}}
+</h4>
+{{> "systems/foundryvtt-reve-de-dragon/templates/chat-infojet.html"}}
+<hr>
+<div>{{#if rolled.isSuccess}}
+    {{alias}} s'est accordé à {{entite}}
+    {{else}}ne s'est pas accordé à {{entite}}, il pourra réessayer à sa prochaine attaque.
+    {{/if}} 
+</div>

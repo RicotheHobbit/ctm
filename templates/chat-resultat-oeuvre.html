@@ -1,0 +1,16 @@
+<h4><img class="chat-icon" src="{{competence.img}}" alt="{{oeuvre.system.competence}}" />
+
+  {{alias}} tente d'interpréter {{oeuvre.name}} (niveau {{oeuvre.system.niveau}})
+</h4>
+<br>{{upperFirst oeuvre.system.default_carac}} / {{oeuvre.system.competence}}
+{{> "systems/foundryvtt-reve-de-dragon/templates/chat-infojet.html"}}
+<hr>
+<div>
+  {{#if rolled.isSuccess}}
+  {{alias}} réussi son interprétation avec une qualité de {{qualiteFinale}} . 
+  {{else}}
+  {{alias}} est peu inspiré(e) et son interprétation a une qualité de {{qualiteFinale}}.
+  {{/if}}
+  {{> "systems/foundryvtt-reve-de-dragon/templates/chat-info-appel-au-moral.html"}}
+</div>
+{{> "systems/foundryvtt-reve-de-dragon/templates/chat-description.html" oeuvre.system}}

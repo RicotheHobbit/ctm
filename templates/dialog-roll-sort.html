@@ -1,0 +1,80 @@
+<form class="dialog-roll-sort">
+  <h2 class="flexrow">Lancer le {{#if sort.system.isrituel}}rituel{{else}}sort{{/if}}:
+    <select name="sort" class="roll-sort" data-dtype="String">
+      {{#select sort}}
+      {{#each sortList as |sort key|}}
+      <option value={{key}}>{{this.name}} - {{#if this.system.caseTMRspeciale}} {{this.system.caseTMRspeciale}}
+        {{else}}{{this.system.caseTMR}}{{/if}} / R{{this.system.difficulte}} r {{sort.system.ptreve}} ({{sort.system.draconic}})
+      </option>
+      {{/each}}
+      {{/select}}
+    </select>
+  </h2>
+  <img class="chat-icon" src="{{competence.img}}" alt="{{competence.name}}" />
+  <div class="grid grid-2col">
+    <div class="flex-group-left">
+      <div class="flexrow">
+        <label for="tmr">TMR - {{tmr.coord}}:</label><label name="tmr">{{tmr.label}}</label>
+      </div>
+      <div class="flexrow">
+        <label for="carac">Rêve:</label><label name="carac">{{selectedCarac.value}}</label>
+      </div>
+      <div class="flexrow">
+        <label for="ptreve-variable">Points de Rêve: </label>
+        <select name="ptreve-variable" class="div-sort-ptreve-var" id="ptreve-variable" data-dtype="number">
+          {{#select ptreve-variable}}
+          {{#each coutreve as |cout key|}}
+          <option value={{cout}}>{{cout}}</option>
+          {{/each}}
+          {{/select}}
+        </select>
+        <label class="div-sort-ptreve-fixe">{{selectedSort.system.ptreve}}</select>
+      </div>
+      <div class="flexrow div-sort-non-rituel">
+        <label>Mettre en réserve</label>
+        <input class="checkbox-by-name" type="checkbox" name="mettreEnReserve" {{#if mettreEnReserve}}checked{{/if}} />
+      </div>
+    </div>
+    <div class="flex-group-left">
+      <div class="flexrow">
+        <label for="competence">Draconic:</label>
+        <select name="competence" class="roll-draconic" data-dtype="String">
+          {{#select draconic}}
+          {{#each draconicList as |draconic key|}}
+          <option value={{key}}>{{draconic.name}} : {{numberFormat draconic.system.niveau decimals=0 sign=true}}
+          </option>
+          {{/each}}
+          {{/select}}
+        </select>
+      </div>
+      <div class="flexrow">
+        <label for="diffLibre">Difficulté</label>
+        <select name="diffLibre" class="div-sort-difficulte-var" id="diffLibre" data-dtype="number">
+          {{#select diffLibre}}
+          {{#each difficultesLibres as |key|}}
+          <option value={{key}}>{{numberFormat key decimals=0 sign=true}}</option>
+          {{/each}}
+          {{/select}}
+        </select>
+        <label class="div-sort-difficulte-fixe">{{numberFormat selectedSort.system.difficulte decimals=0 sign=true}}</label>
+      </div>
+      {{>"systems/foundryvtt-reve-de-dragon/templates/partial-roll-diffCondition.html"}}
+      {{>"systems/foundryvtt-reve-de-dragon/templates/partial-roll-forcer.html"}}
+      <div class="flexrow">
+        <label for="bonus-case">Bonus de case </label>
+        <label name="bonus-case" class="bonus-case">0%</label>
+      </div>
+      <div id="tableAjustements" class="flexrow"></div>
+    </div>
+  </div>
+  <div class="description-sort">
+    <hr>
+    {{> "systems/foundryvtt-reve-de-dragon/templates/partial-description-sort.html" sort=selectedSort}}
+  </div>
+
+  <div id="tableResolution"></div>
+  <div id="tableProbaReussite"></div>
+</form>
+
+<script>
+</script>

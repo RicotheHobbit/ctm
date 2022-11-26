@@ -1,0 +1,23 @@
+<div>
+  <ul class="item-list">
+    <li class="item flexrow">
+      <span class="generic-label">Stress transformé</span>
+      <input class="compteur-edit" type="text" name="experience" value="{{system.compteurs.experience.value}}" data-dtype="number" size="3"/>
+    </li>
+
+    <li class="item flexrow">
+      <span class="generic-label">Total XP compétences</span>
+      <span class="competence-value">{{calc.competenceXPTotal}}</span>
+    </li>
+    {{#if options.vueDetaillee}}
+    <li>Niveaux d'archétype à répartir</li>
+    {{#each calc.comptageArchetype as |archetype key|}}
+    {{#if (lt archetype.nombre archetype.nombreMax)}}
+    <li class="item flexrow">
+      <label class="generic-label">Archetype {{archetype.niveau}} : {{archetype.nombre}} / {{archetype.nombreMax}}</label>
+    </li>
+    {{/if}}
+    {{/each}}
+    {{/if}}
+  </ul>
+</div>

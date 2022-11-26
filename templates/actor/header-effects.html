@@ -1,0 +1,17 @@
+<div class="flexrow">
+  {{#if calc.surprise}}{{calc.surprise}}! {{/if}}
+  {{#if effects}}
+    <span>
+      {{#each effects as |effect key|}}
+      <span class="active-effect" data-effect="{{effect.flags.core.statusId}}">
+        <img class="button-effect-img delete-active-effect" src="{{effect.icon}}" alt="{{localize effect.label}}" width="24" height="24" />
+      </span>
+      {{/each}}
+    </span>
+    {{#if options.isGM}}
+    <span class="enlever-tous-effets"><a>(enlever tout)</a></span>
+    {{/if}}
+  {{else}}
+    <span>Aucun effet actif</span>
+  {{/if}}
+</div>

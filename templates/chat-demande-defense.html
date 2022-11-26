@@ -1,0 +1,73 @@
+<div data-passearme="{{passeArme}}">
+  {{#if (eq surprise 'totale')}}
+    <span><strong>{{defender.name}}</strong> est totalement surpris</span>
+  {{else if essais.defense}}
+    <span><strong>{{defender.name}}</strong> doit :</span>
+  {{else}}
+    <span><strong>{{defender.name}}</strong> doit se défendre
+      {{~#if (eq surprise 'demi')}} avec une significative {{/if}} d'une attaque
+      {{~#if attaqueParticuliere}} <strong>particulière en
+        {{~#if (eq attaqueParticuliere 'finesse')}} finesse
+        {{else if (eq attaqueParticuliere 'force')}} force
+        {{else if (eq attaqueParticuliere 'rapidite')}} rapidité
+        {{/if~}}</strong>
+      {{/if}} de {{attacker.name}} ({{attaqueArme.name}}):
+    </span>
+  {{/if}}
+  <span class='chat-card-button-area'>
+    <br>
+      {{#unless (eq surprise 'totale')}}
+        {{#if essais.defense}}
+          {{#unless essais.defenseChance}}
+            {{#if (eq defender.type 'personnage')}}
+            <a class='chat-card-button' id='appel-chance-defense' data-attackerId='{{attackerId}}'
+              data-defenderTokenId='{{defenderTokenId}}'>Faire appel à la chance</a>
+            </a>
+            <br>
+            {{/if}}
+            {{#if (eq defender.type 'personnage')}}
+            {{#if (gt defender.system.compteurs.destinee.value 0)}}
+              <a class='chat-card-button' id='appel-destinee-defense' data-attackerId='{{attackerId}}'
+                data-defenderTokenId='{{defenderTokenId}}'>Utiliser la destinée</a>
+              </a>
+              <br>
+            {{/if}}
+            {{/if}}
+          {{/unless}}
+        {{else}}
+          {{#each armes as |arme key|}}
+            <a class='chat-card-button' id='parer-button' data-attackerId='{{../attackerId}}' data-defenderTokenId='{{../defenderTokenId}}'
+                data-armeid='{{arme._id}}'>
+              Parer avec {{arme.name}} à {{../diffLibre }}{{#if arme.system.nbUsage}} (Utilisations : {{arme.system.nbUsage}}){{/if}}
+            </a>
+            <br>
+          {{/each}}
+          {{#if mainsNues}}
+            <a class='chat-card-button' id='parer-button' data-attackerId='{{attackerId}}' data-defenderTokenId='{{defenderTokenId}}'
+                data-armeid='{{arme._id}}' data-competence='{{arme.system.competence}}'>
+              Parer à mains nues à {{diffLibre}}{{#if arme.system.nbUsage}} (Utilisations : {{arme.system.nbUsage}}){{/if}}
+            </a>
+            <br>
+          {{/if}}
+          {{#if (ne attaqueCategorie 'tir')}}
+            {{#each esquives as |esquive key|}}
+            <a class='chat-card-button' id='esquiver-button' data-attackerId='{{../attackerId}}' data-defenderTokenId='{{../defenderTokenId}}'
+                data-compid='{{esquive._id}}'  data-competence='{{esquive.name}}'>
+                {{log 'esquive' esquive}}
+              {{esquive.name}} à {{../diffLibre}} {{#if esquive.system.nbUsage}} (Utilisations : {{esquive.system.nbUsage}}){{/if}}
+            </a>
+            <br>
+            {{/each}}
+          {{/if}}
+        {{/if}}
+      {{/unless}}
+    <a class='chat-card-button' id='encaisser-button' data-attackerId='{{attackerId}}'
+      data-defenderTokenId='{{defenderTokenId}}'>
+      Encaisser à {{#if (eq dmg.mortalite 'non-mortel')~}}
+      ({{numberFormat dmg.total decimals=0 sign=true}})
+      {{~else~}}
+      {{numberFormat dmg.total decimals=0 sign=true}}
+      {{~/if}} !
+    </a>
+  </span>
+</div>

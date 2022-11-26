@@ -1,0 +1,25 @@
+<form class="{{cssClass}}" autocomplete="off">
+  <header class="sheet-header">
+    <img class="chat-icon" src="{{img}}" data-edit="img" title="{{name}}"/>
+    <div class="header-fields">
+      <h1 class="charname">
+        <input name="name" type="text" value="{{name}}" placeholder="Name"/>
+      </h1>
+      <p class="poesie-reference">Référence</p>
+    </div>
+  </header>
+  <section class="sheet-body">
+    <div class="flexcol">
+      <label>Extrait</label>
+      <div class="form-group editor">
+        {{editor extrait target="system.extrait" button=true owner=owner editable=editable}}
+      </div>
+    </div>
+    <div class="flexcol">
+      <label>Texte complet</label>
+      <div class="form-group editor">
+        {{editor texte target="system.texte" button=true owner=owner editable=editable}}
+      </div>
+    </div>
+  </section>
+</form>

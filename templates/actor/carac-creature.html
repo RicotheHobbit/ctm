@@ -1,0 +1,8 @@
+<ol class="carac-list alterne-list">
+  {{#each system.attributs as |attr key|}}
+  <li class="caracteristique flexrow list-item" data-attribute="{{key}}">
+    <span class="carac-label" name="system.attributs.{{key}}.label">{{attr.label}}</span>
+    <input class="caracteristique streched" type="text" name="system.attributs.{{key}}.value" value="{{attr.value}}" data-dtype="{{attr.type}}" {{#unless @root.options.vueDetaillee}}disabled{{/unless}}/>
+  </li>
+  {{/each}}
+</ol>

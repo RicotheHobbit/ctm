@@ -1,0 +1,16 @@
+<form autocomplete="off" onsubmit="event.preventDefault();">
+  <ul>
+    {{#each effects as |effect key|}}
+    <li>
+      {{#if effect.rdd}}
+      <input class="resource-content" type="checkbox" checked disabled/>
+      {{else}}
+      <input class="resource-content select-effect" type="checkbox" name="{{effect.id}}" {{#if effect.active}}checked{{/if}}/>
+      {{/if}}
+      <img class="button-effect-img" height="16" width="16" src="{{effect.icon}}" alt="{{localize effect.label}}" />
+      <label>{{localize effect.label}}</label>
+    </li>
+    {{/each}}
+  </ul>
+</form>
+

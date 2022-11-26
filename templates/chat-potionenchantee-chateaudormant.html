@@ -1,0 +1,9 @@
+<img class="chat-icon" src="{{potionImg}}" alt="{{potionName}}" />
+<h4>
+  La potion enchantée {{potionName}} de {{alias}} a perdu un Point de Rêve (nouveau total : {{pr}}).</h4>
+<hr>
+<div>
+  {{#if (eq pr 0)}}
+  Sa potion étant désormais à 0 Point de Rêve, elle est inutilisable et doit être jetée.
+  {{/if}}
+</div>

@@ -1,0 +1,15 @@
+<img class="chat-icon" src="{{herbe.img}}" alt="fabrication" />
+<h4>
+  {{alias}} a fabriqué une potion de {{herbe.system.categorie}} de {{herbe.name}}, avec {{herbe.nbBrins}} brins.
+</h4>
+<hr>
+<div>
+  {{#if (eq nbBrinsReste 0)}}
+  Toute l'herbe a été consommée par la potion. L'herbe a été supprimée de l'inventaire.
+  {{else}}
+  La quantité d'herbe est désormais de {{nbBrinsReste}} et a été mise à jour automatiquement.
+  {{/if}}
+</div>
+<div>
+  Pensez à mettre la potion dans une fiole !
+</div>

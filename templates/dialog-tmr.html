@@ -1,0 +1,59 @@
+<form class="tmr-dialog">
+<h2 class="comptmrdialog" id="tmrDialogTitle"></h2>
+
+<table id="tmrsheet">
+  <tr id="tmrrow1">
+    <td>
+      {{#if (eq mode "visu")}}
+      <div class="flex-group-center">
+        <h4>Visualisation!</h4>
+      </div>
+      {{else}}
+        {{#if (and isGM hasPlayerOwner)}}
+        <div class="flex-group-center">
+          <h4>Le gardien gére les TMR du joueur, le joueur ne peut pas monter dans les TMR!</h4>
+        </div>
+        {{/if}}
+      <div class="flex-group-center">
+        <img class="small-button-direction" id='dir-top-left' src='systems/foundryvtt-reve-de-dragon/styles/img/ui/dir-top-left.svg'>
+        <img class="small-button-direction" id='dir-top' src='systems/foundryvtt-reve-de-dragon/styles/img/ui/dir-top.svg'>
+        <img class="small-button-direction" id='dir-top-right' src='systems/foundryvtt-reve-de-dragon/styles/img/ui/dir-top-right.svg'>
+      </div>
+      <div class="flex-group-center">
+        <img class="small-button-direction" id='dir-bottom-left' src='systems/foundryvtt-reve-de-dragon/styles/img/ui/dir-bottom-left.svg'>        
+        <img class="small-button-direction" id='dir-bottom' src='systems/foundryvtt-reve-de-dragon/styles/img/ui/dir-bottom.svg'>
+        <img class="small-button-direction" id='dir-bottom-right' src='systems/foundryvtt-reve-de-dragon/styles/img/ui/dir-bottom-right.svg'>
+      </div>
+      <div class="flex-group-center lire-signe-draconique">
+        <a>Lire un signe draconique</a>
+      </div>
+      <div class="flex-group-center lancer-sort">
+        <a>Lancer un Sort</a>
+      </div>
+      <hr>
+      <div class="flex-group-center">
+        <label>Carac. Rêve : </label><label>{{caracReve}}</label>
+      </div>
+      <div class="flex-group-center">
+        <label>Rêve actuel : </label><span id="tmr-pointsreve-value">0</span>
+      </div>
+      <div class="flex-group-center">
+        <label>Coordonnées : </label><span id="tmr-pos">0</span>
+      </div>
+      <div class="flex-group-center">
+        <label>Etat général : </label><span id="tmr-etatgeneral-value">0</span>
+      </div>
+      <div class="flex-group-center">
+        <label>Refoulement : </label><span id="tmr-refoulement-value">0</span>
+      </div>
+      <div class="flex-group-center flex-actions-bar appliquerFatigue">
+        Fatigue 
+        <span id="tmr-fatigue-table">{{{fatigue.html}}}</span>
+      </div>
+      {{/if}}
+    </td>
+  </tr>
+</table>
+
+</form>
+

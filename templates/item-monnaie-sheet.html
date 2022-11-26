@@ -1,0 +1,24 @@
+<form class="{{cssClass}}" autocomplete="off">
+  {{>"systems/foundryvtt-reve-de-dragon/templates/header-item.html"}}
+  {{!-- Sheet Body --}}
+  <section class="sheet-body">
+    <div class="form-group">
+      <label for="xp">Quantité</label>
+      <input class="attribute-value" type="text" name="system.quantite" value="{{system.quantite}}" data-dtype="Number"/>
+    </div>
+    <div class="form-group">
+      <label for="xp">Valeur en Deniers</label>
+      {{#if isGM}}
+      <input class="attribute-value" type="text" name="system.valeur_deniers" value="{{system.valeur_deniers}}" data-dtype="Number"/>
+      {{else}}
+      <label for="xp">{{system.valeur_deniers}}</label>
+      {{/if}}
+    </div>
+    <div class="form-group">
+      <label for="xp">Encombrement</label>
+      <input class="attribute-value" type="text" name="system.encombrement" value="{{system.encombrement}}" data-dtype="Number"/>
+    </div>
+
+    {{>"systems/foundryvtt-reve-de-dragon/templates/partial-item-description.html"}}
+  </section>
+</form>

@@ -1,0 +1,45 @@
+<form class="{{cssClass}}" autocomplete="off">
+  {{>"systems/foundryvtt-reve-de-dragon/templates/header-item.html"}}
+
+  <section class="sheet-body">
+    {{#if (and system.sortid sort)}}
+    <div class="form-group">
+      <label>Sort</label>
+      <label>{{sort.name}} - {{sort.system.draconic}} / {{sort.system.difficulte}}</label>
+    </div>
+    {{else}}
+    <div class="form-group">
+      <label>Draconic</label>
+      <select name="system.draconic" id="draconic" data-dtype="String">
+        {{#select system.draconic}}
+        {{>"systems/foundryvtt-reve-de-dragon/templates/enum-draconic.html"}}
+        {{/select}}
+      </select>
+    </div>
+    {{/if}}
+    <div class="form-group">
+      <label for="system.coord">Case TMR</label>
+      <input class="attribute-value" type="text" name="system.coord" value="{{system.coord}}" data-dtype="String"/>
+    </div>
+    <div class="form-group">
+      <label></label>
+      <label class="attribute-value" >{{caseTmr-label system.coord}}</label>
+    </div>
+    <div class="form-group">
+      <label for="system.ptreve">Rêve</label>
+      <input class="attribute-value" type="text" name="system.ptreve" value="{{system.ptreve}}" data-dtype="String"/>
+    </div>
+    <div class="form-group">
+      <label for="system.heurecible">Heure de naissance cible</label>
+      <select type="text" name="system.heurecible" value="{{system.heurecible}}" data-dtype="String">
+        {{#select system.heurecible}}
+        {{>"systems/foundryvtt-reve-de-dragon/templates/enum-heures.html"}}
+        {{/select}}
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="system.echectotal">Echec total</label>
+      <input class="attribute-value" type="checkbox" name="system.echectotal" {{#if system.echectotal}}checked{{/if}} />
+    </div>
+  </section>
+</form>

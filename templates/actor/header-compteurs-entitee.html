@@ -1,0 +1,13 @@
+{{#if (eq system.definition.typeentite 'incarne')}}
+<li data-attribute="endurance">
+  <label class="compteur">
+    Endurance
+    <a class="endurance-moins"><i class="fas fa-minus-square"></i></a>
+    <input class="resource-content" type="text" name="system.sante.endurance.value" value="{{system.sante.endurance.value}}" data-dtype="Number" />
+    / {{#if @root.options.vueDetaillee}}
+    <input class="resource-content" type="text" name="system.sante.endurance.max" value="{{system.sante.endurance.max}}" data-dtype="Number"/>
+    {{else}}{{system.sante.endurance.max}}{{/if}}
+  <a class="endurance-plus"><i class="fas fa-plus-square"></i></a>
+  </label>
+</li>
+{{/if}}

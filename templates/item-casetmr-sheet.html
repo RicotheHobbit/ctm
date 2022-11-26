@@ -1,0 +1,20 @@
+<form class="{{cssClass}}" autocomplete="off">
+  {{>"systems/foundryvtt-reve-de-dragon/templates/header-item.html"}}
+  {{!-- Sheet Body --}}
+  <section class="sheet-body">
+    <div class="form-group">
+      <label for="niveau">Coordonnées TMR </label>
+      <input class="attribute-value" type="text" name="system.coord" value="{{system.coord}}" data-dtype="String"/>
+    </div>
+    <div class="form-group">
+      <label for="niveau">Mode spécifique</label>
+      <select name="system.specific" id="specific" data-dtype="String">
+        {{#select system.specific}}
+        {{>"systems/foundryvtt-reve-de-dragon/templates/enum-tmr-effet.html"}}
+        {{/select}}
+    </select>
+    </div>
+
+    {{>"systems/foundryvtt-reve-de-dragon/templates/partial-item-description.html"}}
+  </section>
+</form>

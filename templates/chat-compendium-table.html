@@ -1,0 +1,16 @@
+<div>
+  <img class="chat-icon" src="{{img}}" alt="{{typeName}}" />
+  <h4>Table aléatoire: {{typeName}}</h4>
+  <div>{{sourceCompendium}}</div>
+  <br>
+</div>
+<div>
+  <ul class="flexcol item-list alterne-list">
+    {{#each table as |row|}}
+    <li class="select-target item list-item" >
+      <span>{{row.min}}{{#unless (eq row.min row.max)}}-{{row.max}}{{/unless}} : &nbsp;</span>
+      <span>{{linkCompendium @root.sourceCompendium row.document.id row.document.name}}</span>
+    </li>
+    {{/each}}
+  </ul>
+</div>

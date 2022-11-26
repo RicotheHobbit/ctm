@@ -1,0 +1,10 @@
+<div class="flex-group-left details-sort">
+  {{#if sort.system.cible}}<label><strong>Cible</strong>: {{sort.system.cible}}&nbsp;&nbsp;</label>{{/if}}
+  {{#if sort.system.JR}}<label><strong>JR</strong>: {{sort.system.JR}}&nbsp;&nbsp;</label>{{/if}}
+  {{#if sort.system.portee}}<label><strong>Portée</strong>: {{sort.system.portee}}&nbsp;&nbsp;</label>{{/if}}
+  {{#if sort.system.duree}}<label><strong>Durée</strong>: {{sort.system.duree}}&nbsp;&nbsp;</label>{{/if}}
+  {{#if sort.system.coutseuil}}<label><strong>Coût de seuil</strong>: {{sort.system.coutseuil}}</label>{{/if}}
+</div>
+<div class="details-sort">
+  {{> "systems/foundryvtt-reve-de-dragon/templates/partial-description-overflow.html" sort.system}}
+</div>

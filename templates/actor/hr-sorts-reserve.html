@@ -1,0 +1,15 @@
+{{#if sortsReserve.length}}
+<h3>Sorts en Réserve</h3>
+<ul class="item-list alterne-list">
+  {{#each sortsReserve as |sort key|}}
+  <li class="item list-item flexrow" data-item-id="{{sort._id}}" data-attribute="{{key}}">
+    <img class="sheet-competence-img" src="{{sort.img}}" />
+    <span class="display-label"><a>{{#if sort.system.echectotal}}Echec total: {{/if}}{{sort.name}} r{{sort.system.ptreve}}</a></span> 
+    <span>{{sort.system.coord}} - {{caseTmr-label sort.system.coord}}</span> 
+    <div class="item-controls flex-shrink">
+      <a class="item-delete flex-shrink" title="Supprimer"><i class="fas fa-trash"></i></a>
+    </div>
+  </li>
+  {{/each}}
+</ul>
+{{/if}}

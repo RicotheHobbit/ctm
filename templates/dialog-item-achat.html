@@ -1,0 +1,96 @@
+<form class="rdddialog">
+  <div>
+    <div class="flexrow flex-center">
+      <div>
+        {{#if vendeur}}
+        <img class="chat-icon" src="{{vendeur.img}}" title="{{vendeur.name}}" alt="{{vendeur.name}}" />
+        {{else}}
+        <img class="chat-icon" src="systems/foundryvtt-reve-de-dragon/styles/img/ui/icon_echoppe.webp" title="Un commerçant" alt="Vendeur MJ" />
+        {{/if}}
+      </div>
+      <div><i class="fas fa-sign-out-alt"></i></div>
+      <div><img class="chat-icon" src="{{item.img}}" title="{{item.name}}" alt="{{item.name}}" /></div>
+      <div><i class="fas fa-sign-in-alt"></i></div>
+      <div>
+        {{#if acheteur}}
+        <img class="chat-icon" src="{{acheteur.img}}" title="{{acheteur.name}}" alt="{{acheteur.name}}" />
+        {{else}}
+        <img class="chat-icon" src="systems/foundryvtt-reve-de-dragon/styles/img/ui/icon_echoppe.webp" title="Un acheteur" alt="Acheteur MJ" />
+        {{/if}}
+      </div>
+    </div>
+    <h4>
+      {{#if isVente}}Acheter{{else}}Prendre{{/if}}
+      {{#if vendeur}}à {{vendeur.name}}{{/if}}:
+      {{item.name}}</h4>
+    </div>
+    
+    <div class="flexrow flex-group-left">
+    <label>{{#if (gt tailleLot 1)}}Lots disponibles
+      {{else}}Quantité disponible{{/if}}</label>
+    <label>{{#if quantiteIllimite}}
+      pas de limite
+      {{else}}
+      {{quantiteNbLots}}
+      {{/if}}</label>
+  </div>
+  <div class="flexrow flex-group-left">
+    <label>
+      {{#if (gt tailleLot 1)}}Nombre de lots de {{tailleLot}}
+      {{else}}Quantité{{/if}}
+    </label>
+    <div class="flexrow">
+      <input name="nombreLots" class="nombreLots flex-shrink" type="number" min="1" max="{{quantiteNbLots}}"
+        value="{{choix.nombreLots}}" data-dtype="Number" />
+    </div>
+  </div>
+
+  {{#if (and (eq item.type 'nourritureboisson') (eq acheteur.type 'personnage'))}}
+    <p>Si vous souhaitez {{#if item.system.boisson}}boire{{else}}manger{{/if}}:</p>
+
+    {{#if item.system.sust}}
+      <p>Cette {{#if item.system.boisson}}boisson{{else}}nourriture{{/if}} vous apportera
+        <span class="total-sust">{{totalSust}}</span>
+        de sustantation.</p>
+    {{/if}}
+    {{#if item.system.boisson}}
+      <p>
+        {{#if item.system.alcoolise}}
+          C'est une boisson alcoolisée de force {{item.system.force}}, vous effectuerez un jet d'éthylisme.
+        {{/if}}
+        Cette boisson vous apportera <span class="total-desaltere">{{totalDesaltere}}</span> unités d'eau.
+      </p>
+    {{/if}}
+    {{#if (gt item.system.qualite 0)}}
+      {{#if (gt item.system.qualite cuisine.system.niveau)}}
+      <p>La qualité du plat est telle qu'un jet de Goût/Cuisine à {{numberFormat item.system.qualite decimals=0 sign=true}}
+        vous permettra un jet de moral heureux.</p>
+      {{/if}}
+    {{/if}}
+    
+    {{#if (or (lt item.system.qualite 0) (lt item.system.exotisme 0))}}
+      <p>
+        Pour surmonter {{#if (lt item.system.qualite 0)}}le mauvais goût{{else}}l'exotisme{{/if}}, vous devez effectuer un jet de Volonté/Cuisine à {{numberFormat (min item.system.exotisme item.system.qualite) decimals=0 sign=true}}.
+      <br/>
+        <input class="attribute-value se-forcer" type="checkbox" name="se-forcer" {{#if choix.seForcer}}checked{{/if}}>
+          <label for="se-forcer">En cas d'échec, voulez-vous vous forcer à manger (et subir un jet de moral en situation malheureuse)?</label>
+        </input>
+      </p>
+    {{/if}}
+  {{/if}}
+
+  {{#if isVente}}
+  <div class="flexrow flex-group-left">
+    <label>Prix {{#if (gt tailleLot 1)}}du lot{{else}}unitaire{{/if}}</label>
+    <label>{{prixLot}} Sols</label>
+  </div>
+  <div class="flexrow flex-group-left">
+    <label>Prix total</label>
+    <span class="flexrow">
+      <span class="prixTotal">{{prixTotal}}</span>
+      <span>Sols</span>
+    </span>
+  </div>
+  {{/if}}
+  </div>
+</form>

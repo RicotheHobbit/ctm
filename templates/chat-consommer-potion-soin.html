@@ -1,0 +1,25 @@
+<img class="chat-icon" src="{{img}}" alt="potion de soin" />
+<h4>
+  {{alias}} a bu une <strong>{{name}}{{#if system.magique}} enchantée de {{system.puissance}} points de guérison{{/if}}</strong>
+</h4>
+<hr>
+<div>
+  {{#if system.magique}}
+    Le Jet de Résistance est {{#if rolled.isSuccess}}réussi{{else}}échoué{{/if}}.
+    {{> "systems/foundryvtt-reve-de-dragon/templates/chat-infojet.html"}}
+    {{#if rolled.isEchec}}
+      <br>La potion fait effet!
+      {{alias}} a perdu 1 point de rêve et s'endort pour {{guerisonMinutes}} minutes. A son réveil, les blessures suivantes seront guéries : 
+      <ul>
+        {{#each guerisonData.list as |guerison key|}}
+        <li>{{guerison}}</li>
+        {{/each}}
+      </ul>
+    {{else}}
+      <br>La potion ne fait pas effet ! Lors de votre prochain jet de récupération à Chateau Dormant, vous bénéficierez d'un bonus de {{system.herbebonus}} (appliqué automatiquement).
+    {{/if}}
+  {{else}}
+    Lors de votre prochain jet de récupération à Chateau Dormant, vous bénéficierez d'un bonus de {{system.herbebonus}} (appliqué automatiquement).
+  {{/if}}
+  <br>La potion a été supprimée de l'équipement.
+</div>

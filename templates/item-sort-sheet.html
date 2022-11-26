@@ -1,0 +1,74 @@
+<form class="{{cssClass}}" autocomplete="off">
+  {{>"systems/foundryvtt-reve-de-dragon/templates/header-item.html"}}
+  {{!-- Sheet Body --}}
+  <section class="sheet-body">
+    <div class="form-group">
+      <label>Draconic</label>
+      <select name="system.draconic" id="draconic" data-dtype="String">
+        {{#select system.draconic}}
+        {{>"systems/foundryvtt-reve-de-dragon/templates/enum-draconic.html"}}
+        {{/select}}
+      </select>
+    </div>      
+    <div class="form-group">
+      <label for="system.caseTMR">Case TMR</label>
+      <select name="system.caseTMR" id="caseTMR" data-dtype="String">
+        {{#select system.caseTMR}}
+        {{>"systems/foundryvtt-reve-de-dragon/templates/enum-tmr-type.html"}}
+        <option value="special">Case spéciale TMR (saisie ci-dessous)</option>
+        {{/select}}
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="system.caseTMRspeciale">Case TMR Spéciale</label>
+      <input class="attribute-value" type="text" name="system.caseTMRspeciale" value="{{system.caseTMRspeciale}}" data-dtype="String"/>
+    </div>
+    <div class="form-group">
+      <label for="system.difficulte">Difficulté</label>
+      <input class="attribute-value" type="text" name="system.difficulte" value="{{system.difficulte}}" data-dtype="String"/>
+    </div>
+    <div class="form-group">
+      <label for="system.ptreve">Coût en Rêve</label>
+      <input class="attribute-value" type="text" name="system.ptreve" value="{{system.ptreve}}" data-dtype="String"/>
+    </div>
+    <div class="form-group">
+      <label for="system.coutseuil">Coût en Seuil</label>
+      <input class="attribute-value" type="text" name="system.coutseuil" value="{{system.coutseuil}}" data-dtype="Number"/>
+    </div>
+    <div class="form-group">
+      <label for="system.isrituel">Rituel</label>
+      <input class="attribute-value" type="checkbox" name="system.isrituel"  {{#if system.isrituel}}checked{{/if}}/>
+    </div>
+    <div class="form-group">
+      <label for="system.duree">Durée</label>
+      <input class="attribute-value" type="text" name="system.duree" value="{{system.duree}}" data-dtype="String"/>
+    </div>
+    <div class="form-group">
+      <label for="system.portee">Portée</label>
+      <input class="attribute-value" type="text" name="system.portee" value="{{system.portee}}" data-dtype="String"/>
+    </div>
+    <div class="form-group">
+      <label for="system.cible">Cible</label>
+      <input class="attribute-value" type="text" name="system.cible" value="{{system.cible}}" data-dtype="String"/>
+    </div>
+    <div class="form-group">
+      <label for="system.JR">Jet de Resistance</label>
+      <input class="attribute-value" type="text" name="system.JR" value="{{system.JR}}" data-dtype="String"/>
+    </div>
+    <div class="form-group">
+      <label for="system.xp">XP</label>
+      <input class="attribute-value" type="text" name="system.xp" value="{{system.xp}}" data-dtype="Number"/>
+    </div>
+    {{#if owner}}
+    {{#each bonusCaseList as |bcData key|}}
+    <div class="form-group">
+      <label for="caseValue">Case/Bonus :</label>
+      <input class="attribute-value"  type="text" name="caseValue" value="{{bcData.case}}" data-dtype="String"/>
+      <input class="attribute-value" type="text" name="bonusValue" value="{{bcData.bonus}}" data-dtype="Number"/>
+    </div>
+    {{/each}}
+    {{/if}}
+
+    {{>"systems/foundryvtt-reve-de-dragon/templates/partial-item-description.html"}}
+  </section>
+</form>

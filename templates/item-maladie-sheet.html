@@ -1,0 +1,48 @@
+<form class="{{cssClass}}" autocomplete="off">
+    <header class="sheet-header">
+        <img class="profile-img" src="{{img}}" data-edit="img" title="{{name}}"/>
+        <div class="header-fields">
+          {{#if (or isGM system.identifie)}}
+            <h1 class="charname"><input name="name" type="text" value="{{name}}" placeholder="Name"/></h1>
+          {{else}}
+            <h1 class="charname">Inconnue</h1>
+          {{/if}}
+          </div>
+    </header>
+    
+    {{!-- Sheet Body --}}
+    <section class="sheet-body">
+      {{#if (or isGM system.identifie)}}
+      <div class="form-group">
+        <label for="xp">Identifiée ? </label>
+        <input class="attribute-value" type="checkbox" name="system.identifie"  {{#if system.identifie}}checked{{/if}}/>
+      </div>
+      <div class="form-group">
+        <label for="xp">Malignité </label>
+        <input class="attribute-value" type="text" name="system.malignite" value="{{system.malignite}}" data-dtype="Number"/>
+      </div>
+      <div class="form-group">
+        <label for="xp">Périodicité</label>
+        <input class="attribute-value" type="text" name="system.periodicite" value="{{system.periodicite}}" data-dtype="String"/>
+      </div>
+      <div class="form-group">
+        <label for="xp">Dommages</label>
+        <input class="attribute-value" type="text" name="system.dommages" value="{{system.dommages}}" data-dtype="String"/>
+      </div>
+      <div class="form-group">
+        <label for="xp">Remedes Connus ? </label>
+        <input class="attribute-value" type="checkbox" name="system.remedesconnus"  {{#if system.remedesconnus}}checked{{/if}}/>
+      </div>
+      {{#if (or isGM system.remedesconnus)}}
+      <div class="form-group">
+        <label for="xp">Remèdes </label>
+        <input class="attribute-value" type="text" name="system.remedes" value="{{system.remedes}}" data-dtype="String"/>
+      </div>
+      {{/if}}
+      {{/if}}
+
+      {{>"systems/foundryvtt-reve-de-dragon/templates/partial-item-description.html"}}
+    
+    </section>
+    
+</form>

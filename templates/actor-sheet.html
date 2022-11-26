@@ -1,0 +1,200 @@
+<form class="{{cssClass}}" autocomplete="off">
+
+    {{!-- Sheet Header --}}
+    <header class="sheet-header">
+      <div class="header-fields">
+        <div class="flexrow">
+          <img class="profile-img" src="{{img}}" data-edit="img" title="{{name}}" />
+          <h1 class="charname"><input name="name" type="text" value="{{name}}" placeholder="Name"/></h1>
+        </div>
+        <div class="flexrow">
+          {{>"systems/foundryvtt-reve-de-dragon/templates/actor/header-compteurs.html"}}
+          <div class="flex-group-center">
+            {{>"systems/foundryvtt-reve-de-dragon/templates/actor/header-buttons.html"}}
+            {{>"systems/foundryvtt-reve-de-dragon/templates/actor/header-etat.html"}}
+            {{>"systems/foundryvtt-reve-de-dragon/templates/actor/header-effects.html"}}
+          </div>
+        </div>
+      </div>
+    </header>
+
+    {{!-- Sheet Tab Navigation --}}
+    <nav class="sheet-tabs tabs" data-group="primary">
+        <a class="item" data-tab="carac">Carac.</a>
+        <a class="item" data-tab="competences">Compétences</a>
+        <a class="item" data-tab="combat">Combat</a>
+        <a class="item" data-tab="connaissances">Savoirs&Taches</a>
+        <a class="item" data-tab="hautreve">Haut-Rêve</a>
+        <a class="item" data-tab="items">Équipement</a>
+        <a class="item" data-tab="description">Description</a>
+      </nav>
+      
+      {{!-- Sheet Body --}}
+      <section class="sheet-body">
+        
+        {{!-- Carac Tab --}}
+        <div class="tab items" data-group="primary" data-tab="carac">
+          <div class="flexrow">
+            {{>"systems/foundryvtt-reve-de-dragon/templates/actor/vue-detaillee.html"}}
+          </div>
+          <div class="grid grid-2col">
+            <div class="flex-group-left flexcol">
+              {{>"systems/foundryvtt-reve-de-dragon/templates/actor/carac-main.html"}}
+              {{>"systems/foundryvtt-reve-de-dragon/templates/actor/carac-total.html"}}
+            </div>
+            <div class="flex-group-left flexcol" >
+              {{>"systems/foundryvtt-reve-de-dragon/templates/actor/carac-derivee.html"}}
+            </div>
+          </div>
+        </div>
+
+        {{!-- Compétences Tab --}}
+        <div class="tab competences" data-group="primary" data-tab="competences">
+          <div class="flexrow">
+            <span><a class="vue-detaillee">
+              <i class="fas {{#if options.vueDetaillee}}fa-eye-slash{{else}}fa-eye{{/if}}"></i>
+              {{#if options.vueDetaillee}}Vue simplifiée{{else}}Vue détaillée{{/if}}</a>
+            </span>
+            <span><a class="show-hide-competences"><img class="small-button-container"
+              src="systems/foundryvtt-reve-de-dragon/icons/{{#if options.showCompNiveauBase}}no-filter.svg{{else}}filter.svg{{/if}}" alt="filter/montrer tout">
+              {{#if options.showCompNiveauBase}}Montrer tout{{else}}Filtrer{{/if}}</a>
+            </span>
+            <span class="flexrow">
+              <input class="recherche flex-grow" type="text" value="{{options.recherche.text}}" name="recherche" 
+              size="8" data-dtype="String" placeholder=""/>
+            </span>
+            <span>
+            </span>
+          </div>
+          <div class="grid grid-2col">
+            <div class="flex-group-left flexcol competence-column">
+              {{> "systems/foundryvtt-reve-de-dragon/templates/actor/competence-categorie.html" competences=(filtreTriCompetences byCateg.generale) categorie="Compétences générales"}}
+              {{> "systems/foundryvtt-reve-de-dragon/templates/actor/competence-categorie.html" competences=(filtreTriCompetences byCateg.particuliere) categorie="Compétences Particulières"}}
+              {{> "systems/foundryvtt-reve-de-dragon/templates/actor/competence-categorie.html" competences=(filtreTriCompetences byCateg.specialisee) categorie="Compétences Spécialisées"}}
+            </div>
+
+            <div class="flex-group-left flexcol competence-column">
+              {{> "systems/foundryvtt-reve-de-dragon/templates/actor/competence-categorie.html" competences=(filtreTriCompetences byCateg.melee) categorie="Compétences de Mêlée"}}
+              {{> "systems/foundryvtt-reve-de-dragon/templates/actor/competence-categorie.html" competences=(filtreTriCompetences byCateg.tir) categorie="Compétences de Tir"}}
+              {{> "systems/foundryvtt-reve-de-dragon/templates/actor/competence-categorie.html" competences=(filtreTriCompetences byCateg.lancer) categorie="Compétences de Lancer"}}
+              {{> "systems/foundryvtt-reve-de-dragon/templates/actor/competence-categorie.html" competences=(filtreTriCompetences byCateg.connaissance) categorie="Connaissances"}}
+              {{#if (or system.attributs.hautrevant.value options.vueDetaillee)}}
+              {{> "systems/foundryvtt-reve-de-dragon/templates/actor/competence-categorie.html" competences=(filtreTriCompetences byCateg.draconic) categorie="Draconic"}}
+              {{/if}}
+              {{> "systems/foundryvtt-reve-de-dragon/templates/actor/xp-competences.html"}}
+            </div>
+          </div>
+        </div>
+
+        {{!-- Combat Tab --}}
+        <div class="tab combat" data-group="primary" data-tab="combat">
+        {{> "systems/foundryvtt-reve-de-dragon/templates/actor/combat.html"}}<hr>
+        {{> "systems/foundryvtt-reve-de-dragon/templates/actor/blessures.html"}}
+        {{> "systems/foundryvtt-reve-de-dragon/templates/actor/maladies-poisons.html"}}
+        {{> "systems/foundryvtt-reve-de-dragon/templates/actor/possessions.html"}}
+        
+      </div>
+      
+      {{!-- Connaissances Tab --}}
+      <div class="tab connaissances" data-group="primary" data-tab="connaissances">
+        {{> "systems/foundryvtt-reve-de-dragon/templates/actor/taches.html"}}
+        {{> "systems/foundryvtt-reve-de-dragon/templates/actor/oeuvres.html"}}
+        {{> "systems/foundryvtt-reve-de-dragon/templates/actor/jeux.html"}}
+        {{> "systems/foundryvtt-reve-de-dragon/templates/actor/alchimie.html"}}
+      </div>
+      
+      {{!-- hautreve Tab --}}
+      <div class="tab hautreve " data-group="primary" data-tab="hautreve" style="height:200px">
+        <div>
+          {{#if system.attributs.hautrevant.value}}
+          <h3>Haut rêvant</h3>
+          {{> "systems/foundryvtt-reve-de-dragon/templates/actor/haut-revant.html"}}
+          {{else}}
+          <h3>Vous n'avez pas le don de haut-rêve</h3>
+          <p>Attribuer la Tête de Dragon 'Don de Haut Rêve' pour rendre le personnage Haut-Rêvant.</p>
+          {{> "systems/foundryvtt-reve-de-dragon/templates/actor/non-haut-revant.html"}}
+          {{/if}}
+          <br><br>
+        </div>
+      </div>
+
+      {{!-- Equipment Tab --}}
+      <div class="tab items" data-group="primary" data-tab="items">
+        
+        {{> "systems/foundryvtt-reve-de-dragon/templates/actor/inventaire.html"}}
+        {{> "systems/foundryvtt-reve-de-dragon/templates/actor/liens-animaux.html"}}
+        {{> "systems/foundryvtt-reve-de-dragon/templates/actor/liens-suivants.html"}}
+        {{> "systems/foundryvtt-reve-de-dragon/templates/actor/liens-vehicules.html"}}
+
+      </div>
+
+      {{!-- Biography Tab --}}
+      <div class="tab biography" data-group="primary" data-tab="description">        
+        <article class="flexrow">
+          <ul class="item-list alterne-list">
+            <li class="item flexrow list-item">
+              <label for="system.race">Race :</label>
+              <input class="flex-grow" type="text" name="system.race" value="{{system.race}}" data-dtype="String"/>
+            </li>
+            <li class="item flexrow list-item">
+              <label for="system.sexe">Sexe :</label>
+              <input class="flex-grow" type="text" name="system.sexe" value="{{system.sexe}}" data-dtype="String"/>
+            </li>
+            <li class="item flexrow list-item">
+              <label for="system.age">Age :</label>
+              <input class="flex-grow" type="text" name="system.age" value="{{system.age}}" data-dtype="String"/>
+            </li>
+            <li class="item flexrow list-item">
+              <label for="system.poids">Poids :</label>
+              <input class="flex-grow" type="text" name="system.poids" value="{{system.poids}}" data-dtype="String"/>
+            </li>
+            <li class="item flexrow list-item">
+              <label for="system.taille">Taille :</label>
+              <input class="flex-grow" type="text" name="system.taille" value="{{system.taille}}" data-dtype="String"/>
+            </li>
+          </ul>
+          <ul class="item-list alterne-list">
+            <li class="item flexrow list-item">
+              <label for="system.main">Main directrice :</label>
+              <input type="text" name="system.main" value="{{system.main}}" data-dtype="String"/>
+            </li>
+            <li class="item flexrow list-item">
+              <label for="system.heure">Heure de naissance :</label>
+              <select type="text" name="system.heure" value="{{system.heure}}" data-dtype="String">
+                {{#select system.heure}}
+                {{>"systems/foundryvtt-reve-de-dragon/templates/enum-heures.html"}}
+                {{/select}}
+              </select>
+            </li>
+            <li class="item flexrow list-item">
+              <label>Beauté :</label>
+              <input type="text" value="{{system.beaute}}" data-dtype="String" disabled/>
+            </li>
+            <li class="item flexrow list-item">
+              <label for="system.cheveux">Cheveux :</label>
+              <input class="flex-grow" type="text" name="system.cheveux" value="{{system.cheveux}}" data-dtype="String"/>
+            </li>
+            <li class="item flexrow list-item">
+              <label for="system.yeux">Yeux :</label>
+              <input class="flex-grow" type="text" name="system.yeux" value="{{system.yeux}}" data-dtype="String"/>
+            </li>
+          </ul>
+        </article>
+
+        <article class="flexcol">
+          <h3>Biographie : </h3>
+          <div class="form-group editor">
+            {{editor biographie target="system.biographie" button=true owner=owner editable=editable}}
+          </div>
+          <h3>Notes : </h3>
+          <div class="form-group editor">
+            {{editor notes target="system.notes" button=true owner=owner editable=editable}}
+          </div>
+          {{> "systems/foundryvtt-reve-de-dragon/templates/actor/xp-journal.html"}}
+          {{> "systems/foundryvtt-reve-de-dragon/templates/actor/editor-notes-mj.html"}}
+        </article>
+      </div>
+
+    </section>
+</form>
+

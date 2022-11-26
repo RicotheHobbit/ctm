@@ -1,0 +1,55 @@
+<form class="rdddialogchrono">
+  <div class="flexcol">
+    <div class="form-group">
+      <label for="auteur">Auteur</label>
+      <input type="text" name="auteur" value="{{auteur}}" data-dtype="String" {{#unless isGM}}disabled{{/unless}}/>
+    </div>
+    <div class="form-group">
+      <label for="information">Information</label>
+      <textarea autocomplete="off" title="Information" name="information">{{information}}</textarea>
+    </div>
+    <div class="form-group">
+      <label for="heureRdD">Heure</label>
+      <select type="text" name="heureRdD" value="{{heureRdD}}" data-dtype="String" />
+        {{#select heureRdD}}
+        {{>"systems/foundryvtt-reve-de-dragon/templates/enum-heures.html"}}
+        {{/select}}
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="jourRdD">Date en jeu</label>
+      <span class="flexrow">
+        <input type="text" name="jourRdD" value="{{jourRdD}}" data-dtype="Number" min="1" max="28"/>
+        <select type="text" name="dateRdD.moisRdD.key" value="{{dateRdD.moisRdD.key}}" data-dtype="String" >
+          {{#select dateRdD.moisRdD.key}}
+          {{>"systems/foundryvtt-reve-de-dragon/templates/enum-heures.html"}}
+          {{/select}}
+        </select>
+        <input type="text" name="dateRdD.annee" value="{{dateRdD.annee}}" data-dtype="Number" />
+      </span>
+    </div>
+    <div class="form-group">
+      <label for="dateReel">Date réelle</label>
+      <input type="datetime-local" name="dateReel" value="{{dateReel}}" data-dtype="String" />
+    </div>
+    <div class="form-group">
+      <label for="journalId">Journal</label>
+      <select type="text" name="journalId" value="{{journalId}}" data-dtype="String">
+        {{#select journalId}}
+        <option value=""></option>
+        {{#each (trier journaux) as |journal key|}}
+        <option value="{{journal.id}}">
+          {{#if journal.folder}}
+          {{#if journal.folder.ancestors}}
+          {{#each journal.folder.ancestors as |parent key|}}{{parent.name}} / {{/each}}
+          {{/if}}
+          {{journal.folder.name}} /
+          {{/if}}
+          {{journal.name}}
+        </option>
+        {{/each}}
+        {{/select}}
+      </select>
+    </div>
+  </div>
+</form>

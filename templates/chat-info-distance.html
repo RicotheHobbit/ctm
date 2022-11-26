@@ -1,0 +1,14 @@
+<img class="chat-icon" src="{{rollData.arme.img}}" alt="{{rollData.arme.name}}" />
+<strong>Ajustement de tir/lancer</strong> proposé de <strong>{{total}}</strong>
+<ul>
+  <li>{{defender.name}} est à une distance indicative de {{distance}} mètres.</li>
+  {{#if isVisible}}
+    <li>Selon les murs et la lumière, la cible {{defender.name}} est visible de {{attacker.name}}.</li>
+  {{else}}
+    <li>Selon les murs et la lumière, la cible {{defender.name}} n'est pas visible de {{attacker.name}}.</li>
+  {{/if}}
+  {{log defender}}
+  <li>Portée {{portee.msg}} pour l'arme {{rollData.arme.name}} : {{portee.diff}}</li>
+  <li>De taille {{taille.msg}}: {{taille.diff}}</li>
+  <li>Mouvement {{activite.msg}}: {{activite.diff}}</li>
+</ul>

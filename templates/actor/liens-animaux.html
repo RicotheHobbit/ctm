@@ -1,0 +1,12 @@
+<span class="item-name"><h4>Compagnons animaux</h4></span>
+<ul class="item-list alterne-list">
+  {{#each subacteurs.montures as |monture id|}}
+  <li class="item flexrow list-item" data-actor-id="{{monture.id}}">
+    <img class="sheet-competence-img" src="{{monture.img}}" title="{{monture.name}}"/>
+    <span class="subacteur-label"><a>{{monture.name}}</a></span>
+    <div class="flex-shrink">
+      <a class="subacteur-delete" title="Supprimer"><i class="fas fa-trash"></i></a>
+  </div>
+  </li>
+  {{/each}}
+</ul>

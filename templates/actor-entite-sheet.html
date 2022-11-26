@@ -1,0 +1,50 @@
+<form class="{{cssClass}}" autocomplete="off">
+
+  {{!-- Sheet Header --}}
+  <header class="sheet-header">
+    <div class="header-fields">
+      <div class="flexrow">
+        <img class="profile-img" src="{{img}}" data-edit="img" title="{{name}}" />
+        <h1 class="charname"><input name="name" type="text" value="{{name}}" placeholder="Name" /></h1>
+        <div class="flex-group-center">
+          <span class="encaisser-direct"><a title="Encaisser des dommages"><img class="button-img" src="icons/svg/bones.svg" alt="Encaisser des dommages"/></a></span>
+          {{#if @root.options.isGM}}
+          <span class="remise-a-neuf"><a title="Remise à neuf"><img class="button-img" src="icons/svg/regen.svg" alt="Remise à neuf"/></a></span>
+          {{/if}}
+        </div>
+      </div>
+      <div class="flex-group-left flexrow">
+        {{>"systems/foundryvtt-reve-de-dragon/templates/actor/header-compteurs-entitee.html"}}
+      </div>
+    </div>
+</header>
+
+  {{!-- Sheet Body --}}
+  <section class="sheet-body">
+
+    {{!-- Carac Tab --}}
+    <div class="items" data-group="primary" data-tab="carac">
+      <div class="flexrow">
+        {{>"systems/foundryvtt-reve-de-dragon/templates/actor/vue-detaillee.html"}}
+      </div>
+      <div class="grid grid-2col">
+        <div class="flex-group-left flexcol">
+          {{>"systems/foundryvtt-reve-de-dragon/templates/actor/carac-main.html"}}
+          {{>"systems/foundryvtt-reve-de-dragon/templates/actor/carac-entitee.html"}}
+        </div>
+        <div class="flex-group-left flexcol">
+          <div class="flex-group-left flexcol competence-column">
+            {{>"systems/foundryvtt-reve-de-dragon/templates/actor/comp-creature.html"}}
+            {{>"systems/foundryvtt-reve-de-dragon/templates/actor/comp-possession.html"}}
+          </div>
+        </div>
+      </div>
+      <div class="form-group editor">
+        {{editor description target="system.description" button=true owner=owner editable=true}}
+      </div>
+      {{>"systems/foundryvtt-reve-de-dragon/templates/actor/editor-notes-mj.html"}}
+
+    </div>
+
+  </section>
+</form>

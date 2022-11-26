@@ -1,0 +1,41 @@
+<form class="rdddialog">
+  <img class="chat-icon" src="{{item.img}}" title="{{item.name}}" alt="{{item.name}}" />
+  <h4>{{item.name}}</h4>
+  <div class="flexcol">
+    {{#if isOwned}}
+    <div class="flexrow flex-group-left">
+      <label>Quantité disponible</label>
+      <label>{{quantiteMax}}</label>
+    </div>
+    {{/if}}
+    <div class="flexrow flex-group-left">
+      <label>Nombre de lots</label>
+      <div class="flexrow">
+        {{#unless isOwned}}
+        <input name="quantiteIllimite" class="quantiteIllimite flex-shrink" type="checkbox" {{#if
+          quantiteIllimite}}checked{{/if}} />
+        <label class="label-quantiteIllimite flex-shrink">Illimités</label>
+        {{/unless}}
+        <input name="quantiteNbLots" class="quantiteNbLots flex-shrink" type="number" min="1"
+          max="{{quantiteMaxLots}}" value="{{quantiteNbLots}}" data-dtype="Number" />
+      </div>
+    </div>
+    <div class="flexrow flex-group-left">
+      <label for="tailleLot">Taille d'un lot</label>
+      <input name="tailleLot" class="tailleLot flex-shrink" type="number" min="1"
+        max="{{quantiteMax}}" value="{{tailleLot}}" data-dtype="Number" />
+    </div>
+    <div class="flexrow flex-group-left">
+      <label>Valeur unitaire</label>
+      <label>{{prixOrigine}} Sols</label>
+    </div>
+    <div class="flexrow flex-group-left">
+      <label for="prixLot">Prix du lot</label>
+      <span class="flexrow">
+        <input name="prixLot" class="prixLot flex-shrink" type="number" value="{{prixLot}}"
+          data-dtype="Number" />
+        <label>Sols</label>
+      </span>
+    </div>
+  </div>
+</form>

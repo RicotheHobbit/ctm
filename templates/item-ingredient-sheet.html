@@ -1,0 +1,47 @@
+<form class="{{cssClass}}" autocomplete="off">
+  {{>"systems/foundryvtt-reve-de-dragon/templates/header-item.html"}}
+
+  {{!-- Sheet Body --}}
+  <section class="sheet-body">
+    <div class="flexcol">
+      <div class="form-group">
+        <label>Niveau (si applicable) </label>
+        <input class="attribute-value" type="text" name="system.niveau" value="{{system.niveau}}" data-dtype="Number" />
+      </div>
+      <div class="form-group">
+        <label>Quantité (Pépins ou Brins)</label>
+        <input class="attribute-value" type="text" name="system.quantite" value="{{system.quantite}}" data-dtype="Number" />
+      </div>
+      <div class="form-group">
+        <label>Encombrement</label>
+        <input class="attribute-value" type="text" name="system.encombrement" value="{{system.encombrement}}" data-dtype="Number" />
+      </div>
+      <div class="form-group item-cout">
+        <label>Prix (sols)</label>
+        <input class="attribute-value" type="text" name="system.cout" value="{{system.cout}}" data-dtype="Number" />
+      </div>
+    </div>
+    <div class="form-group">
+      <label>Milieu</label>
+      <input class="attribute-value" type="text" name="system.milieu" value="{{system.milieu}}" data-dtype="String" />
+    </div>
+    <div class="form-group">
+      <label>Fréquence</label>
+      <select name="system.rarete" class="rarete" data-dtype="String">
+        {{#select system.rarete}}
+        {{>"systems/foundryvtt-reve-de-dragon/templates/enum-rarete.html"}}
+        {{/select}}
+      </select>
+    </div>
+    <div class="form-group">
+      <label>Catégorie</label>
+      <select name="system.categorie" class="categorie" data-dtype="String">
+        {{#select system.categorie}}
+        {{>"systems/foundryvtt-reve-de-dragon/templates/enum-categorie-ingredient.html"}}
+        {{/select}}
+      </select>
+    </div>
+
+    {{>"systems/foundryvtt-reve-de-dragon/templates/partial-item-description.html"}}
+  </section>
+</form>

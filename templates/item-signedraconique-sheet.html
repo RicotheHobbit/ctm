@@ -1,0 +1,57 @@
+<form class="{{cssClass}}" autocomplete="off">
+  <header class="sheet-header">
+    <img class="profile-img" src="{{img}}" data-edit="img" title="{{name}}" />
+    <div class="header-fields">
+      <h1 class="charname"><input name="name" type="text" value="{{name}}" placeholder="Name" /></h1>
+      <a class="signe-aleatoire chat-card-button">Signe aléatoire</a>
+    </div>
+  </header>
+  
+  {{!-- Sheet Body --}}
+  <section class="sheet-body">
+    <div class="form-group">
+      <label for="system.difficulte">Difficulte</label>
+      <input class="attribute-value" type="number" name="system.difficulte" value="{{system.difficulte}}"
+        data-dtype="Number" />
+    </div>
+    <div class="form-group">
+      <label for="system.valeur.norm">Expérience en sorts</label>
+      <div class="flexrow">
+        <input class="signe-xp-sort" type="number" name="system.valeur.norm" data-typereussite="norm"
+          value="{{system.valeur.norm}}" min="1" max="100" data-dtype="Number" />
+        <span>Sign.</span>
+        <input class="signe-xp-sort" type="number" name="system.valeur.sign" data-typereussite="sign"
+          value="{{system.valeur.sign}}" min="1" max="100" data-dtype="Number" />
+        <span>Part.</span>
+        <input class="signe-xp-sort" type="number" name="system.valeur.part" data-typereussite="part"
+          value="{{system.valeur.part}}" min="1" max="100" data-dtype="Number" />
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="system.ephemere">Ephémère</label>
+      <input class="attribute-value" type="checkbox" name="system.ephemere" {{#if system.ephemere}}checked{{/if}} />
+    </div>
+    {{#if system.ephemere}}
+    <div class="form-group">
+      <label for="system.duree">Durée</label>
+      <input class="attribute-value" type="text" name="system.duree" value="{{system.duree}}" data-dtype="String" />
+    </div>
+    {{/if}}
+    <label>Terres médianes</label>
+    <div class="form-group">
+      <div class="grid-select-type-tmr">
+        {{#each tmrs as |tmr key|}}
+        <label class="flexrow">
+          <input type="checkbox" data-dtype="Boolean" class="select-tmr"
+          data-tmr-name="{{tmr.name}}" {{#if tmr.selected}}checked{{/if}} />
+          {{tmr.name}}
+        </label>
+        {{/each}}
+      </div>
+    </div>
+
+    {{>"systems/foundryvtt-reve-de-dragon/templates/partial-item-description.html"}}
+
+</section>
+
+</form>

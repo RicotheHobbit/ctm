@@ -1,0 +1,28 @@
+<div>
+  <span {{#if ajustements}}class="tooltip tooltip-dotted" {{/if}}>
+    {{rolled.caracValue}} à {{numberFormat rolled.finalLevel decimals=0 sign=true}}
+    {{#if ajustements}}
+    <div class="tooltiptext ttt-ajustements">
+      {{#each ajustements as |item key|}}
+      {{#if item.used}}
+      <div class="{{#if item.strong}}strong-text{{/if}}">
+        {{#if item.descr}}
+        {{{item.descr}}}
+        {{else}}
+        {{item.label}}: {{numberFormat item.value decimals=0 sign=true}}
+        {{/if}}
+      </div>
+      {{/if}}
+      {{/each}}
+    </div>
+    {{/if}}
+    {{#if rolled.factorHtml}}<span class="rdd-diviseur">&times;{{{rolled.factorHtml}}}</span>{{/if}}
+  </span>
+  <span>= {{rolled.score}}%</span>
+</div>
+<div>
+  <span>{{rolled.roll}} : </span><span class="rdd-roll-{{rolled.code}} strong-text">{{rolled.quality}}</span>
+  {{#if rolled.ajustementNecessaire}}
+  <span class="rdd-niveau-requis">(Réussite si {{numberFormat rolled.niveauNecessaire decimals=0 sign=true}} / avec niveau {{numberFormat rolled.ajustementNecessaire decimals=0 sign=true}}) </span>
+  {{/if}}
+</div>

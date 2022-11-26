@@ -1,0 +1,52 @@
+<form class="{{cssClass}}" autocomplete="off">
+  <header class="sheet-header">
+      <div class="header-fields">
+          <h1 class="charname">Astrologie</h1>
+      </div>
+  </header>
+
+  <label>&nbsp;&nbsp;Conditions</label>
+  <select name="diffConditions" id="diffConditions" data-dtype="Number">
+      {{#select diffConditions}}
+      {{#each ajustementsConditions  as |key|}}
+      <option value={{key}}>{{numberFormat key decimals=0 sign=true}}</option>
+      {{/each}}
+      {{/select}}
+  </select>
+  <label>&nbsp;&nbsp;Jours</label>
+  <select name="joursAstrologie" id="joursAstrologie" data-dtype="Number">
+      {{#select joursSuivants}}
+      {{#each dates  as |date key|}}
+      <option value={{date.index}}>{{date.label}}</option>
+      {{/each}}
+      {{/select}}
+  </select>
+  <label>Etat Général: {{etat}}</label>
+  <label>&nbsp;&nbsp;<a id='jet-astrologie'>Faire un jet d'Astrologie</a></label>
+
+  {{!-- Sheet Body --}}
+  <section class="sheet-body">
+    <div class="form-group">
+      <label for="astralList">Nombres Astraux</label>
+      <table class='table-nombres-astraux'>
+        <tr class='table-nombres-astraux-td'>
+          {{#each nombres as |nombreData key|}}
+          <td class='table-nombres-astraux-td'>{{nombreData.jourlabel}}</td>
+          {{/each}}
+        </tr>
+        <tr class='table-nombres-astraux-td'>
+          {{#each nombres as |nombreData key|}}
+          <td class='table-nombres-astraux-td'>
+            <ol>
+            {{#each nombreData.listValues as |nombreAstral key|}}
+            <li>{{nombreAstral}}</li>
+            {{/each}}
+            </ol>
+          </td>
+          {{/each}}
+        </tr>
+      </table>        
+    </div>
+  </section>
+  
+</form>

@@ -1,0 +1,9 @@
+<img class="chat-icon" src="{{item.img}}" alt="{{item.name}}" />
+<h4>{{#if isVente}}Achat{{else}}Don{{/if}}</h4>
+<p>
+  {{#if acheteur}}{{acheteur.name}}{{else}}L'acheteur{{/if}} a
+  {{#if isVente}}acheté{{else}}pris{{/if}}
+  {{#if vendeur}}à {{vendeur.name}}{{/if}}:
+  {{quantiteTotal}} {{item.name}} pour {{prixTotal}} sols.
+</p>
+{{> "systems/foundryvtt-reve-de-dragon/templates/chat-description.html" item.system}}

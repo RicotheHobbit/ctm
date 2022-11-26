@@ -1,0 +1,5 @@
+{{#each (trier @root.competences) as |competence key|}}
+  {{#if (eq competence.system.categorie 'draconic')}}
+  <option value="{{competence.name}}">{{competence.name}}</option>
+  {{/if}}
+{{/each}}

@@ -1,0 +1,45 @@
+<form class="dialog-roll-signedraconique">
+  <h2>Lire le signe draconique
+    <select name="signe-draconique" class="roll-signedraconique flex-grow" data-dtype="String">
+      {{#select signe}}
+      {{#each signes as |signe key|}}
+      <option value={{key}}>{{this.name}}</option>
+      {{/each}}
+      {{/select}}
+    </select>
+  </h2>
+  <img class="chat-icon" src="{{competence.img}}" alt="{{competence.name}}" />
+  <div class="grid grid-2col">
+    <div class="flex-group-left">
+      <div class="flexrow">
+        <label for="tmr">TMR - {{tmr.coord}}:</label><label name="tmr">{{tmr.label}}</label>
+      </div>
+      <div class="flexrow">
+        <label for="carac">{{selectedCarac.label}}:</label><label name="carac">{{selectedCarac.value}}</label>
+      </div>
+    </div>
+    <div class="flex-group-left">
+      <div class="flexrow">
+        <label for="competence">Draconic:</label>
+        <select name="competence" class="roll-draconic" data-dtype="String">
+          {{#select draconic}}
+          {{#each draconicList as |draconic key|}}
+          <option value={{key}}>{{draconic.name}} : {{numberFormat draconic.system.niveau decimals=0 sign=true}}
+          </option>
+          {{/each}}
+          {{/select}}
+        </select>
+      </div>
+      {{>"systems/foundryvtt-reve-de-dragon/templates/partial-roll-diffFixe.html"}}
+      {{>"systems/foundryvtt-reve-de-dragon/templates/partial-roll-diffCondition.html"}}
+      {{>"systems/foundryvtt-reve-de-dragon/templates/partial-roll-forcer.html"}}
+      <div id="tableAjustements" class="flexrow"></div>
+    </div>
+  </div>
+
+  <div id="tableResolution"></div>
+  <div id="tableProbaReussite"></div>
+</form>
+
+<script>  
+</script>

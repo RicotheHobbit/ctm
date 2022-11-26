@@ -1,0 +1,41 @@
+<ul class="carac-list alterne-list">
+  {{#each system.carac as |carac key|}}
+      {{#if carac.isLevelUp}}
+      <li class="caracteristique flexrow item-list xp-level-up" data-attribute="{{key}}">
+      {{else}}
+      <li class="caracteristique flexrow list-item" data-attribute="{{key}}">
+      {{/if}}
+      {{#if (eq key 'taille')}}
+        <span class="carac-label" name="system.carac.{{key}}.label">{{carac.label}}</span>
+        <input class="carac-value" type="text" name="system.carac.{{key}}.value" value="{{carac.value}}" data-dtype="{{carac.type}}" {{#unless @root.options.vueDetaillee}}disabled{{/unless}} />
+        <label class="carac-xp"/>
+      {{else}}
+          {{#if carac.derivee}}
+          <span class="carac-label" name="system.carac.{{key}}.label"><a name={{key}}>{{carac.label}}</a></span>
+          <label class="competence-value">{{carac.value}}</label>
+          <label class="carac-xp"/>
+          {{else}}
+            {{#if carac.isLevelUp}}
+              <span class="carac-label tooltip" name="system.carac.{{key}}.label">
+                <span class="tooltiptext ttt-levelup">
+                Vous pouvez dépenser {{carac.xpNext}} points d'Experience pour augmenter de 1 votre caractéristique {{carac.label}}
+              </span>
+              <a name={{key}}>{{carac.label}}</a></span>
+            {{else}}
+              <span class="carac-label tooltip" name="system.carac.{{key}}.label"><a name={{key}}>{{carac.label}}</a></span>
+            {{/if}}
+            <input class="carac-value" type="text" name="system.carac.{{key}}.value" value="{{carac.value}}" data-dtype="{{carac.type}}" {{#unless @root.options.vueDetaillee}}disabled{{/unless}} />
+            <span class="carac-xp tooltip">
+              <input class="carac-xp" type="text" name="system.carac.{{key}}.xp" value="{{carac.xp}}" data-dtype="number" {{#unless @root.options.vueDetaillee}}disabled{{/unless}} />
+              <span class="tooltiptext ttt-xp">Vous devez acquérir {{carac.xpNext}} points d'Experience pour augmenter de 1 votre {{carac.label}}</span>      
+            </span>
+            {{#if carac.isLevelUp}}
+            <a class="carac-xp-augmenter" name="augmenter.{{key}}" title="Augmenter">
+              <i class="fas fa-arrow-alt-circle-up"></i>
+            </a>
+            {{/if}}
+          {{/if}}
+      {{/if}}
+      </li>
+  {{/each}}
+</ul>

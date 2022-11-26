@@ -1,0 +1,29 @@
+<img class="chat-icon" src="{{competence.img}}" alt="{{competence.name}}" />
+<h4>
+  {{alias}} {{#if isSortReserve}}met en réserve{{else}}lance{{/if}}
+  le {{#if selectedSort.system.isrituel}}rituel{{else}}sort{{/if}}
+  {{selectedSort.name}}
+</h4>
+<div>Pour {{selectedSort.system.ptreve_reel}} point{{~#if (gt selectedSort.system.ptreve_reel 1)}}s{{/if}} de rêve en {{tmr.label}} ({{tmr.coord}}).
+{{#if show.reveInsuffisant}}
+<span>Pas assez de rêve!</span>
+{{/if}}
+</div>
+{{> "systems/foundryvtt-reve-de-dragon/templates/chat-infojet.html"}}
+<hr>
+<div>
+  <span>
+    {{#if rolled.isETotal}}Echec TOTAL
+    {{else if rolled.isEchec}}Echec
+    {{else}}Réussite{{/if}}
+    du {{#if selectedSort.system.isrituel}}rituel{{else}}sort{{/if}},
+    {{#if (eq depenseReve 0)}}pas de dépense de rêve
+    {{else if (eq depenseReve 1)}}1 point de rêve a été dépensé
+    {{else}}{{depenseReve}} points de rêve ont été dépensés
+    {{~/if}}.
+  </span>
+</div>
+<hr>
+<div class="poesie-extrait poesie-overflow">
+  {{{selectedSort.system.description}}}
+</div>

@@ -1,0 +1,9 @@
+<img class="chat-icon" src="icons/svg/lightning.svg" alt="Météo" />
+<h4>Météo aléatoire</h4>
+<ul>
+  <li>Vent: {{lowerFirst vent.description}} {{apostrophe 'de' vent.direction}}, force {{vent.force}}</li>
+  <li>Mer {{lowerFirst mer.description}}, {{apostrophe 'de' mer.direction}}, force {{mer.force}}</li>
+  <li>Température {{lowerFirst temperature.description}} ({{numberFormat temperature.force decimals=0 sign=true}})</li>
+  <li>Couverture nuageuse: {{lowerFirst nuage.description}}</li>
+  <li>Pluie: {{lowerFirst pluie.description}}</li>
+</div>

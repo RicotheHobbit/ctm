@@ -1,0 +1,18 @@
+<h4>
+  {{alias}} transforme {{rolled.factor}}% de son stress
+</h4>
+{{> "systems/foundryvtt-reve-de-dragon/templates/chat-infojet.html"}}
+{{#if rolled.isPart}}
+  <div>
+    <span>
+      Deuxième jet: {{rolled.second.roll}} <span class="rdd-roll-{{rolled.second.code}} strong-text">{{rolled.second.quality}}</span>
+    </span>
+  </div>
+{{/if}}
+<hr>
+<span>
+  Transformation de {{perte}} points de stress sur {{stress}}
+  {{~#if (gt dissolution 0)}}; {{dissolution}} points perdus par la dissolution{{/if~}}
+  {{~#if (gt exaltation 0)}}; {{exaltation}} points gagnés par l'exaltation{{/if~}}
+  , gain de {{xp}} points d'expérience
+</span>

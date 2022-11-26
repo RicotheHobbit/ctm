@@ -1,0 +1,46 @@
+<img class="chat-icon" src="{{competence.img}}" alt="{{competence.name}}" />
+<h4>{{alias}} pare une attaque à {{diffLibre}} - {{arme.name}}</h4>
+<div>{{selectedCarac.label}}{{#unless (eq selectedCarac.label competence.name)}} / {{competence.name}}{{/unless}}</div>
+{{> "systems/foundryvtt-reve-de-dragon/templates/chat-infojet.html"}}
+<hr>
+<div>
+  <span>
+    {{#if rolled.isSuccess}}
+    Attaque parée!
+      {{#if rolled.isPart}}<strong>{{alias}} pourra tenter une deuxième parade!</strong>{{/if}}
+    {{else}}
+    La parade a échoué!
+    {{/if}}
+  </span>
+  {{> "systems/foundryvtt-reve-de-dragon/templates/chat-info-appel-au-moral.html"}}
+</div>
+
+{{#if (eq show.recul 'encaisse')}}<div>{{alias}} ne recule pas malgré la violence du coup.</div>
+{{else if (eq show.recul 'chute')}}<div>Sous la violence du coup, {{alias}} recule et chute au sol ! Il/elle ne pourra plus attaquer ce round.</div>
+{{else if (eq show.recul 'recul')}}<div>La violence du coup fait reculer {{alias}} de quelques mètres ! Il/elle ne pourra plus attaquer ce round.</div>
+{{/if}}
+
+{{#if (eq show.deteriorationArme 'resiste')}}
+<div>L'arme résiste au choc de la parade.</div>
+{{else if (eq show.deteriorationArme 'brise')}}
+<div>Sous la violence de la parade, {{arme.name}} s'est brisée!</div>
+{{else if (eq show.deteriorationArme 'perte')}}
+<div>En parant, l'arme perd {{show.perteResistance}} de résistance.</div>
+{{/if}}
+
+{{#if show.desarme}}
+<div>Le défenseur {{alias}} lâche son arme qui tombe à ses pieds.</div>
+{{/if}}
+
+{{#if attackerRoll.tactique}}
+<div>
+  {{#if (eq attackerRoll.tactique 'charge')}}
+  <img class="chat-icon" src="icons/svg/thrust.svg" alt="charge" />
+  C'était une charge, les parades de l'adversaire auront un -4 et il ne pourra pas esquiver!
+  {{ else if (eq attackerRoll.tactique 'feinte')}}
+  <img class="chat-icon" src="systems/foundryvtt-reve-de-dragon/icons/heures/hd06.svg" alt="feinte" height="32"
+    width="32" />
+  C'était une feinte!
+  {{/if}}
+</div>
+{{/if}}

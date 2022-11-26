@@ -1,0 +1,28 @@
+{{log 'entitee.system' system}}
+<ol class="carac-list alterne-list">
+  <li class="caracteristique flexrow list-item">
+    <span class="carac-label" name="catEntite">Catégorie : </span>
+    <select name="system.definition.categorieentite" value="{{system.definition.categorieentite}}" data-dtype="String" {{#unless @root.options.vueDetaillee}}disabled{{/unless}}>
+      {{#select system.definition.categorieentite}}
+      <option value="cauchemar">Cauchemar</option>
+      <option value="reve">Rêve</option>
+      {{/select}}
+    </select>
+  </li>
+  <li class="caracteristique flexrow list-item">
+    <span class="carac-label" name="typeEntite">Type d'entité : </span>
+    <select name="system.definition.typeentite" value="{{system.definition.typeentite}}" data-dtype="String" {{#unless @root.options.vueDetaillee}}disabled{{/unless}}>
+      {{#select system.definition.typeentite}}
+      <option value="incarne">Incarnée</option>
+      <option value="nonincarne">Non Incarnée</option>
+      <option value="blurette">Blurette</option>
+      {{/select}}
+    </select>
+  </li>
+  {{#each system.attributs as |attr key|}}
+  <li class="caracteristique flexrow list-item" data-attribute="{{key}}">
+    <span class="carac-label" name="system.attributs.{{key}}.label">{{attr.label}} : </span>
+    <input class="caracteristique streched" type="text" name="system.attributs.{{key}}.value" value="{{attr.value}}" data-dtype="{{attr.type}}" {{#unless @root.options.vueDetaillee}}disabled{{/unless}}/>
+  </li>
+  {{/each}}
+</ol>

@@ -1,0 +1,16 @@
+<h3>Tâches</h3><a class="chat-card-button creer-tache">Nouvelle Tâche</a>
+<ul class="item-list alterne-list">
+  {{#each taches as |tache id|}}
+  <li class="item flexrow list-item" data-item-id="{{tache._id}}">
+    <img class="sheet-competence-img" src="{{tache.img}}" />
+    <span class="competence-title tache-label"><a>{{tache.name}}
+    ({{tache.system.points_de_tache_courant}}{{#if
+       (or @root.options.isGM (not tache.system.cacher_points_de_tache))
+    }}/{{tache.system.points_de_tache}}{{/if}})</a></span>
+    <div class="item-controls flex-shrink">
+      <a class="item-edit" title="Edit Item"><i class="fas fa-edit"></i></a>
+      <a class="item-delete" title="Delete Item"><i class="fas fa-trash"></i></a>
+    </div>
+  </li>
+  {{/each}}
+</ul>

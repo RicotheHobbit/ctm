@@ -1,0 +1,19 @@
+<form class="rdddialog">
+  <h2>Boire</h2>
+  <img class="chat-icon" src="systems/foundryvtt-reve-de-dragon/icons/objets/chope_gres.webp" alt="Chope d'alcool"/>
+  <div class="grid grid-2col">
+    <label>Vie</label><label class="flexrow"> {{vie}}</label>
+    <label>Etat général</label><label class="flexrow">{{etat}}</label>
+    <label>Déjà bu</label><label class="flexrow">{{diffNbDoses}}</label>
+    <label>Force du breuvage</label>
+    <select name="forceAlcool" id="forceAlcool" data-dtype="number">
+      {{#select forceAlcool}}
+      {{#each ajustementsForce as |key|}}
+      <option value={{key}}>{{key}}</option>
+      {{/each}}
+      {{/select}}
+    </select>
+    <label>Ajustement final</label><label id="roll-param">10 / 0</label>
+    
+  </div>
+</form>

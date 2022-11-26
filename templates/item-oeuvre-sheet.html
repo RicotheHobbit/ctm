@@ -1,0 +1,40 @@
+<form class="{{cssClass}}" autocomplete="off">
+    <header class="sheet-header">
+        <img class="profile-img" src="{{img}}" data-edit="img" title="{{name}}"/>
+        <div class="header-fields">
+            <h1 class="charname"><input name="name" type="text" value="{{name}}" placeholder="Name"/></h1>
+        </div>
+    </header>
+    
+    {{!-- Sheet Body --}}
+    <section class="sheet-body">
+      <div class="form-group">
+        <label>Caractéristique</label>
+        <select name="system.default_carac" id="default_carac" data-dtype="String">
+          {{#select system.default_carac}}
+          {{>"systems/foundryvtt-reve-de-dragon/templates/enum-caracteristiques.html"}}
+          {{/select}}
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Compétence</label>
+        <select name="system.competence" id="competenceselect" data-dtype="String">
+          {{#select system.competence}}
+          {{>"systems/foundryvtt-reve-de-dragon/templates/enum-competence.html"}}
+          {{/select}}    
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Référence / Auteur</label>
+        <input class="attribute-value" type="text" name="system.reference" value="{{system.reference}}" data-dtype="String"/>
+      </div>
+      <div class="form-group">
+        <label>Niveau</label>
+        <input class="attribute-value" type="text" name="system.niveau" value="{{system.niveau}}" data-dtype="Number"/>
+      </div>
+
+      {{>"systems/foundryvtt-reve-de-dragon/templates/partial-item-description.html"}}
+    
+    </section>
+    
+</form>

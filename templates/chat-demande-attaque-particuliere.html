@@ -1,0 +1,21 @@
+<div data-passearme="{{passeArme}}">
+  <h4 class="rdd-roll-part">{{alias}} réussit une attaque particulière!</strong></h4>
+  {{#if isForce}}
+  <br>
+  <a class="chat-card-button" id="particuliere-attaque" data-mode="force" data-attackerId="{{attackerId}}">
+    Attaquer en Force
+  </a>
+  {{/if}}
+  {{#if isRapide}}
+  <br>
+  <a class="chat-card-button" id="particuliere-attaque" data-mode="rapidite" data-attackerId="{{attackerId}}">
+    Attaquer en Rapidité
+  </a>
+  {{/if}}
+  {{#if isFinesse}}
+  <br>
+  <a class="chat-card-button" id="particuliere-attaque" data-mode="finesse" data-attackerId="{{attackerId}}">
+    Attaquer en Finesse
+  </a>
+  {{/if}}
+</div>

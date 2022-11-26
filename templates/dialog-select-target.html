@@ -1,0 +1,14 @@
+<form class="rdd-dialog-select-target">
+  <label>Choisir une seule des cibles</label>
+  <hr>
+  <ul class="flexcol item-list alterne-list">
+    {{#each tokens as |token key|}}
+    <li class="select-target item list-item flexrow" data-token-id="{{token.id}}">
+      <img class="select-token-img flex-shrink" src="{{token.img}}" title="{{token.name}}" />
+      <a>
+      <label>{{token.name}}</label>
+      </a>
+    </li>
+    {{/each}}
+  </ul>
+</form>

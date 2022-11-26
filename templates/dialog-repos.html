@@ -1,0 +1,38 @@
+<form class="skill-roll-dialog">
+  <div class="flexcol">
+  <div class="flex-group-left">
+    <div class="flexrow"><span>
+      <img class="chat-icon" src="{{img}}" title="{{name}}" alt="{{name}}" />
+      <h4>{{name}} se repose</h4>
+    </span></div>
+    <div class="flexrow"><span>
+      <input type="radio" name="repos" id="chateau-dormant" value="chateau-dormant">
+      <label for="chateau-dormant">Château Dormant</label>
+    </span></div>
+    <hr>
+    <div class="flexrow"><span>
+      <input class type="radio" name="repos" id="sieste" value="sieste">
+      <label for="sieste">Sieste de quelques heures</label>
+    </span></div>
+    <div class="flexrow"><span>
+      <input type="radio" name="repos" id="nuit" value="nuit" checked>
+      <label for="nuit">Dormir la nuit</label>
+    </span></div>
+    <br>
+    <div class="flexrow">
+      <label for="nb-heures">Nombre d'heures</label>
+      <input type="number" name="nb-heures" value="4" data-dtype="Number" />
+    </div>
+    <hr>
+    <div class="flexrow"><span>
+      <input type="radio" name="repos" id="gris-reve" value="gris-reve">
+      <label for="gris-reve">Gris rêve</label>
+    </span></div>
+    <br>
+    <div class="flexrow">
+      <label for="nb-jours">Nombre de jours</label>
+      <input type="number" name="nb-jours" value="2" data-dtype="Number" />
+    </div>
+  </div>
+  </div>
+</form>

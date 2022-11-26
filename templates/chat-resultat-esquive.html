@@ -1,0 +1,29 @@
+<img class="chat-icon" src="{{competence.img}}" alt="{{competence.name}}" />
+<h4>{{alias}} esquive une attaque à {{diffLibre}}</h4>
+<div>{{selectedCarac.label}}{{#unless (eq selectedCarac.label competence.name)}} / {{competence.name}}{{/unless}}</div>
+{{> "systems/foundryvtt-reve-de-dragon/templates/chat-infojet.html"}}
+<hr>
+<div>
+  {{#if rolled.isSuccess}}
+  <span>Attaque esquivée!</span>
+    {{#if rolled.isPart}}
+    <!-- TODO: cas de parade à mains nues, texte à modifier -->
+    <span><strong>{{alias}} peut faire une deuxième esquive!</strong></span>
+    {{/if}}
+  {{else}}
+  <span>L'esquive de {{alias}} a échoué!</span>
+  {{/if}}
+  {{> "systems/foundryvtt-reve-de-dragon/templates/chat-info-appel-au-moral.html"}}
+</div>
+
+{{#if attackerRoll.tactique}}
+<div>
+  {{#if (eq attackerRoll.tactique 'charge')}}
+  <img class="chat-icon" src="icons/svg/thrust.svg" alt="charge" height="32" width="32" />
+  C'était une charge, les parades de l'adversaire de {{alias}} auront un -4 et il ne pourra pas esquiver!
+  {{ else if (eq attackerRoll.tactique 'feinte')}}
+  <img class="chat-icon" src="systems/foundryvtt-reve-de-dragon/icons/heures/hd06.svg" alt="feinte" height="32" width="32" />
+  C'était une feinte!
+  {{/if}}
+</div>
+{{/if}}

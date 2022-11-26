@@ -1,0 +1,23 @@
+<h3>Journal d'Experience</h3>
+<div class="form-group editor">
+  <ul class="item-list alterne-list">
+  {{#each system.experiencelog as |xp key|}}
+    <li class="experiencelog flexrow list-item" data-key="{{key}}">
+      <label class="flex-grow">{{xp.valeur}} {{xp.raison}}</label>
+      <label class="flex-shrink">{{xp.mode}}</label>
+      <label class="flex-shrink">{{xp.daterdd}}</label>
+      <label class="flex-shrink">{{xp.datereel}}</label>
+      {{#if @root.options.isGM}}
+      <span>
+        <a class="experiencelog-delete" title="Supprimer">
+          <i class="fas fa-trash"></i>
+        </a>
+        <a class="experiencelog-delete-previous" title="Supprimer jusqu'ici">
+          <i class="fas fa-eraser"></i>
+        </a>
+      </span>
+      {{/if}}
+    </li>
+  {{/each}}
+  </ul>
+</div>

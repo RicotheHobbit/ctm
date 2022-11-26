@@ -1,0 +1,16 @@
+{{#if possessions}}
+<div class="flex-group-left flexcol competence-column">
+  <ol class="item-list alterne-list">
+    {{#each possessions as |possession key|}}
+    <li class="item flexrow list-item" data-item-id="{{possession._id}}">
+      <img class="sheet-competence-img" src="{{possession.img}}" />
+      <span class="competence-label">{{possession.name}}</span>
+      <div class="item-controls">
+        <a class="item-edit" title="Edit Item"><i class="fas fa-edit"></i></a>
+        <a class="item-delete" title="Delete Item"><i class="fas fa-trash"></i></a>
+      </div>
+    </li>
+    {{/each}}
+  </ol>
+</div>
+{{/if}}

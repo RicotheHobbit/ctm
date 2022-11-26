@@ -1,0 +1,10 @@
+<div class="flexrow">
+  <label for="diffConditions">Conditions</label>
+  <select name="diffConditions" id="diffConditions" data-dtype="number" {{#unless use.conditions}}disabled{{/unless}}>
+      {{#select diffConditions}}
+      {{#each ajustementsConditions  as |key|}}
+      <option value={{key}}>{{numberFormat key decimals=0 sign=true}}</option>
+      {{/each}}
+      {{/select}}
+  </select>
+</div>

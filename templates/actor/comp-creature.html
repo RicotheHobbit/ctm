@@ -1,0 +1,26 @@
+<ol class="item-list alterne-list">
+  {{#each (trier competences) as |comp key|}}
+  <li class="item flexrow list-item" data-item-id="{{comp._id}}">
+    <a class="competence-label">
+      <img class="sheet-competence-img" src="{{comp.img}}" />
+      <span>{{comp.name}}</span>
+    </a>
+
+    <input class="competence-value creature-carac" type="text" compname="{{comp.name}}"
+      value="{{comp.system.carac_value}}" data-dtype="number" 
+      {{#unless @root.options.vueDetaillee}}disabled{{/unless}}/>
+    <input class="competence-value creature-niveau" type="text" compname="{{comp.name}}"
+      value="{{numberFormat comp.system.niveau decimals=0 sign=true}}" data-dtype="number"
+      {{#unless @root.options.vueDetaillee}}disabled{{/unless}}/>
+    <input class="competence-value creature-dommages" type="text" compname="{{comp.name}}"
+      value="{{numberFormat comp.system.dommages decimals=0 sign=true}}" data-dtype="number" 
+      {{#unless @root.options.vueDetaillee}}disabled{{/unless}}/>
+      {{#if @root.options.vueDetaillee}}
+      <div class="item-controls">
+        <a class="item-edit" title="Edit Item"><i class="fas fa-edit"></i></a>
+        <a class="item-delete" title="Delete Item"><i class="fas fa-trash"></i></a>
+      </div>
+      {{/if}}
+  </li>
+  {{/each}}
+</ol>

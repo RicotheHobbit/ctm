@@ -1,0 +1,10 @@
+<div class="flexrow">
+  <label for="diffLibre">Difficulté choisie</label>
+  <select name="diffLibre" id="diffLibre" data-dtype="number" {{#unless use.libre}}disabled{{/unless}}>
+    {{#select diffLibre}}
+    {{#each difficultesLibres as |key|}}
+    <option value={{key}}>{{numberFormat key decimals=0 sign=true}}</option>
+    {{/each}}
+    {{/select}}
+  </select>
+</div>

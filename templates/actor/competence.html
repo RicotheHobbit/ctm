@@ -1,0 +1,52 @@
+{{#if system.isVisible}}
+  <li class="item flexrow list-item {{#if system.isLevelUp}}xp-level-up tooltip{{/if}}" data-item-id="{{_id}}">
+    <a class="competence-label" name="{{name}}">
+      <img class="sheet-competence-img" src="{{img}}"/>
+      <span>{{name}}</span>
+    </a>
+
+    {{#if system.isLevelUp}}
+    <span class="tooltiptext ttt-levelup">Vous pouvez dépenser {{system.xpNext}} points d'Experience pour augmenter de 1 votre compétence {{name}}</span>
+    <a class="competence-xp-augmenter" compname="{{name}}" title="Augmenter">
+      <i class="fas fa-arrow-alt-circle-up"></i>
+    </a>
+    {{/if}}
+
+    <input class="competence-value" type="text" compname="{{name}}" name="comp-value-{{name}}"
+          value="{{numberFormat system.niveau decimals=0 sign=true}}" data-dtype="number"
+          {{#unless @root.options.vueDetaillee}}disabled{{/unless}} />
+
+    {{#if @root.options.vueDetaillee}}
+    <span class="competence-xp {{#unless system.isLevelUp}}tooltip{{/unless}}">
+      <input class="competence-xp " type="text" compname="{{name}}" name="comp-xp-{{name}}"
+          value="{{numberFormat system.xp decimals=0 sign=false}}" data-dtype="number"/>
+      {{#unless system.isLevelUp}}
+      <span class="tooltiptext left-competence ttt-xp">Vous devez acquérir {{system.xpNext}} points d'Experience pour augmenter de 1 votre compétence {{name}}</span>      
+      {{/unless}}
+    </span>
+    {{/if}}
+    {{#if (eq system.categorie 'draconic')}}
+    <input class="competence-xp-sort" type="text" compname="{{name}}" name="comp-xp-sort-{{name}}"
+          value="{{numberFormat system.xp_sort decimals=0 sign=false}}" data-dtype="number"
+          {{#unless @root.options.vueDetaillee}}disabled{{/unless}}/>
+    {{/if}}
+    {{#if @root.options.vueDetaillee}}
+    <div class="item-controls">
+      {{#if system.stressXpMax}}
+      <a class="competence-stress-augmenter" compname="{{name}}" 
+            title="Dépenser {{system.stressXpMax}} points de stress {{#if system.isStressLevelUp}} pour augmenter d'un niveau {{/if}}">
+            <i class="fas fa-arrow-alt-circle-up allouer-stress{{#if system.isStressLevelUp}}-level-up{{/if}}"></i>
+      </a>
+      {{else}}
+      <i class="far fa-circle"></i>
+      {{/if}}
+      <input class="competence-archetype niveau-archetype" type="text" compname="{{name}}" name="comp-archetype-{{name}}"
+            value="{{numberFormat system.niveau_archetype decimals=0 sign=true}}" data-dtype="number"/>
+      <a class="item-edit" title="Modifier"><i class="fas fa-edit"></i></a>
+      {{#if @root.options.isGM}}
+      <a class="item-delete" title="Supprimer"><i class="fas fa-trash"></i></a>
+      {{/if}}
+    </div>
+    {{/if}}
+  </li>
+{{/if}}

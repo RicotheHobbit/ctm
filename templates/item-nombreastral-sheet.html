@@ -1,0 +1,23 @@
+<form class="{{cssClass}}" autocomplete="off">
+  {{>"systems/foundryvtt-reve-de-dragon/templates/header-item.html"}}
+  {{!-- Sheet Body --}}
+  <section class="sheet-body">
+    <div class="form-group">
+      <label for="xp">Nombre</label>
+      <input class="attribute-value" type="text" name="system.value" value="{{system.value}}" data-dtype="Number"/>
+    </div>
+    <div class="form-group">
+      <label for="xp">Nombre valide ? </label>
+      <input class="attribute-value" type="checkbox" name="system.istrue"  {{#if system.istrue}}checked{{/if}}/>
+    </div>
+    <div class="form-group">
+      <label for="xp">Index du jour concerné</label>
+      <input class="attribute-value" type="text" name="system.jourindex" value="{{system.jourindex}}" data-dtype="Number"/>
+    </div>
+    <div class="form-group">
+      <label for="xp">Label du jour</label>
+      <input class="attribute-value" type="text" name="system.jourlabel" value="{{system.jourlabel}}" data-dtype="String"/>
+    </div>
+
+  </section>
+</form>

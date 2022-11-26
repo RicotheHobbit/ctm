@@ -1,0 +1,9 @@
+{{#if use.moral}}
+<span>
+  Vous avez fait appel {{#if (gt moral 0)}}au moral{{else}}à l'énergie du déspoir{{/if}}
+  {{#if (eq perteMoralEchec 'dissolution')}}et échoué, cous marquez un point de dissolution!.
+  {{else if (eq perteMoralEchec 'perte')}}et échoué, votre moral baisse à {{moral}}.
+  {{else}}et réussi, votre moral reste de {{moral}}.
+  {{/if}}
+<span>
+{{/if}}

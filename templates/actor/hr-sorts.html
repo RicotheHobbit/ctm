@@ -1,0 +1,19 @@
+{{#if sorts.length}}
+<h3>Sorts</h3>
+<ul class="item-list alterne-list">
+  {{#each sorts as |sort key|}}
+  <li class="item list-item flexrow" data-item-id="{{sort._id}}" data-attribute="{{key}}">
+    <img class="sheet-competence-img" src="{{sort.img}}" />
+    <span class="display-label flex-grow-2">
+      <a data-item-id="{{sort._id}}">{{sort.name}}
+        - {{#if sort.system.caseTMRspeciale}}{{sort.system.caseTMRspeciale}}{{else}}{{upperFirst sort.system.caseTMR}}{{/if}}
+      </a>
+    </span>
+    <span>{{sort.system.draconic}} / {{sort.system.difficulte}}</span>
+    <div class="item-controls flex-shrink">
+      <a class="item-delete" title="Supprimer"><i class="fas fa-trash"></i></a>
+    </div>
+  </li>
+  {{/each}}
+</ul>
+{{/if}}

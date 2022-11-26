@@ -1,0 +1,33 @@
+{{#if subacteurs.vehicules.length}}
+<ul class="item-list alterne-list">
+  
+  <li class="competence-header flexrow">
+    <span class="item-name"><h4>Véhicules</h4></span>
+    <span></span>
+    <span>Catégorie</span>
+    <span>Résistance</span>
+    <span>Structure</span>
+    <span></span>
+  </li>
+
+  {{#each subacteurs.vehicules as |vehicule id|}}
+  <li class="item flexrow list-item" data-actor-id="{{vehicule.id}}">
+    <span class="subacteur-label">
+      <a>
+        <img class="sheet-competence-img" src="{{vehicule.img}}" title="{{vehicule.name}}"/>
+        {{vehicule.name}}
+      </a>
+    </span>
+    <span>{{vehicule.system.categorie}}</span>
+    <span>{{vehicule.system.etat.resistance.max}}</span>
+    <span>{{vehicule.system.etat.structure.max}}</span>
+    <span>
+      <a class="subacteur-delete" title="Supprimer"><i class="fas fa-trash"></i></a>
+    </span>
+  </li>
+  {{/each}}
+</ul>
+{{else}}
+<span class="item-name"><h4>Véhicules</h4></span>
+{{/if}}
+

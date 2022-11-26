@@ -1,0 +1,34 @@
+<form class="{{cssClass}}" autocomplete="off">
+  {{>"systems/foundryvtt-reve-de-dragon/templates/header-item.html"}}
+  {{!-- Sheet Body --}}
+  <section class="sheet-body">
+    <div class="form-group">
+      <label>Niveau</label>
+      <input class="attribute-value" type="text" name="system.niveau" value="{{system.niveau}}" data-dtype="Number"/>
+    </div>
+    <div class="form-group">
+      <label>Durée</label>
+      <input class="attribute-value" type="text" name="system.duree" value="{{system.duree}}" data-dtype="String"/>
+    </div>system
+    <div class="form-group">
+      <label>Sust</label>
+      <input class="attribute-value" type="text" name="system.sust" value="{{system.sust}}" data-dtype="Number"/>
+    </div>
+    <div class="form-group">
+      <label>Exotisme</label>
+      <input class="attribute-value" type="text" name="system.exotisme" value="{{system.exotisme}}" data-dtype="Number"/>
+    </div>
+    <div class="form-group">
+      <label>Référence / Auteur</label>
+      <input class="attribute-value" type="text" name="system.reference" value="{{system.reference}}" data-dtype="String"/>
+    </div>
+    <div class="flexcol">
+      <span><label>Ingrédients : </label></span>
+      <div class="form-group editor">
+        {{editor ingredients target="system.ingredients" button=true owner=owner editable=editable}}
+      </div>
+    </div>
+
+    {{>"systems/foundryvtt-reve-de-dragon/templates/partial-item-description.html"}}
+  </section>
+</form>

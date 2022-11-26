@@ -1,0 +1,71 @@
+<form class="{{cssClass}}" autocomplete="off">
+  {{>"systems/foundryvtt-reve-de-dragon/templates/header-item.html"}}
+  {{!-- Sheet Body --}}
+  <section class="sheet-body">
+    <div class="form-group">
+      <label for="xp">Caractéristique</label>
+      <select name="system.carac" id="caracselect" data-dtype="String">
+      {{#select system.carac}}
+      {{#each caracList  as |carac key|}}
+      <option value="{{key}}">{{carac.label}}</option>
+      {{/each}}
+      {{/select}}    
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="xp">Compétence</label>
+      <select name="system.competence" id="competenceselect" data-dtype="String">
+      {{#select system.competence}}
+      <option value="">Sans compétence</option>
+      {{>"systems/foundryvtt-reve-de-dragon/templates/enum-competence.html"}}
+      {{/select}}    
+    </select>
+  </div>
+    <div class="form-group">
+      <label for="xp">Difficulté</label>
+      <input class="attribute-value" type="text" name="system.difficulte" value="{{system.difficulte}}" data-dtype="Number"/>
+    </div>
+    <div class="form-group">
+      <label for="xp">Périodicité</label>
+      <input class="attribute-value" type="text" name="system.periodicite" value="{{system.periodicite}}" data-dtype="String"/>
+    </div>
+    <div class="form-group">
+      <label for="xp">Fatigue</label>
+      <input class="attribute-value" type="text" name="system.fatigue" value="{{system.fatigue}}" data-dtype="Number"/>
+    </div>
+    {{#if isGM}}
+    <div class="form-group">
+      <label for="xp">Cacher les Points de Tâches nécessaires au joueur</label>
+      <input class="attribute-value" type="checkbox" name="system.cacher_points_de_tache" value="{{system.cacher_points_de_tache}}" {{checked system.cacher_points_de_tache}}/>
+    </div>
+    <div class="form-group">
+      <label for="xp">Points de tâches nécessaires</label>
+      <input class="attribute-value" type="text" name="system.points_de_tache" value="{{system.points_de_tache}}" data-dtype="Number"/>
+    </div>
+    {{else}}
+      <div class="form-group">
+        <label for="xp">Points de tâches nécessaires</label>
+        {{#if system.cacher_points_de_tache}}
+        <input class="attribute-value" type="text" value="?????" data-dtype="Number" disabled/>
+        {{else}}
+        <input class="attribute-value" type="text" name="system.points_de_tache" value="{{system.points_de_tache}}" data-dtype="Number"/>
+        {{/if}}
+      </div>
+    {{/if}}
+    <hr>
+    <div class="form-group">
+      <label for="xp">Points de tâches obtenus</label>
+      <input class="attribute-value" type="text" name="system.points_de_tache_courant" value="{{system.points_de_tache_courant}}" data-dtype="Number"/>
+    </div>
+    <div class="form-group">
+      <label for="xp">Nombre de Succès</label>
+      <input class="attribute-value" type="text" name="system.nb_jet_succes" value="{{system.nb_jet_succes}}" data-dtype="Number" {{#if isGM}}{{else}}disabled{{/if}}/>
+    </div>
+    <div class="form-group">
+      <label for="xp">Nombre d'Echecs</label>
+      <input class="attribute-value" type="text" name="system.nb_jet_echec" value="{{system.nb_jet_echec}}" data-dtype="Number" {{#if isGM}}{{else}}disabled{{/if}}/>
+    </div>
+
+    {{>"systems/foundryvtt-reve-de-dragon/templates/partial-item-description.html"}}
+  </section>
+</form>

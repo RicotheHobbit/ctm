@@ -1,0 +1,87 @@
+<form class="skill-roll-dialog">
+  <h2 class="dialog-roll-title"></h2>
+
+  <div class="grid grid-2col">
+    <div class="flex-group-left">
+      <img class="chat-icon" src="{{competence.img}}" alt="{{competence.name}}"/>
+      <div class="flexrow">
+        <label>Caractéristique</label>
+        {{>"systems/foundryvtt-reve-de-dragon/templates/partial-select-carac.html"}}
+      </div>
+      {{#if arme}}
+        {{#if attackerRoll}}
+          {{#if attackerRoll.tactique}}
+          <div class="flexrow">
+            <label>Tactique: </label><label>{{attackerRoll.tactique}}</label>
+          </div>
+          {{/if}}
+        {{else}}
+        <div class="flexrow">
+          <label>Tactique:</label>
+          <span class="tooltip tooltip-dotted">
+            <select class="select-by-name" name="tactique" data-dtype="String" {{#unless use.conditions}}disabled{{/unless}}>
+              <option value="Attaque normale">Attaque normale</option>
+              <option value="charge">Charge</option>
+              <option value="feinte">Feinte</option>
+            </select>
+            <div class="tooltiptext ttt-ajustements">
+              <div>
+                <strong>Charge</strong> : Les longueurs d'armes n'interviennent pas dans la charge, il faut gérer une initiative aléatoire dans ce cas.
+                <br><strong>Feinte</strong> : Vous devez avoir l'initative sur votre adversaire et y renoncer.
+              </div>
+            </div>
+          </span>
+        </div>
+        {{/if}}
+        {{#if targetToken}}
+        <div class="flexrow">
+          Cible: {{targetToken.name}}
+          <img class="sheet-competence-img" src="{{targetToken.img}}" title="{{targetToken.name}}" />
+        </div>
+        {{/if}}
+        {{#if ajustements.attaqueDefenseurSurpris.used}}
+        <div class="flexrow">
+          <label id="defenseur-surprise">{{ajustements.attaqueDefenseurSurpris.label}}</label>
+        </div>
+        {{/if}}
+
+        {{#unless attackerRoll}}
+        <div class="flexrow">
+          <label>D&eacute;gats:</label>
+          {{#if (eq arme.system.mortalite 'non-mortel')}}
+          <label class="dmg-arme-actor"></label>
+          {{else if (eq arme.system.mortalite 'empoignade')}}
+          <label>Empoignade</label>
+          {{else}}
+          <span>
+            <input class="attribute-value" type="checkbox" name="coupsNonMortels" {{#unless (eq mortalite 'mortel')}}checked{{/unless}} />
+            <label class="dmg-arme-actor"></label>
+          </span>
+          {{/if}}
+        </div>
+        {{/unless}}
+      {{/if}}
+
+      {{>"systems/foundryvtt-reve-de-dragon/templates/partial-roll-surenc.html"}}
+      {{>"systems/foundryvtt-reve-de-dragon/templates/partial-roll-enctotal.html"}}
+    </div>
+
+    <div class="flex-group-left">
+      {{#if attackerRoll}}
+      {{>"systems/foundryvtt-reve-de-dragon/templates/partial-roll-diffFixe.html"}}
+      {{else}}
+      {{>"systems/foundryvtt-reve-de-dragon/templates/partial-roll-diffLibre.html"}}
+      {{/if}}
+      {{>"systems/foundryvtt-reve-de-dragon/templates/partial-roll-diffCondition.html"}}
+      {{>"systems/foundryvtt-reve-de-dragon/templates/partial-roll-forcer.html"}}
+      {{>"systems/foundryvtt-reve-de-dragon/templates/partial-roll-moral.html"}}
+      <div id="tableAjustements" class="flexrow"></div>
+    </div>
+  </div>
+
+  <div id="tableResolution"></div>
+  <div id="tableProbaReussite"></div>
+</form>
+
+<script>
+</script>

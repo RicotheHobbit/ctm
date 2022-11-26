@@ -1,0 +1,61 @@
+<form class="skill-roll-dialog">
+  <div>
+    <h4>Paramétrer le signe draconique
+      <span class="chat-card-button-area">
+        <a class="signe-aleatoire chat-card-button">Signe aléatoire</a>
+      </span>
+      <br><input type="text" name="signe.name" value="{{signe.name}}" data-dtype="String" />
+    </h4>
+  </div>
+  <div class="form-group">
+    <label for="signe.system.difficulte">Difficulte</label>
+    <input type="number" name="signe.system.difficulte" value="{{signe.system.difficulte}}" data-dtype="Number" />
+  </div>
+  <div class="form-group">
+    <label for="signe.system.valeur.norm">Expérience en sorts</label>
+    <div class="flexrow">
+      <input class="signe-xp-sort" type="number" name="signe.system.valeur.norm" data-typereussite="norm"
+        value="{{signe.system.valeur.norm}}" min="1" max="100" data-dtype="Number" />
+      <span>Sign.</span>
+      <input class="signe-xp-sort" type="number" name="signe.system.valeur.sign" data-typereussite="sign"
+        value="{{signe.system.valeur.sign}}" min="1" max="100" data-dtype="Number" />
+      <span>Part.</span>
+      <input class="signe-xp-sort" type="number" name="signe.system.valeur.part" data-typereussite="part"
+        value="{{signe.system.valeur.part}}" min="1" max="100" data-dtype="Number" />
+    </div>
+  </div>
+  <div class="form-group flexrow">
+      <label for="signe.system.ephemere">Ephémère</label>
+      <input class="flex-shrink" type="checkbox" name="signe.system.ephemere" {{#if signe.system.ephemere}}checked{{/if}} />
+      <span>
+        <input type="text" name="signe.system.duree" value="{{signe.system.duree}}" data-dtype="String" />
+      </span>
+  </div>
+  <hr>
+  <label>Terres médianes</label>
+  <div class="form-group">
+    <div class="grid-select-type-tmr">
+      {{#each tmrs as |tmr key|}}
+      <label class="flexrow">
+        <input type="checkbox" data-dtype="Boolean" class="select-tmr"
+        data-tmr-name="{{tmr.name}}" {{#if tmr.selected}}checked{{/if}} />
+        {{tmr.name}}
+      </label>
+      {{/each}}
+    </div>
+  </div>
+  <hr>
+  <label for="actors">Haut-rêvants concernés</label>
+  <div class="form-group">
+    <div class="grid-select-actor">
+      {{#each actors as |actor key|}}
+      <label class="flexrow">
+        <input type="checkbox" data-dtype="Boolean" class="select-actor"
+        data-actor-id="{{actor.id}}" {{#if actor.selected}}checked{{/if}} />
+        {{actor.name}}
+      </label>
+      {{/each}}
+    </div>
+  </div>
+  <hr>
+</form>

@@ -1,0 +1,19 @@
+{{#if rencontres.length}}
+<h3>Rencontres en attente dans les TMR</h3>
+<ul class="item-list">
+  {{#each rencontres as |rencontre key|}}
+  <li class="item flexrow" data-item-id="{{rencontre._id}}" data-attribute="{{key}}">
+    <img class="sheet-competence-img" src="{{rencontre.img}}" />
+    <span class="display-label flex-grow"><a>
+      {{rencontre.name}} r{{rencontre.system.force}} ({{rencontre.system.coord}} - {{caseTmr-label rencontre.system.coord}})
+    </a></span> 
+    {{#if rencontre.system.date}}
+    <span class="flex-shrink">{{upperFirst rencontre.system.heure}}, le {{rencontre.system.date}}</span> 
+    {{/if}}
+    <div class="item-controls flex-shrink">
+      <a class="item-delete" title="Supprimer"><i class="fas fa-trash"></i></a>
+    </div>
+  </li>
+  {{/each}}
+</ul>
+{{/if}}

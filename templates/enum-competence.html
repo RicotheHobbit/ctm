@@ -1,0 +1,5 @@
+{{#each (trier @root.competences) as |competence key|}}
+{{#if (or (not ../categorie) (eq competence.system.categorie ../categorie))}}
+<option value="{{competence.name}}">{{competence.name}}</option>
+{{/if}}
+{{/each}}

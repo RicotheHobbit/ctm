@@ -1,0 +1,15 @@
+<img class="chat-icon" src="{{competence.img}}" alt="{{competence.name}}" />
+<h4>
+  {{alias}} a médité : {{meditation.name}}
+</h4>
+{{> "systems/foundryvtt-reve-de-dragon/templates/chat-infojet.html"}}
+<hr>
+<div>
+  {{#if rolled.isSuccess}}
+  {{alias}} aperçoit un signe draconique éphémère, qu'il faut aller lire en <strong>{{typeTmr-name meditation.system.tmr}}</strong>.
+  {{else}}
+  La méditation de {{alias}} ne porte pas ses fruits, il ne distingue aucun signe Draconique.
+  {{/if}}
+  <br><span>{{alias}} s'est fatigué de 2 cases.</span>
+  {{#if rolled.isEPart}}<br><span>Son échec {{#if rolled.isETotal}}total{{else}}particulier{{/if}} augmente de 1 la difficulté de la méditation!</span>{{/if~}}
+</div>

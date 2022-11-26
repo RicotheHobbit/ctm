@@ -1,0 +1,27 @@
+<img class="chat-icon" src="{{img}}" alt="potion de repos" />
+<h4>
+  {{alias}} a bu une <strong>{{name}}{{#if system.magique}} enchantée de puissance {{system.puissance}}{{/if}}</strong>.
+</h4>
+<hr>
+<div>
+  {{#if system.magique}}
+    Le Jet de Résistance est {{#if rolled.isSuccess}}réussi{{else}}échoué{{/if}}.
+    {{> "systems/foundryvtt-reve-de-dragon/templates/chat-infojet.html"}}
+    {{#if rolled.isEchec}}
+    <br>La potion fait effet !
+      {{alias}} a perdu 1 point de rêve et s'endort pour {{guerisonDureeValue}} {{guerisonDureeUnite}} et
+      se récupère {{caseFatigueReel}} cases de fatigue.<br>
+      {{#if system.reposalchimique}}
+        De plus, la potion étant alchimique, {{alias}} est en aphasie pendant cette durée.
+        {{#if aphasiePermanente}}
+        Malheureusement, l'aphasie est permanente tant que {{alias}} ne réussit pas un jet de VOLONTE à 0 à Chateau Dormant (le moral compte).
+        {{/if}}
+      {{/if}}
+    {{else}}
+    <br>La potion ne fait pas effet ! Elle vous octroie tout de même un bonus de {{system.herbebonus}} segments de fatigue récupérés en plus à la fin de Chateau Dormant (à gérer manuellement).
+    {{/if}}
+  {{else}}
+    Une fois consommée (vers fin Lyre), elle vous octroie un bonus de {{system.herbebonus}} segments de fatigue récupérés en plus à la fin de Chateau Dormant (à gérer manuellement).
+  {{/if}}
+  <br>La potion a été supprimée de l'équipement.
+</div>

@@ -1,0 +1,14 @@
+<div class="flexcol">
+  <span><label>Description : </label></span>
+  <div class="form-group editor">
+    {{editor description target="system.description" button=true owner=owner editable=editable}}
+  </div>
+</div>
+{{#if isGM}}
+<div class="flexcol">
+  <span><label>Description (MJ seulement): </label></span>
+  <div class="form-group editor">
+    {{editor descriptionmj target="system.descriptionmj" button=true owner=owner editable=editable}}
+  </div>
+</div>
+{{/if}}

@@ -1,0 +1,9 @@
+<h4>C'est au tour de {{alias}} !</h4>
+<div data-combatid="{{combatId}}" data-combatmessage="actor-turn-summary">{{blessuresStatus}}</div>
+<div>Son état général est de : {{etatGeneral}} {{#if isSonne}} et est <strong>sonné</strong>{{/if}}</div>
+{{#if isGrave}}
+<div>{{alias}} souffre de Blessure(s) Grave(s) : n'oubliez pas de faire un Jet de Vie toutes les SC ({{SConst}}) minutes. Un point d'Endurance a été retiré automatiquement.</div>
+{{/if}}
+{{#if isCritique}}
+<div>{{alias}} souffre d'une <strong>Blessure Critique</strong> : faites un <a id="chat-jet-vie" data-actorId="{{actorId}}">Jet de Vie.<a></div>
+{{/if}}

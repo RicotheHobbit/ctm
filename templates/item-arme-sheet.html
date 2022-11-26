@@ -1,0 +1,114 @@
+<form class="{{cssClass}}" autocomplete="off">
+    {{>"systems/foundryvtt-reve-de-dragon/templates/header-item.html"}}
+    
+    {{!-- Sheet Body --}}
+    <section class="sheet-body">
+      <div class="form-group">
+        <label for="system.competence">Compétence de mêlée</label>
+        <select name="system.competence" id="competence" data-dtype="String">
+          {{#select system.competence}}
+          <option value="">- impossible -</option>
+          {{>"systems/foundryvtt-reve-de-dragon/templates/enum-competence.html" categorie='melee'}}
+          {{/select}}
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="system.lancer">Compétence de lancer</label>
+        <select name="system.lancer" data-dtype="String">
+          {{#select system.lancer}}
+          <option value="">- impossible -</option>
+          {{>"systems/foundryvtt-reve-de-dragon/templates/enum-competence.html" categorie='lancer'}}
+          {{/select}}
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="system.tir">Compétence de tir</label>
+        <select name="system.tir" id="tir" data-dtype="String">
+          {{#select system.tir}}
+          <option value="">- impossible -</option>
+          {{>"systems/foundryvtt-reve-de-dragon/templates/enum-competence.html" categorie='tir'}}
+          {{/select}}
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="system.dommages">Dommages </label>
+        <input class="attribute-value" type="text" name="system.dommages" value="{{system.dommages}}" data-dtype="String"/>
+      </div>
+      <div class="form-group">
+        <label for="system.resistance">Résistance </label>
+        <input class="attribute-value" type="text" name="system.resistance" value="{{system.resistance}}" data-dtype="Number"/>
+      </div>
+      <div class="form-group">
+        <label for="system.categorie_parade">Catégorie parade </label>
+        <select name="system.categorie_parade" id="categorie_parade" data-dtype="String">
+          {{#select system.categorie_parade}}
+          {{>"systems/foundryvtt-reve-de-dragon/templates/enum-categorie-parade.html"}}
+          {{/select}}
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="system.encombrement">Encombrement </label>
+        <input class="attribute-value" type="text" name="system.encombrement" value="{{system.encombrement}}" data-dtype="Number"/>
+      </div>
+      <div class="form-group">
+        <label for="system.force">Force min. </label>
+        <input class="attribute-value" type="text" name="system.force" value="{{system.force}}" data-dtype="String"/>
+      </div>
+      <div class="form-group">
+        <label for="system.rapide">Arme rapide ? </label>
+        <input class="attribute-value" type="checkbox" name="system.rapide"  {{#if system.rapide}}checked{{/if}}/>
+      </div>
+      <div class="form-group">
+        <label for="system.unemain">A Une main ? </label>
+        <input class="attribute-value" type="checkbox" name="system.unemain"  {{#if system.unemain}}checked{{/if}}/>
+      </div>
+      <div class="form-group">
+        <label for="system.deuxmains">A Deux mains ? </label>
+        <input class="attribute-value" type="checkbox" name="system.deuxmains"  {{#if system.deuxmains}}checked{{/if}}/>
+      </div>
+      <div class="form-group">
+        <label for="system.portee_courte">Portée courte </label>
+        <input class="attribute-value" type="text" name="system.portee_courte" value="{{system.portee_courte}}" data-dtype="Number"/>
+      </div>
+      <div class="form-group">
+        <label for="system.portee_moyenne">Portée moyenne </label>
+        <input class="attribute-value" type="text" name="system.portee_moyenne" value="{{system.portee_moyenne}}" data-dtype="Number"/>
+      </div>
+      <div class="form-group">
+        <label for="system.portee_extreme">Portée extrême </label>
+        <input class="attribute-value" type="text" name="system.portee_extreme" value="{{system.portee_extreme}}" data-dtype="Number"/>
+      </div>
+      <div class="form-group">
+        <label for="system.penetration">Pénétration </label>
+        <input class="attribute-value" type="text" name="system.penetration" value="{{system.penetration}}" data-dtype="Number"/>
+      </div>
+      <div class="form-group item-cout">
+        <label for="system.cout">Prix (sols) </label>
+        <input class="attribute-value" type="text" name="system.cout" value="{{system.cout}}" data-dtype="Number"/>
+      </div>
+      <div class="form-group">
+        <label for="system.magique">Magique ? </label>
+        <input class="attribute-value" type="checkbox" name="system.magique"  {{#if system.magique}}checked{{/if}}/>
+      </div>
+      <div class="form-group item-magique">
+        <label for="system.resistance_magique">Résistance magique </label>
+        <input class="attribute-value" type="text" name="system.resistance_magique" value="{{system.resistance_magique}}" data-dtype="Number"/>
+      </div>
+      <div class="form-group item-magique">
+        <label for="system.ecaille_efficacite">Nombre d'Ecailles d'Efficacité </label>
+        <input class="attribute-value" type="text" name="system.ecaille_efficacite" value="{{system.ecaille_efficacite}}" data-dtype="Number"/>
+      </div>
+      <div class="form-group">
+        <label for="system.initpremierround">Classe d'initiative au premier round (mêlée seulement) </label>
+        <select name="system.initpremierround" id="initpremierround" data-dtype="String">
+          {{#select system.initpremierround}}
+          {{>"systems/foundryvtt-reve-de-dragon/templates/enum-initpremierround.html"}}
+          {{/select}}
+        </select>
+      </div>      
+
+      {{>"systems/foundryvtt-reve-de-dragon/templates/partial-item-description.html"}}
+      
+    </section>
+    
+</form>

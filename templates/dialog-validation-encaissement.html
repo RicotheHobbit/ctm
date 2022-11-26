@@ -1,0 +1,48 @@
+<form class="dialog-validation-encaissement">
+  <div class="flexrow flex-center">
+    <div class="flex-shrink"><img class="chat-icon" src="icons/svg/bones.svg" alt="Encaisser des dommages" /></div>
+    <div><h4>Encaissement de {{actor.name}}</h4></div>
+    <div class="flex-shrink"><img class="chat-icon" src="{{actor.img}}" title="{{actor.name}}" alt="{{actor.name}}" /></div>
+  </div>
+  <ul>
+    <li class="flexrow flex-group-left">
+      <label>Jet d'encaissement</label>
+      <input class="encaissement-roll-result" type="number" value="{{encaissement.roll.result}}" min="2" max="20" data-dtype="Number" />
+    </li>
+    <li class="flexrow flex-group-left">
+      <label>Total</label>
+      <span class="tooltip tooltip-dotted">
+        <label class="encaissement-total">{{encaissement.total}}</label>
+        <div class="tooltiptext ttt-ajustements">
+          <div>Armure: {{encaissement.armure}}</div>
+          {{#if rollData.dmg.penetration}}
+          <div>Pénétration: -{{rollData.dmg.penetration}}</div>
+          {{/if}}
+          <hr>
+          {{#if encaissement.dmg.total}}
+          <div>+dom encaissement: {{numberFormat rollData.dmg.total decimals=0 sign=true}}</div>
+          {{/if}}
+          {{#if rollData.dmg.dmgArme}}
+          <div>+dom arme: {{numberFormat rollData.dmg.dmgArme decimals=0 sign=true}}</div>
+          {{/if}}
+          {{#if rollData.dmg.dmgActor}}
+          <div>+dom attaquant: {{numberFormat rollData.dmg.dmgActor decimals=0 sign=true}}</div>
+          {{/if}}
+          {{#if rollData.dmg.dmgParticuliere}}
+          <div>+dom particulière: {{numberFormat rollData.dmg.dmgParticuliere decimals=0 sign=true}}</div>
+          {{/if}}
+          {{#if rollData.dmg.dmgTactique}}
+          <div>+dom tactique: {{numberFormat rollData.dmg.dmgTactique decimals=0 sign=true}}</div>
+          {{/if}}
+          {{#if rollData.dmg.dmgSurprise}}
+          <div>+dom surprise: {{numberFormat rollData.dmg.dmgSurprise decimals=0 sign=true}}</div>
+          {{/if}}
+        </div>
+      </span>
+    </li>
+    <li class="flexrow flex-group-left">
+      <label>Blessure ({{rollData.dmg.mortalite}})</label>
+      <label class="encaissement-blessure">{{encaissement.blessures}}</label>
+    </li>
+  </ul>
+</form>

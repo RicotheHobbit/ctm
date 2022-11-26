@@ -1,0 +1,53 @@
+<form class="{{cssClass}}" autocomplete="off">
+  {{>"systems/foundryvtt-reve-de-dragon/templates/header-item.html"}}
+  {{!-- Sheet Body --}}
+  <section class="sheet-body">
+    <div class="form-group">
+      <label for="system.sust">Sustentation</label>
+      <input class="attribute-value" type="text" name="system.sust" value="{{system.sust}}" data-dtype="Number" />
+    </div>
+    <div class="form-group">
+      <label for="system.boisson">Boisson</label>
+      <input class="attribute-value" type="checkbox" name="system.boisson" {{#if system.boisson}}checked{{/if}} />
+    </div>
+    {{#if system.boisson}}
+      <div class="form-group">
+        <label for="system.desaltere">Désaltère de</label>
+        <input class="attribute-value" type="text" name="system.desaltere" value="{{system.desaltere}}" data-dtype="Number" />
+      </div>
+      <div class="form-group">
+        <label for="system.alcoolise">Alcoolisée</label>
+        <input class="attribute-value" type="checkbox" name="system.alcoolise" {{#if system.alcoolise}}checked{{/if}} />
+      </div>
+      {{#if system.alcoolise}}
+      <div class="form-group">
+        <label>Force de l'alcool par dose</label>
+        <input class="attribute-value" type="text" name="system.force" value="{{system.force}}" data-dtype="Number" />
+      </div>
+      {{/if}}
+    {{/if}}
+    <div class="form-group">
+        <label for="system.qualite">Qualité</label>
+        <input class="attribute-value" type="text" name="dasystemta.qualite" value="{{system.qualite}}" data-dtype="Number" />
+    </div>
+    <div class="form-group">
+      <label for="system.exotisme">Exotisme</label>
+      <input class="attribute-value" type="text" name="system.exotisme" value="{{system.exotisme}}" data-dtype="Number" />
+    </div>
+    <div class="form-group">
+      <label for="system.encombrement">Encombrement</label>
+      <input class="attribute-value" type="text" name="system.encombrement" value="{{system.encombrement}}"
+        data-dtype="Number" />
+    </div>
+    <div class="form-group">
+      <label for="system.quantite">Quantité</label>
+      <input class="attribute-value" type="text" name="system.quantite" value="{{system.quantite}}" data-dtype="Number" />
+    </div>
+    <div class="form-group item-cout">
+      <label for="system.cout">Prix (sols) </label>
+      <input class="attribute-value" type="text" name="system.cout" value="{{system.cout}}" data-dtype="Number" />
+    </div>
+
+    {{>"systems/foundryvtt-reve-de-dragon/templates/partial-item-description.html"}}
+  </section>
+</form>

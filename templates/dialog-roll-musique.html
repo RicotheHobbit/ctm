@@ -1,0 +1,27 @@
+<form class="rdddialog">
+  <h2>Interpréter la mélodie: {{oeuvre.name}}</h2>
+
+  <div class="grid grid-2col">
+    <div class="flex-group-left">
+      <img class="chat-icon" src="{{competence.img}}" alt="{{competence.name}}" />
+      <div class="grid grid-2col">
+        <label>Caractéristique: </label><label class="flex-grow">{{selectedCarac.label}}</label>
+        <label>{{competence.name}}:</label><label class="flex-grow">{{numberFormat competence.system.niveau decimals=0 sign=true}}</label></label>
+      </div>
+      {{> "systems/foundryvtt-reve-de-dragon/templates/partial-description-overflow.html" oeuvre.system}}
+    </div>
+    <div class="flex-group-left">
+      {{>"systems/foundryvtt-reve-de-dragon/templates/partial-roll-diffFixe.html"}}
+      {{>"systems/foundryvtt-reve-de-dragon/templates/partial-roll-diffCondition.html"}}
+      {{>"systems/foundryvtt-reve-de-dragon/templates/partial-roll-forcer.html"}}
+      {{>"systems/foundryvtt-reve-de-dragon/templates/partial-roll-moral.html"}}
+      <div id="tableAjustements" class="flexrow"></div>
+    </div>
+  </div>
+
+  <div id="tableResolution"></div>
+  <div id="tableProbaReussite"></div>
+</form>
+
+<script>
+</script>

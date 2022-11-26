@@ -1,0 +1,48 @@
+<form class="{{cssClass}}" autocomplete="off">
+  {{>"systems/foundryvtt-reve-de-dragon/templates/header-item.html"}}
+  {{!-- Sheet Body --}}
+  <section class="sheet-body">
+    <div class="form-group">
+      <label>Type</label>
+      <select name="system.type" id="type" data-dtype="String">
+        {{#select system.type}}
+        {{{gemmeTypeList}}}
+        {{/select}}
+      </select>
+    </div>
+    <div class="form-group">
+      <label>Taille</label>
+      <input class="attribute-value" type="text" name="system.taille" value="{{system.taille}}" data-dtype="Number" />
+    </div>
+    <div class="form-group">
+      <label>Pureté</label>
+      <input class="attribute-value" type="text" name="system.purete" value="{{system.purete}}" data-dtype="Number" />
+    </div>
+    <div class="form-group">
+      <label>Qualité</label>
+      <input class="attribute-value" type="text" name="system.qualite" value="{{system.qualite}}" data-dtype="Number" />
+    </div>
+    <div class="form-group">
+      <label>Encombrement</label>
+      <input class="attribute-value" type="text" name="system.encombrement" value="{{system.encombrement}}" data-dtype="Number" />
+    </div>
+    <div class="form-group">
+      <label>Quantité</label>
+      <input class="attribute-value" type="text" name="system.quantite" value="{{system.quantite}}" data-dtype="Number" />
+    </div>
+    <div class="form-group">
+      <label>Inertie</label>
+      <input class="attribute-value" type="text" name="system.inertie" value="{{system.inertie}}" data-dtype="Number" disabled/>
+    </div>
+    <div class="form-group">
+      <label>Enchantabilité</label>
+      <input class="attribute-value" type="text" name="system.enchantabilite" value="{{system.enchantabilite}}" data-dtype="Number" disabled/>
+    </div>
+    <div class="form-group">
+      <label>Prix</label>
+      <input class="attribute-value" type="text" name="system.cout" value="{{system.cout}}" data-dtype="Number" disabled/>
+    </div>
+
+    {{>"systems/foundryvtt-reve-de-dragon/templates/partial-item-description.html"}}
+  </section>
+</form>

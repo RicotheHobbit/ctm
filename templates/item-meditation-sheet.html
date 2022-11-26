@@ -1,0 +1,74 @@
+<form class="{{cssClass}}" autocomplete="off">
+  {{>"systems/foundryvtt-reve-de-dragon/templates/header-item.html"}}
+  {{!-- Sheet Body --}}
+  <section class="sheet-body">
+    <div class="form-group">
+      <label for="xp">Compétence</label>
+      <select name="system.competence" id="competenceselect" data-dtype="String">
+        {{#select system.competence}}
+        {{>"systems/foundryvtt-reve-de-dragon/templates/enum-competence.html"}}
+        {{/select}}    
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="xp">Thème</label>
+      <input class="attribute-value" type="text" name="system.theme" value="{{system.theme}}" data-dtype="String"/>
+    </div>
+    <div class="form-group">
+      <label for="xp">Support</label>
+      <input class="attribute-value" type="text" name="system.support" value="{{system.support}}" data-dtype="String"/>
+    </div>
+    <div class="form-group">
+      <label for="xp">Heure</label>
+      <select name="system.heure" id="heure" data-dtype="String">
+        {{#select system.heure}}
+        {{>"systems/foundryvtt-reve-de-dragon/templates/enum-heures.html"}}
+        {{/select}}
+      </select>        
+    </div>
+    <div class="form-group">
+      <label for="xp">Purification</label>
+      <input class="attribute-value" type="text" name="system.purification" value="{{system.purification}}" data-dtype="String"/>
+    </div>
+    <div class="form-group">
+      <label for="xp">Vêture</label>
+      <input class="attribute-value" type="text" name="system.veture" value="{{system.veture}}" data-dtype="String"/>
+    </div>
+    <div class="form-group">
+      <label for="xp">Comportement</label>
+      <input class="attribute-value" type="text" name="system.comportement" value="{{system.comportement}}" data-dtype="String"/>
+    </div>
+    <div class="form-group">
+      <label for="xp">Case TMR</label>
+      <select name="system.tmr" id="tmr" data-dtype="String">
+        {{#select system.tmr}}
+        {{>"systems/foundryvtt-reve-de-dragon/templates/enum-tmr-type.html"}}
+        {{/select}}
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="xp">Malus</label>
+      {{#if isGM}}
+      <select name="system.malus" id="malus" data-dtype="Number">
+        {{#select system.malus}}
+        <option value="0">0</option>
+        <option value="-1">-1</option>
+        <option value="-2">-2</option>
+        <option value="-3">-3</option>
+        <option value="-4">-4</option>
+        <option value="-5">-5</option>
+        <option value="-6">-6</option>
+        <option value="-7">-7</option>
+        <option value="-8">-8</option>
+        <option value="-9">-9</option>
+        <option value="-10">-10</option>
+        {{/select}}
+      </select>
+      {{else}}
+      <label>>{{system.malus}}</label>
+      {{/if}}
+    </div>
+
+    {{>"systems/foundryvtt-reve-de-dragon/templates/partial-item-description.html"}}
+  </section>
+</form>

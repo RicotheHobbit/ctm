@@ -1,0 +1,14 @@
+<div class="post-item" data-transfer="{{transfer}}">
+  <h3><b>{{name}}</b></h3>
+  {{#if img}}
+  <img class="chat-icon" src="{{img}}" title="{{name}}" />
+  {{/if}}
+  
+  <p class="card-content">{{{system.description}}}</p>
+  <p>
+    {{#each properties as |property p|}}
+    <span>{{{property}}}</span><br>
+    {{/each}}
+  </p>
+
+</div>

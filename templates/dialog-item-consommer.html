@@ -1,0 +1,37 @@
+<form class="rdddialog">
+  <img class="chat-icon" src="{{item.img}}" title="{{item.name}}" alt="{{item.name}}" />
+  <h4>{{item.name}}</h4>
+  <div class="flexrow">
+    <label class="flex-grow">Quantité à {{#if item.system.boisson}}boire{{else}}manger{{/if}}</label>
+    <input class="attribute-value consommer-doses flex-shrink" type="number" name="doses" value="{{choix.doses}}"
+      min="0" max="{{item.system.quantite}}" data-dtype="Number" />
+  </div>
+  {{#if item.system.sust}}
+  <p>Cette {{#if item.system.boisson}}boisson{{else}}nourriture{{/if}} vous apportera <span
+      class="total-sust">{{totalSust}}</span> de sustantation.</p>
+  {{/if}}
+  {{#if item.system.boisson}}
+  <p>{{#if item.system.alcoolise}}
+    C'est une boisson alcoolisée de force {{item.system.force}}, vous effectuerez un jet d'éthylisme.
+    {{/if}}
+    Cette boisson vous apportera <span class="total-desaltere">{{totalDesaltere}}</span> unités d'eau.
+  </p>
+  {{/if}}
+  {{#if (gt item.system.qualite 0)}}
+  {{#if (gt item.system.qualite cuisine.system.niveau)}}
+  <p>La qualité du plat est telle qu'un jet de Goût/Cuisine à {{numberFormat item.system.qualite decimals=0 sign=true}}
+    vous permettra un jet de moral heureux.</p>
+  {{/if}}
+  {{/if}}
+
+  {{#if (or (lt item.system.qualite 0) (lt item.system.exotisme 0))}}
+  <p>
+    Pour surmonter {{#if (lt item.system.qualite 0)}}le mauvais goût{{else}}l'exotisme{{/if}}, vous devez effectuer un jet de Volonté/Cuisine à {{numberFormat (min item.system.exotisme item.system.qualite) decimals=0 sign=true}}.
+  <br/>
+    <input class="attribute-value se-forcer" type="checkbox" name="se-forcer" {{#if choix.seForcer}}checked{{/if}}>
+      <label for="se-forcer">En cas d'échec, voulez-vous vous forcer à manger (et subir un jet de moral en situation malheureuse)?</label>
+    </input>
+  </p>
+  {{/if}}
+
+</form>

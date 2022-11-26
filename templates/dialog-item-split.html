@@ -1,0 +1,11 @@
+<form class="rdddialog">
+  <img class="chat-icon" src="{{item.img}}" title="{{item.name}}" alt="{{item.name}}" />
+  <h4>{{item.name}}</h4>
+  <label>Quantité totale : {{item.system.quantite}}</label>
+  <div class="flexrow">
+    <label class="flex-grow">Quantité à séparer</label>
+    <input class="attribute-value choix-quantite flex-shrink" type="number" name="choix.quantite" value="{{choix.quantite}}"
+      min="1" max="{{choix.max}}" data-dtype="Number" />
+  </div>
+</form>
+

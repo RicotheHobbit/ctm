@@ -1,0 +1,21 @@
+<form autocomplete="off" onsubmit="event.preventDefault();">
+  {{log 'systemCompendiums'systemCompendiums}}
+  {{log 'availableCompendiums' availableCompendiums}}
+  <ul>
+    {{#each systemCompendiums as |definition key|}}
+    <li class="flexrow">
+      <label>{{definition.label}}</label>
+      <select data-dtype="String" class="system-compendium-setting flex-grow-2" data-compendium="{{definition.compendium}}" >
+        {{#select definition.value}}
+        {{#each @root.availableCompendiums as |available key|}}
+        {{#if (eq available.type definition.type)}}
+        <option value="{{available.name}}">{{available.path }}</option>
+        {{/if}}
+        {{/each}}
+        {{/select}}
+      </select>
+    </li>
+    {{/each}}
+  </ul>
+</form>
+

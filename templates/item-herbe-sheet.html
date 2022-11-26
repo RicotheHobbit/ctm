@@ -1,0 +1,55 @@
+<form class="{{cssClass}}" autocomplete="off">
+  <header class="sheet-header">
+    <img class="profile-img" src="{{img}}" data-edit="img" title="{{name}}" />
+    <div class="header-fields">
+      <h1 class="charname"><input name="name" type="text" value="{{name}}" placeholder="Name" /></h1>
+      {{#if isIngredientPotionBase}}
+      <div class="form-group">
+        <span for="xp"><a class="creer-potion-base chat-card-button" data-actor-id="{{actorId}}">Fabriquer une potion depuis cette plante</a></span>
+      </div>
+      {{/if}}
+    </div>
+  </header>
+
+  {{!-- Sheet Body --}}
+  <section class="sheet-body">
+    <div class="flexcol">
+      <div class="form-group">
+        <label>Niveau (si applicable)</label>
+        <input class="attribute-value" type="text" name="system.niveau" value="{{system.niveau}}" data-dtype="Number" />
+      </div>
+      <div class="form-group">
+        <label>Quantité (Pépins ou Brins)</label>
+        <input class="attribute-value" type="text" name="system.quantite" value="{{system.quantite}}" data-dtype="Number" />
+      </div>
+      <div class="form-group item-cout">
+        <label>Prix (sols)</label>
+        <input class="attribute-value" type="text" name="system.cout" value="{{system.cout}}" data-dtype="Number" />
+      </div>
+      <div class="form-group">
+        <label>Milieu</label>
+        <input class="attribute-value" type="text" name="system.milieu" value="{{system.milieu}}" data-dtype="String" />
+      </div>
+      <div class="form-group">
+        <label>Fréquence</label>
+        <select name="system.rarete" class="rarete" data-dtype="String">
+          {{#select system.rarete}}
+          {{>"systems/foundryvtt-reve-de-dragon/templates/enum-rarete.html"}}
+          {{/select}}
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Catégorie</label>
+        <select name="system.categorie" class="categorie" data-dtype="String">
+          {{#select system.categorie}}
+          {{>"systems/foundryvtt-reve-de-dragon/templates/enum-categorie-ingredient.html"}}
+          {{/select}}
+        </select>
+      </div>
+
+      {{>"systems/foundryvtt-reve-de-dragon/templates/partial-item-description.html"}}
+    
+    </div>
+  </section>
+
+</form>

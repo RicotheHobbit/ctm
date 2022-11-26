@@ -1,0 +1,21 @@
+{{#if competence.img}}
+  <img class="chat-icon" src="{{competence.img}}" alt="{{competence.name}}" />
+{{/if}}
+<h4>
+  {{alias}} {{#if show.title}}{{show.title}}: {{/if}}
+  {{#if selectedCarac}}{{selectedCarac.label}}
+    {{#if competence}}{{#unless (eq selectedCarac.label competence.name)}} / {{competence.name}}{{/unless}}{{/if}}
+    à {{diffLibre}}
+  {{/if}}
+</h4>
+{{> "systems/foundryvtt-reve-de-dragon/templates/chat-infojet.html"}}
+<hr>
+<div>
+  <span>{{#if rolled.ptTache}}{{rolled.ptTache}} points de tâche{{/if}}{{#if rolled.ptQualite}}{{#if rolled.ptTache}},{{/if}} ajustement Qualité {{numberFormat rolled.ptQualite decimals=0 sign=true}}{{/if}}</span>
+  {{> "systems/foundryvtt-reve-de-dragon/templates/chat-info-appel-au-moral.html"}}
+</div>
+{{~#if show.explications}}
+<div>
+  {{show.explications}}
+</div>
+{{/if}}

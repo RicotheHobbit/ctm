@@ -1,0 +1,26 @@
+<h4>{{alias}} a gagné de l'expérience en {{caracName}}{{#if competence}} / {{competence.name}}{{/if}}!</h4>
+{{#if (gt xpCarac 0)}}
+<hr>
+  {{xpCarac}} point{{#if (gt xpCarac 1)}}s{{/if}}
+  {{#if caracRepartitionManuelle}}à répartir manuellement dans la caractéristique dérivée{{else}}en{{/if}}
+  {{caracName}}.
+  {{#if checkCarac}}
+  L'expérience dans cette caractéristique est de {{checkCarac.xp}}, elle peut progresser!
+  <br>Vous devez ouvrir votre fiche de personnage et appliquer (ou pas) l'augmentation manuellement.
+  {{/if}}
+{{/if}}
+
+{{#if (gt xpCompetence 0)}}
+<hr>
+  {{xpCompetence}} point{{#if (gt xpCompetence 1)}}s{{/if}} en {{competence.name}}.
+    {{#if checkComp}}
+    L'expérience dans cette compétence est de {{checkComp.xp}}, elle peut progresser jusqu'à {{checkComp.niveau}}!
+    Vous devez ouvrir votre fiche de personnage et appliquer l'augmentation manuellement.
+    {{#if (gt checkComp.niveau checkComp.archetype)}}<br>Le niveau d'archétype est de {{checkComp.archetype}}.
+    {{#if checkComp.archetypeWarning}}
+    <br><strong>ATTENTION !!</strong> Si vous appliquez cette augmentation, votre compétence dépassera l'archétype.
+    Veuillez contrôler que votre archétype est à jour, ou bien ne pas augmenter le niveau de cette compétence.
+    {{/if}}
+    {{/if}}
+    {{/if}}
+{{/if}}

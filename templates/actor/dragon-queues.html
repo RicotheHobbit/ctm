@@ -1,0 +1,15 @@
+{{#if (or queues.length ombres.length)}}
+<h3>
+  {{#if queues.length}}Queues de Dragon{{/if}}
+  {{#if (and queues.length ombres.length)}} et {{/if}}
+  {{#if ombres.length}}Ombres de Thanatos{{/if}}
+</h3>
+<ul class="item-list">
+  {{#each queues as |queue key|}}
+  {{> "systems/foundryvtt-reve-de-dragon/templates/actor/dragon-queue.html" queue=queue key=key}}
+  {{/each}}
+  {{#each ombres as |ombre key|}}
+  {{> "systems/foundryvtt-reve-de-dragon/templates/actor/dragon-queue.html" queue=ombre key=key}}
+  {{/each}}
+</ul>
+{{/if}}

@@ -1,0 +1,21 @@
+<form class="encaisse-roll-dialog">
+  <h2 class="encaisserdialog" id="encaisserTitle"></h2>
+  <div class="flexrow">
+    <label>Modificateurs aux Dommages:</label>
+    <select class="competence-value flex-shrink" name="modificateurDegats" id="modificateurDegats" data-dtype="number">
+      {{#select modificateurDegats}}
+      {{#each ajustementsEncaissement as |key|}}
+      <option value={{key}}>{{numberFormat key decimals=0 sign=true}}</option>
+      {{/each}}
+      {{/select}}
+    </select>
+  </div>
+  <div class="flexcol">
+    <label >Cas particuliers:</label>
+    <select name="encaisserSpecial" id="encaisserSpecial" data-dtype="String">
+      <option value="aucun">Aucun</option>
+      <option value="noarmure">Ne pas compter les Armures</option>
+      <option value="chute">Chute : Limiter les armures à 2 PA</option>
+    </select>
+  </div>
+</form>

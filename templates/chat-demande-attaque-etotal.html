@@ -1,0 +1,22 @@
+<div data-passearme="{{passeArme}}">
+  <h4 class="rdd-roll-etotal"><strong>Echec total en attaque</strong></h4>
+  <br>
+  {{#if (eq attacker.type 'personnage')}}
+    {{#unless essais.attaqueChance}}
+      <a class='chat-card-button' id='appel-chance-attaque' data-attackerId='{{attackerId}}'
+        data-defenderTokenId='{{defenderTokenId}}'>Faire appel à la chance</a>
+      </a>
+      <br>
+    {{/unless}}
+    {{#if (gt attacker.system.compteurs.destinee.value 0)}}
+      <a class='chat-card-button' id='appel-destinee-attaque' data-attackerId='{{attackerId}}'
+        data-defenderTokenId='{{defenderTokenId}}'>Utiliser la destinée</a>
+      </a>
+      <br>
+    {{/if}}
+  {{/if}}
+  <a class='chat-card-button' id='echec-total-attaque' data-attackerId='{{attackerId}}'
+    data-defenderTokenId='{{defenderTokenId}}'>
+    Tirer la maladresse !
+  </a>
+</div>

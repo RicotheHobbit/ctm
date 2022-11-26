@@ -1,0 +1,15 @@
+<img class="chat-icon" src="{{competence.img}}" alt="{{oeuvre.system.competence}}" />
+<h4>
+  {{alias}} joue à : {{oeuvre.name}}
+</h4>
+{{> "systems/foundryvtt-reve-de-dragon/templates/chat-infojet.html"}}
+<hr>
+<div>
+  {{#if rolled.isSuccess}}
+  {{alias}} a gagné la partie !
+  {{else}}
+  {{alias}} a perdu ...
+  {{/if}}
+  {{> "systems/foundryvtt-reve-de-dragon/templates/chat-info-appel-au-moral.html"}}
+</div>
+{{> "systems/foundryvtt-reve-de-dragon/templates/chat-description.html" oeuvre.system}}

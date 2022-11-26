@@ -1,0 +1,11 @@
+<img class="chat-icon" src="{{competence.img}}" alt="{{competence.name}}" />
+<h4>{{alias}} lit le signe {{signe.name}}</h4>
+{{> "systems/foundryvtt-reve-de-dragon/templates/chat-infojet.html"}}
+<hr>
+<div>
+  {{#if rolled.isSuccess}}
+  {{alias}} a gagné {{xpSort}} points d'expérience en sorts dans la {{competence.name}}.
+  {{else}}
+  {{alias}} n'a pas pu interpréter le signe draconique.
+  {{/if}}
+</div>

@@ -1,0 +1,14 @@
+<img class="chat-icon" src="{{rencontre.img}}" alt="{{rencontre.name}}" />
+<h4>{{#if mauvaise}}Mauvaise rencontre{{else}}Rencontre{{/if}} en {{typeTmr-name tmr.type}}</h4>
+<div>{{sourceCompendium}}</div>
+<div>Jet: {{roll.formula}} : {{roll.total}}{{percentages}}</div>
+<hr>
+<div>
+  <p>{{rencontre.name}} {{rencontre.system.force}} ({{rencontre.system.formule}})</p>
+  <p>{{linkCompendium sourceCompendium rencontre.id rencontre.name}}</p>
+  {{#if rencontre.system.description}}
+  <div class="poesie-extrait">
+    {{{rencontre.system.description}}}
+  </div>
+  {{/if}}
+</div>

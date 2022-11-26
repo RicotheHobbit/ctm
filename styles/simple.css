@@ -1,0 +1,1713 @@
+  /* ==================== (A) Fonts ==================== */
+  @font-face {
+    font-family: "GoudyAcc";
+    src: url('../fonts/goudyacc.ttf') format("truetype");
+  }
+  @font-face {
+    font-family: "MedievalSharp";
+    src: url('../fonts/MedievalSharp.ttf') format("truetype");
+  }
+  @font-face {
+    font-family: "GrenzeGotisch";
+    src: url('../fonts/GrenzeGotisch-Regular.ttf') format("truetype");
+  }
+  @font-face {
+    font-family: "Fondamento";
+    src: url('../fonts/Fondamento.ttf') format("truetype");
+  }
+  @font-face {
+    font-family: "CaslonAntique";
+    src: url('../fonts/CaslonAntique.ttf') format("truetype");
+  }
+  @font-face {
+    font-family: 'HeuresDraconiques';
+    src:
+        url('../fonts/heuresdraconiques2.woff') format('woff'),
+        url('../fonts/heuresdraconiques2.woff2') format('woff2'),
+        url('../fonts/heuresdraconiques2.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+:root {
+/* =================== 1. ACTOR SHEET FONT STYLES =========== */
+  --window-header-title-font-family: CaslonAntique;
+  --window-header-title-font-size: 1.5rem;
+  --window-header-title-font-weight: normal;
+  --window-header-title-color: #f5f5f5;
+
+  --major-button-font-family: CaslonAntique;
+  --major-button-font-size: 1.25rem;
+  --major-button-font-weight: normal;
+  --major-button-color: #dadada;
+
+  --tab-header-font-family: CaslonAntique;
+  --tab-header-font-size: 1.2rem;
+  --tab-header-font-weight: 700;
+  --tab-header-color: #403f3e;
+  --tab-header-color-active: #4a0404;
+
+  --actor-input-font-family: CaslonAntique;
+  --actor-input-font-size: 1.2rem;
+  --actor-input-font-weight: 500;
+  --actor-input-color: black;
+
+  --actor-label-font-family: CaslonAntique;
+  --actor-label-font-size: 1.2rem;
+  --actor-label-font-weight: 700;
+  --actor-label-color: #464331c4;
+
+/* =================== 2. DEBUGGING HIGHLIGHTERS ============ */ 
+  --debug-background-color-red: #ff000054;
+  --debug-background-color-blue: #1d00ff54;
+  --debug-background-color-green: #54ff0054;
+
+  --debug-box-shadow-red: inset 0 0 2px red;
+  --debug-box-shadow-blue: inset 0 0 2px blue;
+  --debug-box-shadow-green: inset 0 0 2px green;
+
+/* =================== 3. some constants ============ */
+  --color-controls:rgba(0, 0, 0, 0.9);
+  --color-controls-hover:rgba(255, 255, 128, 0.7);
+  --color-control-border-hover:rgba(255, 128, 0, 0.8);
+  --color-gold: rgba(191, 149, 63, 0.8);
+  --gradient-gold: linear-gradient(30deg, rgba(191, 149, 63, 0.3), rgba(252, 246, 186, 0.3), rgba(179, 135, 40, 0.3), rgba(251, 245, 183, 0.3), rgba(170, 119, 28, 0.3));
+  --gradient-silver: linear-gradient(30deg, rgba(61, 55, 93, 0.3), rgba(178, 179, 196, 0.3), rgba(59, 62, 63, 0.6), rgba(206, 204, 199, 0.3), rgba(61, 46, 49, 0.3));
+  --gradient-green: linear-gradient(30deg, rgba(7, 76, 0, 0.3), rgba(66, 163, 65, 0.2), rgba(184, 226, 163, 0.1), rgba(66, 163, 65, 0.2), rgba(184, 226, 163, 0.3));
+  --gradient-red: linear-gradient(150deg, rgba(255, 0, 0, 0.3), rgba(255, 200, 128, 0.05),rgba(255, 200, 128, 0.1), rgba(255,10,0,0.3));
+  --gradient-violet: linear-gradient(150deg, rgba(100, 45, 124, 0.6), rgba(216, 157, 192, 0.3), rgba(177, 157, 216, 0.5), rgba(107, 62, 121, 0.3), rgba(100, 45, 124, 0.6));
+  --gradient-purple-black: linear-gradient(150deg,  rgba(0, 0, 0, 0.7), rgba(100, 45, 124, 0.4), rgba(82, 17, 131, 0.3),rgba(100, 45, 124, 0.4), rgba(0, 0, 0, 0.7));
+  --gradient-silver-light: linear-gradient(30deg, rgba(61, 55, 93, 0.2), rgba(178, 179, 196, 0.1), rgba(59, 62, 63, 0.2), rgba(206, 204, 199, 0.1), rgba(61, 46, 49, 0.2));
+
+  --background-custom-button: linear-gradient(to bottom, rgba(33, 55, 74, 0.988) 5%, rgba(21, 40, 51, 0.671) 100%);
+  --background-custom-button-hover: linear-gradient(to bottom, rgb(128, 0, 0) 5%, rgb(62, 1, 1) 100%);
+  --background-tooltip: rgba(220,220,210,0.95);
+}
+
+/*@import url("https://fonts.googleapis.com/css2?family=Martel:wght@400;800&family=Roboto:wght@300;400;500&display=swap");*/
+/* Global styles & Font */
+.window-app {
+  font-family: CaslonAntique;
+  text-align: justify;
+  font-size: 16px;
+  letter-spacing: 1px;
+}
+
+/* Fonts */
+.sheet header.sheet-header h1 input, .window-app .window-header, #actors .directory-list, #navigation #scene-list .scene.nav-item {font-family: "GoudyAcc"} /* For title, sidebar character and scene */
+.sheet nav.sheet-tabs {
+  font-family: "CaslonAntique";
+} /* For nav and title */
+.window-app input, .foundryvtt-reve-de-dragon .item-form, .sheet header.sheet-header .flex-compteurs, .sheet header.sheet-header .flex-group-center.flex-fatigue, select, button, .item-checkbox, #sidebar, #players, #navigation #nav-toggle {
+  font-family: "CaslonAntique"; /* For sheet parts */
+}
+
+.window-header{
+  background: rgba(0,0,0,0.75);
+}
+
+.window-app.sheet .window-content {
+  margin: 0;
+  padding: 0;
+}
+.strong-text{
+  font-weight: bold;
+}
+i:is(.fas, .far) {
+  font-size: smaller;
+}
+
+.tabs .item.active, .blessures-list li ul li:first-child:hover, a:hover {
+  text-shadow: 1px 0px 0px #ff6600;
+}
+
+.rollable:hover, .rollable:focus {
+  color: #000;
+  text-shadow: 0 0 10px red;
+  cursor: pointer;
+}
+
+table {border: 1px solid #7a7971;}
+
+.grid, .grid-2col {
+  display: grid;
+  grid-column: span 2 / span 2;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  margin: 10px 0;
+  padding: 0;
+}
+
+.grid-3col {
+  grid-column: span 3 / span 3;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.grid-4col {
+  grid-column: span 4 / span 4;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.grid-5col {
+  grid-column: span 5 / span 5;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+}
+
+.grid-6col {
+  grid-column: span 5 / span 5;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+}
+
+.grid-7col {
+  grid-column: span 7 / span 7;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+}
+
+.grid-8col {
+  grid-column: span 8 / span 8;
+  grid-template-columns: repeat(8, minmax(0, 1fr));
+}
+
+.grid-9col {
+  grid-column: span 9 / span 9;
+  grid-template-columns: repeat(9, minmax(0, 1fr));
+}
+
+.grid-10col {
+  grid-column: span 10 / span 10;
+  grid-template-columns: repeat(10, minmax(0, 1fr));
+}
+
+.grid-11col {
+  grid-column: span 11 / span 11;
+  grid-template-columns: repeat(11, minmax(0, 1fr));
+}
+
+.grid-12col {
+  grid-column: span 12 / span 12;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+}
+
+.flex-group-center,
+.flex-group-left,
+.flex-group-right {
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  text-align: center;
+  padding: 5px;
+}
+
+.flex-group-left {
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  text-align: left;
+}
+
+.flex-group-right {
+  -webkit-box-pack: end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+  text-align: right;
+}
+
+.flex-center {
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.flex-between {
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+.flex-shrink {
+  flex: 'flex-shrink' ;
+}
+:is(.flex-grow, .flex-grow-3) {
+  flex-grow : 3;
+}
+.flex-grow-2 {
+  flex-grow : 2;
+}
+/* Styles limited to foundryvtt-reve-de-dragon sheets */
+.equipement-nom {
+  flex-grow : 4;
+  margin: 0;
+  justify-content: center;
+  text-align: left;
+}
+.equipement-detail {
+  margin: 0;
+  flex: 'flex-shrink' ;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.equipement-actions {
+  margin: 0;
+  flex-grow: 2;
+  align-items: center;
+  justify-content: center;
+  text-align: left;
+}
+.blessure-control {
+  flex-grow: 1;
+  flex-direction: row;
+}
+.blessure-soins {
+  flex-direction: row;
+  align-content: flex-start;
+  justify-content: flex-start;
+  margin-right: 2px;
+  margin-left: 2px;
+  padding: 2px;
+}
+input:is(.blessure-psdone, .blessure-scdone) {
+  width: 20px;
+}
+input:is(.blessure-premiers_soins, .blessure-soins_complets) {
+  width: calc(100% - 25px);
+}
+.blessure-jours {
+  flex-direction: row;
+  align-content: flex-start;
+  justify-content: flex-start;
+}
+.blessure-localisation {
+  flex-direction: row;
+  align-content: flex-start;
+  justify-content: flex-start;
+}
+.blessure-inactive {
+  color:rgba(150, 150, 150, 0.4);
+}
+.blessure-active-legere {
+  color:rgba(60, 60, 60, 0.9);
+  text-shadow: 1px 1px 4px rgba(60, 60, 60, 1);
+}
+.blessure-active-grave {
+  color: rgba(218, 126, 21, 0.9);
+  text-shadow: 1px 1px 4px rgba(60, 60, 60, 1);
+}
+.blessure-active-critique {
+  color: rgba(173, 36, 26, 0.9);
+  text-shadow: 1px 1px 4px rgba(60, 60, 60, 1);
+}
+
+.foundryvtt-reve-de-dragon .sheet-header {
+  -webkit-box-flex: 0;
+  -ms-flex: 0 0 210px;
+  flex: 0 0 210px;
+  overflow: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+}
+
+.foundryvtt-reve-de-dragon .sheet-header .profile-img {
+  -webkit-box-flex: 0;
+  -ms-flex: 0 0 128px;
+  flex: 0 0 128px;
+  height: 128px;
+  width: 128px;
+  margin-right: 10px;
+  object-fit: cover;
+  object-position: 50% 0;
+}
+.rdd-dialog-select-target img.select-token-img {
+  -webkit-box-flex: 0;
+  -ms-flex: 0 0 48px;
+  flex: 0 0 48px;
+  height: 48px;
+  width: 48px;
+  border: 0;
+  margin-right: 0.5rem;
+  object-fit: cover;
+  vertical-align: baseline;
+}
+
+.rdd-dialog-select-target li.select-target {
+  vertical-align: baseline;
+  padding: 0.1rem;
+}
+
+.dice-img {
+  border-width: 0;
+}
+.button-img {
+  vertical-align: baseline;
+  width: 32px;
+  height: 32px;
+  max-height: 36px;
+  border-width: 0;
+  border: 1px solid rgba(0, 0, 0, 0);
+}
+.button-effect-img {
+  vertical-align: baseline;
+  width: 16px;
+  max-height: 16px;
+  height: 16;
+  border-width: 0;
+}
+.small-button-direction {
+  height: 32px;
+  width: 32px;
+  border: 0;
+  vertical-align: bottom;
+}
+:is(.button-img,.button-effect-img:hover,.small-button-direction):hover {
+  color: var(--color-controls-hover);
+  border: 1px solid var(--color-control-border-hover);
+  text-shadow: 1px 0px 0px #ff6600;
+  cursor: pointer;
+}
+
+.small-button-container {
+  height: 16px;
+  width: 16px;
+  border: 0;
+  vertical-align: bottom;
+}
+
+.foundryvtt-reve-de-dragon .sheet-header .header-fields {
+  -webkit-box-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+}
+
+.foundryvtt-reve-de-dragon .sheet-header h1.charname {
+  height: 50px;
+  padding: 0px;
+  margin: 5px 0;
+  border-bottom: 0;
+}
+
+.foundryvtt-reve-de-dragon .sheet-header h1.charname input {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}
+
+.foundryvtt-reve-de-dragon .sheet-tabs {
+  -webkit-box-flex: 0;
+  -ms-flex: 0;
+  flex: 0;
+}
+
+.foundryvtt-reve-de-dragon .sheet-body,
+.foundryvtt-reve-de-dragon .sheet-body .tab,
+.foundryvtt-reve-de-dragon .sheet-body .tab .editor {
+  height: 100%;
+}
+
+.rdd.sheet .window-content {overflow: hidden;}
+.rdd.sheet .window-content .sheet-body {overflow-y: scroll;}
+.rdd.sheet .window-content .sheet-body .tab {padding-bottom: 30px;}
+.rdd.sheet .window-content .sheet-body .competence-list {width: 100%;}
+.rdd.sheet .window-content .sheet-body .carac-list {
+  width: 100%;
+  flex-grow: 0;
+}
+
+.rdd.sheet .window-content .sheet-body .carac-list .caracteristique {
+  flex-wrap: nowrap;
+  justify-content: stretch;
+}
+.rdd.sheet .window-content .sheet-body .carac-list .caracteristique.streched {
+  flex-wrap: nowrap;
+  justify-content: stretch;
+  flex-basis: 7.5em;
+  width: max-content;
+}
+
+.rdd.sheet .window-content .sheet-body .carac-list .caracteristique > .carac-label {
+  flex-basis: 50%;
+}
+.rdd.sheet .window-content .sheet-body .carac-list .caracteristique > .attribut-label {
+  flex-basis: 50%;
+}
+.rdd.sheet .window-content .sheet-body .carac-list .caracteristique > .competence-value.total {
+  flex-grow: 1;
+  text-align: right;
+}
+.rdd.sheet .window-content .sheet-body .carac-list .caracteristique > .utiliser-attribut {
+  flex-basis: available;
+  flex-grow: 1;
+}
+.rdd.sheet .window-content .sheet-body .carac-list .caracteristique > * {
+  flex-basis: 13%;
+  flex-grow: 0;
+}
+
+.editor {
+  border: 2;
+  height: 300px;
+  padding: 0 3px;
+}
+
+.medium-editor {
+  border: 2;
+  height: 240px;
+  padding: 0 3px;
+}
+
+.small-editor {
+  border: 2;
+  height: 150px;
+  padding: 0 3px;
+}
+
+.foundryvtt-reve-de-dragon .tox .tox-editor-container {
+  background: #fff;
+}
+
+.foundryvtt-reve-de-dragon .tox .tox-edit-area {
+  padding: 0 8px;
+}
+
+.foundryvtt-reve-de-dragon .resource-label {
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.foundryvtt-reve-de-dragon .tabs {
+  height: 40px;
+  border-top: 1px solid #AAA;
+  border-bottom: 1px solid #AAA;
+}
+
+.foundryvtt-reve-de-dragon .tabs .item {
+  line-height: 40px;
+  font-weight: bold;
+}
+
+.foundryvtt-reve-de-dragon .tabs .item.active {
+  text-decoration: underline;
+  text-shadow: none;
+}
+
+.foundryvtt-reve-de-dragon .item-list {
+  list-style: none;
+  padding: 0;
+  overflow-y: auto;
+}
+
+.foundryvtt-reve-de-dragon .item-list .item-header {
+  font-weight: bold;
+}
+
+.foundryvtt-reve-de-dragon .item-list .item img {
+  display: inline;
+}
+
+.foundryvtt-reve-de-dragon .item-list .item-name {
+  margin: 0;
+}
+
+.competence-list .item-controls {
+  display: contents !important;
+}
+.competence-list .item-controls.hidden-controls {
+  display: none !important;
+}
+.item-controls i:is(.fas,.far) {
+  color: var(--color-controls);
+}
+.item-controls i:is(.fas,.far):hover {
+  opacity: 0.7  ;
+}
+
+.rdddialog .dialog-roll-sort s{
+  width: 600px;
+  height: 430px;
+  z-index: 9999;
+  display: block;
+}
+.rdd-roll-part{
+  align-items: center;
+  border-radius: 6px; padding: 3px;
+  background: var(--gradient-gold);
+}
+.rdd-roll-sign{
+  border-radius: 6px; padding: 3px;
+  background: var(--gradient-silver);
+}
+.rdd-roll-norm{
+  border-radius: 6px; padding: 3px;
+  background: var(--gradient-green);
+}
+.rdd-roll-notSign, .rdd-roll-echec{
+  border-radius: 6px; padding: 3px;
+  background: var(--gradient-red);
+}
+.rdd-roll-epart{
+  border-radius: 6px; padding: 3px;
+  background: var(--gradient-violet);
+}
+.rdd-roll-etotal{
+  border-radius: 6px; padding: 3px;
+  background: var(--gradient-purple-black);
+}
+.rdd-diviseur{
+  border-radius: 6px; padding: 3px;
+  background: var(--gradient-silver-light);
+}
+
+.rdd-niveau-requis{
+  font-size: 0.80rem;
+  text-align: right;
+}
+
+.table-resolution-carac {
+  background-color: yellow;
+}
+
+.table-resolution-target {
+  font-weight: bold;
+  background-color: lightblue;
+}
+
+#tableProbaReussite{
+  font-size: 0.8rem;
+  padding: 5px;
+}
+
+.poesie-extrait {
+  font-size: 0.85rem;
+  font-style: italic;
+}
+.poesie-reference{
+  font-size: 0.70rem;
+  text-align: right;
+}
+.poesie-overflow {
+  color: rgba(82, 17, 131, 0.9);
+  max-height: 1.5rem;
+  overflow: hidden;
+  border-left: 1px dotted black; /* If you want dots under the hoverable text */
+}
+.poesie-overflow:hover {
+  max-height: unset;
+  overflow: visible;
+  border-left: 0px
+}
+
+.type-compendium{
+  font-size: 0.60rem;
+}
+
+/* ======================================== */
+/* Sheet  */
+.window-app.sheet .window-content .sheet-header{
+  background: #011d33 url(img/bg_header.webp) no-repeat left top;
+  color: rgba(255, 255, 255, 1);
+}
+
+.window-app.sheet .window-content .sheet-header :is(
+    input[type="text"],
+    input[type="number"],
+    input[type="password"],
+    input[type="datetime-local"],
+    input[type="date"],
+    input[type="time"]) {
+  color: rgba(255, 255, 255, 0.75);
+  background: rgba(255, 255, 255, 0.05);
+  border: 0 none;
+  margin-bottom: 0.2rem;
+}
+
+form.rdddialogchrono input[type=datetime-local] {
+  min-width: 20px;
+  padding: 0;
+  background: rgba(0, 0, 0, 0.05);
+  border: 1px solid var(--color-border-dark);
+  width: calc(100% - 2px);
+  height: var(--form-field-height);
+  margin: 0;
+  color: var(--color-text-dark-primary);
+  border-radius: 3px;
+}
+
+.window-app .window-content, .window-app.sheet .window-content .sheet-body{
+  background: rgb(245,245,240) url(img/bg_left.webp) no-repeat left top;
+}
+
+section.sheet-body{padding: 0.25rem 0.5rem;}
+
+.sheet header.sheet-header .profile-img {
+  object-fit: cover;
+  object-position: 50% 0;
+  margin: 0.5rem 0 0.5rem  0.5rem;
+  padding: 0;
+}
+.sheet header.sheet-header h1 {
+  flex: 3;
+}
+.sheet header.sheet-header img.button-img{
+  height: 48px;
+  padding: 1px;
+  margin: 1px;
+}
+.sheet nav.sheet-tabs {
+  font-size: 0.65rem;
+  font-weight: bold;
+  height: 4rem;
+  flex: 0 0 5rem;
+  margin: 0;
+  padding: 0 0 0 0.25rem;
+  text-align: center;
+  text-transform: uppercase;
+  line-height: 1.2rem;
+  border-top: 0 none;
+  border-bottom: 0 none;
+  color: rgba(52, 52, 52, 0.95);
+  background: rgb(245,245,240) url(img/bg_menu.webp) no-repeat left top;
+}
+
+nav.sheet-tabs .item {
+  position: relative;
+  padding: 0 0.2rem;
+}
+
+nav.sheet-tabs .item:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 2rem;
+  width: 1px;
+  border-right: 1px dashed rgba(52, 52, 52, 0.25);
+}
+
+.sheet .tab[data-tab] {
+  padding: 0;
+}
+
+section.sheet-body:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.sheet header.sheet-header .flex-compteurs { text-align: right; max-width: max-content;}
+.sheet header.sheet-header .resource-content {width: 2rem;}
+
+li label.compteur {
+  display: inline-block;
+  flex-direction: row;
+}
+.compteur span {
+  display: inline-block;
+  text-align: left;
+  width: 2rem;
+}
+.compteur a i:is(.fas,.far):hover {
+  opacity: 0.7  ;
+}
+
+.select-diff {
+  display: inline-block;
+  text-align: left;
+  width: 50px;
+}
+.select-carac {
+  display: inline-block;
+  text-align: left;
+  width: 100%;
+  max-width: 90%;
+}
+
+.alchimie-tache {
+  font-weight: bold;
+  background: rgb(182, 180, 179);
+  border: 1px solid rgba(72, 46, 28, 1);
+  border-radius: 0.25rem;
+  color: rgba(212, 27, 27, 0.5);
+}
+
+.window-app.sheet .window-content .tooltip:hover .tooltiptext {
+  top: 2rem;
+  left: 2rem;
+  margin: 0;
+  padding: 0.25rem;
+}
+
+.window-app.sheet .window-content .carac-value, .window-app.sheet .window-content .competence-xp {
+  flex-grow: 0;
+  margin: 0.05rem;
+  flex-basis: 2rem;
+  text-align: center;
+}
+.window-app.sheet .window-content .carac-value, .window-app.sheet .window-content .competence-value {
+  flex-grow: 0;
+  margin: 0.05rem;
+  flex-basis: 2rem;
+  text-align: center;
+}
+.window-app.sheet .window-content .carac-value, .window-app.sheet .window-content .competence-archetype {
+  flex-grow: 0;
+  margin: 0.05rem;
+  flex-basis: 2rem;
+  text-align: center;
+}
+.window-app.sheet .window-content .carac-value, .window-app.sheet .window-content .competence-xp-sort {
+  flex-grow: 0;
+  margin: 0.05rem;
+  flex-basis: 2rem;
+  text-align: center;
+}
+
+/* ======================================== */
+/* Global UI elements  */
+
+/* ======================================== */
+
+h1, h2, h3, h4 {
+  font-weight: bold;
+}
+
+ul, ol {
+    margin: 0;
+    padding: 0;
+}
+ul, li {
+  list-style-type: none;
+}
+.sheet .caracteristique li {
+  margin: 0.1rem;
+  padding: 0.2rem;
+}
+.sheet li {
+  margin: 0.1rem;
+  padding: 0.1rem;
+}
+.header-fields li {
+  margin: 0;
+  padding: 0;
+}
+.sheet input.recherche {
+  background-image: url("img/ui/icon-search.svg");
+  background-position: 0.1rem 0.1rem;
+  background-size: 1rem;
+  background-repeat: no-repeat;
+  padding: 0.1rem 0.1rem 0.1rem 1.2rem;
+  max-height: 1.2rem;
+}
+
+.alterne-list > .list-item:hover {
+  background: rgba(100, 100, 50, 0.25);
+}
+.alterne-list > .list-item:nth-child(even) {
+  background: rgba(80, 60, 0, 0.10);
+}
+.alterne-list > .list-item:nth-child(odd) {
+  background: rgb(160, 130, 100, 0.05);
+}
+.xp-level-up {
+  margin: 0.1rem;
+  box-shadow: inset 0px 0px 1px #00000096;
+  border-radius: 0.25rem;
+  padding: 0.1rem;
+  flex: 1 1 5rem;  
+  background: var(--gradient-gold) !important;
+}
+.niveau-archetype {
+  background: var(--gradient-silver-light) !important;
+}
+.item-controls i.fas.allouer-stress.level-up {
+  color: var(--color-gold);
+}
+.blessures-list ul {
+  display: flex;
+}
+.blessures-list li {
+  flex: 1;
+  flex-basis: auto;
+}
+.blessures-list li ul li:first-child {
+  flex: 0;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem;
+  cursor: pointer;
+}
+.carac-label {
+  font-weight: bold;
+}
+.list-item {
+  margin: 0.1rem;
+  box-shadow: inset 0px 0px 1px #00000096;
+  border-radius: 0.25rem;
+  padding: 0.1rem;
+  flex: 1 1 1.5rem;
+  display: flex !important;
+  align-items: center !important;
+}
+
+.table-row {
+  margin: 0.1rem;
+  padding: 0.1rem;
+  flex: 1 1 5rem;
+}
+
+.alterne-row > .row-item:hover {
+  background: rgba(100, 100, 50, 0.25);
+}
+.alterne-row > .row-item:nth-child(even) {
+  background: rgba(80, 60, 0, 0.10);
+}
+.alterne-row > .row-item:nth-child(odd) {
+  background: rgb(160, 130, 100, 0.05);
+}
+
+.item-display-show {
+  display: inline;
+}
+.item-display-hide {
+  display: none;
+}
+.conteneur-type {
+  background: rgb(200, 10, 100, 0.25);
+}
+
+.item-column {
+  margin-left: 0.2rem;
+  margin-right: 0.2rem;
+  justify-content: center;
+  text-align: center;
+}
+
+.list-item-margin1 {
+  margin-left: 0.5rem;
+}
+.list-item-margin2 {
+  margin-left: 1rem;
+}
+.list-item-margin3 {
+  margin-left: 1.5rem;
+}
+.list-item-margin4 {
+  margin-left: 2rem;
+}
+.list-item-margin5 {
+  margin-left: 2.5rem;
+}
+.list-item-margin6 {
+  margin-left: 3rem;
+}
+
+.grid-select-type-tmr {
+  display: grid;
+  grid-column: span 4 / span 4;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.1rem;
+  margin: 0.1rem;
+  padding: 0;
+}
+.grid-select-actor {
+  display: grid;
+  grid-column: span 2 / span 2;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.1rem;
+  margin: 0.1rem;
+  padding: 0;
+}
+
+.sheet-competence-img {
+  width: 24px;
+  height: 24px;
+  flex-grow: 0;
+  margin-right: 0.2rem;
+  vertical-align: bottom;
+}
+.competence-column {
+  flex-direction: column;
+  align-content: flex-start;
+  justify-content: flex-start;
+  flex-grow: 0;
+  flex-basis: 1;
+}
+.competence-header {
+  align-content: flex-start;
+  justify-content: flex-start;
+  font-weight: bold;
+  flex-grow: 0;
+}
+.arme-label,
+.generic-label,
+.competence-label,
+.astrologie-label,
+.tache-label,
+.subacteur-label,
+.chant-label,
+.musique-label,
+.oeuvre-label,
+.chant-label,
+.danse-label,
+.recette-label,
+.jeu-label,
+.recettecuisine-label,
+.description-label {
+  flex-grow: 2;
+}
+.attribut-value,
+.carac-value {
+  flex-grow: 0;
+  flex-basis: 64px;
+  margin-right: 4px;
+  margin-left: 4px;
+}
+.sante-value,
+.competence-value {
+  flex-grow: 0;
+  flex-basis: 2rem;
+  margin-right: 0.2rem;
+  margin-left: 0.2rem;
+}
+.initiative-value {
+  flex-grow: 0;
+  flex-basis: 3rem;
+  margin-right: 0.2rem;
+  margin-left: 0.2rem;
+}
+.description-value {
+  flex-grow: 0;
+  flex-basis: 4rem;
+  margin-right: 0.2rem;
+  margin-left: 0.2rem;
+}
+.competence-xp {
+  flex-grow: 0;
+  flex-basis: 2rem;
+  margin-right: 0.2rem;
+  margin-left: 0.2rem;
+}
+.blessures-title { 
+  font-weight: bold;
+}
+.alchimie-title { 
+  font-weight: bold;
+}
+.pointsreve-value {
+  flex-grow: 0;
+  flex-basis: 64px;
+  margin-right: 4px;
+  margin-left: 4px;
+}
+.input-sante-header,
+.stress-style {
+  flex-grow: 0;
+  flex-basis: 64px;
+  margin-right: 4px;
+  margin-left: 4px;
+}
+
+/* ======================================== */
+.table-nombres-astraux {
+  border:1;
+  font-size: 0.75rem;
+}
+.table-nombres-astraux td {
+  border: 1px solid black;
+  text-align: center;
+  vertical-align: top;
+}
+
+/* ======================================== */
+.tokenhudext {
+	display: flex; 
+	flex: 0 !important;
+  font-family: CaslonPro;
+  font-weight: 600;
+}
+.tokenhudext.left {
+  justify-content: flex-start;
+  flex-direction: column;
+  position: absolute;
+  top: 2.75rem;
+  right: 4rem;
+}
+.tokenhudext.right {
+  justify-content: flex-start;
+  flex-direction: column;
+  position: absolute;
+  top: 2.75rem;
+  left: 4rem;
+}
+.control-icon.tokenhudicon {
+  width: fit-content;
+  height: fit-content;
+  min-width: 6rem;
+  flex-basis: auto;
+  padding: 0;
+  line-height: 1rem;
+  margin: 0.2rem;
+}
+.control-icon.tokenhudicon.right {
+  margin-left: 8px;
+}
+.rdd-hud-menu label {
+  font-size: 0.75rem;
+}
+#token-hud .status-effects.active{
+  z-index: 2;
+}
+/* ======================================== */
+.item-checkbox {
+  height: 25px;
+  border: 1px solid #736953a6;
+  border-left: none;
+  font-weight: 500;
+  font-size: 1rem;
+  color: var(--color-controls);
+  padding-top: 5px;
+  margin-right: 0px;
+  width: 45px;
+  position: relative;
+  left: 0px;
+  text-align: center;
+}
+
+/* ======================================== */
+/* dialogue competence : Appel au moral */
+.diffAppelAuMoral {
+  display: none !important;
+}
+
+.imgAppelAuMoral	 {
+  height: 20px;
+  width: 20px;
+  border:none;
+  outline: none;
+  background-size: cover;
+}
+
+/* Tooltip container */
+.tooltipAppelAuMoral {
+  position: relative;
+  display: inline-block;
+  border-bottom: 0; 
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.tooltipAppelAuMoral:hover .tooltipAppelAuMoralText {
+  visibility: visible;
+  opacity: 1;
+}
+
+/* Tooltip text */
+.tooltipAppelAuMoral .tooltipAppelAuMoralText {
+  text-align: center;
+  
+  /* Position the tooltip text */
+  position: absolute;
+  z-index: 1;
+  left: 25px;
+  
+  /* Fade in tooltip */
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+
+/* ======================================== */
+/* Fatigue CSS */
+.table-fatigue {
+  table-layout: fixed;
+  padding: 0;
+  margin: 0;
+}
+.table-fatigue td {
+  table-layout: fixed;
+  width: 2px;
+  height: 2px;
+  padding: 0;
+}
+.table-fatigue .fatigue-used {
+  background-color: DarkRed;
+  border: 1px solid #999;
+}
+.table-fatigue .fatigue-none {
+  background-color: Grey;
+  border: 1px solid #999;
+}
+.table-fatigue .fatigue-free {
+  border: 1px solid #999;
+}
+.table-fatigue .fatigue-malus {
+  font-size: 0.8rem;
+}
+.flex-actions-bar  {
+  flex-grow: 2;
+}
+
+/* ======================================== */
+/* Sidebar CSS */
+#sidebar {
+  font-size: 1rem;
+  background: rgb(105,85,65) url(img/bg_sid_dark.webp) no-repeat right bottom;
+  background-position: 100%;
+  color: rgba(220,220,220,0.75);
+}
+
+#sidebar-tabs > .collapsed, #chat-controls .chat-control-icon {
+  color: rgba(220,220,220,0.75);
+  text-shadow: 1px 1px 0 rgba(0,0,0,0.75);
+}
+
+.sidebar-tab .directory-list .entity {
+    border-top: 1px dashed rgba(0,0,0,0.25);
+    border-bottom: 0 none;
+    padding: 0.2rem 0; 
+}
+
+.sidebar-tab .directory-list .entity:hover {
+  background: rgba(0,0,0,0.05);
+  cursor: pointer;
+}
+
+.chat-message {
+  background: rgba(220,220,210,0.5);
+  font-size: 1rem;
+}
+
+.chat-message.whisper {
+  background: rgba(220,220,210,0.75);
+  border: 2px solid #545469;
+}
+.chat-icon {
+  border: 0;
+  padding: 2px 6px 2px 2px;
+  float: left;
+  width: 64px;
+  height: 64px;
+}
+
+#sidebar-tabs {
+  flex: 0 0 28px;
+  box-sizing: border-box;
+  margin: 0 0 3px;
+  border-bottom: 1px solid rgba(0,0,0,0);
+  box-shadow: inset 0 0 2rem rgba(0,0,0,0.5);
+}
+
+#sidebar-tabs > .item.active {
+  border: 1px solid rgba(114,98,72,1);
+  background: rgba(30, 25, 20, 0.75);
+  box-shadow: 0 0 6px inset rgba(114,98,72,1);
+}
+
+#sidebar #sidebar-tabs i{
+  width: 23px;
+  height: 23px;
+  display: inline-block;
+  background-position:center;
+  background-size:cover;
+  text-shadow: 1px 1px 0 rgba(0,0,0,0.75);
+
+}
+
+#sidebar #sidebar-tabs i:is(
+  .fa-comments, .fa-fist-raised, .fa-swords,
+  .fa-users, .fa-user, .fa-map, .fa-suitcase,
+  .fa-book-open, .fa-th-list, .fa-music,
+  .fa-atlas,.fa-cogs
+):before {content: "";}
+#sidebar #sidebar-tabs i.fa-comments {background: url("img/ui/icon_sidebar_chat.svg") no-repeat;}
+#sidebar #sidebar-tabs i.fa-fist-raised {background: url("img/ui/icon_sidebar_fight.svg") no-repeat;}
+#sidebar #sidebar-tabs i.fa-swords {background: url("img/ui/icon_sidebar_fight.svg") no-repeat;}
+#sidebar #sidebar-tabs i.fa-user {background: url("img/ui/icon_sidebar_actor.svg") no-repeat;}
+#sidebar #sidebar-tabs i.fa-users {background: url("img/ui/icon_sidebar_actor.svg") no-repeat;}
+#sidebar #sidebar-tabs i.fa-map {background: url("img/ui/icon_sidebar_scene.svg") no-repeat;}
+#sidebar #sidebar-tabs i.fa-suitcase {background: url("img/ui/icon_sidebar_item.svg") no-repeat;}
+#sidebar #sidebar-tabs i.fa-book-open {background: url("img/ui/icon_sidebar_journal.svg") no-repeat;}
+#sidebar #sidebar-tabs i.fa-th-list {background: url("img/ui/icon_sidebar_rolltable.svg") no-repeat;}
+#sidebar #sidebar-tabs i.fa-music {background: url("img/ui/icon_sidebar_music.svg") no-repeat;}
+#sidebar #sidebar-tabs i.fa-atlas {background: url("img/ui/icon_sidebar_compendium.svg") no-repeat;}
+#sidebar #sidebar-tabs i.fa-cogs {background: url("img/ui/icon_sidebar_settings.svg") no-repeat;}
+
+#combat #combat-controls {
+  box-shadow: inset 0 0 2rem rgba(0,0,0,0.5);
+}
+
+/*--------------------------------------------------------------------------*/
+/* Control, Tool, hotbar & navigation */
+
+#controls .scene-control, #controls .control-tool {
+  box-shadow: 0 0 3px #000;
+  margin: 0 0 8px;
+  border-radius: 0;
+  background: rgba(30, 25, 20, 1);
+  background-origin: padding-box;
+  border-image: url(img/ui/footer-button.webp) 10 repeat;
+  border-image-width: 4px;
+  border-image-outset: 0px;
+}
+#controls .control-tools {
+  max-height: calc(100vh - 156px);
+  height: auto;
+}
+#controls :is(.scene-control.active,.control-tool.active, .scene-control:hover, .control-tool:hover) {
+  background: rgba(72, 46, 28, 1);
+  background-origin: padding-box;
+  border-image: url(img/ui/footer-button.webp) 10 repeat;
+  border-image-width: 4px;
+  border-image-outset: 0px;
+  box-shadow: 0 0 3px #ff6400;
+}
+
+#hotbar #action-bar #macro-list {
+  border: 1px solid rgba(72, 46, 28, 1);
+  box-shadow: 2px 2px 5px #000000;
+}
+
+#hotbar #action-bar .macro {
+  border-image: url(img/ui/bg_control.webp) 21 repeat;
+  border-image-slice: 6 6 6 6 fill;
+  border-image-width: 6px 6px 6px 6px;
+  border-image-outset: 0px 0px 0px 0px;
+  border-radius: 0px;
+}
+
+#hotbar .bar-controls {  
+  background: rgba(30, 25, 20, 1);
+  border: 1px solid rgba(72, 46, 28, 1);
+}
+
+#players {
+  border-image: url(img/ui/footer-button.webp) 10 repeat;
+  border-image-width: 4px;
+  border-image-outset: 0px;
+  background: rgba(30, 25, 20, 1);
+}
+
+#navigation #scene-list .scene.nav-item.active {
+  background: rgba(72, 46, 28, 1);
+}
+
+#navigation #scene-list .scene.nav-item {
+  background: rgba(30, 25, 20, 1);
+  background-origin: padding-box;
+  border-image: url(img/ui/footer-button.webp) 10 repeat;
+  border-image-width: 4px;
+  border-image-outset: 0px;
+}
+
+#navigation #scene-list .scene.view, #navigation #scene-list .scene.context {
+  background: rgba(72, 46, 28, 1);
+  background-origin: padding-box;
+  border-image: url(img/ui/footer-button.webp) 10 repeat;
+  border-image-width: 4px;
+  border-image-outset: 0px;
+  box-shadow: 0 0 3px #ff6400;
+}
+
+#navigation #nav-toggle {
+  background: rgba(30, 25, 20, 1);
+  background-origin: padding-box;
+  border-image: url(img/ui/footer-button.webp) 10 repeat;
+  border-image-width: 4px;
+  border-image-outset: 0px;
+}
+
+/*--------------------------------------------------------------------------*/
+/* CALENDAR STUFF */
+#calendar-time-container{
+	position: absolute;
+  display: block;
+}
+.calendar{
+  min-width: 150px;
+  grid-row: 1;
+  grid-column: 1;
+  width: fit-content;
+  height: 84px;
+  margin: 0;
+  padding: 0;
+  border: 1px solid #000;
+  border-radius: 3%;
+  background: rgba(0, 0, 0, 0.5);
+  font-family: "GoudyAcc";
+  z-index: 100;
+}
+.calendar-hdr{
+  display: grid;
+	font-size: 1rem;
+	margin: 3px;
+	padding: 4px;
+	height: 25px;
+	width: fit-content;
+	min-width: 200px;
+  border-bottom: 1px solid #111;
+  color: #CCC;
+  float: left;
+}
+.calendar-date-rdd {
+  font-family: "GoudyAcc";
+  color: #CCC;
+  opacity: 90;
+	font-size: 13px;
+	line-height: 1;
+	text-align: center;
+	padding: 0;
+	margin: 0;
+	border: none;
+	flex: 1;
+}
+.calendar-date{
+	grid-row: 1;
+	grid-column: 2;
+	float: left;
+	text-align: center;
+	padding-top: 0px;
+	padding-bottom: 0px;
+	margin-bottom: 5px;
+	color: #CCC;
+	cursor: pointer;
+}
+.calendar-date,
+.calendar-date-num {
+	transition: 0.2s;
+}
+.calendar-date-num {
+	grid-row: 1;
+	grid-column: 2;
+	float: left;
+	text-align: center;
+	padding-top: 0px;
+	padding-bottom: 0px;
+	margin-bottom: 5px;
+	color: #CCC;
+	opacity: 0;
+	cursor: pointer;
+}
+.calendar-heure-img{
+  width: 24px;
+  height: 24px;
+  flex-grow: 0;
+  border-width: 0;
+  opacity: 90;
+  color: rgba(255, 255, 255, 0.5);
+}
+.calendar-hdr:hover .calendar-date {
+	opacity: 0;
+}
+.calendar-hdr:hover .calendar-date-num{
+	opacity: 1;
+}
+.calendar-container{
+	padding-top: 3px;
+	padding-bottom: 20px;
+}
+.calendar-btn-container-left{
+	width: 20%;
+	display: grid;
+	float: left;
+	margin: 2px;
+  grid-row-gap: 3px;
+	color: rgba(0, 0, 0, 0.5);  
+}
+.calendar-btn-container-right{
+	width: 20%;
+	display: grid;
+	float: right;
+	margin: 2px;
+	grid-row-gap: 3px;
+}
+.astrologie-btn-edit,
+.calendar-btn-edit{
+	grid-row: 1;
+	grid-column: 1;
+	margin: auto;
+	color: rgba(0, 0, 0, 0.5);
+}
+.astrologie-btn-edit:hover,
+.calendar-btn-edit:hover {
+  color: #FFF;
+	border: 0px solid #000;
+	cursor: pointer;
+}
+.calendar-btn{
+	margin: auto;
+	border: 1px solid rgba(0, 0, 0, 0);
+	color: rgba(255, 255, 255, 0.5);
+}
+.calendar-btn:hover {
+	color: var(--color-controls-hover);
+	border: 1px solid var(--color-control-border-hover);
+	cursor: pointer;
+}
+
+.calendar-1min{
+	grid-row: 1;
+	grid-column: 1;
+}
+.calendar-5min{
+	grid-row: 1;
+	grid-column: 2;
+}
+.calendar-10min{
+	grid-row: 2;
+	grid-column: 1;
+	margin-left: 10px;
+}
+
+.calendar-20min{
+	grid-row: 2;
+	grid-column: 2;
+	margin-left: 10px;
+}
+
+.calendar-lyre{
+	grid-row: 1;
+	grid-column: 1;
+	height: fit-content;
+	text-align: center; 
+	vertical-align: center;
+}
+
+.calendar-vaisseau{
+	grid-row: 1;
+	grid-column: 2;
+	height: fit-content;
+	text-align: center; 
+	vertical-align: center;
+}
+
+.calendar-30min{
+	grid-row: 2;
+	grid-column: 1;
+	height: fit-content;
+	text-align: center; 
+	vertical-align: center;
+}
+.calendar-1heure{
+	grid-row: 2;
+	grid-column: 2;
+	height: fit-content;
+	text-align: center; 
+	vertical-align: center;
+}
+
+.calendar-btn-container-left:hover{ 
+	color: #FFF;
+	border: 0px solid #000;
+	cursor: pointer;
+}
+.calendar-weekday-time{
+	display: grid;
+	float: left;
+	width: 55%;
+	padding-top: 0px;
+	padding-bottom: 0px;
+	margin: auto;
+	color: #CCC;
+}
+.calendar-weekday{
+	grid-column: 1;
+	grid-row: 1;
+	text-align: center; 
+	margin: auto;
+	border-bottom: 1px solid #111;
+}
+.calendar-time{
+	grid-column: 1;
+  grid-row: 2;
+  font-size: 1.10rem;
+	text-align: center; 
+	margin: auto;
+	cursor: pointer;
+	display: inline-flex;
+}
+.calendar-nombre-astral{
+grid-column: 2;
+grid-row: 2;
+font-size: 1.10rem;
+text-align: right; 
+margin: auto;
+cursor: pointer;
+display: inline-flex;
+}
+.calendar-time-disp{
+	position: relative;
+	bottom: 6px;
+}
+
+/* Tooltip container */
+.tooltip {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip-dotted {
+  border-bottom: 1px dotted black; /* If you want dots under the hoverable text */
+}
+
+/* Tooltip text */
+.tooltip .tooltiptext {
+  text-align: center;  
+  /* Position the tooltip text */
+  position: absolute;
+  z-index: 1;
+  /* Fade in tooltip */
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.tooltip .left-competence {
+  transform: translate(-100%, 0%);
+}
+
+.tooltip .ttt-fatigue{
+  width: 360px;
+  
+  background: rgba(30, 25, 20, 0.9);
+  border-image: url(img/ui/bg_control.webp) 21 repeat;
+  border-image-slice: 6 6 6 6 fill;
+  border-image-width: 6px 6px 6px 6px;
+  border-image-outset: 0px 0px 0px 0px;
+  border-radius: 0px;
+
+  font-size: 0.8rem;
+  padding: 3px 0;
+}
+
+.tooltip .ttt-ajustements {
+  width: 150px;
+  background: var(--background-tooltip);
+  border-radius: 6px;
+  font-size: 0.9rem;
+  padding: 3px 0;
+}
+
+.tooltip .ttt-titre {
+  text-align: justify;
+  width: 100%;
+  top: 30px;
+  background: var(--background-tooltip);
+  border-radius: 6px;
+  font-size: 0.9rem;
+  padding: 3px;
+}
+
+.tooltip :is(.ttt-xp,.ttt-levelup) {
+  width: 250px;
+  background: var(--background-tooltip) !important;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  padding: 3px 0;
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+
+.chat-card-button {
+  box-shadow: inset 0px 1px 0px 0px #a6827e;
+  background: var(--background-custom-button);
+  background-color: #7d5d3b00;
+  border-radius: 3px;
+  border: 2px ridge #846109;
+  display: inline-block;
+  cursor: pointer;
+  color: #ffffff;
+  font-family: CaslonPro;
+  font-size: 14px;
+  padding: 4px 12px 0px 12px;
+  text-decoration: none;
+  text-shadow: 0px 1px 0px #4d3534;
+  position: relative;
+  margin:5px;
+}
+
+
+.chat-card-button:hover {
+  background: var(--background-custom-button-hover);
+  background-color: red;
+}
+
+.chat-card-button:active {
+  position:relative;
+  top:1px;
+}
+/* Dropdown Content (Hidden by Default) */
+.button-dropdown-content {
+  display: none;
+  position: absolute;
+  width: max-content;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  background: var(--background-tooltip) ;
+  overflow-y: scroll;
+  max-height: 14rem;
+  z-index: 10;
+}
+
+.button-dropdown {
+  position: relative;
+  display: inline-block;
+}
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.button-dropdown:hover .button-dropbutton {
+  text-shadow: 1px 0px 0px #ff6600;
+}
+/* Show the dropdown menu on hover */
+.button-dropdown:hover .button-dropdown-content {display: block;}
+
+/* Links inside the dropdown */
+.button-dropdown-content a {
+  color: black;
+  padding: 0.2rem 0.4rem;
+  text-decoration: none;
+  display: block;
+}
+
+/* Change color of dropdown links on hover */
+.button-dropdown-content a:hover {background-color: #ddd;}
+
+
+
+/*************************************************************/
+#pause
+{
+  font-family: CaslonAntique;
+  font-size: 2rem;
+}
+#pause > h3
+{
+  color: #CCC
+}
+#pause > img {
+  content: url(img/rdd_pause.webp);
+  height: 256px;
+  width: 256px;
+  top: -75px;
+  left: calc(50% - 132px);
+}
+
+#logo {
+  content : url(img/logo.webp);
+  width: 80px;
+  height: 68px;
+}

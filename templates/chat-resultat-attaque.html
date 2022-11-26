@@ -1,0 +1,40 @@
+<img class="chat-icon" src="{{competence.img}}" alt="{{competence.name}}" />
+<h4>{{alias}} attaque  à {{diffLibre}}: {{arme.name}}</h4>
+<div>{{selectedCarac.label}}{{#unless (eq selectedCarac.label competence.name)}} / {{competence.name}}{{/unless}}</div>
+{{> "systems/foundryvtt-reve-de-dragon/templates/chat-infojet.html"}}
+<hr>
+{{#if tactique}}
+  <div>
+    {{#if (eq tactique 'charge')}}
+    <img class="chat-icon" src="icons/svg/thrust.svg" alt="charge" height="32" width="32" />
+    C'est une charge, vos parades auront un -4 et vous ne pourrez pas esquiver!
+    {{ else if (eq tactique 'feinte')}}
+      {{#if rolled.isSuccess}}
+        <img class="chat-icon" src="systems/foundryvtt-reve-de-dragon/icons/heures/hd06.svg" alt="feinte" height="32" width="32" />
+        Votre feinte peut faire mouche!
+      {{/if}}
+    {{/if}}
+  </div>
+{{/if}}
+<div>
+ {{#if rolled.isSuccess}}
+  <span><strong>{{show.cible}}</strong> doit se défendre à <strong>{{diffLibre}}</strong>, ou encaisser à
+    {{~#if (eq dmg.mortalite 'non-mortel')}}
+    <span class="rdd-roll-norm">({{numberFormat dmg.total decimals=0 sign=true}})</span> (dommages non-mortel)
+    {{else if (eq dmg.mortalite 'mortel')}}
+    <span class="rdd-roll-echec">{{numberFormat dmg.total decimals=0 sign=true}}</span>
+    {{else}}
+    <span class="rdd-roll-etotal">{{numberFormat dmg.total decimals=0 sign=true}}</span> (entités de cauchemar)
+    {{~/if}}.
+    {{#if show.isRecul}}Si votre adversaire n'esquive pas, il devra résister à l'impact ou reculer sous le choc!{{/if}}
+  </span>
+  {{#if (eq particuliere 'rapidite')}}
+    <span>
+      <br>Votre attaque rapide vous permet une deuxième attaque, ou défense supplémentaire!
+    </span>
+  {{/if}}
+{{else}}
+  <span>Votre attaque a échoué!</span>
+{{/if}}
+{{> "systems/foundryvtt-reve-de-dragon/templates/chat-info-appel-au-moral.html"}}
+</div>

@@ -1,0 +1,15 @@
+{{#if casestmr.length}}
+  <h3>Effets sur les cases des TMR</h3>
+  <ul class="item-list alterne-list">
+    {{#each casestmr as |casetmr key|}}
+    <li class="item list-item flexrow" data-item-id="{{casetmr.id}}" data-attribute="{{key}}">
+      <img class="sheet-competence-img" src="{{casetmr.img}}" />
+      <span class="display-label"><a>{{casetmr.name}}</a></span>
+      <span>{{casetmr.system.coord}} - {{caseTmr-label casetmr.system.coord}}</span> 
+      <div class="item-controls flex-shrink">
+        <a class="item-delete" title="Supprimer"><i class="fas fa-trash"></i></a>
+      </div>
+    </li>
+    {{/each}}
+  </ul>
+{{/if}}

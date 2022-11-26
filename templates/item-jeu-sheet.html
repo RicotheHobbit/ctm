@@ -1,0 +1,32 @@
+<form class="{{cssClass}}" autocomplete="off">
+  {{>"systems/foundryvtt-reve-de-dragon/templates/header-item.html"}}
+
+  {{!-- Sheet Body --}}
+  <section class="sheet-body">
+    <div class="form-group">
+      <label class="alchimie-title" for="xp">Type</label>
+      <select name="system.type" data-dtype="String">
+        {{#select system.type}}
+        <option value="adressehasard">Adresse/Hasard</option>
+        <option value="de">Dés</option>
+        <option value="carte">Cartes</option>
+        <option value="reflexion">Reflexion</option>
+        {{/select}}    
+      </select>
+    </div>
+    <div class="form-group">
+      <label class="alchimie-title" for="xp">Base</label>
+      <input class="attribute-value" type="text" name="system.base" value="{{system.base}}" data-dtype="Number"/>
+    </div>
+    <div class="form-group">
+      <label class="alchimie-title" for="xp">Caractéristique/Compétence</label>
+      <input class="attribute-value" type="text" name="system.caraccomp" value="{{system.caraccomp}}" data-dtype="String"/>
+    </div>
+    <div class="form-group">
+      <label>Référence / Auteur</label>
+      <input class="attribute-value" type="text" name="system.reference" value="{{system.reference}}" data-dtype="String"/>
+    </div>
+
+    {{>"systems/foundryvtt-reve-de-dragon/templates/partial-item-description.html"}}
+  </section>
+</form>

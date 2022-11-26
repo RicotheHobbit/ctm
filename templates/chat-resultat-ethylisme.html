@@ -1,0 +1,41 @@
+<img class="chat-icon" src="systems/foundryvtt-reve-de-dragon/icons/objets/chope_gres.webp" alt="Ethylisme" />
+<h4>
+  {{alias}} boit un verre d'alcool de force {{jetVie.forceAlcool}}
+  {{#if alcool}}
+  <br>{{alcool.name}}
+  {{/if}}
+</h4>
+{{> "systems/foundryvtt-reve-de-dragon/templates/chat-infojet.html" jetVie}}
+<hr>
+<span>
+  {{#if jetVie.rolled.isSuccess}}
+  {{alias}} a réussi son jet d'éthylisme, il a consommé {{doses}} doses sans effet.
+  {{else}}
+  {{alias}} a échoué son jet d'éthylisme, il est maintenant {{nomEthylisme}} ({{ajustementEthylique}}).
+  {{/if}}
+</span>
+{{#if jetVie.rolled.isEchec}}
+<br>
+<span>
+    {{alias}} perd {{perteEndurance.perte}} points d'endurance. {{#if perteEndurance.perteVie}}<br/>Il tombe inconscient et perd un point de vie.{{/if}}
+    {{#if jetMoral}}
+    <br/>Jet de moral {{#if jetMoral.succes}}réussi{{else}}manqué{{/if}} en situation heureuse ({{jetMoral.jet}}/{{jetMoral.difficulte}}).
+    {{#if (gt jetMoral.ajustement 0)}}L'alcool met {{alias}} en joie. Il gagne un point de moral.
+    {{else if (lt jetMoral.ajustement 0)}}{{alias}} a l'alcool triste. Il perd un point de moral.
+    {{else}}{{alias}} garde son moral.{{/if}}
+    {{/if}}
+  </span>
+  {{#if jetVolonte}}
+  <hr>
+  <h4>Qui a bu boira</h4>
+  {{> "systems/foundryvtt-reve-de-dragon/templates/chat-infojet.html" jetVolonte}}
+  <hr>
+  <span>
+    {{#if jetVolonte.rolled.isSuccess}}
+    {{alias}} est libre de s'arrêter de boire.
+    {{else}}
+    {{alias}} a une envie irrépressible de reprendre un verre.
+    {{/if}}
+  </span>
+  {{/if}}
+{{/if}}

@@ -1,0 +1,37 @@
+<div class="post-item" data-transfer="{{transfer}}">
+  <h3>{{#if alias}}{{alias}} propose: {{else}}Acheter {{/if}}{{item.name}}</h3>
+  {{#if item.img}}
+  <img class="chat-icon" src="{{item.img}}" title="{{item.name}}" alt="{{item.name}}" />
+  {{/if}}
+  <div class="poesie-extrait poesie-overflow card-content">{{{item.system.description}}}</div>
+  <p>
+    {{#each properties as |property p|}}
+    <span>{{{property}}}</span><br>
+    {{/each}}
+  </p>
+  <hr>
+  <p>
+    {{#unless quantiteIllimite}}
+    <span>Lots disponibles: <span class="quantiteNbLots">{{quantiteNbLots}}</span></span><br>
+    {{/unless}}
+    {{#if (gt tailleLot 1)}}
+    <span>Lots de: <span class="tailleLot">{{tailleLot}}</span></span><br>
+    {{/if}}
+    {{#if (ne prixLot 0)}}
+    <span><strong>Prix {{#if (gt tailleLot 1)}}du lot {{else}}unitaire{{/if}}:
+      <span class="prixLot">{{prixLot}}</span> Sols</strong></span><br>
+    {{/if}}
+  </p>
+  {{#if (or (gt quantiteNbLots 0) quantiteIllimite)}}
+  <span class="chat-card-button-area">
+    <a class="button-acheter chat-card-button"
+      data-jsondata='{{jsondata}}'
+      {{#if vendeurId}}data-vendeurId='{{vendeurId}}'{{/if}}
+      data-tailleLot="{{tailleLot}}"
+      data-quantiteNbLots="{{quantiteNbLots}}"
+      data-quantiteIllimite="{{#if quantiteIllimite}}true{{else}}false{{/if}}"
+      data-prixLot="{{prixLot}}">
+    {{#if (eq prixLot 0)}}Prendre{{else}}Acheter{{/if}}</a>
+  </span>
+  {{/if}}
+</div>

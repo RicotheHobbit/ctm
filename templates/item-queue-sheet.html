@@ -1,0 +1,31 @@
+<form class="{{cssClass}}" autocomplete="off">
+  {{>"systems/foundryvtt-reve-de-dragon/templates/header-item.html"}}
+  {{!-- Sheet Body --}}
+  <section class="sheet-body">
+    <div class="form-group">
+      <label></label>
+      <label class="attribute-value">{{#if (eq type 'ombre')}}Ombre de thanatos
+        {{else if (eq type 'queue')}}Queue de Dragon
+        {{/if}}
+      </label>
+    </div>
+
+    <div class="form-group">
+      <label for="system.categorie">Type de queue</label>
+      <select name="system.categorie" class="categorie" data-dtype="String">
+        {{#select system.categorie}}
+        {{>"systems/foundryvtt-reve-de-dragon/templates/enum-categorie-queue.html"}}
+        {{/select}}
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="system.refoulement">Refoulement</label>
+      <input class="attribute-value" type="text" name="system.refoulement" value="{{system.refoulement}}" data-dtype="Number"/>
+    </div>
+
+    {{>"systems/foundryvtt-reve-de-dragon/templates/partial-item-hautrevant.html"}}
+    {{>"systems/foundryvtt-reve-de-dragon/templates/partial-item-frequence.html"}}
+    {{>"systems/foundryvtt-reve-de-dragon/templates/partial-item-description.html"}}
+  </section>
+</form>

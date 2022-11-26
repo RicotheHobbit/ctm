@@ -1,0 +1,47 @@
+<img class="chat-icon" src="{{competence.img}}" />
+<h4>
+  {{#if (eq mode "possession")}}
+    {{attacker.name}} tente de {{#if isECNIDefender}}conjurer la possession de{{else}}posséder{{/if}} {{defender.name}}
+  {{else}}
+    {{defender.name}} tente de {{#if isECNIDefender}}résister à{{else}}conjurer la possession de{{/if}} {{attacker.name}}
+  {{/if}}
+</h4>
+{{> "systems/foundryvtt-reve-de-dragon/templates/chat-infojet.html"}}
+
+<hr>
+<div>
+  <span class='chat-card-button-area'>
+    <br>
+    {{#if (eq mode "possession")}}
+      {{#if possession.isSuccess}}
+        <a class='defense-possession chat-card-button'
+            data-attackerId='{{attacker.id}}'
+            data-defenderId='{{defender.id}}'
+            data-possessionId='{{possession.system.possessionid}}'>
+            {{#if isECNIDefender}}
+            Résister à la conjuration
+            {{else}}
+            Résister à la possession
+            {{/if}}
+        </a>
+      {{else}}
+        La Tentative de {{#if isECNIDefender}}conjuration{{else}}possession{{/if}} a échoué !
+      {{/if}}
+    {{else}}
+      {{#if rolled.isSuccess}}
+        La tentative de {{#if isECNIDefender}}conjuration a été repoussée{{else}}possession a été conjurée{{/if}}!
+        {{defender.name}} a résisté.
+        {{else}}
+        La tentative de {{#if isECNIDefender}}conjuration a réussi{{else}}possession n'a pas pu être conjurée{{/if}}!
+      {{/if}}
+    {{/if}}
+    <br>Points de Possession: {{possession.ptsPossession}}
+    <br>Points de Conjuration: {{possession.ptsConjuration}}
+
+    {{#if possession.isPosseder}}
+    <br><strong>Vous êtes été possédé par {{possession.system.typepossession}} ! La possession en cours a été supprimée.</strong>
+    {{/if}}
+    {{#if possession.isConjurer}}
+    <br><strong>Vous avez conjuré {{possession.system.typepossession}} ! La possession en cours a été supprimée.</strong>
+    {{/if}}
+</div>

@@ -1,0 +1,30 @@
+{{#if competences}}
+<div class="flex-shrink">
+  <header class="competence-header flexrow">
+    <span class="competence-title">{{categorie}}</span>
+  </header>
+  <ul class="item-list alterne-list competence-list">
+    {{#if @root.options.vueDetaillee}}
+    <li class="item flexrow list-item ">
+      <span class="competence-label"></span>
+      <span class="competence-value" >Niv.</span>
+      <span class="competence-xp">xp</span>
+      {{#if (eq categorie 'Draconic')}}
+      <span class="competence-xp-sort">sort</span>
+      {{/if}}
+      <div class="item-controls">
+        <i class="far fa-arrow-alt-circle-up"></i>
+        <span class="competence-archetype">Arch.</span>
+        <i class="far fa-edit"></i>
+        {{#if @root.options.isGM}}
+        <i class="far fa-trash"></i>
+        {{/if}}
+      </div>
+    </li>
+    {{/if}}
+    {{#each competences as |comp key|}}
+    {{> "systems/foundryvtt-reve-de-dragon/templates/actor/competence.html" comp}}
+    {{/each}}
+  </ul>
+</div>
+{{/if}}

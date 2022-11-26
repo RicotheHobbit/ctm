@@ -1,0 +1,44 @@
+<div id="calendar-time-container">
+	<div class="calendar">
+    {{#if isGM}}
+    <i class="calendar-btn calendar-btn-edit fas fa-cog" title="Editer"></i>
+    <i class="calendar-btn astrologie-btn-edit fas fa-cog" title="Astrologie"></i>
+    {{/if}}
+		<div class="calendar-hdr">
+			<p id="calendar-move-handle" class="calendar-date-rdd" title="Deplacer">Jour {{jourMois}} de {{nomMois}} ({{nomSaison}})</p>
+    </div>
+		<div class="calendar-container">
+      {{#if isGM}}
+			<div class="calendar-btn-container-left">
+				<i class="calendar-btn calendar-1min fas fa-angle-right" data-calendar-avance="1" title="Avancer de 1 minute"></i>
+				<i class="calendar-btn calendar-5min fas fa-angle-double-right" data-calendar-avance="5" title="Avancer de 5 minutes"></i>
+				<i class="calendar-btn calendar-10min fas fa-play" data-calendar-avance="10" title="Avancer de 10 minutes"></i>
+				<i class="calendar-btn calendar-20min fas fa-step-forward" data-calendar-avance="20" title="Avancer de 20 minutes"></i>
+			</div>
+      {{else}}
+      <div class="calendar-btn-container-left">
+			</div>
+      {{/if}}
+			<div class="calendar-weekday-time">
+				{{#if isGM}}
+				<a class="ajout-chronologie calendar-weekday">
+					<img class="calendar-heure-img" src="{{iconHeure}}" alt="{{nomHeure}}"/>&nbsp;<span class="calendar-heure-texte">{{nomHeure}}</span>
+				</a>
+				<p class="calendar-time-disp calendar-time isGM">{{minutesRelative}} minutes</p>
+				{{else}}
+				<a class="ajout-chronologie">
+					<img class="calendar-heure-img" src="{{iconHeure}}" alt="{{nomHeure}}"/>&nbsp;<span class="calendar-heure-texte">{{nomHeure}}</span>
+				</a>
+				{{/if}}
+			</div>
+      {{#if isGM}}
+			<div class="calendar-btn-container-right">
+				<i class="calendar-btn calendar-30min fas fa-forward" data-calendar-avance="30" title="Avancer de 30 minutes" ></i>
+				<i class="calendar-btn calendar-1heure fas fa-fast-forward" data-calendar-avance="120" title="Avancer d'1 heure" ></i>
+				<i class="calendar-btn calendar-vaisseau fas fa-sun" data-calendar-set="0" title="Avancer au Vaisseau"></i>
+				<i class="calendar-btn calendar-lyre fas fa-moon" data-calendar-set="6" title="Avancer à Lyre"></i>
+			</div>
+      {{/if}}
+		</div>
+	</div>
+</div>

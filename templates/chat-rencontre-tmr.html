@@ -1,0 +1,16 @@
+<img class="chat-icon" src="{{competence.img}}" alt="{{competence.name}}"/>
+<h4 data-categorie="tmr" data-actor-id="{{actor._id}}" data-rencontre-round="{{nbRounds}}">
+  {{alias}} rencontre {{#if (eq rencontre.system.genre 'f')}}une{{else}}un{{/if}} {{rencontre.name}} de force {{rencontre.system.force}}
+</h4>
+{{> "systems/foundryvtt-reve-de-dragon/templates/chat-infojet.html"}}
+<hr>
+<span>
+  {{message}}
+</span>
+{{#if poesie}}
+<hr>
+<span class="poesie-extrait">
+  {{{poesie.extrait}}}
+  <p class="poesie-reference">{{poesie.reference}}</p>
+</span>
+{{/if}}

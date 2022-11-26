@@ -1,0 +1,22 @@
+<div class="control-icon rdd-initiative ">
+  <img class="rdd-hud-togglebutton" src="icons/svg/sword.svg" width="36" height="36" title="Initiative" />
+  <div class="rdd-hud-list tokenhudext right">
+    {{#each actions as |action key|}}
+    <div class="control-icon tokenhudicon rdd-hud-menu"
+        data-combatant-id="{{../combatant.id}}"
+        data-action-index="{{action.index}}"
+        title="{{action.name}}">
+      <label>init: {{action.name}} {{action.system.infoMain}}</label>
+    </div>
+    {{/each}}
+    {{#each commandes as |commande key|}}
+    <div class="control-icon tokenhudicon rdd-hud-menu"
+        data-command="{{commande.command}}" 
+        data-combatant-id="{{../combatant.id}}"
+        data-action-index="{{commande.index}}"
+        title="{{commande.name}}">
+      <label>{{commande.name}}</label>
+    </div>
+    {{/each}}    
+  </div>
+</div>

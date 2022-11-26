@@ -1,0 +1,14 @@
+{{#if tetes.length}}
+<h3>Tetes</h3>
+<ul class="item-list">
+  {{#each tetes as |tete key|}}
+  <li class="item flexrow" data-attribute={{key}} data-item-id="{{tete._id}}">
+    <img class="sheet-competence-img" src="{{tete.img}}" />
+    <span class="display-label flex-grow"><a>{{tete.name}}</a></span>
+    <div class="item-controls flex-shrink">
+      <a class="item-delete" title="Delete Item"><i class="fas fa-trash"></i></a>
+    </div>
+  </li>
+  {{/each}}
+</ul>
+{{/if}}

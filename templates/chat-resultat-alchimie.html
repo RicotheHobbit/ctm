@@ -1,0 +1,14 @@
+<img class="chat-icon" src="systems/foundryvtt-reve-de-dragon/icons/competence_alchimie.webp" alt="préparation alchimique" />
+<h4>
+  {{alias}} essaye de réaliser sa recette Alchimique : {{recette.name}}
+</h4>
+{{> "systems/foundryvtt-reve-de-dragon/templates/chat-infojet.html"}}
+<hr>
+<div>
+  {{#if rolled.isSuccess}}
+  {{alias}} a réussi son opération alchimique ! Il/Elle peut passer à l'étape suivante de sa recette. 
+  {{else}}
+  {{alias}} a raté son opération alchimique ! Sa recette est un echec.
+  {{/if}}
+  {{> "systems/foundryvtt-reve-de-dragon/templates/chat-info-appel-au-moral.html"}}
+</div>

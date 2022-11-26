@@ -1,0 +1,43 @@
+<ul class="item-list alterne-list">
+  <li class="competence-header flexrow">
+    <span class="competence-title competence-label">Armes et Défenses</span>
+    <span class="competence-title competence-value">Niveau</span>
+    <span class="competence-title competence-value">+dom</span>
+    <span class="competence-title competence-value"></span>
+    <span class="competence-title initiative-value">Initiative</span>
+  </li>
+{{#each combat as |arme key|}}
+  <li class="item flexrow list-item"
+      data-item-id="{{arme._id}}"
+      data-arme-name="{{arme.name}}"
+      data-competence-name="{{arme.system.competence}}" >
+    <span class="arme-label">
+      <a>
+        {{#if arme.img}}
+        <img class="sheet-competence-img" src="{{arme.img}}"/>
+        {{/if}}
+        <span>{{arme.name}}</span>
+      </a>
+      ({{arme.system.competence}})
+    </span>
+    <span class="competence-value">{{numberFormat arme.system.niveau decimals=0 sign=true}}</span>
+    <span class="competence-value">{{numberFormat arme.system.dommagesReels decimals=0 sign=true}}</span>
+    <span class="competence-value"></span>
+    <span class="initiative-value arme-initiative"><a>{{arme.system.initiative}}</a></span>
+  </li>
+  {{/each}}
+  {{#each esquives as |esq key|}}
+  <li class="item flexrow list-item" data-item-id="{{esq._id}}">
+    <span class="competence-label">
+      <a class="competence-label" name="{{esq.name}}">
+        <img class="sheet-competence-img" src="{{esq.img}}"/>
+        <span>{{esq.name}}</span>
+      </a>
+    </span>
+    <span class="competence-value">{{numberFormat esq.system.niveau decimals=0 sign=true}}</span>
+    <span class="competence-value"></span>
+    <span class="competence-value"></span>
+    <span class="initiative-value"></span>
+  </li>
+{{/each}}
+</ul>
