@@ -1,0 +1,1026 @@
+{
+  "Actor": {
+    "types": ["personnage", "creature", "entite", "vehicule"],
+    "templates": {
+      "description": {
+        "description": "Description ...",
+        "race": "",
+        "notesmj": "Notes du MJ"
+      },
+      "subacteurs": {
+        "subacteurs": {
+          "suivants": [],
+          "montures": [],
+          "vehicules": []
+        }
+      },
+      "background": {
+        "biographie": "Histoire personnelle...",
+        "notes": "Notes",
+        "notesmj": "Notes du MJ",
+        "race": "Humain",
+        "yeux": "",
+        "cheveux": "",
+        "poids": "",
+        "heure": "",
+        "sexe": "",
+        "age": 0,
+        "beaute": 10,
+        "main": "droitier",
+        "experiencelog": []
+      },
+      "vehicule": {
+        "categorie": "",
+        "vitesse": "",
+        "bonus": "",
+        "manoeuvrabilite": "",
+        "equipage": 0,
+        "capacite_encombrement": 0,
+        "etat": {
+          "resistance" : {
+            "type": "number",
+            "max": 20,
+            "value": 20,
+            "label": "Résistance",
+            "derivee": false
+          },
+          "structure":{
+            "type": "number",
+            "max": 10,
+            "value": 10,
+            "label": "Structure",
+            "derivee": false
+          }
+        }
+      },
+      "entite": {
+        "definition": {
+          "categorieentite": "",
+          "typeentite": ""
+        },
+        "carac": {
+          "taille": {
+            "type": "number",
+            "value": 10,
+            "label": "Taille",
+            "xp": 0,
+            "derivee": false
+          },
+          "reve": {
+            "type": "number",
+            "value": 10,
+            "label": "Rêve",
+            "xp": 0,
+            "derivee": false
+          },
+          "niveau": {
+            "type": "number",
+            "value": 0,
+            "label": "Niveau",
+            "xp": 0,
+            "derivee": false
+          }
+        },
+        "sante": {
+          "endurance": {
+            "type": "number",
+            "max": 10,
+            "value": 10,
+            "label": "Endurance",
+            "derivee": false
+          },
+          "resonnance": {
+            "actors" : []
+          }
+        },
+        "compteurs": {
+          "etat": {
+            "value": 0,
+            "label": "Etat général"
+          },
+          "surenc": {
+            "value": 0,
+            "label": "Sur-encombrement"
+          }
+        },
+        "attributs": {
+          "plusdom": {
+            "type": "number",
+            "value": 0,
+            "label": "+dom",
+            "derivee": true
+          },
+          "vitesse": {
+            "type": "string",
+            "value": 0,
+            "label": "Vitesse",
+            "derivee": true
+          },
+          "protection": {
+            "type": "number",
+            "value": 0,
+            "label": "Protection naturelle",
+            "derivee": false
+          }
+        }
+      },
+      "creature": {
+        "carac": {
+          "taille": {
+            "type": "number",
+            "value": 10,
+            "label": "Taille",
+            "xp": 0,
+            "derivee": false
+          },
+          "constitution": {
+            "type": "number",
+            "value": 10,
+            "label": "Constitution",
+            "xp": 0,
+            "derivee": false
+          },
+          "force": {
+            "type": "number",
+            "value": 10,
+            "label": "Force",
+            "xp": 0,
+            "derivee": false
+          },
+          "perception": {
+            "type": "number",
+            "value": 10,
+            "label": "Perception",
+            "xp": 0,
+            "derivee": false
+          },
+          "volonte": {
+            "type": "number",
+            "value": 10,
+            "label": "Volonté",
+            "xp": 0,
+            "derivee": false
+          },
+          "reve": {
+            "type": "number",
+            "value": 10,
+            "label": "Rêve",
+            "xp": 0,
+            "derivee": false
+          }
+        },
+        "sante": {
+          "vie": {
+            "type": "number",
+            "max": 10,
+            "value": 10,
+            "label": "Vie",
+            "derivee": false
+          },
+          "endurance": {
+            "type": "number",
+            "max": 10,
+            "value": 10,
+            "label": "Endurance",
+            "derivee": false
+          }
+        },
+        "blessures": {
+          "legeres": {
+            "liste":   [ { "active": false, "psdone": false, "premiers_soins": -1, "scdone": false, "soins_complets": -1, "jours": 0, "localisation": "" },
+                        { "active": false, "psdone": false, "premiers_soins": -1, "scdone": false, "soins_complets": -1, "jours": 0, "localisation": "" },
+                        { "active": false, "psdone": false, "premiers_soins": -1, "scdone": false, "soins_complets": -1, "jours": 0, "localisation": "" },
+                        { "active": false, "psdone": false, "premiers_soins": -1, "scdone": false, "soins_complets": -1, "jours": 0, "localisation": "" },
+                        { "active": false, "psdone": false, "premiers_soins": -1, "scdone": false, "soins_complets": -1, "jours": 0, "localisation": "" } ]
+          },
+          "graves": {
+            "liste":   [ { "active": false, "psdone": false, "premiers_soins": -1, "scdone": false, "soins_complets": -1, "jours": 0, "localisation": "" },
+                        { "active": false, "psdone": false, "premiers_soins": -1, "scdone": false, "soins_complets": -1, "jours": 0, "localisation": "" } ]
+          },
+          "critiques": {
+            "liste":   [ { "active": false, "psdone": false, "premiers_soins": -1, "scdone": false, "soins_complets": -1, "jours": 0, "localisation": "" } ]
+          }
+        },
+        "attributs": {
+          "plusdom": {
+            "type": "number",
+            "value": 0,
+            "label": "+dom",
+            "derivee": true
+          },
+          "vitesse": {
+            "type": "string",
+            "value": 0,
+            "label": "Vitesse",
+            "derivee": true
+          },
+          "encombrement": {
+            "type": "number",
+            "value": 0,
+            "label": "Encombrement",
+            "derivee": false
+          },
+          "protection": {
+            "type": "number",
+            "value": 0,
+            "label": "Protection naturelle",
+            "derivee": false
+          }
+        },
+        "compteurs": {
+          "etat": {
+            "value": 0,
+            "label": "Etat général"
+          },
+          "surenc": {
+            "value": 0,
+            "label": "Sur-encombrement"
+          }
+        }
+      },
+      "personnage": {
+        "carac": {
+          "taille": {
+            "type": "number",
+            "value": 10,
+            "label": "Taille",
+            "xp": 0,
+            "derivee": false
+          },
+          "apparence": {
+            "type": "number",
+            "value": 10,
+            "label": "Apparence",
+            "xp": 0,
+            "derivee": false
+          },
+          "constitution": {
+            "type": "number",
+            "value": 10,
+            "label": "Constitution",
+            "xp": 0,
+            "derivee": false
+          },
+          "force": {
+            "type": "number",
+            "value": 10,
+            "label": "Force",
+            "xp": 0,
+            "derivee": false
+          },
+          "agilite": {
+            "type": "number",
+            "value": 10,
+            "label": "Agilité",
+            "xp": 0,
+            "derivee": false
+          },
+          "dexterite": {
+            "type": "number",
+            "value": 10,
+            "label": "Dextérité",
+            "xp": 0,
+            "derivee": false
+          },
+          "vue": {
+            "type": "number",
+            "value": 10,
+            "label": "Vue",
+            "xp": 0,
+            "derivee": false
+          },
+          "ouie": {
+            "type": "number",
+            "value": 10,
+            "label": "Ouïe",
+            "xp": 0,
+            "derivee": false
+          },
+          "odoratgout": {
+            "type": "number",
+            "value": 10,
+            "label": "Odorat-Goût",
+            "xp": 0,
+            "derivee": false
+          },
+          "volonte": {
+            "type": "number",
+            "value": 10,
+            "label": "Volonté",
+            "xp": 0,
+            "derivee": false
+          },
+          "intellect": {
+            "type": "number",
+            "value": 10,
+            "label": "Intellect",
+            "xp": 0,
+            "derivee": false
+          },
+          "empathie": {
+            "type": "number",
+            "value": 10,
+            "label": "Empathie",
+            "xp": 0,
+            "derivee": false
+          },
+          "reve": {
+            "type": "number",
+            "value": 10,
+            "label": "Rêve",
+            "xp": 0,
+            "derivee": false
+          },
+          "chance": {
+            "type": "number",
+            "value": 10,
+            "label": "Chance",
+            "xp": 0,
+            "derivee": false
+          },
+          "melee": {
+            "type": "number",
+            "value": 10,
+            "label": "Mêlée",
+            "xp": 0,
+            "derivee": true
+          },
+          "tir": {
+            "type": "number",
+            "value": 10,
+            "label": "Tir",
+            "xp": 0,
+            "derivee": true
+          },
+          "lancer": {
+            "type": "number",
+            "value": 10,
+            "label": "Lancer",
+            "xp": 0,
+            "derivee": true
+          },
+          "derobee": {
+            "type": "number",
+            "value": 10,
+            "label": "Dérobée",
+            "xp": 0,
+            "derivee": true
+          }
+        },
+        "sante": {
+          "vie": {
+            "type": "number",
+            "max": 10,
+            "value": 10,
+            "label": "Vie",
+            "derivee": true
+          },
+          "endurance": {
+            "type": "number",
+            "max": 10,
+            "value": 10,
+            "label": "Endurance",
+            "derivee": true
+          },
+          "fatigue": {
+            "type": "number",
+            "max": 0,
+            "value": 0,
+            "label": "Fatigue",
+            "derivee": true
+          }
+        },
+        "blessures": {
+          "legeres": {
+            "liste":   [ { "active": false, "premiers_soins": 0, "soins_complets": 0, "jours": 0, "localisation": "" },
+                        { "active": false, "premiers_soins": 0, "soins_complets": 0, "jours": 0, "localisation": "" },
+                        { "active": false, "premiers_soins": 0, "soins_complets": 0, "jours": 0, "localisation": "" },
+                        { "active": false, "premiers_soins": 0, "soins_complets": 0, "jours": 0, "localisation": "" },
+                        { "active": false, "premiers_soins": 0, "soins_complets": 0, "jours": 0, "localisation": "" } ]
+          },
+          "graves": {
+            "liste":   [ { "active": false, "premiers_soins": 0, "soins_complets": 0, "jours": 0, "localisation": "" },
+                        { "active": false, "premiers_soins": 0, "soins_complets": 0, "jours": 0, "localisation": "" } ]
+          },
+          "critiques": {
+            "liste":   [ { "active": false, "premiers_soins": 0, "soins_complets": 0, "jours": 0, "localisation": "" } ]
+          }
+        },
+        "attributs": {
+          "sconst": {
+            "type": "number",
+            "value": 0,
+            "label": "S. Const",
+            "derivee": true
+          },
+          "sust": {
+            "type": "number",
+            "value": 0,
+            "label": "Sustentation",
+            "derivee": true
+          },
+          "plusdom": {
+            "type": "number",
+            "value": 0,
+            "label": "+dom",
+            "derivee": true
+          },
+          "encombrement": {
+            "type": "number",
+            "value": 0,
+            "label": "Encombrement",
+            "derivee": true
+          },
+          "malusarmure": {
+            "type": "number",
+            "value": 0,
+            "label": "Malus Armure",
+            "derivee": true
+          },
+          "protection": {
+            "type": "number",
+            "value": 0,
+            "label": "Protection naturelle",
+            "derivee": false
+          },
+          "hautrevant": {
+            "type": "string",
+            "value": "",
+            "label": "Haut rêvant",
+            "derivee": true
+          }
+        },
+        "reve": {
+          "reve": {
+            "max": 0,
+            "value": 10,
+            "label": "Points de Rêve actuels",
+            "thanatosused": false
+          },
+          "seuil": {
+            "max": 0,
+            "value": 10,
+            "label": "Seuil de Rêve"
+          },
+          "tmrpos": {
+            "coord": "A1",
+            "label": "Position TMR",
+            "cache": false
+          },
+          "refoulement": {
+            "value": 0,
+            "label": "Points de Refoulement"
+          },
+          "queues": {
+            "list": []
+          },
+          "souffles": {
+            "list": []
+          },
+          "tetes": {
+            "list": []
+          },
+          "ombres": {
+            "list": []
+          }
+        },
+        "compteurs": {
+          "sust": {
+            "value": 0,
+            "label": "Sust.",
+            "isInput": true
+          },
+          "eau": {
+            "value": 0,
+            "label": "Eau",
+            "isInput": true
+          },
+          "moral": {
+            "value": 0,
+            "label": "Moral",
+            "isInput": true
+          },
+          "exaltation": {
+            "value": 0,
+            "label": "Exaltation",
+            "isInput": true
+          },
+          "dissolution": {
+            "value": 0,
+            "label": "Dissolution",
+            "isInput": true
+          },
+          "chance": {
+            "value": 0,
+            "max": 0,
+            "label": "Chance",
+            "isInput": true
+          },
+          "destinee": {
+            "value": 0,
+            "label": "Destinée",
+            "isInput": true
+          },
+          "voyage": {
+            "value": 0,
+            "label": "Voyage",
+            "isInput": true
+          },
+          "etat": {
+            "value": 0,
+            "label": "Etat général"
+          },
+          "surenc": {
+            "value": 0,
+            "label": "Sur-encombrement"
+          },
+          "ethylisme": {
+            "value": 1,
+            "label": "Ethylisme",
+            "isInput": true,
+            "nb_doses": 0,
+            "jet_moral": "false"
+          },
+          "stress": {
+            "value": 0,
+            "label": "Stress",
+            "isStress": true,
+            "isInput": true
+          },
+          "experience": {
+            "value": 0,
+            "label": "Experience",
+            "isInput": true
+          }
+        },
+        "argent": {
+          "deniers": {
+            "label": "Denier",
+            "value": 0,
+            "enc": 0
+          },
+          "sols": {
+            "label": "Sol",
+            "value": 0,
+            "enc": 0
+          }
+        }
+      }
+    },
+    "personnage": {
+      "templates": [ "personnage", "background", "subacteurs" ]
+    },
+    "creature": {
+      "templates": [ "creature", "description" ]
+    },
+    "entite": {
+      "templates": [ "entite", "description" ]
+    },
+    "vehicule": {
+      "templates": [ "vehicule", "description" ]
+    }
+  },
+  "Item": {
+    "types": [
+        "competence", "competencecreature",
+        "recettealchimique", "musique", "chant", "danse", "jeu", "recettecuisine", "oeuvre",
+        "objet", "arme", "armure", "conteneur", "herbe", "ingredient", "livre", "potion", "munition",
+        "monnaie", "nourritureboisson", "gemme",
+        "meditation", "rencontre", "queue", "ombre", "souffle", "tete", "casetmr", "signedraconique", "sort", "sortreserve",
+        "nombreastral", "tache", "maladie", "poison", "possession",
+        "tarot", "extraitpoetique"
+    ],
+    "possession": {
+      "typepossession": "",
+      "possede": false,
+      "possessionid": "",
+      "possesseurid": "",
+      "possedeid": "",
+      "compteur": 0,
+      "date": 0,
+      "description": ""
+    },
+    "objet": {
+      "description": "",
+      "descriptionmj": "",
+      "quantite": 1,
+      "encombrement": 0,
+      "equipe": false,
+      "resistance": 0,
+      "qualite": 0,
+      "cout": 0
+    },
+    "gemme": {
+      "type": "",
+      "description": "",
+      "encombrement": 0,
+      "quantite": 1,
+      "cout": 0,
+      "taille": 0,
+      "purete": 0,
+      "inertie": 0,
+      "enchantabilite": 0,
+      "qualite": 0
+    },
+    "conteneur": {
+      "description": "",
+      "descriptionmj": "",
+      "capacite": 0,
+      "encombrement": 0,
+      "equipe": false,
+      "qualite": 0,
+      "contenu": [],
+      "cout": 0
+    },
+    "arme": {
+      "categorie_parade": "",
+      "description": "",
+      "descriptionmj": "",
+      "quantite": 1,
+      "encombrement": 0,
+      "equipe": false,
+      "dommages": "0",
+      "penetration": 0,
+      "force": "0",
+      "resistance": 0,
+      "competence": "",
+      "lancer": "",
+      "tir": "",
+      "cout": 0,
+      "portee_courte": 0,
+      "portee_moyenne": 0,
+      "portee_extreme": 0,
+      "magique": false,
+      "ecaille_efficacite": 0,
+      "resistance_magique": 0,
+      "rapide": false,
+      "deuxmains": false,
+      "unemain": false,
+      "initpremierround": ""
+    },
+    "munition": {
+      "description": "",
+      "descriptionmj": "",
+      "quantite": 1,
+      "encombrement": 0,
+      "equipe": false,
+      "qualite": 0,
+      "cout": 0
+    },
+    "armure": {
+      "description": "",
+      "descriptionmj": "",
+      "quantite": 1,
+      "encombrement": 0,
+      "equipe": false,
+      "protection": 0,
+      "deterioration": 0,
+      "malus": 0,
+      "cout": 0
+    },
+    "competence": {
+      "niveau": 0,
+      "default_diffLibre": 0,
+      "base": 0,
+      "categorie": "",
+      "xp": 0,
+      "description": "Compétence : ...",
+      "descriptionmj": "",
+      "defaut_carac": "",
+      "niveau_archetype": 0,
+      "xp_sort": 0
+    },
+    "competencecreature": {
+      "categorie_parade": "",
+      "niveau": 0,
+      "default_diffLibre": 0,
+      "categorie": "",
+      "carac_value": 0,
+      "iscombat": false,
+      "isnaturelle": true,
+      "ispossession": false,
+      "dommages": 0,
+      "description": "Compétence : ...",
+      "descriptionmj": ""
+    },
+    "sort": {
+      "description": "",
+      "descriptionmj": "",
+      "draconic": "",
+      "duree": "",
+      "JR": "",
+      "cible": "",
+      "difficulte": "",
+      "portée": "",
+      "caseTMR": "",
+      "caseTMRspeciale": "",
+      "ptreve": "",
+      "xp": 0,
+      "bonuscase": "",
+      "isrituel": false,
+      "coutseuil": 0
+    },
+    "herbe": {
+      "description": "",
+      "descriptionmj": "",
+      "niveau": 0,
+      "base": 0,
+      "quantite": 1,
+      "milieu": "",
+      "rarete": "",
+      "categorie": "",
+      "cout": 0
+    },
+    "ingredient": {
+      "description": "",
+      "descriptionmj": "",
+      "niveau": 0,
+      "encombrement": 0,
+      "base": 0,
+      "quantite": 1,
+      "milieu": "",
+      "rarete": "",
+      "categorie": "",
+      "cout": 0
+    },
+    "tache": {
+      "carac": "",
+      "competence": "",
+      "periodicite": "",
+      "fatigue": 1,
+      "difficulte": 0,
+      "points_de_tache": 4,
+      "points_de_tache_courant": 0,
+      "nb_jet_echec": 0,
+      "nb_jet_succes": 0,
+      "cacher_points_de_tache": false,
+      "description": "",
+      "descriptionmj": ""
+    },
+    "livre": {
+      "description": "",
+      "descriptionmj": "",
+      "competence": "",
+      "auteur": "",
+      "quantite": 1,
+      "difficulte": 0,
+      "points_de_tache": 0,
+      "encombrement": 0,
+      "xp": "",
+      "niveau_minimum": 0,
+      "niveau_maximum": 0,
+      "cout": 0
+    },
+    "potion": {
+      "description": "",
+      "descriptionmj": "",
+      "quantite": 1,
+      "encombrement": 0,
+      "rarete": "",
+      "categorie": "",
+      "herbe": "",
+      "herbebrins": 0,
+      "herbebonus": 0,
+      "reposalchimique": false,
+      "pr": 0,
+      "prpermanent": false,
+      "prdate": 0,
+      "cout": 0
+    },
+    "rencontre": {
+      "genre": "f",
+      "formule": "2d4",
+      "refoulement": 1,
+      "presentCite": false,
+      "mauvaiseRencontre": false,
+      "ordreTri": 0,
+      "force": 0,
+      "coord": "",
+      "date": "",
+      "heure": "",
+      "succes": {
+        "effets": [],
+        "message": "",
+        "poesie": "",
+        "reference":""
+      },
+      "echec": {
+        "effets": [],
+        "message": "",
+        "poesie": "",
+        "reference": ""
+      },
+      "frequence": {
+        "cite": 0,
+        "sanctuaire": 0,
+        "plaines": 0,
+        "pont": 0,
+        "collines": 0,
+        "foret": 0,
+        "monts": 0,
+        "desert": 0,
+        "fleuve": 0,
+        "lac": 0,
+        "marais": 0,
+        "gouffre": 0,
+        "necropole": 0,
+        "desolation": 0,
+        "mauvaise": 0
+      },
+      "description": ""
+    },
+    "queue": {
+      "description": "",
+      "descriptionmj": "",
+      "frequence": 0,
+      "hautrevant": false,
+      "categorie": "",
+      "refoulement": 0,
+      "duree": "",
+      "restant" : 0
+    },
+    "ombre": {
+      "description": "",
+      "descriptionmj": "",
+      "frequence": 0,
+      "hautrevant": false,
+      "categorie": "false",
+      "refoulement": 2,
+      "duree": "",
+      "restant" : 0
+    },
+    "souffle": {
+      "description": "",
+      "descriptionmj": "",
+      "frequence": 0,
+      "hautrevant": false,
+      "duree": "",
+      "restant" : 0
+    },
+    "tete": {
+      "frequence": 0,
+      "hautrevant": false,
+      "description": "",
+      "descriptionmj": ""
+    },
+    "tarot": {
+      "concept":"",
+      "aspect":"",
+      "frequence": 1,
+      "description": "",
+      "descriptionmj": ""
+    },
+    "nombreastral": {
+      "value": 0,
+      "istrue": false,
+      "jourindex": 1,
+      "jourlabel": ""
+    },
+    "monnaie": {
+      "quantite": "",
+      "valeur_deniers":0,
+      "encombrement":0,
+      "description": "",
+      "descriptionmj": ""
+    },
+    "meditation": {
+      "competence": "",
+      "theme": "",
+      "support": "",
+      "heure": "",
+      "purification": "",
+      "veture": "",
+      "comportement": "",
+      "tmr": "",
+      "malus" : 0,
+      "description": "",
+      "descriptionmj": ""
+    },
+    "casetmr": {
+      "coord": "",
+      "type": "",
+      "label": "",
+      "specific": "",
+      "description": "",
+      "descriptionmj": "",
+      "sourceid":""
+    },
+    "recettealchimique": {
+      "but": "",
+      "utilisation": "",
+      "enchantement": "",
+      "sureffet": "",
+      "manipulation": "",
+      "description": "",
+      "descriptionmj": ""
+    },
+    "musique": {
+      "niveau": "",
+      "reference": "",
+      "description": "",
+      "descriptionmj": ""
+    },
+    "danse": {
+      "type": "",
+      "agilite": false,
+      "apparence": false,
+      "niveau": "",
+      "reference": "",
+      "description": "",
+      "descriptionmj": ""
+    },
+    "chant": {
+      "niveau": "",
+      "reference": "",
+      "description": "",
+      "descriptionmj": ""
+    },
+    "jeu": {
+      "type": "",
+      "base": "",
+      "caraccomp": "",
+      "reference": "",
+      "description": "",
+      "descriptionmj": ""
+    },
+    "recettecuisine": {
+      "niveau": "",
+      "ingredients": "",
+      "duree": "",
+      "sust": 0,
+      "exotisme": 0,
+      "reference": "",
+      "description": "",
+      "descriptionmj": ""
+    },
+    "oeuvre": {
+      "default_carac": "",
+      "competence": "",
+      "niveau": 0,
+      "reference": "",
+      "description": "",
+      "descriptionmj": ""
+    },
+    "maladie": {
+      "identifie": false,
+      "malignite": 0,
+      "periodicite": "",
+      "remedesconnus": false,
+      "remedes": "",
+      "dommages":"",
+      "description": "",
+      "descriptionmj": ""
+    },
+    "poison": {
+      "identifie": false,
+      "malignite": 0,
+      "periodicite": "",
+      "remedesconnus": false,
+      "remedes": "",
+      "dommages":"",
+      "active": false,
+      "description": "",
+      "descriptionmj": ""
+    },
+    "nourritureboisson": {
+      "description": "",
+      "descriptionmj": "",
+      "sust": 0,
+      "boisson": false,
+      "desaltere": 0,
+      "alcoolise": false,
+      "force": 0,
+      "qualite": 0,
+      "exotisme": 0,
+      "encombrement": 0,
+      "quantite": 1,
+      "cout": 0
+    },
+    "signedraconique": {
+      "typesTMR": [],
+      "ephemere": true,
+      "duree": "1 round",
+      "difficulte": 0,
+      "valeur": {
+        "norm": 3,
+        "sign": 5,
+        "part": 10
+      },
+      "description": "",
+      "descriptionmj": ""
+    },
+    "sortreserve": {
+      "sortid" : "",
+      "draconic": "",
+      "coord": "",
+      "ptreve": 0,
+      "heurecible": "",
+      "echectotal": false
+    },
+    "extraitpoetique": {
+      "extrait": "",
+      "texte": ""
+    }
+  }
+}
+
